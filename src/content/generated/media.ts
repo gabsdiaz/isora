@@ -11,6 +11,9 @@ export const videos: Record<string, { duration: number }> = {
   },
   "de/a1-1/04": {
     "duration": 170
+  },
+  "de/a1-1/05": {
+    "duration": 132
   }
 };
 export const guides: Record<string, { pages: number }> = {
