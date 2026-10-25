@@ -18,7 +18,9 @@ export default function Start() {
     <div className="mx-auto max-w-3xl py-4">
       <p className="text-center text-sm text-muted">{es ? `¡Hola, ${user?.name.split(" ")[0]}!` : `Hi, ${user?.name.split(" ")[0]}!`}</p>
       <h1 className="mt-1 text-center text-3xl font-semibold sm:text-5xl">Wie möchtest du starten?</h1>
-      <p className="mt-2 text-center text-cocoa">{es ? "¿Cómo quieres empezar?" : "How would you like to start?"}</p>
+      <p className="mt-2 text-center text-cocoa">
+        {es ? "¿Cómo quieres empezar? Es el último paso para armar tu plan de estudio." : "How would you like to start? It's the last step to build your study plan."}
+      </p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         <Link
@@ -49,7 +51,7 @@ export default function Start() {
           type="button"
           onClick={() => {
             chooseStart("scratch");
-            router.push("/aprender/de/a1-1/1");
+            router.push("/aprender/plan?neu=1");
           }}
           className="group flex flex-col rounded-[2rem] border border-latte/60 bg-paper p-7 text-left transition hover:-translate-y-0.5 hover:border-cocoa-light"
         >

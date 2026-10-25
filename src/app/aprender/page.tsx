@@ -11,14 +11,14 @@ import type { StringKey } from "@/lib/i18n";
 import { useLevels } from "@/lib/levels";
 import { useMounted } from "@/components/games/shared";
 import { dueCards, useDeck } from "@/lib/flashcards";
-import { GOALS, TIMES } from "@/content/onboarding";
+import { useStudyPlan } from "@/lib/useStudyPlan";
 
 const TILE = "mt-4 flex items-center justify-between gap-4 rounded-3xl border border-latte/60 bg-sand p-5 shadow-sm shadow-espresso/5 transition hover:border-cocoa-light hover:bg-sand-deep";
 const SECTION_LABELS: StringKey[] = ["secVideo", "secTheory", "secCards", "secReading", "secListening", "secSpeaking", "secWriting", "secExercises", "secGuide"];
 
 export default function Dashboard() {
   const { g } = useT();
-  const { user, profile } = useSession();
+  const { user } = useSession();
   const { progress } = useProgress();
   const { last } = useLastVisit();
   const { levels, isUnlocked } = useLevels();
@@ -49,7 +49,6 @@ export default function Dashboard() {
         {g("hello")}, {user?.name.split(" ")[0]}
       </p>
       <h1 className="mt-1 text-3xl font-semibold sm:text-4xl">{g("myCourses")}</h1>
-      {profile && <PlanChips goal={profile.goal} exam={profile.exam} minutes={profile.minutes} />}
 
       {/* Cursos */}
       <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -94,6 +93,7 @@ export default function Dashboard() {
         </Link>
       )}
 
+      <PlanTile />
       <Link href="/aprender/test/einstufung" className={TILE}>
         <div className="flex items-center gap-4">
           <span className="text-3xl" aria-hidden="true">🎯</span>
@@ -208,26 +208,38 @@ function CardsTile() {
   );
 }
 
-/** Meta y tiempo diario que el estudiante eligió en el cuestionario de bienvenida. */
-function PlanChips({ goal, exam, minutes }: { goal?: string; exam?: string; minutes?: number }) {
-  const gl = GOALS.find((x) => x.id === goal);
-  const t = TIMES.find((x) => x.minutes === minutes);
-  if (!gl && !t) return null;
+/** Mi plan de estudio: meta, fecha estimada y cómo va la semana. */
+function PlanTile() {
+  const { plan, week, stats, isDone, now } = useStudyPlan();
+  const mounted = useMounted();
+  if (!mounted || !plan) return null;
+  const today = week?.days.find((d) => d.date <= now && now < d.date + 86_400_000);
+  const nextBlock = today?.blocks.find((b) => !isDone(b));
+  const finish = new Date(plan.finishAt).toLocaleDateString("de-DE", { month: "long", year: "numeric" });
   return (
-    <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
-      {gl && (
-        <span className="rounded-full bg-sand px-3 py-1 text-ink">
-          🎯 {goal === "exam" && exam && exam !== "?" ? `${exam} bestehen` : gl.de}
+    <Link href="/aprender/plan" className={`${TILE} flex-wrap`}>
+      <div className="flex min-w-0 flex-1 basis-64 items-center gap-4">
+        <span className="text-3xl" aria-hidden="true">
+          📅
         </span>
-      )}
-      {t && (
-        <span className="rounded-full bg-sand px-3 py-1 text-ink">
-          {t.emoji} {t.de} pro Tag
-        </span>
-      )}
-      <Link href="/bienvenida?edit=1" aria-label="Ziel ändern" className="rounded-full px-2 py-1 text-xs text-cocoa hover:bg-sand">
-        ✎
-      </Link>
-    </div>
+        <div className="min-w-0 flex-1">
+          <p className="font-display text-xl text-wine">Mein Lernplan</p>
+          <p className="truncate text-sm text-cocoa">
+            🎯 {plan.exam ?? plan.targetLabel} · 🏁 {finish}
+          </p>
+          <div className="mt-2 flex max-w-sm items-center gap-2">
+            <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-paper">
+              <div className="h-full rounded-full bg-yellow" style={{ width: `${stats.minutes ? (stats.doneMinutes / stats.minutes) * 100 : 0}%` }} />
+            </div>
+            <span className="text-xs tabular-nums text-cocoa">
+              Woche {stats.done}/{stats.total}
+            </span>
+          </div>
+        </div>
+      </div>
+      <span className="shrink-0 rounded-full bg-wine px-4 py-2 text-sm font-medium text-cream">
+        {nextBlock ? `Heute: ${nextBlock.emoji} ${nextBlock.de.replace(/^(Geschichte|Spiel): /, "")}` : today ? "Heute geschafft ✓" : "Plan ansehen"} →
+      </span>
+    </Link>
   );
 }

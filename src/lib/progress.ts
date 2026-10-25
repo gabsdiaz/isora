@@ -93,6 +93,13 @@ export function useLastVisit() {
 
 export const unitKey = (lang: string, level: string, n: number) => `${lang}/${level}/${n}`;
 
+/** Abrir una unidad directamente en una pestaña (desde el plan de estudio). */
+export const JUMP_EVENT = "isora:jump";
+export function jumpToSection(level: string, number: number, section: number) {
+  lastStore.save({ level, number, section, at: Date.now() });
+  window.dispatchEvent(new CustomEvent(JUMP_EVENT, { detail: { level, number, section } }));
+}
+
 /** Porcentaje de una unidad: 9 secciones vistas + ejercicios terminados. */
 export function unitPercent(p: UnitProgress | undefined, sections = 9) {
   if (!p) return 0;

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { getLevel, getUnitMeta } from "@/content/de/course";
 import { getUnitContent } from "@/content/de/units";
 import { useT, type StringKey } from "@/lib/i18n";
-import { unitKey as progressKey, useLastVisit, useProgress } from "@/lib/progress";
+import { JUMP_EVENT, unitKey as progressKey, useLastVisit, useProgress } from "@/lib/progress";
 import { useMounted } from "../games/shared";
 import { useLevels } from "@/lib/levels";
 import { Translatable } from "../german/Translatable";
@@ -44,6 +44,15 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
   const [chosen, setActive] = useState<number | null>(null);
   const stored = last && last.level === levelId && last.number === number ? last.section : 0;
   const active = chosen ?? Math.min(stored, SECTIONS.length - 1);
+  // El plan de estudio puede pedir abrir una pestaña concreta
+  useEffect(() => {
+    const onJump = (e: Event) => {
+      const d = (e as CustomEvent<{ level: string; number: number; section: number }>).detail;
+      if (d.level === levelId && d.number === number) setActive(d.section);
+    };
+    window.addEventListener(JUMP_EVENT, onJump);
+    return () => window.removeEventListener(JUMP_EVENT, onJump);
+  }, [levelId, number]);
   const seen = progress[pk]?.sections ?? [];
   const done = progress[pk]?.completed;
 

@@ -34,8 +34,11 @@ export function TestView({ id }: { id: string }) {
     if (mode === "placement")
       return (
         <>
-          <button type="button" onClick={() => router.push(`/aprender/de/${o.start}`)} className={`${btn} bg-wine text-cream hover:bg-wine-light`}>
-            Mit {levelLabel(o.start!)} starten →
+          <button type="button" onClick={() => router.push("/aprender/plan?neu=1")} className={`${btn} bg-wine text-cream hover:bg-wine-light`}>
+            📅 Mein Lernplan →
+          </button>
+          <button type="button" onClick={() => router.push(`/aprender/de/${o.start}`)} className={`${btn} border border-cocoa/30 bg-paper text-cocoa`}>
+            Mit {levelLabel(o.start!)} starten
           </button>
           {o.start !== "a1-1" && (
             <Link href="/aprender/de/a1-1/1" className={`${btn} border border-cocoa/30 bg-paper text-cocoa`}>

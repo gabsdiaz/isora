@@ -31,6 +31,8 @@ export type StudentProfile = {
   exam?: string;
   deadline?: string;
   minutes?: number;
+  /** Días de estudio por semana */
+  days?: number;
   interests?: string[];
   at?: number;
 };

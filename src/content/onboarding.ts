@@ -12,7 +12,7 @@ export const Q = {
   learn: { de: "Welche Sprache möchtest du lernen?", t: { es: "¿Qué idioma quieres aprender? Puedes elegir varios.", en: "Which language do you want to learn? You can pick several." } },
   why: { de: "Warum lernst du Deutsch?", t: { es: "¿Por qué quieres aprender? Elige todas las que quieras.", en: "Why do you want to learn? Pick as many as you like." } },
   goal: { de: "Was ist dein Ziel?", t: { es: "¿Cuál es tu meta?", en: "What's your goal?" } },
-  time: { de: "Wie viel Zeit hast du pro Tag?", t: { es: "¿Cuánto tiempo tienes al día?", en: "How much time do you have per day?" } },
+  time: { de: "Wie viel Zeit hast du pro Tag?", t: { es: "¿Cuánto tiempo tienes al día? Con esto armamos tu plan de estudio.", en: "How much time do you have per day? We'll build your study plan with this." } },
   interests: { de: "Was interessiert dich?", t: { es: "¿Qué te interesa? Elegiremos historias y ejemplos con esto.", en: "What are you into? We'll pick stories and examples with this." } },
 } as const;
 
@@ -63,8 +63,12 @@ export const TIMES: (Choice & { minutes: number })[] = [
   { id: "5", minutes: 5, emoji: "☕", de: "5 Minuten", t: { es: "Lo que dura un café", en: "A coffee break" } },
   { id: "10", minutes: 10, emoji: "🥨", de: "10 Minuten", t: { es: "Una pausa corta", en: "A short break" } },
   { id: "20", minutes: 20, emoji: "📖", de: "20 Minuten", t: { es: "En serio", en: "Serious" } },
-  { id: "30", minutes: 30, emoji: "🚀", de: "30+ Minuten", t: { es: "Modo intensivo", en: "Intensive mode" } },
+  { id: "30", minutes: 30, emoji: "🎧", de: "30 Minuten", t: { es: "Media hora diaria", en: "Half an hour a day" } },
+  { id: "60", minutes: 60, emoji: "🚀", de: "1 Stunde", t: { es: "Modo intensivo", en: "Intensive mode" } },
+  { id: "90", minutes: 90, emoji: "🔥", de: "90+ Minuten", t: { es: "Modo examen", en: "Exam mode" } },
 ];
+
+export const DAYS = [2, 3, 4, 5, 6, 7];
 
 export const INTERESTS: Choice[] = [
   { id: "music", emoji: "🎵", de: "Musik", t: { es: "Música", en: "Music" } },

@@ -6,7 +6,8 @@ import { useSession, type NativeLang, type StudentProfile } from "@/lib/session"
 import { Logo } from "@/components/Logo";
 import { FullPageLoader } from "@/components/AppShell";
 import { SpeakButton } from "@/components/SpeakButton";
-import { AGES, DEADLINES, EXAMS, GOALS, INTERESTS, LANGS, Q, REASONS, TIMES, type Choice } from "@/content/onboarding";
+import { AGES, DAYS, DEADLINES, EXAMS, GOALS, INTERESTS, LANGS, Q, REASONS, TIMES, type Choice } from "@/content/onboarding";
+import { useLevels } from "@/lib/levels";
 
 type Step = "lang" | "name" | "age" | "learn" | "why" | "goal" | "time" | "interests" | "done";
 const STEPS: Step[] = ["lang", "name", "age", "learn", "why", "goal", "time", "interests", "done"];
@@ -29,14 +30,16 @@ const UI = {
   when: { es: "¿Para cuándo?", en: "By when?" },
   doneTitle: { es: "¡Listo! Este es tu plan", en: "All set! Here's your plan" },
   planGoal: { es: "Meta", en: "Goal" },
-  planTime: { es: "Cada día", en: "Every day" },
+  planTime: { es: "Tu ritmo", en: "Your pace" },
   planWhy: { es: "Porque", en: "Because" },
   planLikes: { es: "Te gusta", en: "You like" },
   doneNext: {
-    es: "Ahora puedes hacer el test de nivel o empezar desde cero. ¡Tú decides!",
-    en: "Now you can take the placement test or start from scratch. Your call!",
+    es: "Con esto armamos tu plan de estudio personalizado: semana a semana, con tu meta, tu ritmo y tus temas favoritos.",
+    en: "With this we'll build your personalised study plan: week by week, with your goal, your pace and your favourite topics.",
   },
-  go: { es: "Los geht's! 🚀", en: "Los geht's! 🚀" },
+  daysQ: { es: "¿Cuántos días a la semana?", en: "How many days a week?" },
+  hoursWeek: { es: "horas por semana", en: "hours a week" },
+  go: { es: "📅 Mein Lernplan →", en: "📅 Mein Lernplan →" },
   save: { es: "Guardar cambios", en: "Save changes" },
   edit: { es: "Cambiar respuestas", en: "Change answers" },
 } satisfies Record<string, Txt>;
@@ -69,6 +72,8 @@ function Wizard() {
   const [exam, setExam] = useState(profile?.exam ?? "");
   const [deadline, setDeadline] = useState(profile?.deadline ?? "");
   const [minutes, setMinutes] = useState<number | null>(profile?.minutes ?? null);
+  const [days, setDays] = useState<number>(profile?.days ?? 5);
+  const { levels } = useLevels();
   const [interests, setInterests] = useState<string[]>(profile?.interests ?? []);
   const [saving, setSaving] = useState(false);
   const auto = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -82,8 +87,6 @@ function Wizard() {
 
   const L = (t: Txt) => t[lang];
   const id = STEPS[step];
-  const next = params.get("next");
-  const safeNext = next && next.startsWith("/aprender") ? next : "/aprender";
 
   const valid: Record<Step, boolean> = {
     lang: true,
@@ -117,12 +120,14 @@ function Wizard() {
       exam: goal === "exam" ? exam : undefined,
       deadline,
       minutes: minutes ?? undefined,
+      days,
       interests,
     };
     // Firestore no acepta undefined
     (Object.keys(p) as (keyof StudentProfile)[]).forEach((k) => p[k] === undefined && delete p[k]);
     await saveProfile(p, lang);
-    router.replace(editing ? "/aprender" : safeNext);
+    // Con las respuestas armamos el plan de estudio; si aún no sabemos su nivel, primero test o desde cero
+    router.replace(editing ? "/aprender/plan" : levels.startChoice ? "/aprender/plan?neu=1" : "/aprender/start");
   };
 
   const q = id !== "done" ? Q[id] : null;
@@ -279,24 +284,49 @@ function Wizard() {
             )}
 
             {id === "time" && (
-              <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
-                {TIMES.map((t) => (
-                  <button
-                    key={t.id}
-                    type="button"
-                    aria-pressed={minutes === t.minutes}
-                    onClick={() => pickAndGo(() => setMinutes(t.minutes))}
-                    className={`flex flex-col items-center gap-1 rounded-3xl border p-5 text-center transition ${
-                      minutes === t.minutes ? "border-wine bg-paper shadow-md shadow-wine/10" : "border-latte/60 bg-sand hover:border-cocoa-light hover:bg-sand-deep"
-                    }`}
-                  >
-                    <span className="text-3xl" aria-hidden="true">
-                      {t.emoji}
-                    </span>
-                    <span className="font-display text-lg text-ink">{t.de}</span>
-                    <span className="text-xs text-muted">{L(t.t)}</span>
-                  </button>
-                ))}
+              <div>
+                <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+                  {TIMES.map((t) => (
+                    <button
+                      key={t.id}
+                      type="button"
+                      aria-pressed={minutes === t.minutes}
+                      onClick={() => setMinutes(t.minutes)}
+                      className={`flex flex-col items-center gap-1 rounded-3xl border p-4 text-center transition ${
+                        minutes === t.minutes ? "border-wine bg-paper shadow-md shadow-wine/10" : "border-latte/60 bg-sand hover:border-cocoa-light hover:bg-sand-deep"
+                      }`}
+                    >
+                      <span className="text-3xl" aria-hidden="true">
+                        {t.emoji}
+                      </span>
+                      <span className="font-display text-lg text-ink">{t.de}</span>
+                      <span className="text-xs text-muted">{L(t.t)}</span>
+                    </button>
+                  ))}
+                </div>
+                <p className="mt-7 text-sm font-medium text-cocoa">
+                  An wie vielen Tagen pro Woche? <span className="font-normal text-muted">· {L(UI.daysQ)}</span>
+                </p>
+                <div className="mt-2 flex gap-2">
+                  {DAYS.map((d) => (
+                    <button
+                      key={d}
+                      type="button"
+                      aria-pressed={days === d}
+                      onClick={() => setDays(d)}
+                      className={`h-12 flex-1 rounded-2xl border font-display text-lg transition ${
+                        days === d ? "border-wine bg-wine text-cream shadow-md shadow-wine/15" : "border-latte/60 bg-sand text-ink hover:border-cocoa-light hover:bg-sand-deep"
+                      }`}
+                    >
+                      {d}
+                    </button>
+                  ))}
+                </div>
+                {minutes !== null && (
+                  <p className="mt-4 text-sm text-cocoa">
+                    → {minutes} Min. × {days} Tage = <b>{Math.round(((minutes * days) / 60) * 10) / 10} {L(UI.hoursWeek)}</b>
+                  </p>
+                )}
               </div>
             )}
 
@@ -308,7 +338,7 @@ function Wizard() {
               </div>
             )}
 
-            {id === "done" && <Summary L={L} lang={lang} name={name.trim()} goal={goal} exam={exam} deadline={deadline} minutes={minutes} reasons={reasons} interests={interests} />}
+            {id === "done" && <Summary L={L} lang={lang} name={name.trim()} goal={goal} exam={exam} deadline={deadline} minutes={minutes} days={days} reasons={reasons} interests={interests} />}
           </div>
 
           {(id === "why" || id === "interests" || id === "name") && <p className="mt-6 text-sm text-muted">{L(UI.psst)}</p>}
@@ -453,9 +483,11 @@ function Summary({
   exam,
   deadline,
   minutes,
+  days,
   reasons,
   interests,
 }: {
+  days: number;
   L: (t: Txt) => string;
   lang: NativeLang;
   name: string;
@@ -484,8 +516,8 @@ function Summary({
           {goal === "exam" && exam && exam !== "?" && <span className="text-wine"> · {exam}</span>}
           {d && <span className="text-muted"> · {d.t[lang]}</span>}
         </Row>
-        <Row label={`Pro Tag · ${L(UI.planTime)}`}>
-          {t?.emoji} {t?.de}
+        <Row label={`Pro Woche · ${L(UI.planTime)}`}>
+          {t?.emoji} {t?.de} × {days} Tage
         </Row>
         <Row label={`Warum · ${L(UI.planWhy)}`}>
           <span className="flex flex-wrap gap-1.5">

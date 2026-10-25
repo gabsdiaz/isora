@@ -43,7 +43,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <GlossProvider>
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-20 pt-6 sm:px-6">{children}</main>
       </GlossProvider>
-      <footer className="border-t border-line bg-cream-deep py-6 text-center text-xs text-muted">
+      <footer className="border-t border-line bg-cream-deep py-6 text-center text-xs text-muted print:hidden">
         {APP_NAME} · {new Date().getFullYear()} · Illustrationen: Twemoji (CC-BY 4.0)
       </footer>
     </div>
@@ -85,7 +85,7 @@ function Header() {
     .toUpperCase();
 
   return (
-    <header className="sticky top-0 z-30 border-b border-line bg-paper/95 text-ink backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-line bg-paper/95 text-ink backdrop-blur print:hidden">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-6">
           <Logo href="/aprender" />
@@ -128,6 +128,9 @@ function Header() {
               </Link>
               <Link href="/aprender/chat" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep lg:hidden">
                 🧑‍🏫 {g("teacher")} {unread && <span className="ml-1 inline-block h-2 w-2 rounded-full bg-wine" />}
+              </Link>
+              <Link href="/aprender/plan" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep">
+                📅 Mein Lernplan
               </Link>
               <Link href="/bienvenida?edit=1" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep">
                 🙋 Mein Profil <span className="text-muted">· {lang === "en" ? "my answers" : "mis respuestas"}</span>
