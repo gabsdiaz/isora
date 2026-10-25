@@ -30,10 +30,10 @@ export default function MyCards() {
       <h1 className="mt-1 text-3xl font-semibold sm:text-4xl">{g("myCards")}</h1>
 
       <div className="mt-6 grid gap-4 md:grid-cols-[1.3fr_1fr]">
-        <div className="rounded-[2rem] bg-espresso p-6 text-cream">
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-latte">Heute</p>
+        <div className="rounded-[2rem] border border-latte/60 bg-sand p-6 text-ink">
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-wine">Heute</p>
           <p className="mt-1 font-display text-4xl">{due.length} Karten fällig</p>
-          <p className="mt-2 text-sm text-cream/70">
+          <p className="mt-2 text-sm text-cocoa">
             Wiederholung mit System: Was du gut kannst, siehst du später wieder. Was schwer ist, kommt bald zurück.
           </p>
           <button

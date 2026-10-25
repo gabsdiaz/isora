@@ -42,16 +42,16 @@ export function FlipCard({ card, flipped, onFlip }: { card: Card; flipped: boole
           <span className="text-xs uppercase tracking-[0.14em] text-muted">Tippen zum Umdrehen</span>
         </div>
         {/* Reverso */}
-        <div className="absolute inset-0 flex flex-col justify-center gap-3 rounded-[2rem] bg-espresso p-7 text-cream shadow-xl shadow-espresso/30 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <p className="font-display text-3xl text-[#f3c9a8]">{loc(card.tr)}</p>
-          <p className="font-display text-xl text-cream/90">
+        <div className="absolute inset-0 flex flex-col justify-center gap-3 rounded-[2rem] border border-latte/60 bg-sand p-7 text-ink shadow-xl shadow-espresso/10 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <p className="font-display text-3xl text-wine">{loc(card.tr)}</p>
+          <p className="font-display text-xl text-ink">
             {headword(card)}
-            {card.plural && <span className="ml-2 text-sm text-latte">· Plural: die {card.plural}</span>}
+            {card.plural && <span className="ml-2 text-sm text-cocoa-light">· Plural: die {card.plural}</span>}
           </p>
           {example && (
             <div className="mt-2 border-l-2 border-wine-light pl-3">
-              <p className="font-display text-[17px] leading-snug text-cream">{example.de}</p>
-              <p className="mt-1 text-sm italic text-latte">{loc(example.tr)}</p>
+              <p className="font-display text-[17px] leading-snug text-ink">{example.de}</p>
+              <p className="mt-1 text-sm italic text-cocoa-light">{loc(example.tr)}</p>
             </div>
           )}
         </div>
@@ -89,10 +89,10 @@ export function ReviewSession({ cards, onDone }: { cards: Card[]; onDone?: () =>
   if (!card || index >= queue.length) {
     const total = stats.again + stats.good + stats.easy;
     return (
-      <div className="mx-auto max-w-md rounded-[2rem] bg-espresso p-8 text-center text-cream">
+      <div className="mx-auto max-w-md rounded-[2rem] border border-latte/60 bg-sand p-8 text-center text-ink">
         <p className="text-5xl">🎉</p>
         <p className="mt-3 font-display text-3xl">Super gemacht!</p>
-        <p className="mt-2 text-cream/80">
+        <p className="mt-2 text-cocoa">
           {total} Karten · ✅ {stats.good + stats.easy} · 🔁 {stats.again}
         </p>
         {onDone && (
@@ -129,9 +129,9 @@ export function ReviewSession({ cards, onDone }: { cards: Card[]; onDone?: () =>
               Nochmal
               <span className="block text-[11px] font-normal text-wine/70">otra vez</span>
             </button>
-            <button type="button" onClick={() => rate("good")} className="rounded-2xl bg-espresso px-3 py-3 text-sm font-semibold text-cream hover:bg-espresso-light">
+            <button type="button" onClick={() => rate("good")} className="rounded-2xl border border-latte bg-sand px-3 py-3 text-sm font-semibold text-cocoa hover:border-cocoa-light">
               Gut
-              <span className="block text-[11px] font-normal text-cream/60">bien</span>
+              <span className="block text-[11px] font-normal text-cocoa-light">bien</span>
             </button>
             <button type="button" onClick={() => rate("easy")} className="rounded-2xl border border-sage/40 bg-sage-soft px-3 py-3 text-sm font-semibold text-sage hover:border-sage">
               Leicht
@@ -160,7 +160,7 @@ export function MiniCard({ card, onClick }: { card: Card; onClick?: () => void }
         speakGerman(headword(card));
         onClick?.();
       }}
-      className={`flex items-center gap-3 rounded-2xl border p-3 text-left transition ${show ? "border-espresso bg-espresso text-cream" : "border-line bg-paper hover:border-cocoa-light"}`}
+      className={`flex items-center gap-3 rounded-2xl border p-3 text-left transition ${show ? "border-latte bg-sand text-ink" : "border-line bg-paper hover:border-cocoa-light"}`}
     >
       {imageFor(card.de) ? (
         // eslint-disable-next-line @next/next/no-img-element
@@ -169,11 +169,11 @@ export function MiniCard({ card, onClick }: { card: Card; onClick?: () => void }
         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-cream-deep font-display text-cocoa">{card.de[0]}</span>
       )}
       <span className="min-w-0 flex-1">
-        <span className={`block truncate font-display text-[17px] ${show ? "text-cream" : "text-ink"}`}>
-          {card.article && <span className={show ? "text-latte" : ARTICLE_COLORS[card.article]}>{card.article} </span>}
+        <span className={`block truncate font-display text-[17px] text-ink`}>
+          {card.article && <span className={ARTICLE_COLORS[card.article]}>{card.article} </span>}
           {card.de}
         </span>
-        {show && <span className="block truncate text-sm text-[#f3c9a8]">{loc(card.tr)}</span>}
+        {show && <span className="block truncate text-sm text-wine">{loc(card.tr)}</span>}
       </span>
       <BoxDots box={card.box} dark={show} />
     </button>
@@ -184,7 +184,7 @@ export function BoxDots({ box, dark }: { box: number; dark?: boolean }) {
   return (
     <span className="flex shrink-0 gap-0.5" title={`Box ${box}/5`}>
       {[1, 2, 3, 4, 5].map((i) => (
-        <span key={i} className={`h-1.5 w-1.5 rounded-full ${i <= box ? (dark ? "bg-latte" : "bg-wine") : dark ? "bg-cream/20" : "bg-line"}`} />
+        <span key={i} className={`h-1.5 w-1.5 rounded-full ${i <= box ? "bg-wine" : dark ? "bg-latte/50" : "bg-line"}`} />
       ))}
     </span>
   );

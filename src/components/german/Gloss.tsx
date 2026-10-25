@@ -130,7 +130,7 @@ function AddCardButton({ gloss }: { gloss: Gloss }) {
       type="button"
       disabled={saved}
       onClick={() => addCards([{ de: gloss.de, article: gloss.article, plural: gloss.plural, tr: gloss.tr, source }])}
-      className={`mt-2 rounded-full px-2.5 py-1 text-xs font-medium transition ${saved ? "bg-sage-soft text-sage" : "bg-espresso text-cream hover:bg-espresso-light"}`}
+      className={`mt-2 rounded-full px-2.5 py-1 text-xs font-medium transition ${saved ? "bg-sage-soft text-sage" : "bg-wine-soft text-wine hover:bg-wine hover:text-cream"}`}
     >
       {saved ? "✓ In meinen Karten" : "+ Karteikarte"}
     </button>

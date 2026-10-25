@@ -29,7 +29,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <GlossProvider>
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-20 pt-6 sm:px-6">{children}</main>
       </GlossProvider>
-      <footer className="bg-espresso py-6 text-center text-xs text-cream/60">
+      <footer className="border-t border-line bg-cream-deep py-6 text-center text-xs text-muted">
         {APP_NAME} · {new Date().getFullYear()} · Illustrationen: Twemoji (CC-BY 4.0)
       </footer>
     </div>
@@ -59,10 +59,10 @@ function Header() {
     .toUpperCase();
 
   return (
-    <header className="sticky top-0 z-30 bg-espresso text-cream shadow-md shadow-espresso/20">
+    <header className="sticky top-0 z-30 border-b border-line bg-paper/95 text-ink backdrop-blur">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-6">
-          <Logo href="/aprender" light />
+          <Logo href="/aprender" />
           <nav className="hidden items-center gap-1 sm:flex">
             <NavLink href="/aprender" label={g("learn")} />
             <NavLink href="/aprender/karten" label={g("myCards")} />
@@ -72,7 +72,7 @@ function Header() {
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
-            className="flex items-center gap-2 rounded-full border border-cream/15 bg-espresso-light py-1 pl-1 pr-3 text-sm transition hover:border-cream/40"
+            className="flex items-center gap-2 rounded-full border border-line bg-cream py-1 pl-1 pr-3 text-sm transition hover:border-cocoa-light"
             aria-haspopup="menu"
             aria-expanded={open}
           >
@@ -84,7 +84,7 @@ function Header() {
                 {initials}
               </span>
             )}
-            <span className="hidden max-w-[10rem] truncate text-cream sm:inline">{user?.name}</span>
+            <span className="hidden max-w-[10rem] truncate text-ink sm:inline">{user?.name}</span>
           </button>
           {open && (
             <div role="menu" className="absolute right-0 mt-2 w-60 rounded-2xl border border-line bg-paper p-2 shadow-lg shadow-cocoa/10">
@@ -132,7 +132,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className={`rounded-full px-3.5 py-1.5 text-sm transition ${active ? "bg-wine text-cream" : "text-cream/75 hover:bg-espresso-light hover:text-cream"}`}
+      className={`rounded-full px-3.5 py-1.5 text-sm transition ${active ? "bg-wine text-cream" : "text-cocoa hover:bg-cream-deep hover:text-ink"}`}
     >
       {label}
     </Link>

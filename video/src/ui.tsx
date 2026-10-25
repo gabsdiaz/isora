@@ -135,7 +135,7 @@ export function Write({
         fontWeight: weight,
         color,
         lineHeight: 1.15,
-        clipPath: `inset(-20% ${100 - p}% -30% -5%)`,
+        clipPath: `inset(-20% ${p >= 100 ? -10 : (100 - p) * 1.1 - 10}% -30% -5%)`,
         whiteSpace: "pre-line",
         ...style,
       }}

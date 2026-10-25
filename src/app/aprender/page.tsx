@@ -52,10 +52,10 @@ export default function Dashboard() {
       {nextUnit && (
         <Link
           href={`/aprender/de/${nextUnit.level}/${nextUnit.number}`}
-          className="group mt-8 flex items-center justify-between gap-4 rounded-3xl bg-espresso p-6 text-cream shadow-lg shadow-espresso/25 transition hover:bg-espresso-light"
+          className="group mt-8 flex items-center justify-between gap-4 rounded-3xl border border-latte/60 bg-sand p-6 text-ink shadow-md shadow-espresso/5 transition hover:border-cocoa-light hover:bg-sand-deep"
         >
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-latte">
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-wine">
               {g("continueLearning")} · {nextUnit.label} · {g("unit")} {nextUnit.number}
             </p>
             <p className="mt-1 font-display text-2xl">{nextUnit.title}</p>
@@ -122,7 +122,7 @@ function CardsTile() {
           </p>
         </div>
       </div>
-      <span className="rounded-full bg-espresso px-4 py-2 text-sm font-medium text-cream">Wiederholen →</span>
+      <span className="rounded-full bg-wine px-4 py-2 text-sm font-medium text-cream">Wiederholen →</span>
     </Link>
   );
 }

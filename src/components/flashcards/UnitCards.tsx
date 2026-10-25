@@ -31,11 +31,11 @@ export function UnitCards({ vocab, source }: { vocab: VocabEntry[]; source: stri
 
   return (
     <div>
-      <div className="mb-6 flex flex-col gap-4 rounded-[2rem] bg-espresso p-6 text-cream sm:flex-row sm:items-center sm:justify-between">
+      <div className="mb-6 flex flex-col gap-4 rounded-[2rem] border border-latte/60 bg-sand p-6 text-ink sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-latte">Karteikarten</p>
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-wine">Karteikarten</p>
           <p className="mt-1 font-display text-2xl">{cards.length} Wörter in dieser Einheit</p>
-          <p className="mt-1 text-sm text-cream/70">
+          <p className="mt-1 text-sm text-cocoa">
             {due.length} fällig · {learned} gut gelernt · automatisch in „Meine Karten“ gespeichert
           </p>
         </div>
@@ -43,7 +43,7 @@ export function UnitCards({ vocab, source }: { vocab: VocabEntry[]; source: stri
           <button type="button" onClick={() => setMode("review")} className="rounded-full bg-wine px-5 py-2.5 text-sm font-medium text-cream hover:bg-wine-light">
             ▶ Lernen
           </button>
-          <button type="button" onClick={() => setMode("memory")} className="rounded-full border border-cream/30 px-5 py-2.5 text-sm font-medium text-cream hover:border-cream">
+          <button type="button" onClick={() => setMode("memory")} className="rounded-full border border-cocoa/30 bg-paper px-5 py-2.5 text-sm font-medium text-cocoa hover:border-cocoa">
             🧠 Memory-Spiel
           </button>
         </div>
@@ -122,7 +122,7 @@ function Memory({ words, onDone }: { words: VocabEntry[]; onDone: () => void }) 
               type="button"
               onClick={() => flip(tile)}
               className={`flex aspect-square flex-col items-center justify-center gap-1 rounded-2xl p-2 text-center transition ${
-                isFound ? "bg-sage-soft text-sage" : isOpen ? "bg-paper text-ink shadow-md" : "bg-espresso text-cream hover:bg-espresso-light"
+                isFound ? "bg-sage-soft text-sage" : isOpen ? "bg-paper text-ink shadow-md" : "border border-latte/60 bg-sand text-cocoa hover:bg-sand-deep"
               }`}
             >
               {isOpen ? (
@@ -138,14 +138,14 @@ function Memory({ words, onDone }: { words: VocabEntry[]; onDone: () => void }) 
                   <span className="font-display text-base leading-tight sm:text-lg">{tile.text}</span>
                 )
               ) : (
-                <span className="font-display text-2xl text-latte">?</span>
+                <span className="font-display text-2xl text-wine">?</span>
               )}
             </button>
           );
         })}
       </div>
       {done && (
-        <div className="mt-5 rounded-[2rem] bg-espresso p-6 text-center text-cream">
+        <div className="mt-5 rounded-[2rem] border border-latte/60 bg-sand p-6 text-center text-ink">
           <p className="font-display text-2xl">Geschafft in {moves} Zügen! 🎉</p>
           <button type="button" onClick={onDone} className="mt-4 rounded-full bg-wine px-5 py-2 text-sm font-medium text-cream hover:bg-wine-light">
             Zurück
