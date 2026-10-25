@@ -17,7 +17,7 @@ import { useMounted } from "./games/shared";
 
 /** Protege las páginas internas: exige sesión y que el idioma nativo esté elegido. */
 export function AppShell({ children }: { children: React.ReactNode }) {
-  const { user, nativeLang, loading } = useSession();
+  const { user, nativeLang, profile, loading } = useSession();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -31,11 +31,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (loading) return;
     if (!user) router.replace("/");
-    else if (!nativeLang) router.replace(`/bienvenida?next=${encodeURIComponent(pathname)}`);
+    else if (!nativeLang || !profile) router.replace(`/bienvenida?next=${encodeURIComponent(pathname)}`);
     else if (isNew && !pathname.startsWith("/aprender/start") && !pathname.startsWith("/aprender/test")) router.replace("/aprender/start");
-  }, [loading, user, nativeLang, router, pathname, isNew]);
+  }, [loading, user, nativeLang, profile, router, pathname, isNew]);
 
-  if (loading || !user || !nativeLang) return <FullPageLoader />;
+  if (loading || !user || !nativeLang || !profile) return <FullPageLoader />;
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -128,6 +128,9 @@ function Header() {
               </Link>
               <Link href="/aprender/chat" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep lg:hidden">
                 🧑‍🏫 {g("teacher")} {unread && <span className="ml-1 inline-block h-2 w-2 rounded-full bg-wine" />}
+              </Link>
+              <Link href="/bienvenida?edit=1" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep">
+                🙋 Mein Profil <span className="text-muted">· {lang === "en" ? "my answers" : "mis respuestas"}</span>
               </Link>
               <p className="px-3 pb-1 pt-2 text-xs font-medium uppercase tracking-wide text-muted">{t("settingsLang")}</p>
               <div className="flex gap-1 px-2 pb-2">

@@ -11,13 +11,14 @@ import type { StringKey } from "@/lib/i18n";
 import { useLevels } from "@/lib/levels";
 import { useMounted } from "@/components/games/shared";
 import { dueCards, useDeck } from "@/lib/flashcards";
+import { GOALS, TIMES } from "@/content/onboarding";
 
 const TILE = "mt-4 flex items-center justify-between gap-4 rounded-3xl border border-latte/60 bg-sand p-5 shadow-sm shadow-espresso/5 transition hover:border-cocoa-light hover:bg-sand-deep";
 const SECTION_LABELS: StringKey[] = ["secVideo", "secTheory", "secCards", "secReading", "secListening", "secSpeaking", "secWriting", "secExercises", "secGuide"];
 
 export default function Dashboard() {
   const { g } = useT();
-  const { user } = useSession();
+  const { user, profile } = useSession();
   const { progress } = useProgress();
   const { last } = useLastVisit();
   const { levels, isUnlocked } = useLevels();
@@ -48,6 +49,7 @@ export default function Dashboard() {
         {g("hello")}, {user?.name.split(" ")[0]}
       </p>
       <h1 className="mt-1 text-3xl font-semibold sm:text-4xl">{g("myCourses")}</h1>
+      {profile && <PlanChips goal={profile.goal} exam={profile.exam} minutes={profile.minutes} />}
 
       {/* Cursos */}
       <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -203,5 +205,29 @@ function CardsTile() {
       </div>
       <span className="rounded-full bg-wine px-4 py-2 text-sm font-medium text-cream">Wiederholen →</span>
     </Link>
+  );
+}
+
+/** Meta y tiempo diario que el estudiante eligió en el cuestionario de bienvenida. */
+function PlanChips({ goal, exam, minutes }: { goal?: string; exam?: string; minutes?: number }) {
+  const gl = GOALS.find((x) => x.id === goal);
+  const t = TIMES.find((x) => x.minutes === minutes);
+  if (!gl && !t) return null;
+  return (
+    <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
+      {gl && (
+        <span className="rounded-full bg-sand px-3 py-1 text-ink">
+          🎯 {goal === "exam" && exam && exam !== "?" ? `${exam} bestehen` : gl.de}
+        </span>
+      )}
+      {t && (
+        <span className="rounded-full bg-sand px-3 py-1 text-ink">
+          {t.emoji} {t.de} pro Tag
+        </span>
+      )}
+      <Link href="/bienvenida?edit=1" aria-label="Ziel ändern" className="rounded-full px-2 py-1 text-xs text-cocoa hover:bg-sand">
+        ✎
+      </Link>
+    </div>
   );
 }

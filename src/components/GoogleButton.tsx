@@ -68,7 +68,7 @@ export function GoogleButton({
           ux_mode: "popup",
           itp_support: true,
         });
-        google.accounts.id.renderButton(box.current, { type: "standard", theme: "filled_black", size: "large", shape: "pill", text: "continue_with", locale, width: 280 });
+        google.accounts.id.renderButton(box.current, { type: "standard", theme: "filled_black", size: "large", shape: "pill", text: "continue_with", locale, width: 320 });
         setReady(true);
       })
       .catch(() => cbs.current.onError("gsi/load-failed"));

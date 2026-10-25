@@ -8,6 +8,7 @@ import { Logo } from "@/components/Logo";
 import { FullPageLoader } from "@/components/AppShell";
 import { GoogleButton } from "@/components/GoogleButton";
 import { LoginDiagnosis } from "@/components/LoginDiagnosis";
+import { EmailLogin } from "@/components/EmailLogin";
 import { GOOGLE_CLIENT_ID, firebaseEnabled, isMobileDevice } from "@/lib/firebase";
 
 /** Navegadores internos de apps (Instagram, Facebook, TikTok…): Google no permite iniciar sesión ahí. */
@@ -27,18 +28,19 @@ const useInAppBrowser = () =>
   );
 
 export default function Landing() {
-  const { user, nativeLang, loading, demoMode, authError, signInWithGoogle, signInWithGoogleToken } = useSession();
+  const { user, nativeLang, profile, loading, demoMode, authError, signInWithGoogle, signInWithGoogleToken } = useSession();
   const mobileGoogle = useMobileGoogle();
   const { t } = useT();
   const router = useRouter();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState("");
+  const [withEmail, setWithEmail] = useState(false);
   const inApp = useInAppBrowser();
 
   useEffect(() => {
-    if (!loading && user) router.replace(nativeLang ? "/aprender" : "/bienvenida");
-  }, [loading, user, nativeLang, router]);
+    if (!loading && user) router.replace(nativeLang && profile ? "/aprender" : "/bienvenida");
+  }, [loading, user, nativeLang, profile, router]);
 
   if (loading || user) return <FullPageLoader />;
 
@@ -93,10 +95,24 @@ export default function Landing() {
                 type="button"
                 onClick={handleSignIn}
                 disabled={busy}
-                className="inline-flex items-center gap-3 rounded-full bg-wine px-6 py-3.5 text-base font-medium text-cream shadow-md shadow-wine/20 transition hover:bg-wine-light disabled:opacity-70"
+                className="inline-flex w-full max-w-[320px] items-center justify-center gap-3 rounded-full bg-wine px-6 py-3.5 text-base font-medium text-cream shadow-md shadow-wine/20 transition hover:bg-wine-light disabled:opacity-70"
               >
                 <GoogleIcon />
                 {busy ? t("signingIn") : t("signInGoogle")}
+              </button>
+            )}
+            <div className="flex w-full max-w-[320px] items-center gap-3 text-xs uppercase tracking-[0.14em] text-muted">
+              <span className="h-px flex-1 bg-line" /> o <span className="h-px flex-1 bg-line" />
+            </div>
+            {withEmail ? (
+              <EmailLogin />
+            ) : (
+              <button
+                type="button"
+                onClick={() => setWithEmail(true)}
+                className="inline-flex w-full max-w-[320px] items-center justify-center gap-2 rounded-full border border-cocoa/30 bg-paper px-6 py-3 text-[15px] font-medium text-ink transition hover:border-cocoa"
+              >
+                <span aria-hidden="true">✉️</span> Continuar con correo
               </button>
             )}
             {demoMode && <p className="text-xs text-muted">{t("demoNotice")}</p>}

@@ -8,6 +8,7 @@ import { STORIES } from "../src/content/de/stories";
 import { THEMES } from "../src/content/de/themes";
 import { EXAM_AUDIO } from "../src/content/de/exams";
 import { PRACTICE } from "../src/content/de/practice";
+import { ONBOARDING_AUDIO } from "../src/content/onboarding";
 import { audioKey, normalizeSpeech } from "../src/lib/speech";
 import type { Voice } from "../src/content/types";
 
@@ -44,4 +45,6 @@ for (const p of Object.values(PRACTICE)) {
   p.listening.lines.forEach((l) => add(l.de, l.voice));
   p.speaking.forEach((x) => add(x.de, "f"));
 }
+// Preguntas del cuestionario de bienvenida
+ONBOARDING_AUDIO.forEach((t) => add(t, "f"));
 console.log(JSON.stringify([...out.entries()].map(([key, v]) => ({ key, ...v }))));
