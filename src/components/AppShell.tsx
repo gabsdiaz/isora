@@ -63,10 +63,11 @@ function Header() {
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-6">
           <Logo href="/aprender" />
-          <nav className="hidden items-center gap-1 sm:flex">
+          <nav className="hidden items-center gap-1 md:flex">
             <NavLink href="/aprender" label={g("learn")} />
             <NavLink href="/aprender/karten" label={g("myCards")} />
             <NavLink href="/aprender/spiele" label={g("games")} />
+            <NavLink href="/aprender/unterricht" label={g("lessons")} />
           </nav>
         </div>
         <div className="relative" ref={menuRef}>
@@ -89,11 +90,14 @@ function Header() {
           </button>
           {open && (
             <div role="menu" className="absolute right-0 mt-2 w-60 rounded-2xl border border-line bg-paper p-2 shadow-lg shadow-cocoa/10">
-              <Link href="/aprender/karten" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep sm:hidden">
+              <Link href="/aprender/karten" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep md:hidden">
                 🃏 {g("myCards")}
               </Link>
-              <Link href="/aprender/spiele" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep sm:hidden">
+              <Link href="/aprender/spiele" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep md:hidden">
                 🎮 {g("games")}
+              </Link>
+              <Link href="/aprender/unterricht" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep md:hidden">
+                🧑‍🏫 {g("lessons")}
               </Link>
               <p className="px-3 pb-1 pt-2 text-xs font-medium uppercase tracking-wide text-muted">{t("settingsLang")}</p>
               <div className="flex gap-1 px-2 pb-2">

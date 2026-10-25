@@ -118,7 +118,17 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
         {active === 5 && <GuideSection mediaKey={mediaKey} title={meta.title} />}
       </div>
 
-      <div className="mt-10 flex items-center justify-between border-t border-line pt-6">
+      <Link
+        href="/aprender/unterricht"
+        className="mt-10 flex items-center justify-between gap-3 rounded-2xl border border-dashed border-latte bg-paper/70 px-4 py-3 text-sm text-cocoa transition hover:border-cocoa-light hover:text-wine"
+      >
+        <span>
+          <span aria-hidden="true">🧑‍🏫</span> {g("lessonCta")}
+        </span>
+        <span className="shrink-0 font-medium text-wine">{g("bookNow")} →</span>
+      </Link>
+
+      <div className="mt-6 flex items-center justify-between border-t border-line pt-6">
         <button
           type="button"
           onClick={() => go(active - 1)}

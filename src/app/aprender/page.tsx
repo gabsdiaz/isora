@@ -80,6 +80,19 @@ export default function Dashboard() {
         </div>
         <span className="rounded-full bg-wine px-4 py-2 text-sm font-medium text-cream">{g("games")} →</span>
       </Link>
+      <Link
+        href="/aprender/unterricht"
+        className="mt-4 flex items-center justify-between gap-4 rounded-3xl border border-latte/60 bg-sand p-5 transition hover:border-cocoa-light hover:bg-sand-deep"
+      >
+        <div className="flex items-center gap-4">
+          <span className="text-3xl" aria-hidden="true">🧑‍🏫</span>
+          <div>
+            <p className="font-display text-xl text-wine">{g("lessonTitle")}</p>
+            <p className="text-sm text-cocoa">{g("lessonQuestion")}</p>
+          </div>
+        </div>
+        <span className="shrink-0 rounded-full bg-wine px-4 py-2 text-sm font-medium text-cream">{g("bookNow")} →</span>
+      </Link>
 
       {/* Niveles */}
       <h2 className="mt-10 text-2xl font-semibold">{g("levels")}</h2>
