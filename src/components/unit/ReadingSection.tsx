@@ -5,96 +5,137 @@ import type { Reading } from "@/content/types";
 import { useT } from "@/lib/i18n";
 import { speakGerman } from "@/lib/speech";
 import { SpeakButton } from "../SpeakButton";
+import { GermanText } from "../german/Gloss";
+import { Translatable, TranslateToggle } from "../german/Translatable";
 
-export function ReadingSection({ readings }: { readings: Reading[] }) {
+export function ReadingSection({ readings, unitKey }: { readings: Reading[]; unitKey: string }) {
+  const { g, t } = useT();
   return (
     <div className="space-y-10">
+      <p className="flex items-center gap-2 rounded-2xl bg-cream-deep/60 px-4 py-2.5 text-sm text-cocoa" title={t("tapHint")}>
+        <span aria-hidden="true">👆</span> {g("tapHint")}
+      </p>
       {readings.map((r) => (
-        <ReadingCard key={r.title} reading={r} />
+        <ReadingCard key={r.title} reading={r} unitKey={unitKey} />
       ))}
     </div>
   );
 }
 
-function ReadingCard({ reading }: { reading: Reading }) {
-  const { t, loc } = useT();
-  const speakers = Array.from(new Set(reading.lines.map((l) => l.speaker).filter(Boolean)));
-  const fullText = reading.lines.map((l) => l.de).join(" ");
+function ReadingCard({ reading, unitKey }: { reading: Reading; unitKey: string }) {
+  const { g } = useT();
+  const [playing, setPlaying] = useState(false);
+  const speakers = Array.from(new Set(reading.lines.map((l) => l.speaker).filter(Boolean))) as string[];
+  const isDialogue = speakers.length > 0;
+
+  // Lee todo el texto línea por línea con la voz de cada personaje
+  const playAll = async () => {
+    if (playing) return;
+    setPlaying(true);
+    for (const line of reading.lines) {
+      const voice = (line.speaker && reading.speakers?.[line.speaker]) || "m";
+      await speakGerman(line.de, voice);
+      await new Promise((r) => setTimeout(r, 250));
+    }
+    setPlaying(false);
+  };
 
   return (
-    <section className="grid gap-5 lg:grid-cols-[1fr_17rem]">
-      <div className="rounded-3xl border border-line bg-paper p-5 sm:p-6">
-        <div className="mb-4 flex items-start justify-between gap-3">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted">{loc(reading.kind)}</p>
-            <h2 className="text-2xl font-semibold">{reading.title}</h2>
-          </div>
-          <button
-            type="button"
-            onClick={() => speakGerman(fullText)}
-            className="shrink-0 rounded-full border border-line px-3 py-1.5 text-sm text-cocoa hover:border-wine-light hover:text-wine"
-          >
-            ▶ {t("listen")}
-          </button>
+    <section className="rounded-3xl border border-line bg-paper p-5 sm:p-6">
+      <div className="mb-5 flex items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted">{reading.kind.de}</p>
+          <h2 className="text-2xl font-semibold">{reading.title}</h2>
         </div>
-        <div className="space-y-2.5">
-          {reading.lines.map((line, i) => {
-            const right = speakers.indexOf(line.speaker) % 2 === 1;
-            return (
-              <div key={i} className={`flex items-end gap-2 ${right ? "flex-row-reverse" : ""}`}>
-                <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-2.5 ${
-                    right ? "rounded-br-md bg-wine-soft" : "rounded-bl-md bg-cream-deep/70"
-                  }`}
-                >
-                  {line.speaker && <p className={`text-xs font-semibold ${right ? "text-wine" : "text-cocoa"}`}>{line.speaker}</p>}
-                  <p className="font-display text-[17px] leading-snug text-ink">{line.de}</p>
-                </div>
-                <SpeakButton text={line.de} className="mb-1 h-7 w-7" />
-              </div>
-            );
-          })}
-        </div>
+        <button
+          type="button"
+          onClick={playAll}
+          disabled={playing}
+          className="shrink-0 rounded-full border border-line px-3.5 py-1.5 text-sm text-cocoa transition hover:border-wine-light hover:text-wine disabled:opacity-60"
+        >
+          {playing ? "♪ …" : `▶ ${g("listen")}`}
+        </button>
       </div>
 
-      <aside className="space-y-4">
-        <div className="rounded-3xl border border-line bg-paper p-5">
-          <p className="mb-3 text-sm font-medium text-cocoa">{t("glossary")}</p>
-          <dl className="space-y-2.5">
-            {reading.glossary.map((g) => (
-              <div key={g.de}>
-                <dt className="font-display text-wine">{g.de}</dt>
-                <dd className="text-sm text-ink/70">{loc(g.meaning)}</dd>
-              </div>
+      <div className={isDialogue ? "space-y-2.5" : "space-y-3"}>
+        {reading.lines.map((line, i) => {
+          const right = isDialogue && speakers.indexOf(line.speaker!) % 2 === 1;
+          const voice = (line.speaker && reading.speakers?.[line.speaker]) || "m";
+          return <Line key={i} line={line} right={right} dialogue={isDialogue} voice={voice} unitKey={unitKey} />;
+        })}
+      </div>
+
+      {reading.questions && (
+        <div className="mt-6 rounded-2xl bg-cream/70 p-4">
+          <p className="mb-3 text-sm font-semibold text-cocoa">{g("comprehension")}</p>
+          <ul className="space-y-4">
+            {reading.questions.map((q, i) => (
+              <Question key={i} q={q} unitKey={unitKey} />
             ))}
-          </dl>
+          </ul>
         </div>
-        {reading.questions && (
-          <div className="rounded-3xl border border-line bg-paper p-5">
-            <p className="mb-3 text-sm font-medium text-cocoa">{t("comprehension")}</p>
-            <ul className="space-y-3">
-              {reading.questions.map((q, i) => (
-                <Question key={i} q={loc(q.q)} a={loc(q.a)} />
-              ))}
-            </ul>
-          </div>
-        )}
-      </aside>
+      )}
     </section>
   );
 }
 
-function Question({ q, a }: { q: string; a: string }) {
-  const { t } = useT();
+function Line({
+  line,
+  right,
+  dialogue,
+  voice,
+  unitKey,
+}: {
+  line: Reading["lines"][number];
+  right: boolean;
+  dialogue: boolean;
+  voice: "m" | "f";
+  unitKey: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const { loc } = useT();
+
+  if (!dialogue) {
+    return (
+      <div className="flex items-start gap-2">
+        <p className="min-w-0 flex-1 font-display text-[18px] leading-relaxed text-ink">
+          <GermanText text={line.de} unitKey={unitKey} />
+          {open && <span className="mt-1 block font-sans text-[15px] italic text-muted">{loc(line.tr)}</span>}
+        </p>
+        <SpeakButton text={line.de} voice={voice} className="h-7 w-7" />
+        <TranslateToggle open={open} onClick={() => setOpen((o) => !o)} />
+      </div>
+    );
+  }
+
+  return (
+    <div className={`flex items-end gap-1.5 ${right ? "flex-row-reverse" : ""}`}>
+      <div className={`max-w-[80%] rounded-2xl px-4 py-2.5 ${right ? "rounded-br-md bg-wine-soft" : "rounded-bl-md bg-cream-deep/70"}`}>
+        {line.speaker && <p className={`text-xs font-semibold ${right ? "text-wine" : "text-cocoa"}`}>{line.speaker}</p>}
+        <p className="font-display text-[17px] leading-snug text-ink">
+          <GermanText text={line.de} unitKey={unitKey} />
+        </p>
+        {open && <p className="mt-1 text-sm italic text-muted">{loc(line.tr)}</p>}
+      </div>
+      <div className="mb-1 flex flex-col gap-1">
+        <SpeakButton text={line.de} voice={voice} className="h-7 w-7" />
+        <TranslateToggle open={open} onClick={() => setOpen((o) => !o)} />
+      </div>
+    </div>
+  );
+}
+
+function Question({ q, unitKey }: { q: NonNullable<Reading["questions"]>[number]; unitKey: string }) {
+  const { g } = useT();
   const [open, setOpen] = useState(false);
   return (
     <li>
-      <p className="text-sm text-ink">{q}</p>
+      <Translatable de={q.q.de} tr={q.q} unitKey={unitKey} textClassName="text-[15px] font-medium text-ink" />
       {open ? (
-        <p className="mt-1 text-sm font-medium text-sage">{a}</p>
+        <Translatable de={q.a.de} tr={q.a} unitKey={unitKey} className="mt-1.5" textClassName="text-[15px] text-sage" />
       ) : (
-        <button type="button" onClick={() => setOpen(true)} className="mt-1 text-xs text-wine underline-offset-2 hover:underline">
-          {t("showAnswer")}
+        <button type="button" onClick={() => setOpen(true)} className="mt-1 text-xs font-medium text-wine underline-offset-2 hover:underline">
+          {g("showAnswer")}
         </button>
       )}
     </li>

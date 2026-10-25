@@ -1,106 +1,124 @@
 /**
- * Tipos del contenido de los cursos.
- * Estructura pensada para crecer: idioma → nivel → unidad.
- * Más adelante se suman otros idiomas (inglés…) y rutas de examen (TestDaF, IELTS…).
+ * Formato del contenido (alemán primero).
+ * Todo lo visible está en alemán; la traducción (es/en) aparece solo al tocar.
+ * Estructura: idioma → nivel → unidad. Luego se suman inglés y rutas de examen.
  */
 
-/** Texto en el idioma nativo del estudiante (por ahora español o inglés). */
-export type Localized = { es: string; en: string };
+/** Traducción al idioma nativo del estudiante. */
+export type Tr = { es: string; en: string };
+
+/** Texto alemán con su traducción (de + es + en). */
+export type Tri = { de: string; es: string; en: string };
+
+/** Voz del audio: m = masculina, f = femenina. */
+export type Voice = "m" | "f";
 
 export type LevelId = "a1-1" | "a1-2" | "a2-1" | "a2-2" | "b1-1" | "b1-2";
 
 export type UnitMeta = {
   number: number; // 1–20
-  /** Título en el idioma que se aprende */
+  /** Título en alemán */
   title: string;
-  /** Traducción del tema */
-  topic: Localized;
+  /** Tema traducido (se ve al tocar 🌐) */
+  topic: Tr;
 };
 
 export type Level = {
   id: LevelId;
   label: string; // "A1.1"
-  name: Localized;
-  description: Localized;
+  name: Tri;
+  description: Tri;
   units: UnitMeta[]; // siempre 20
 };
 
 export type Course = {
-  lang: "de"; // luego: "en", …
-  name: Localized;
-  nativeName: string;
+  lang: "de";
+  name: Tri;
   levels: Level[];
 };
 
-/* ─────────────── Contenido detallado de una unidad ─────────────── */
+/* ─────────────── Vocabulario (alimenta el diccionario al tocar y, luego, las flashcards) ─────────────── */
 
-/** Bloques de la explicación teórica (estilo Khan Academy) */
+export type VocabEntry = {
+  de: string;
+  tr: Tr;
+  article?: "der" | "die" | "das";
+  plural?: string;
+  /** Formas flexionadas que también se reconocen al tocar */
+  forms?: string[];
+  /** Palabra de las instrucciones (no se muestra en la lista de vocabulario) */
+  meta?: boolean;
+};
+
+/* ─────────────── Explicación (estilo Khan Academy) ─────────────── */
+
 export type TheoryBlock =
-  | { type: "heading"; text: Localized }
-  | { type: "paragraph"; text: Localized }
-  | {
-      type: "phrases";
-      title?: Localized;
-      items: { de: string; meaning: Localized; note?: Localized }[];
-    }
+  | { type: "heading"; text: Tri }
+  | { type: "text"; text: Tri }
+  | { type: "tip"; text: Tri }
+  | { type: "example"; de: string; tr: Tr }
+  | { type: "phrases"; title?: Tri; items: { de: string; tr: Tr; note?: Tri }[] }
   | {
       type: "table";
-      title?: Localized;
-      columns: Localized[];
+      title?: Tri;
+      columns: string[];
+      /** **x** resalta terminaciones: "komm**e**" */
       rows: string[][];
-    }
-  | { type: "tip"; text: Localized }
-  | { type: "example"; de: string; meaning: Localized };
+      note?: Tri;
+    };
+
+/* ─────────────── Lecturas ─────────────── */
 
 export type Reading = {
   title: string;
-  kind: Localized; // "Diálogo", "Correo", …
-  lines: { speaker?: string; de: string }[];
-  glossary: { de: string; meaning: Localized }[];
-  questions?: { q: Localized; a: Localized }[];
+  kind: Tri;
+  /** Voz de cada personaje */
+  speakers?: Record<string, Voice>;
+  lines: { speaker?: string; de: string; tr: Tr }[];
+  questions?: { q: Tri; a: Tri }[];
 };
 
+/* ─────────────── Ejercicios ─────────────── */
+
+type ExBase = { id: string; prompt: Tri };
+
 export type Exercise =
-  | {
-      id: string;
-      type: "choice";
-      prompt: Localized;
-      sentence?: string;
-      options: string[];
-      answer: number;
-      explanation: Localized;
-    }
-  | {
-      id: string;
-      type: "fill";
-      prompt: Localized;
-      /** Usa ___ donde va la respuesta */
-      sentence: string;
-      answers: string[]; // respuestas aceptadas
-      hint?: Localized;
-      explanation: Localized;
-    }
-  | {
-      id: string;
-      type: "order";
-      prompt: Localized;
-      words: string[]; // en orden correcto
-      explanation: Localized;
-    }
-  | {
-      id: string;
-      type: "match";
-      prompt: Localized;
-      pairs: { de: string; meaning: Localized }[];
-    };
+  | (ExBase & { type: "choice"; sentence?: string; options: string[]; answer: number; explanation: Tri })
+  | (ExBase & { type: "listen"; audio: string; voice?: Voice; options: string[]; answer: number; explanation: Tri })
+  | (ExBase & { type: "fill"; sentence: string; answers: string[]; hint?: Tri; explanation: Tri })
+  | (ExBase & { type: "order"; words: string[]; explanation: Tri })
+  | (ExBase & { type: "match"; pairs: { de: string; tr: Tr }[] })
+  /** Richtig / Falsch con un texto corto (aviso, nota, e-mail), como en el Goethe A1 */
+  | (ExBase & { type: "rf"; context?: string; contextTitle?: string; statement: string; answer: boolean; explanation: Tri })
+  /** Escritura libre con modelo de respuesta */
+  | (ExBase & { type: "write"; task: Tri; model: string });
+
+/* ─────────────── Video (guion para el generador Manim) ─────────────── */
+
+export type VideoBeat =
+  | { type: "phrase"; de: string; tr: Tr; say?: Tri }
+  | { type: "list"; title: Tri; items: { de: string; tr: Tr }[]; say?: Tri }
+  | { type: "table"; title: Tri; columns: string[]; rows: string[][]; say?: Tri }
+  | { type: "dialogue"; speakers: Record<string, Voice>; lines: { speaker: string; de: string; tr: Tr }[] }
+  | { type: "rule"; text: Tri; say?: Tri }
+  | { type: "transform"; from: string; to: string; say?: Tri; tr?: Tr };
+
+export type VideoScript = {
+  illustration?: string;
+  intro: Tri;
+  beats: VideoBeat[];
+  outro: Tri;
+};
+
+/* ─────────────── Unidad ─────────────── */
 
 export type UnitContent = {
   level: LevelId;
   number: number;
-  goals: Localized[];
-  video: { src?: string; poster?: string; duration?: string; description: Localized };
+  goals: Tri[];
+  vocab: VocabEntry[];
+  video: VideoScript;
   theory: TheoryBlock[];
   readings: Reading[];
   exercises: Exercise[];
-  guide?: { href: string; pages?: number };
 };

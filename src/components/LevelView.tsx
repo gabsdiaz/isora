@@ -8,13 +8,13 @@ import { unitKey, useProgress } from "@/lib/progress";
 
 export function LevelView({ levelId }: { levelId: string }) {
   const level = getLevel(levelId)!;
-  const { t, loc } = useT();
+  const { g, loc } = useT();
   const { progress } = useProgress();
 
   return (
     <div>
       {/* Selector de nivel */}
-      <nav className="-mx-4 mb-6 flex gap-2 overflow-x-auto px-4 pb-1" aria-label={t("levels")}>
+      <nav className="-mx-4 mb-6 flex gap-2 overflow-x-auto px-4 pb-1" aria-label={g("levels")}>
         <Link href="/aprender" className="shrink-0 rounded-full px-3 py-1.5 text-sm text-muted hover:text-wine">
           ←
         </Link>
@@ -33,10 +33,10 @@ export function LevelView({ levelId }: { levelId: string }) {
 
       <header className="mb-8">
         <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted">
-          {t("level")} · {loc(level.name)}
+          {g("level")} · {level.name.de}
         </p>
         <h1 className="mt-1 text-4xl font-semibold sm:text-5xl">{level.label}</h1>
-        <p className="mt-3 max-w-2xl text-ink/75">{loc(level.description)}</p>
+        <p className="mt-3 max-w-2xl text-ink/75">{level.description.de}</p>
       </header>
 
       <ol className="grid gap-3 sm:grid-cols-2">
@@ -54,19 +54,18 @@ export function LevelView({ levelId }: { levelId: string }) {
               </span>
               <span className="min-w-0 flex-1">
                 <span className={`block truncate font-display text-lg ${available ? "text-ink" : "text-ink/50"}`}>{u.title}</span>
-                <span className="block truncate text-sm text-muted">{loc(u.topic)}</span>
               </span>
               <span
                 className={`shrink-0 rounded-full px-2.5 py-1 text-xs ${
                   done ? "bg-sage-soft text-sage" : available ? "bg-wine-soft text-wine" : "text-muted"
                 }`}
               >
-                {done ? t("completed") : available ? t("start") : t("comingSoon")}
+                {done ? g("completed") : available ? g("start") : g("comingSoon")}
               </span>
             </>
           );
           return (
-            <li key={u.number}>
+            <li key={u.number} title={loc(u.topic)}>
               {available ? (
                 <Link
                   href={`/aprender/de/${level.id}/${u.number}`}
