@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useSession } from "@/lib/session";
 import { useT } from "@/lib/i18n";
 import { Logo } from "./Logo";
+import { APP_NAME } from "@/lib/brand";
 
 /** Protege las páginas internas: exige sesión y que el idioma nativo esté elegido. */
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -25,7 +26,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <Header />
       <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-20 pt-6 sm:px-6">{children}</main>
       <footer className="border-t border-line py-6 text-center text-xs text-muted">
-        Isora · {new Date().getFullYear()}
+        {APP_NAME} · {new Date().getFullYear()}
       </footer>
     </div>
   );

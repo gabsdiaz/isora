@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { APP_NAME } from "@/lib/brand";
 
 export function LogoMark({ size = 32 }: { size?: number }) {
   return (
@@ -20,7 +21,7 @@ export function Logo({ href = "/" }: { href?: string }) {
   return (
     <Link href={href} className="flex items-center gap-2.5">
       <LogoMark />
-      <span className="font-display text-2xl font-semibold text-wine">Isora</span>
+      <span className="font-display text-2xl font-semibold text-wine">{APP_NAME}</span>
     </Link>
   );
 }
