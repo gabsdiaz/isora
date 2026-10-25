@@ -77,7 +77,7 @@ export default function Dashboard() {
             </p>
             <div className="mt-3 flex max-w-sm items-center gap-3">
               <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-paper">
-                <div className="h-full rounded-full bg-wine" style={{ width: `${nextPct}%` }} />
+                <div className="h-full rounded-full bg-yellow" style={{ width: `${nextPct}%` }} />
               </div>
               <span className="text-xs tabular-nums text-cocoa">{nextPct}%</span>
             </div>
@@ -149,7 +149,7 @@ export default function Dashboard() {
               <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/70">{lvl.description.de}</p>
               <div className="mt-4">
                 <div className="h-1.5 overflow-hidden rounded-full bg-cream-deep">
-                  <div className="h-full rounded-full bg-wine" style={{ width: `${(done / 20) * 100}%` }} />
+                  <div className="h-full rounded-full bg-yellow" style={{ width: `${(done / 20) * 100}%` }} />
                 </div>
                 <p className="mt-2 text-xs text-muted">
                   {done}/20 · {available > 0 ? `${available} ${g("available")}` : g("comingSoon")}

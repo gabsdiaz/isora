@@ -59,7 +59,7 @@ export function LevelView({ levelId }: { levelId: string }) {
                 {available && pct > 0 && (
                   <span className="mt-1 flex items-center gap-2">
                     <span className="h-1 flex-1 overflow-hidden rounded-full bg-cream-deep">
-                      <span className="block h-full rounded-full bg-wine" style={{ width: `${pct}%` }} />
+                      <span className="block h-full rounded-full bg-yellow" style={{ width: `${pct}%` }} />
                     </span>
                     <span className="text-[11px] tabular-nums text-muted">{pct}%</span>
                   </span>

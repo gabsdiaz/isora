@@ -61,7 +61,7 @@ export function StoryReader({ story }: { story: Story }) {
         </div>
       </header>
 
-      <div className="sticky top-[68px] z-10 -mx-4 mt-6 flex flex-wrap items-center gap-2 border-b border-line bg-cream/95 px-4 py-2.5 backdrop-blur">
+      <div className="sticky top-16 z-10 -mx-4 mt-6 flex flex-wrap items-center gap-2 border-b border-line bg-cream/95 px-4 py-2.5 backdrop-blur">
         <PlayerControls state={player.state} label={g("listenStory")} onPlay={playAll} onPause={player.pause} onResume={player.resume} onStop={player.stop} />
         <button
           type="button"

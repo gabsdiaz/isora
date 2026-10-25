@@ -75,7 +75,6 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-paper/95 text-ink backdrop-blur">
-      <div className="h-[3px] bg-[linear-gradient(90deg,#2e2019_0_33.4%,#940d00_33.4%_66.7%,#f2c230_66.7%)]" aria-hidden="true" />
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-6">
           <Logo href="/aprender" />
@@ -161,7 +160,7 @@ function NavLink({ href, label, also, dot }: { href: string; label: string; also
   return (
     <Link
       href={href}
-      className={`relative rounded-full px-3.5 py-1.5 text-sm transition ${active ? "bg-wine text-cream" : "text-cocoa hover:bg-cream-deep hover:text-ink"}`}
+      className={`relative rounded-full px-3.5 py-1.5 text-sm transition ${active ? "bg-yellow font-medium text-ink shadow-sm shadow-yellow/40" : "text-cocoa hover:bg-yellow-soft hover:text-ink"}`}
     >
       {label}
       {dot && <span className="absolute right-1 top-1 h-2 w-2 rounded-full bg-wine ring-2 ring-paper" aria-label="neu" />}

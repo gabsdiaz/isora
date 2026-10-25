@@ -47,7 +47,7 @@ export function ExercisesSection({
       <div className="sticky top-[7.5rem] z-10 mb-5 flex items-center justify-between gap-3 rounded-2xl border border-line bg-paper/95 px-4 py-3 backdrop-blur">
         <div className="flex-1">
           <div className="h-2 overflow-hidden rounded-full bg-cream-deep">
-            <div className="h-full rounded-full bg-wine transition-all" style={{ width: `${(answered / exercises.length) * 100}%` }} />
+            <div className="h-full rounded-full bg-yellow transition-all" style={{ width: `${(answered / exercises.length) * 100}%` }} />
           </div>
         </div>
         <p className="shrink-0 text-sm text-cocoa">

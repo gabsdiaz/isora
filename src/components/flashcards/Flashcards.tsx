@@ -115,7 +115,7 @@ export function ReviewSession({ cards, onDone }: { cards: Card[]; onDone?: () =>
     <div>
       <div className="mx-auto mb-5 flex max-w-md items-center gap-3">
         <div className="h-2 flex-1 overflow-hidden rounded-full bg-cream-deep">
-          <div className="h-full rounded-full bg-wine transition-all" style={{ width: `${(index / queue.length) * 100}%` }} />
+          <div className="h-full rounded-full bg-yellow transition-all" style={{ width: `${(index / queue.length) * 100}%` }} />
         </div>
         <span className="text-sm text-cocoa">
           {index + 1}/{queue.length}
