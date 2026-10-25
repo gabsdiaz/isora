@@ -31,7 +31,7 @@ PIPER = {
 }
 
 # Velocidad: un poco más lento en alemán para principiantes
-EDGE_RATE = {"es": "+0%", "de": "-8%"}
+EDGE_RATE = {"es": "+0%", "de": "-10%"}
 
 
 def duration(path):

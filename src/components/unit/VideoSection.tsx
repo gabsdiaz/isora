@@ -12,7 +12,9 @@ export function VideoSection({ script, title, mediaKey, unitKey }: { script: Vid
   const { g, lang } = useT();
   const info = videos[mediaKey];
   const ref = useRef<HTMLVideoElement>(null);
-  const [track, setTrack] = useState<Track>("de");
+  // Por defecto: subtítulos en la lengua materna (el audio ya está en alemán)
+  const [choice, setTrack] = useState<Track | null>(null);
+  const track: Track = choice ?? lang;
   const base = `/videos/${mediaKey}`;
 
   // Activa la pista de subtítulos elegida
@@ -39,7 +41,7 @@ export function VideoSection({ script, title, mediaKey, unitKey }: { script: Vid
         {info ? (
           <video ref={ref} controls playsInline preload="metadata" poster={`${base}.jpg`} className="aspect-video w-full bg-cream" crossOrigin="anonymous">
             <source src={`${base}.mp4`} type="video/mp4" />
-            <track kind="subtitles" srcLang="de" label="Deutsch" src={`${base}.de.vtt`} default />
+            <track kind="subtitles" srcLang="de" label="Deutsch" src={`${base}.de.vtt`} />
             <track kind="subtitles" srcLang="es" label="Español" src={`${base}.es.vtt`} />
             <track kind="subtitles" srcLang="en" label="English" src={`${base}.en.vtt`} />
           </video>

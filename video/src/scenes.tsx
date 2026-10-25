@@ -16,11 +16,11 @@ const segEnd = (s: SceneData, i: number) => {
 };
 const activeSeg = (s: SceneData, frame: number) => s.segments.findIndex((g) => frame >= g.from && frame < g.from + g.dur);
 
-/** La profe: un sticker que "habla" (rebota) mientras narra en español */
+/** La profe: un sticker que "habla" (rebota) mientras narra (frases sin voz de ejemplo) */
 export function Teacher({ scene }: { scene: SceneData }) {
   const frame = useCurrentFrame();
   const i = activeSeg(scene, frame);
-  const talking = i >= 0 && scene.segments[i].lang === "es";
+  const talking = i >= 0 && (scene.segments[i].lang === "es" || !scene.segments[i].voice);
   const bounce = talking ? Math.abs(Math.sin(frame / 4)) * 6 : 0;
   return (
     <div style={{ position: "absolute", left: 26, bottom: 18, transform: `translateY(${-bounce}px)` }}>
@@ -122,7 +122,7 @@ export function TimelineScene({ scene }: { scene: SceneData }) {
 
 export function TipScene({ scene }: { scene: SceneData }) {
   const frame = useCurrentFrame();
-  const de = scene.segments.findIndex((g) => g.lang === "de");
+  const de = scene.segments.length - 1; // la palabra clave se dice al final
   const wiggle = de >= 0 && frame >= segFrom(scene, de) ? Math.sin(frame / 3) * 3 : 0;
   return (
     <>
