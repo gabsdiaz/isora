@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Isora
 
-## Getting Started
+Plataforma de aprendizaje de idiomas enfocada en preparación de exámenes (TestDaF, Goethe, IELTS, TOEFL…). Primera versión: alemán, niveles A1.1 – B1.2 (20 unidades cada uno).
 
-First, run the development server:
+## Correr en tu computador
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # llena los datos de Firebase (opcional: sin ellos corre en modo demo)
+npm run dev                  # abre http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+  app/                    páginas (inicio, bienvenida, aprender/…)
+  components/             interfaz (encabezado, unidad, ejercicios…)
+  content/
+    types.ts              formato del contenido
+    de/course.ts          temario: niveles y títulos de las 120 unidades
+    de/units/             contenido de cada unidad (video, teoría, lectura, ejercicios, guía)
+  lib/                    sesión (login Google), idioma nativo, progreso, pronunciación
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Agregar una unidad:** crea `src/content/de/units/<nivel>/<nn>-<tema>.ts` siguiendo el ejemplo de `a1-1/01-vorstellung.ts` y regístrala en `src/content/de/units/index.ts`.
 
-## Learn More
+## Tecnologías
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js · TypeScript · Tailwind CSS · Firebase (Auth con Google + Firestore) · Vercel
