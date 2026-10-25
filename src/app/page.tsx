@@ -18,7 +18,7 @@ const useInAppBrowser = () =>
   );
 
 export default function Landing() {
-  const { user, nativeLang, loading, demoMode, signInWithGoogle } = useSession();
+  const { user, nativeLang, loading, demoMode, authError, signInWithGoogle } = useSession();
   const { t } = useT();
   const router = useRouter();
   const [busy, setBusy] = useState(false);
@@ -68,7 +68,11 @@ export default function Landing() {
               {busy ? t("signingIn") : t("signInGoogle")}
             </button>
             {demoMode && <p className="text-xs text-muted">{t("demoNotice")}</p>}
-            {error && <p className="text-sm text-wine">{error}</p>}
+            {(error || authError) && (
+              <p className="text-sm text-wine">
+                {error ?? "No se pudo iniciar sesión. Intenta de nuevo."} {authError && <span className="text-xs text-muted">({authError})</span>}
+              </p>
+            )}
             {inApp && (
               <p className="max-w-sm rounded-2xl bg-yellow-soft px-4 py-3 text-sm text-ink">
                 Para iniciar sesión con Google, abre este enlace en <b>Chrome</b> o <b>Safari</b> (menú ⋯ → «Abrir en el navegador»).

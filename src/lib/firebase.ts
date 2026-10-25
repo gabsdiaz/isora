@@ -18,6 +18,16 @@ const config = {
 
 export const firebaseEnabled = Boolean(config.apiKey && config.authDomain && config.projectId);
 
+/** Celular o tablet: ahí el login va por redirección y desde el propio dominio de Isora. */
+export const isMobileDevice = () => typeof navigator !== "undefined" && /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+
+/** En el celular el login usa el dominio de la app (proxy en next.config.ts) en vez de firebaseapp.com. */
+function authDomain() {
+  if (typeof window === "undefined") return config.authDomain;
+  const local = /^(localhost|127\.|192\.168\.)/.test(window.location.hostname);
+  return isMobileDevice() && !local ? window.location.host : config.authDomain;
+}
+
 let app: FirebaseApp | null = null;
 let auth: Auth | null = null;
 let db: Firestore | null = null;
@@ -25,7 +35,7 @@ let db: Firestore | null = null;
 export function getFirebase() {
   if (!firebaseEnabled) return { app: null, auth: null, db: null };
   if (!app) {
-    app = getApps()[0] ?? initializeApp(config);
+    app = getApps()[0] ?? initializeApp({ ...config, authDomain: authDomain() });
     auth = getAuth(app);
     db = getFirestore(app);
   }

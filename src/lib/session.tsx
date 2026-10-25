@@ -3,13 +3,14 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import {
   GoogleAuthProvider,
+  getRedirectResult,
   onAuthStateChanged,
   signInWithPopup,
   signInWithRedirect,
   signOut as fbSignOut,
 } from "firebase/auth";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
-import { firebaseEnabled, getFirebase } from "./firebase";
+import { firebaseEnabled, getFirebase, isMobileDevice } from "./firebase";
 
 export type NativeLang = "es" | "en";
 
@@ -25,6 +26,8 @@ type Session = {
   nativeLang: NativeLang | null;
   loading: boolean;
   demoMode: boolean;
+  /** Código del último error de login (para mostrarlo y poder diagnosticar) */
+  authError: string | null;
   signInWithGoogle: () => Promise<void>;
   signOut: () => Promise<void>;
   setNativeLang: (lang: NativeLang) => Promise<void>;
@@ -62,6 +65,7 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<IsoraUser | null>(null);
   const [nativeLang, setLang] = useState<NativeLang | null>(null);
   const [loading, setLoading] = useState(true);
+  const [authError, setAuthError] = useState<string | null>(null);
 
   // Carga el idioma nativo del usuario (Firestore si existe, si no el navegador)
   const loadProfile = useCallback(async (u: IsoraUser) => {
@@ -101,6 +105,8 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
         cancelled = true;
       };
     }
+    // Vuelta del login por redirección (celular): si Google devolvió un error, lo mostramos
+    getRedirectResult(auth).catch((e: { code?: string }) => setAuthError(e.code ?? "auth/error"));
     // Si Firebase no responde (red lenta), no dejamos al estudiante mirando el spinner
     const safety = setTimeout(() => setLoading(false), 8000);
     const off = onAuthStateChanged(auth, async (fbUser) => {
@@ -137,6 +143,12 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
       return;
     }
     const provider = new GoogleAuthProvider();
+    setAuthError(null);
+    // En el celular: redirección (las ventanas emergentes no vuelven bien a la pestaña)
+    if (isMobileDevice()) {
+      await signInWithRedirect(auth, provider);
+      return;
+    }
     try {
       await signInWithPopup(auth, provider);
     } catch (e) {
@@ -147,6 +159,7 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
         return;
       }
       if (code === "auth/popup-closed-by-user" || code === "auth/cancelled-popup-request") return;
+      setAuthError(code || "auth/error");
       throw e;
     }
   }, []);
@@ -181,11 +194,12 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
       nativeLang,
       loading,
       demoMode: !firebaseEnabled,
+      authError,
       signInWithGoogle,
       signOut,
       setNativeLang,
     }),
-    [user, nativeLang, loading, signInWithGoogle, signOut, setNativeLang],
+    [user, nativeLang, loading, authError, signInWithGoogle, signOut, setNativeLang],
   );
 
   return <SessionContext.Provider value={value}>{children}</SessionContext.Provider>;
