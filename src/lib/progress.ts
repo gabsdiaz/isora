@@ -20,7 +20,7 @@ export const LAST_KEY = "isora.last.v1";
 export const LAST_EVENT = "isora:last";
 
 /** Almacén sencillo en localStorage con caché (para useSyncExternalStore). */
-function createStore<T>(key: string, event: string, empty: T) {
+export function createStore<T>(key: string, event: string, empty: T) {
   let cacheRaw: string | null = null;
   let cache: T = empty;
   const snapshot = (): T => {

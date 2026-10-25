@@ -5,11 +5,17 @@ import { german, getLevel } from "@/content/de/course";
 import { isUnitAvailable } from "@/content/de/units";
 import { useT } from "@/lib/i18n";
 import { unitKey, unitPercent, useProgress } from "@/lib/progress";
+import { useLevels } from "@/lib/levels";
+import { useMounted } from "./games/shared";
 
 export function LevelView({ levelId }: { levelId: string }) {
   const level = getLevel(levelId)!;
   const { g, loc } = useT();
   const { progress } = useProgress();
+  const { levels, isUnlocked } = useLevels();
+  const mounted = useMounted();
+  const locked = mounted && !isUnlocked(level.id);
+  const finalResult = levels.exams?.["abschluss-a1-1"];
 
   return (
     <div>
@@ -26,6 +32,7 @@ export function LevelView({ levelId }: { levelId: string }) {
               l.id === level.id ? "border-wine bg-wine text-cream" : "border-line bg-paper text-cocoa hover:border-cocoa-light"
             }`}
           >
+            {mounted && !isUnlocked(l.id) && <span aria-label="gesperrt">🔒 </span>}
             {l.label}
           </Link>
         ))}
@@ -39,9 +46,27 @@ export function LevelView({ levelId }: { levelId: string }) {
         <p className="mt-3 max-w-2xl text-ink/75">{level.description.de}</p>
       </header>
 
+      {locked && (
+        <div className="mb-8 flex flex-col items-start gap-4 rounded-[2rem] border-2 border-dashed border-wine/40 bg-sand p-6 sm:flex-row sm:items-center">
+          <span className="text-5xl" aria-hidden="true">🔒</span>
+          <div className="flex-1">
+            <p className="font-display text-2xl text-wine">Dieses Niveau ist noch gesperrt</p>
+            <p className="mt-1 text-sm text-cocoa">Zeig in einem Mini-Test (8 Fragen, ca. 4 Min.), dass du bereit bist – oder mach den Einstufungstest.</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Link href={`/aprender/test/zugang-${level.id}`} className="rounded-full bg-wine px-5 py-2.5 text-sm font-medium text-cream hover:bg-wine-light">
+              🔓 Mini-Test starten
+            </Link>
+            <Link href="/aprender/test/einstufung" className="rounded-full border border-cocoa/30 bg-paper px-5 py-2.5 text-sm font-medium text-cocoa">
+              🎯 Einstufungstest
+            </Link>
+          </div>
+        </div>
+      )}
+
       <ol className="grid gap-3 sm:grid-cols-2">
         {level.units.map((u) => {
-          const available = isUnitAvailable(level.id, u.number);
+          const available = isUnitAvailable(level.id, u.number) && !locked;
           const up = progress[unitKey("de", level.id, u.number)];
           const done = up?.completed;
           const pct = unitPercent(up);
@@ -92,6 +117,27 @@ export function LevelView({ levelId }: { levelId: string }) {
           );
         })}
       </ol>
+
+      {level.id === "a1-1" && (
+        <Link
+          href="/aprender/test/abschluss-a1-1"
+          className="mt-6 flex items-center justify-between gap-4 rounded-[2rem] border-2 border-wine/60 bg-sand p-6 transition hover:bg-sand-deep"
+        >
+          <span className="flex items-center gap-4">
+            <span className="text-5xl" aria-hidden="true">🏆</span>
+            <span>
+              <span className="block font-display text-2xl text-wine">Abschlusstest A1.1</span>
+              <span className="block text-sm text-cocoa">Grammatik · Lesen · Hören · Schreiben – alle Themen von A1.1. Bestanden = A1.2 frei!</span>
+              {finalResult && (
+                <span className={`mt-1 inline-block rounded-full px-2.5 py-0.5 text-xs ${finalResult.passed ? "bg-sage-soft text-sage" : "bg-wine-soft text-wine"}`}>
+                  {finalResult.passed ? "✓ Bestanden" : "Noch nicht bestanden"} · {finalResult.score} %
+                </span>
+              )}
+            </span>
+          </span>
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-wine text-cream">→</span>
+        </Link>
+      )}
     </div>
   );
 }

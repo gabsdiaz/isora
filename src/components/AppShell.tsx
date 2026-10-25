@@ -11,6 +11,9 @@ import { APP_NAME } from "@/lib/brand";
 import { subscribeThread } from "@/lib/chat";
 import { firebaseEnabled } from "@/lib/firebase";
 import { useCloudSync } from "@/lib/cloud";
+import { useLevels } from "@/lib/levels";
+import { useLastVisit, useProgress } from "@/lib/progress";
+import { useMounted } from "./games/shared";
 
 /** Protege las páginas internas: exige sesión y que el idioma nativo esté elegido. */
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -18,11 +21,19 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
 
+  const { levels } = useLevels();
+  const { progress } = useProgress();
+  const { last } = useLastVisit();
+  const mounted = useMounted();
+  // Estudiante nuevo (sin progreso): primero elige entre test de nivel o empezar desde cero
+  const isNew = mounted && !levels.startChoice && !last && Object.keys(progress).length === 0;
+
   useEffect(() => {
     if (loading) return;
     if (!user) router.replace("/");
     else if (!nativeLang) router.replace(`/bienvenida?next=${encodeURIComponent(pathname)}`);
-  }, [loading, user, nativeLang, router, pathname]);
+    else if (isNew && !pathname.startsWith("/aprender/start") && !pathname.startsWith("/aprender/test")) router.replace("/aprender/start");
+  }, [loading, user, nativeLang, router, pathname, isNew]);
 
   if (loading || !user || !nativeLang) return <FullPageLoader />;
 

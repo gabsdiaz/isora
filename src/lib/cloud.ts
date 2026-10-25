@@ -5,6 +5,7 @@ import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { firebaseEnabled, getFirebase } from "./firebase";
 import { LAST_EVENT, LAST_KEY, PROGRESS_EVENT, PROGRESS_KEY, type LastVisit, type Progress } from "./progress";
 import { CARDS_EVENT, CARDS_KEY, type Card } from "./flashcards";
+import { LEVELS_EVENT, LEVELS_KEY, type LevelState } from "./levels";
 
 /**
  * Guarda el progreso, las flashcards y "dónde quedé" en Firestore
@@ -62,6 +63,19 @@ function mergeCards(a: Deck, b: Deck): Deck {
 
 const mergeLast = (a: LastVisit | null, b: LastVisit | null) => (!a ? b : !b ? a : a.at >= b.at ? a : b);
 
+function mergeLevels(a: LevelState | null, b: LevelState | null): LevelState | null {
+  if (!a) return b;
+  if (!b) return a;
+  const exams = { ...b.exams, ...a.exams };
+  for (const k of Object.keys(b.exams ?? {})) if (a.exams?.[k] && b.exams[k].score > a.exams[k].score) exams[k] = b.exams[k];
+  return {
+    startChoice: a.startChoice ?? b.startChoice,
+    unlocked: Array.from(new Set([...(a.unlocked ?? []), ...(b.unlocked ?? [])])),
+    placement: !a.placement ? b.placement : !b.placement ? a.placement : a.placement.at >= b.placement.at ? a.placement : b.placement,
+    exams,
+  };
+}
+
 export function useCloudSync(uid: string | undefined) {
   useEffect(() => {
     if (!firebaseEnabled || !uid || uid === "demo") return;
@@ -77,6 +91,7 @@ export function useCloudSync(uid: string | undefined) {
         progress: JSON.stringify(read<Progress>(PROGRESS_KEY, {})),
         cards: JSON.stringify(read<Deck>(CARDS_KEY, {})),
         last: JSON.stringify(read<LastVisit | null>(LAST_KEY, null)),
+        levels: JSON.stringify(read<LevelState | null>(LEVELS_KEY, null)),
         updatedAt: serverTimestamp(),
       }).catch(() => undefined);
     const push = () => {
@@ -99,6 +114,8 @@ export function useCloudSync(uid: string | undefined) {
           write(PROGRESS_KEY, PROGRESS_EVENT, mergeProgress(read<Progress>(PROGRESS_KEY, {}), parse<Progress>(remote.progress, {})));
           write(CARDS_KEY, CARDS_EVENT, mergeCards(read<Deck>(CARDS_KEY, {}), parse<Deck>(remote.cards, {})));
           write(LAST_KEY, LAST_EVENT, mergeLast(read<LastVisit | null>(LAST_KEY, null), parse<LastVisit | null>(remote.last, null)));
+          const lv = mergeLevels(read<LevelState | null>(LEVELS_KEY, null), parse<LevelState | null>(remote.levels, null));
+          if (lv) write(LEVELS_KEY, LEVELS_EVENT, lv);
         }
       } catch {
         /* sin conexión: seguimos con los datos del navegador */
@@ -108,7 +125,7 @@ export function useCloudSync(uid: string | undefined) {
       push();
     })();
 
-    const events = [PROGRESS_EVENT, CARDS_EVENT, LAST_EVENT];
+    const events = [PROGRESS_EVENT, CARDS_EVENT, LAST_EVENT, LEVELS_EVENT];
     events.forEach((e) => window.addEventListener(e, push));
     window.addEventListener("pagehide", flush);
     return () => {

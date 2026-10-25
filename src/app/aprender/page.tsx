@@ -8,6 +8,8 @@ import { useSession } from "@/lib/session";
 import { unitKey, unitPercent, useLastVisit, useProgress } from "@/lib/progress";
 import { getUnitMeta } from "@/content/de/course";
 import type { StringKey } from "@/lib/i18n";
+import { useLevels } from "@/lib/levels";
+import { useMounted } from "@/components/games/shared";
 import { dueCards, useDeck } from "@/lib/flashcards";
 
 const TILE = "mt-4 flex items-center justify-between gap-4 rounded-3xl border border-latte/60 bg-sand p-5 shadow-sm shadow-espresso/5 transition hover:border-cocoa-light hover:bg-sand-deep";
@@ -18,6 +20,8 @@ export default function Dashboard() {
   const { user } = useSession();
   const { progress } = useProgress();
   const { last } = useLastVisit();
+  const { levels, isUnlocked } = useLevels();
+  const mounted = useMounted();
 
   // Siguiente unidad disponible y no completada
   let nextUnit: { level: string; label: string; number: number; title: string; section?: number } | null = null;
@@ -88,6 +92,16 @@ export default function Dashboard() {
         </Link>
       )}
 
+      <Link href="/aprender/test/einstufung" className={TILE}>
+        <div className="flex items-center gap-4">
+          <span className="text-3xl" aria-hidden="true">🎯</span>
+          <div>
+            <p className="font-display text-xl text-wine">{mounted && levels.placement ? `Dein Startniveau: ${levels.placement.level.toUpperCase().replace("-", ".")}` : "Einstufungstest"}</p>
+            <p className="text-sm text-cocoa">{mounted && levels.placement ? "Test wiederholen, wenn du besser geworden bist." : "Grammatik · Lesen · Hören · Schreiben – finde dein Niveau."}</p>
+          </div>
+        </div>
+        <span className="shrink-0 rounded-full bg-wine px-4 py-2 text-sm font-medium text-cream">{mounted && levels.placement ? "Wiederholen" : "Test starten"} →</span>
+      </Link>
       <CardsTile />
       <Link
         href="/aprender/geschichten"
@@ -143,7 +157,11 @@ export default function Dashboard() {
             >
               <div className="flex items-start justify-between">
                 <span className="font-display text-3xl font-semibold text-wine">{lvl.label}</span>
-                <span className="rounded-full bg-cream-deep px-2.5 py-1 text-xs text-cocoa">20 {g("units")}</span>
+                {mounted && !isUnlocked(lvl.id) ? (
+                  <span className="rounded-full bg-wine-soft px-2.5 py-1 text-xs text-wine">🔒 Mini-Test</span>
+                ) : (
+                  <span className="rounded-full bg-cream-deep px-2.5 py-1 text-xs text-cocoa">20 {g("units")}</span>
+                )}
               </div>
               <p className="mt-1 font-medium text-cocoa">{lvl.name.de}</p>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/70">{lvl.description.de}</p>

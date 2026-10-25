@@ -7,6 +7,7 @@ import { getUnitContent } from "@/content/de/units";
 import { useT, type StringKey } from "@/lib/i18n";
 import { unitKey as progressKey, useLastVisit, useProgress } from "@/lib/progress";
 import { useMounted } from "../games/shared";
+import { useLevels } from "@/lib/levels";
 import { Translatable } from "../german/Translatable";
 import { VideoSection } from "./VideoSection";
 import { TheorySection } from "./TheorySection";
@@ -31,6 +32,7 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
   const { g } = useT();
   const { progress, markUnit, markSection } = useProgress();
   const { last, setLast } = useLastVisit();
+  const { isUnlocked } = useLevels();
   const mounted = useMounted();
   const pk = progressKey("de", levelId, number);
   // Pestaña: la elegida ahora, o la última que el estudiante abrió en esta unidad
@@ -61,6 +63,22 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
       <Translatable as="h1" de={meta.title} tr={meta.topic} className="mt-1" textClassName="text-4xl font-semibold sm:text-5xl" />
     </header>
   );
+
+  if (mounted && !isUnlocked(levelId)) {
+    return (
+      <div>
+        {header}
+        <div className="rounded-[2rem] border-2 border-dashed border-wine/40 bg-sand p-8 text-center">
+          <p className="text-5xl">🔒</p>
+          <p className="mt-2 font-display text-2xl text-wine">{level.label} ist noch gesperrt</p>
+          <p className="mx-auto mt-2 max-w-md text-sm text-cocoa">Mach zuerst den Mini-Test, um dieses Niveau freizuschalten.</p>
+          <Link href={`/aprender/test/zugang-${levelId}`} className="mt-5 inline-block rounded-full bg-wine px-5 py-2.5 text-sm font-medium text-cream hover:bg-wine-light">
+            🔓 Mini-Test starten
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   if (!content) {
     return (
@@ -171,6 +189,13 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
 function NextUnitLink({ levelId, number }: { levelId: string; number: number }) {
   const { g } = useT();
   const next = getUnitContent(levelId, number + 1);
+  if (!next && levelId === "a1-1") {
+    return (
+      <Link href="/aprender/test/abschluss-a1-1" className="rounded-full bg-wine px-5 py-2.5 text-sm font-medium text-cream hover:bg-wine-light">
+        🏆 Abschlusstest A1.1 →
+      </Link>
+    );
+  }
   if (next) {
     return (
       <Link href={`/aprender/de/${levelId}/${number + 1}`} className="rounded-full bg-wine px-5 py-2.5 text-sm font-medium text-cream hover:bg-wine-light">
