@@ -6,10 +6,18 @@ import { useSession } from "@/lib/session";
 import { useT } from "@/lib/i18n";
 import { Logo } from "@/components/Logo";
 import { FullPageLoader } from "@/components/AppShell";
+import { GoogleButton } from "@/components/GoogleButton";
+import { GOOGLE_CLIENT_ID, isMobileDevice } from "@/lib/firebase";
 
 /** Navegadores internos de apps (Instagram, Facebook, TikTok…): Google no permite iniciar sesión ahí. */
 const IN_APP = /FBAN|FBAV|Instagram|Line\/|TikTok|Snapchat|; wv\)/i;
 const noop = () => () => {};
+const useMobileGoogle = () =>
+  useSyncExternalStore(
+    noop,
+    () => Boolean(GOOGLE_CLIENT_ID) && isMobileDevice(),
+    () => false,
+  );
 const useInAppBrowser = () =>
   useSyncExternalStore(
     noop,
@@ -18,7 +26,8 @@ const useInAppBrowser = () =>
   );
 
 export default function Landing() {
-  const { user, nativeLang, loading, demoMode, authError, signInWithGoogle } = useSession();
+  const { user, nativeLang, loading, demoMode, authError, signInWithGoogle, signInWithGoogleToken } = useSession();
+  const mobileGoogle = useMobileGoogle();
   const { t } = useT();
   const router = useRouter();
   const [busy, setBusy] = useState(false);
@@ -58,15 +67,19 @@ export default function Landing() {
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">{t("heroBody")}</p>
 
           <div className="mt-8 flex flex-col items-start gap-3">
-            <button
-              type="button"
-              onClick={handleSignIn}
-              disabled={busy}
-              className="inline-flex items-center gap-3 rounded-full bg-wine px-6 py-3.5 text-base font-medium text-cream shadow-md shadow-wine/20 transition hover:bg-wine-light disabled:opacity-70"
-            >
-              <GoogleIcon />
-              {busy ? t("signingIn") : t("signInGoogle")}
-            </button>
+            {mobileGoogle ? (
+              <GoogleButton onToken={signInWithGoogleToken} onError={setError} />
+            ) : (
+              <button
+                type="button"
+                onClick={handleSignIn}
+                disabled={busy}
+                className="inline-flex items-center gap-3 rounded-full bg-wine px-6 py-3.5 text-base font-medium text-cream shadow-md shadow-wine/20 transition hover:bg-wine-light disabled:opacity-70"
+              >
+                <GoogleIcon />
+                {busy ? t("signingIn") : t("signInGoogle")}
+              </button>
+            )}
             {demoMode && <p className="text-xs text-muted">{t("demoNotice")}</p>}
             {(error || authError) && (
               <p className="text-sm text-wine">

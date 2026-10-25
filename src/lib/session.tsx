@@ -4,6 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import {
   GoogleAuthProvider,
   getRedirectResult,
+  signInWithCredential,
   onAuthStateChanged,
   signInWithPopup,
   signInWithRedirect,
@@ -29,6 +30,8 @@ type Session = {
   /** Código del último error de login (para mostrarlo y poder diagnosticar) */
   authError: string | null;
   signInWithGoogle: () => Promise<void>;
+  /** Inicia sesión con el token del botón oficial de Google (celular) */
+  signInWithGoogleToken: (idToken: string) => Promise<void>;
   signOut: () => Promise<void>;
   setNativeLang: (lang: NativeLang) => Promise<void>;
 };
@@ -164,6 +167,17 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  const signInWithGoogleToken = useCallback(async (idToken: string) => {
+    const { auth } = getFirebase();
+    if (!auth) return;
+    setAuthError(null);
+    try {
+      await signInWithCredential(auth, GoogleAuthProvider.credential(idToken));
+    } catch (e) {
+      setAuthError((e as { code?: string }).code ?? "auth/error");
+    }
+  }, []);
+
   const signOut = useCallback(async () => {
     const { auth } = getFirebase();
     if (auth) await fbSignOut(auth);
@@ -196,10 +210,11 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
       demoMode: !firebaseEnabled,
       authError,
       signInWithGoogle,
+      signInWithGoogleToken,
       signOut,
       setNativeLang,
     }),
-    [user, nativeLang, loading, authError, signInWithGoogle, signOut, setNativeLang],
+    [user, nativeLang, loading, authError, signInWithGoogle, signInWithGoogleToken, signOut, setNativeLang],
   );
 
   return <SessionContext.Provider value={value}>{children}</SessionContext.Provider>;

@@ -18,14 +18,18 @@ const config = {
 
 export const firebaseEnabled = Boolean(config.apiKey && config.authDomain && config.projectId);
 
-/** Celular o tablet: ahí el login va por redirección y desde el propio dominio de Isora. */
+/** ID de cliente web de Google (Credenciales de Google Cloud). Es público: va en el navegador. */
+export const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "";
+
+/** Celular o tablet: ahí usamos el botón oficial de Google (ver GoogleButton.tsx). */
 export const isMobileDevice = () => typeof navigator !== "undefined" && /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
 
 /** En el celular el login usa el dominio de la app (proxy en next.config.ts) en vez de firebaseapp.com. */
 function authDomain() {
   if (typeof window === "undefined") return config.authDomain;
   const local = /^(localhost|127\.|192\.168\.)/.test(window.location.hostname);
-  return isMobileDevice() && !local ? window.location.host : config.authDomain;
+  // Con el botón de Google (GIS) ya no hace falta el dominio propio; se deja como respaldo sin ID de cliente
+  return isMobileDevice() && !local && !GOOGLE_CLIENT_ID ? window.location.host : config.authDomain;
 }
 
 let app: FirebaseApp | null = null;
