@@ -4,6 +4,8 @@ import { createContext, useCallback, useContext, useEffect, useLayoutEffect, use
 import { lookup, maxPhraseWords, type Gloss } from "@/content/de/dictionary";
 import { useT } from "@/lib/i18n";
 import { speakGerman } from "@/lib/speech";
+import { imageFor } from "@/content/de/images";
+import { cardId, useDeck } from "@/lib/flashcards";
 
 /* ─────────────── Popover global de traducción ─────────────── */
 
@@ -11,7 +13,7 @@ type Open = { gloss: Gloss; surface: string; rect: DOMRect } | null;
 const GlossContext = createContext<{ open: (g: Gloss, surface: string, el: HTMLElement) => void; activeKey: string | null } | null>(null);
 
 const ARTICLE_COLORS: Record<string, string> = {
-  der: "text-[#2f5d8a]",
+  der: "text-blue",
   die: "text-wine",
   das: "text-sage",
 };
@@ -93,6 +95,10 @@ function GlossPopover({ state, onClose }: { state: NonNullable<Open>; onClose: (
       style={pos ? { top: pos.top, left: pos.left } : { visibility: "hidden", top: 0, left: 0 }}
     >
       <div className="flex items-start gap-2.5">
+        {imageFor(gloss.de) && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={imageFor(gloss.de)!} alt="" width={40} height={40} className="mt-0.5 shrink-0" draggable={false} />
+        )}
         <button
           type="button"
           onClick={() => speakGerman(headword)}
@@ -108,9 +114,26 @@ function GlossPopover({ state, onClose }: { state: NonNullable<Open>; onClose: (
           </p>
           {gloss.plural && <p className="text-xs text-muted">Plural: die {gloss.plural}</p>}
           <p className="mt-1 text-[15px] text-cocoa">{loc(gloss.tr)}</p>
+          <AddCardButton gloss={gloss} />
         </div>
       </div>
     </div>
+  );
+}
+
+function AddCardButton({ gloss }: { gloss: Gloss }) {
+  const { deck, addCards } = useDeck();
+  const source = gloss.source ?? "mine";
+  const saved = Boolean(deck[cardId(source, gloss.de)]);
+  return (
+    <button
+      type="button"
+      disabled={saved}
+      onClick={() => addCards([{ de: gloss.de, article: gloss.article, plural: gloss.plural, tr: gloss.tr, source }])}
+      className={`mt-2 rounded-full px-2.5 py-1 text-xs font-medium transition ${saved ? "bg-sage-soft text-sage" : "bg-espresso text-cream hover:bg-espresso-light"}`}
+    >
+      {saved ? "✓ In meinen Karten" : "+ Karteikarte"}
+    </button>
   );
 }
 

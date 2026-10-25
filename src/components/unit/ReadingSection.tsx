@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { Reading } from "@/content/types";
 import { useT } from "@/lib/i18n";
 import { speakGerman } from "@/lib/speech";
+import { emojiCode } from "@/content/de/images";
 import { SpeakButton } from "../SpeakButton";
 import { GermanText } from "../german/Gloss";
 import { Translatable, TranslateToggle } from "../german/Translatable";
@@ -43,9 +44,15 @@ function ReadingCard({ reading, unitKey }: { reading: Reading; unitKey: string }
   return (
     <section className="rounded-3xl border border-line bg-paper p-5 sm:p-6">
       <div className="mb-5 flex items-start justify-between gap-3">
-        <div>
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted">{reading.kind.de}</p>
-          <h2 className="text-2xl font-semibold">{reading.title}</h2>
+        <div className="flex items-center gap-3">
+          {reading.emoji && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={`/emoji/${emojiCode(reading.emoji)}.svg`} alt="" width={44} height={44} className="shrink-0" draggable={false} />
+          )}
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted">{reading.kind.de}</p>
+            <h2 className="text-2xl font-semibold">{reading.title}</h2>
+          </div>
         </div>
         <button
           type="button"

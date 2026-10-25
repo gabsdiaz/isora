@@ -17,11 +17,11 @@ export function LogoMark({ size = 32 }: { size?: number }) {
   );
 }
 
-export function Logo({ href = "/" }: { href?: string }) {
+export function Logo({ href = "/", light = false }: { href?: string; light?: boolean }) {
   return (
     <Link href={href} className="flex items-center gap-2.5">
       <LogoMark />
-      <span className="font-display text-2xl font-semibold text-wine">{APP_NAME}</span>
+      <span className={`font-display text-2xl font-semibold ${light ? "text-cream" : "text-wine"}`}>{APP_NAME}</span>
     </Link>
   );
 }

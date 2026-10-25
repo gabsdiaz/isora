@@ -72,6 +72,8 @@ export type TheoryBlock =
 export type Reading = {
   title: string;
   kind: Tri;
+  /** Ilustración (emoji de Twemoji) para la cabecera de la lectura */
+  emoji?: string;
   /** Voz de cada personaje */
   speakers?: Record<string, Voice>;
   lines: { speaker?: string; de: string; tr: Tr }[];

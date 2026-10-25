@@ -12,10 +12,12 @@ import { TheorySection } from "./TheorySection";
 import { ReadingSection } from "./ReadingSection";
 import { ExercisesSection } from "./ExercisesSection";
 import { GuideSection } from "./GuideSection";
+import { UnitCards } from "../flashcards/UnitCards";
 
 const SECTIONS: { id: string; label: StringKey }[] = [
   { id: "video", label: "secVideo" },
   { id: "theory", label: "secTheory" },
+  { id: "cards", label: "secCards" },
   { id: "reading", label: "secReading" },
   { id: "exercises", label: "secExercises" },
   { id: "guide", label: "secGuide" },
@@ -89,9 +91,9 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
                 type="button"
                 onClick={() => go(i)}
                 aria-current={active === i ? "step" : undefined}
-                className={`flex items-center gap-2 rounded-full px-3.5 py-2 text-sm transition ${active === i ? "bg-wine text-cream" : "text-cocoa hover:bg-cream-deep"}`}
+                className={`flex items-center gap-2 rounded-full px-3.5 py-2 text-sm transition ${active === i ? "bg-espresso text-cream" : "text-cocoa hover:bg-cream-deep"}`}
               >
-                <span className={`flex h-5 w-5 items-center justify-center rounded-full text-[11px] ${active === i ? "bg-cream text-wine" : "bg-cream-deep text-cocoa"}`}>
+                <span className={`flex h-5 w-5 items-center justify-center rounded-full text-[11px] ${active === i ? "bg-wine text-cream" : "bg-cream-deep text-cocoa"}`}>
                   {i + 1}
                 </span>
                 {g(s.label)}
@@ -104,15 +106,16 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
       <div className="min-h-[40vh]">
         {active === 0 && <VideoSection script={content.video} title={meta.title} mediaKey={mediaKey} unitKey={key} />}
         {active === 1 && <TheorySection blocks={content.theory} vocab={content.vocab} unitKey={key} />}
-        {active === 2 && <ReadingSection readings={content.readings} unitKey={key} />}
-        {active === 3 && (
+        {active === 2 && <UnitCards vocab={content.vocab} source={key} />}
+        {active === 3 && <ReadingSection readings={content.readings} unitKey={key} />}
+        {active === 4 && (
           <ExercisesSection
             exercises={content.exercises}
             unitKey={key}
             onComplete={(score, total) => markUnit(progressKey("de", levelId, number), score, total)}
           />
         )}
-        {active === 4 && <GuideSection mediaKey={mediaKey} title={meta.title} />}
+        {active === 5 && <GuideSection mediaKey={mediaKey} title={meta.title} />}
       </div>
 
       <div className="mt-10 flex items-center justify-between border-t border-line pt-6">

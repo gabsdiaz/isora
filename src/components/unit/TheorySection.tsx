@@ -4,10 +4,11 @@ import { useState } from "react";
 import type { TheoryBlock, VocabEntry } from "@/content/types";
 import { useT } from "@/lib/i18n";
 import { SpeakButton } from "../SpeakButton";
+import { WordImage } from "../WordImage";
 import { GermanText } from "../german/Gloss";
 import { Translatable, TranslateToggle } from "../german/Translatable";
 
-const ARTICLE_COLORS: Record<string, string> = { der: "text-[#2f5d8a]", die: "text-wine", das: "text-sage" };
+const ARTICLE_COLORS: Record<string, string> = { der: "text-blue", die: "text-wine", das: "text-sage" };
 
 function PhraseRow({ de, tr, note, unitKey }: { de: string; tr: { es: string; en: string }; note?: string; unitKey: string }) {
   const [open, setOpen] = useState(false);
@@ -15,6 +16,7 @@ function PhraseRow({ de, tr, note, unitKey }: { de: string; tr: { es: string; en
   return (
     <li className="flex items-center gap-3 px-4 py-3">
       <SpeakButton text={de} />
+      <WordImage word={de.replace(/[!?.]$/, "")} size={28} />
       <span className="min-w-0 flex-1">
         <span className="font-display text-lg text-wine">
           <GermanText text={de} unitKey={unitKey} />
@@ -58,7 +60,7 @@ export function TheorySection({ blocks, vocab, unitKey }: { blocks: TheoryBlock[
             return <Translatable key={i} de={b.text.de} tr={b.text} unitKey={unitKey} className="max-w-3xl" textClassName="text-[17px] leading-relaxed text-ink/90" />;
           case "tip":
             return (
-              <aside key={i} className="flex gap-3 rounded-2xl border-l-4 border-gold bg-[#f4ead6] p-4 text-ink/90">
+              <aside key={i} className="flex gap-3 rounded-2xl border-l-4 border-gold bg-[#f3e8d6] p-4 text-ink/90">
                 <span className="font-display text-xl text-gold" aria-hidden="true">
                   ✦
                 </span>
@@ -139,6 +141,7 @@ function VocabList({ vocab }: { vocab: VocabEntry[] }) {
       <ul className="grid gap-2 sm:grid-cols-2">
         {words.map((v) => (
           <li key={v.de} className="flex items-center gap-3 rounded-2xl border border-line bg-paper px-3 py-2.5">
+            <WordImage word={v.de} size={30} />
             <SpeakButton text={v.article ? `${v.article} ${v.de}` : v.de} className="h-7 w-7" />
             <span className="min-w-0 flex-1">
               <span className="font-display text-[17px] text-ink">

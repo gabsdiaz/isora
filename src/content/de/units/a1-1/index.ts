@@ -20,4 +20,12 @@ import u18 from "./18";
 import u19 from "./19";
 import u20 from "./20";
 
-export const a1_1: UnitContent[] = [u01, u02, u03, u04, u05, u06, u07, u08, u09, u10, u11, u12, u13, u14, u15, u16, u17, u18, u19, u20];
+import { extraReadings1 } from "./readings-extra-1";
+import { extraReadings2 } from "./readings-extra-2";
+
+const extra = { ...extraReadings1, ...extraReadings2 };
+
+const units: UnitContent[] = [u01, u02, u03, u04, u05, u06, u07, u08, u09, u10, u11, u12, u13, u14, u15, u16, u17, u18, u19, u20];
+
+/** Cada unidad con su lectura extra (más larga) al final */
+export const a1_1: UnitContent[] = units.map((u) => (extra[u.number] ? { ...u, readings: [...u.readings, extra[u.number]] } : u));

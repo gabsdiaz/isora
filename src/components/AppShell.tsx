@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useSession } from "@/lib/session";
@@ -28,8 +29,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <GlossProvider>
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-20 pt-6 sm:px-6">{children}</main>
       </GlossProvider>
-      <footer className="border-t border-line py-6 text-center text-xs text-muted">
-        {APP_NAME} · {new Date().getFullYear()}
+      <footer className="bg-espresso py-6 text-center text-xs text-cream/60">
+        {APP_NAME} · {new Date().getFullYear()} · Illustrationen: Twemoji (CC-BY 4.0)
       </footer>
     </div>
   );
@@ -37,7 +38,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
 function Header() {
   const { user, signOut, setNativeLang } = useSession();
-  const { t, lang } = useT();
+  const { t, g, lang } = useT();
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -58,14 +59,20 @@ function Header() {
     .toUpperCase();
 
   return (
-    <header className="sticky top-0 z-30 border-b border-line bg-cream/90 backdrop-blur">
+    <header className="sticky top-0 z-30 bg-espresso text-cream shadow-md shadow-espresso/20">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
-        <Logo href="/aprender" />
+        <div className="flex items-center gap-6">
+          <Logo href="/aprender" light />
+          <nav className="hidden items-center gap-1 sm:flex">
+            <NavLink href="/aprender" label={g("learn")} />
+            <NavLink href="/aprender/karten" label={g("myCards")} />
+          </nav>
+        </div>
         <div className="relative" ref={menuRef}>
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
-            className="flex items-center gap-2 rounded-full border border-line bg-paper py-1 pl-1 pr-3 text-sm transition hover:border-cocoa-light"
+            className="flex items-center gap-2 rounded-full border border-cream/15 bg-espresso-light py-1 pl-1 pr-3 text-sm transition hover:border-cream/40"
             aria-haspopup="menu"
             aria-expanded={open}
           >
@@ -77,10 +84,13 @@ function Header() {
                 {initials}
               </span>
             )}
-            <span className="hidden max-w-[10rem] truncate text-ink sm:inline">{user?.name}</span>
+            <span className="hidden max-w-[10rem] truncate text-cream sm:inline">{user?.name}</span>
           </button>
           {open && (
             <div role="menu" className="absolute right-0 mt-2 w-60 rounded-2xl border border-line bg-paper p-2 shadow-lg shadow-cocoa/10">
+              <Link href="/aprender/karten" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep sm:hidden">
+                🃏 {g("myCards")}
+              </Link>
               <p className="px-3 pb-1 pt-2 text-xs font-medium uppercase tracking-wide text-muted">{t("settingsLang")}</p>
               <div className="flex gap-1 px-2 pb-2">
                 {(["es", "en"] as const).map((l) => (
@@ -113,6 +123,19 @@ function Header() {
         </div>
       </div>
     </header>
+  );
+}
+
+function NavLink({ href, label }: { href: string; label: string }) {
+  const pathname = usePathname();
+  const active = href === "/aprender" ? pathname === "/aprender" || pathname.startsWith("/aprender/de") : pathname.startsWith(href);
+  return (
+    <Link
+      href={href}
+      className={`rounded-full px-3.5 py-1.5 text-sm transition ${active ? "bg-wine text-cream" : "text-cream/75 hover:bg-espresso-light hover:text-cream"}`}
+    >
+      {label}
+    </Link>
   );
 }
 

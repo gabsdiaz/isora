@@ -54,6 +54,9 @@ const strings = {
   secExercises: { de: "Übungen", es: "Ejercicios", en: "Exercises" },
   secGuide: { de: "Arbeitsblatt", es: "Guía descargable", en: "Worksheet" },
   vocab: { de: "Wortschatz", es: "Vocabulario", en: "Vocabulary" },
+  secCards: { de: "Karteikarten", es: "Flashcards", en: "Flashcards" },
+  myCards: { de: "Meine Karten", es: "Mis flashcards", en: "My flashcards" },
+  learn: { de: "Lernen", es: "Aprender", en: "Learn" },
   tapHint: {
     de: "Tippe auf ein Wort: Übersetzung und Aussprache.",
     es: "Toca una palabra para ver su traducción y escuchar cómo se pronuncia. El botón de idioma traduce la frase completa.",

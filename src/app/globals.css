@@ -3,20 +3,26 @@
 /* ───────────────────────── Isora · paleta ─────────────────────────
    Crema de fondo, títulos vino tinto con acento café, texto negro.   */
 @theme {
-  --color-cream: #f6efe3;
-  --color-cream-deep: #ede2cf;
-  --color-paper: #fbf7f0;
-  --color-line: #e3d6c0;
-  --color-wine: #6e1e2b;
-  --color-wine-light: #8b2e3c;
-  --color-wine-soft: #f1dfdc;
-  --color-cocoa: #4a2e22;
-  --color-cocoa-light: #7a5644;
+  /* Fondo crema y rojo principal elegidos por Gabriela */
+  --color-cream: #f5f1e8;
+  --color-cream-deep: #ebe3d4;
+  --color-paper: #fbf9f4;
+  --color-line: #e2d8c6;
+  --color-wine: #940d00;
+  --color-wine-light: #b3200f;
+  --color-wine-soft: #f6e0da;
+  /* Cafés: claro para textos suaves, oscuro (espresso) para paneles y encabezados */
+  --color-cocoa: #4a3326;
+  --color-cocoa-light: #7b5a45;
+  --color-espresso: #2e2019;
+  --color-espresso-light: #45322a;
+  --color-latte: #c9a98b;
   --color-ink: #1b1714;
-  --color-muted: #6b5d52;
-  --color-gold: #b8893e;
+  --color-muted: #6e6156;
+  --color-gold: #c08a3e;
   --color-sage: #5f7a5a;
   --color-sage-soft: #e3eadc;
+  --color-blue: #2f5d8a;
 
   --font-serif: "Fraunces Variable", Georgia, "Times New Roman", serif;
   --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;

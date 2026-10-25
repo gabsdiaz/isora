@@ -6,6 +6,7 @@ import { isUnitAvailable } from "@/content/de/units";
 import { useT } from "@/lib/i18n";
 import { useSession } from "@/lib/session";
 import { unitKey, useProgress } from "@/lib/progress";
+import { dueCards, useDeck } from "@/lib/flashcards";
 
 export default function Dashboard() {
   const { g } = useT();
@@ -51,19 +52,21 @@ export default function Dashboard() {
       {nextUnit && (
         <Link
           href={`/aprender/de/${nextUnit.level}/${nextUnit.number}`}
-          className="group mt-8 flex items-center justify-between gap-4 rounded-3xl bg-wine p-6 text-cream shadow-lg shadow-wine/20 transition hover:bg-wine-light"
+          className="group mt-8 flex items-center justify-between gap-4 rounded-3xl bg-espresso p-6 text-cream shadow-lg shadow-espresso/25 transition hover:bg-espresso-light"
         >
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-cream/70">
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-latte">
               {g("continueLearning")} · {nextUnit.label} · {g("unit")} {nextUnit.number}
             </p>
             <p className="mt-1 font-display text-2xl">{nextUnit.title}</p>
           </div>
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cream text-wine transition group-hover:translate-x-1">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-wine text-cream transition group-hover:translate-x-1">
             →
           </span>
         </Link>
       )}
+
+      <CardsTile />
 
       {/* Niveles */}
       <h2 className="mt-10 text-2xl font-semibold">{g("levels")}</h2>
@@ -96,5 +99,30 @@ export default function Dashboard() {
         })}
       </div>
     </div>
+  );
+}
+
+function CardsTile() {
+  const { deck } = useDeck();
+  const { g } = useT();
+  const total = Object.keys(deck).length;
+  const due = dueCards(deck).length;
+  if (!total) return null;
+  return (
+    <Link
+      href="/aprender/karten"
+      className="mt-4 flex items-center justify-between gap-4 rounded-3xl border border-line bg-paper p-5 transition hover:border-cocoa-light hover:shadow-md hover:shadow-espresso/10"
+    >
+      <div className="flex items-center gap-4">
+        <span className="text-3xl" aria-hidden="true">🃏</span>
+        <div>
+          <p className="font-display text-xl text-wine">{g("myCards")}</p>
+          <p className="text-sm text-muted">
+            {total} Karten · {due} heute fällig
+          </p>
+        </div>
+      </div>
+      <span className="rounded-full bg-espresso px-4 py-2 text-sm font-medium text-cream">Wiederholen →</span>
+    </Link>
   );
 }
