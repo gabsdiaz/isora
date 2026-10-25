@@ -31,7 +31,7 @@ PIPER = {
 }
 
 # Velocidad: un poco más lento en alemán para principiantes
-EDGE_RATE = {"es": "-4%", "de": "-12%"}
+EDGE_RATE = {"es": "+0%", "de": "-8%"}
 
 
 def duration(path):
@@ -41,8 +41,13 @@ def duration(path):
 
 
 async def edge_tts(text, lang, voice, dest):
+    import os, ssl
     import edge_tts
-    comm = edge_tts.Communicate(text, EDGE_VOICES[(lang, voice)], rate=EDGE_RATE[lang])
+    import edge_tts.communicate as _c
+    ca = os.environ.get("SSL_CERT_FILE") or "/root/.ccr/ca-bundle.crt"
+    if os.path.exists(ca):  # entorno con proxy: usa su certificado
+        _c._SSL_CTX = ssl.create_default_context(cafile=ca)
+    comm = edge_tts.Communicate(text, EDGE_VOICES[(lang, voice)], rate=EDGE_RATE[lang], proxy=os.environ.get("HTTPS_PROXY"))
     await comm.save(dest)
 
 
@@ -142,7 +147,7 @@ def main(script_path):
             d = duration(dest)
             segs.append({**seg, "audio": f"audio/{slug}/{os.path.basename(dest)}", "from": round(t * FPS), "dur": round(d * FPS)})
             cues.append({"start": total / FPS + t, "end": total / FPS + t + d, "seg": seg})
-            gap = 0.75 if lang == "de" else 0.4
+            gap = 0.6 if lang == "de" else 0.3
             t += d + gap
         if scene["type"] == "try":
             t += scene.get("pause", 5)

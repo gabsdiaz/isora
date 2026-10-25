@@ -6,6 +6,7 @@
 import { bundle } from "@remotion/bundler";
 import { renderMedia, renderStill, selectComposition } from "@remotion/renderer";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
@@ -39,7 +40,7 @@ await renderMedia({
   outputLocation: tmp,
   inputProps: timeline,
   browserExecutable,
-  concurrency: 4,
+  concurrency: os.cpus().length,
   crf: 22,
   onProgress: ({ progress }) => {
     const p = Math.floor(progress * 10);
