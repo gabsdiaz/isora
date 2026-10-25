@@ -5,6 +5,7 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithPopup,
+  signInWithRedirect,
   signOut as fbSignOut,
 } from "firebase/auth";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
@@ -43,6 +44,11 @@ function readLocal<T>(key: string): T | null {
   }
 }
 
+/** Espera una promesa como máximo `ms` milisegundos (en el celular la red puede colgarse). */
+function withTimeout<T>(p: Promise<T>, ms: number): Promise<T | undefined> {
+  return Promise.race([p, new Promise<undefined>((r) => setTimeout(() => r(undefined), ms))]);
+}
+
 function writeLocal(key: string, value: unknown) {
   try {
     if (value === null) localStorage.removeItem(key);
@@ -63,14 +69,19 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
     const { db } = getFirebase();
     if (db) {
       try {
-        const snap = await getDoc(doc(db, "users", u.uid));
-        const remote = snap.data()?.nativeLang as NativeLang | undefined;
+        const snap = await withTimeout(getDoc(doc(db, "users", u.uid)), 3500);
+        const remote = snap?.data()?.nativeLang as NativeLang | undefined;
         if (remote) lang = remote;
       } catch {
         /* sin conexión o reglas aún no configuradas: usamos el valor local */
       }
     }
     setLang(lang);
+  }, []);
+
+  // Señal para el aviso de "navegador sin soporte" (layout.tsx): la app sí arrancó
+  useEffect(() => {
+    (window as unknown as { __isoraReady?: boolean }).__isoraReady = true;
   }, []);
 
   useEffect(() => {
@@ -90,7 +101,10 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
         cancelled = true;
       };
     }
-    return onAuthStateChanged(auth, async (fbUser) => {
+    // Si Firebase no responde (red lenta), no dejamos al estudiante mirando el spinner
+    const safety = setTimeout(() => setLoading(false), 8000);
+    const off = onAuthStateChanged(auth, async (fbUser) => {
+      clearTimeout(safety);
       if (!fbUser) {
         setUser(null);
         setLang(null);
@@ -107,6 +121,10 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
       await loadProfile(u);
       setLoading(false);
     });
+    return () => {
+      clearTimeout(safety);
+      off();
+    };
   }, [loadProfile]);
 
   const signInWithGoogle = useCallback(async () => {
@@ -118,7 +136,19 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
       setLang(readLocal<NativeLang>(langKey(demo.uid)));
       return;
     }
-    await signInWithPopup(auth, new GoogleAuthProvider());
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (e) {
+      // En algunos celulares la ventana emergente está bloqueada: entramos por redirección
+      const code = (e as { code?: string }).code ?? "";
+      if (code === "auth/popup-blocked" || code === "auth/operation-not-supported-in-this-environment" || code === "auth/web-storage-unsupported") {
+        await signInWithRedirect(auth, provider);
+        return;
+      }
+      if (code === "auth/popup-closed-by-user" || code === "auth/cancelled-popup-request") return;
+      throw e;
+    }
   }, []);
 
   const signOut = useCallback(async () => {
@@ -136,15 +166,10 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
       writeLocal(langKey(user.uid), lang);
       const { db } = getFirebase();
       if (db) {
-        try {
-          await setDoc(
-            doc(db, "users", user.uid),
-            { nativeLang: lang, name: user.name, email: user.email, updatedAt: serverTimestamp() },
-            { merge: true },
-          );
-        } catch {
-          /* se queda guardado localmente */
-        }
+        // Se guarda en la nube en segundo plano (no hacemos esperar al estudiante)
+        setDoc(doc(db, "users", user.uid), { nativeLang: lang, name: user.name, email: user.email, updatedAt: serverTimestamp() }, { merge: true }).catch(
+          () => undefined,
+        );
       }
     },
     [user],

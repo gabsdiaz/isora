@@ -1,11 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "@/lib/session";
 import { useT } from "@/lib/i18n";
 import { Logo } from "@/components/Logo";
 import { FullPageLoader } from "@/components/AppShell";
+
+/** Navegadores internos de apps (Instagram, Facebook, TikTok…): Google no permite iniciar sesión ahí. */
+const IN_APP = /FBAN|FBAV|Instagram|Line\/|TikTok|Snapchat|; wv\)/i;
+const noop = () => () => {};
+const useInAppBrowser = () =>
+  useSyncExternalStore(
+    noop,
+    () => IN_APP.test(navigator.userAgent),
+    () => false,
+  );
 
 export default function Landing() {
   const { user, nativeLang, loading, demoMode, signInWithGoogle } = useSession();
@@ -13,6 +23,7 @@ export default function Landing() {
   const router = useRouter();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const inApp = useInAppBrowser();
 
   useEffect(() => {
     if (!loading && user) router.replace(nativeLang ? "/aprender" : "/bienvenida");
@@ -58,6 +69,11 @@ export default function Landing() {
             </button>
             {demoMode && <p className="text-xs text-muted">{t("demoNotice")}</p>}
             {error && <p className="text-sm text-wine">{error}</p>}
+            {inApp && (
+              <p className="max-w-sm rounded-2xl bg-yellow-soft px-4 py-3 text-sm text-ink">
+                Para iniciar sesión con Google, abre este enlace en <b>Chrome</b> o <b>Safari</b> (menú ⋯ → «Abrir en el navegador»).
+              </p>
+            )}
           </div>
         </section>
 

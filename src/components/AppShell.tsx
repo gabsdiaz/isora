@@ -169,9 +169,23 @@ function NavLink({ href, label, also, dot }: { href: string; label: string; also
 }
 
 export function FullPageLoader() {
+  // Si tarda demasiado (red lenta del celular), ofrecemos recargar
+  const [slow, setSlow] = useState(false);
+  useEffect(() => {
+    const id = setTimeout(() => setSlow(true), 9000);
+    return () => clearTimeout(id);
+  }, []);
   return (
-    <div className="flex min-h-screen items-center justify-center">
+    <div className="flex min-h-screen flex-col items-center justify-center gap-5 px-6 text-center">
       <div className="h-9 w-9 animate-spin rounded-full border-2 border-line border-t-wine" aria-label="Cargando" />
+      {slow && (
+        <div className="max-w-xs">
+          <p className="text-sm text-cocoa">Esto está tardando más de lo normal. Revisa tu conexión e intenta de nuevo.</p>
+          <button type="button" onClick={() => window.location.reload()} className="mt-3 rounded-full bg-wine px-5 py-2 text-sm font-medium text-cream">
+            Neu laden · Recargar
+          </button>
+        </div>
+      )}
     </div>
   );
 }
