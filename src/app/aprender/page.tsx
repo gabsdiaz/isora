@@ -118,6 +118,18 @@ export default function Dashboard() {
         </div>
         <span className="shrink-0 rounded-full bg-wine px-4 py-2 text-sm font-medium text-cream">Lesen →</span>
       </Link>
+      <Link href="/aprender/lieder" className={TILE}>
+        <div className="flex items-center gap-4">
+          <span className="text-3xl" aria-hidden="true">
+            🎵
+          </span>
+          <div>
+            <p className="font-display text-xl text-wine">{g("songs")}</p>
+            <p className="text-sm text-cocoa">Deutsch mit Musik · Spotify · Lückentext</p>
+          </div>
+        </div>
+        <span className="shrink-0 rounded-full bg-wine px-4 py-2 text-sm font-medium text-cream">Anhören →</span>
+      </Link>
       <Link
         href="/aprender/spiele"
         className={TILE}

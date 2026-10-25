@@ -93,6 +93,7 @@ function Header() {
             <NavLink href="/aprender" label={g("learn")} />
             <NavLink href="/aprender/karten" label={g("myCards")} />
             <NavLink href="/aprender/geschichten" label={g("stories")} />
+            <NavLink href="/aprender/lieder" label={g("songs")} />
             <NavLink href="/aprender/spiele" label={g("games")} />
             <NavLink href="/aprender/chat" also="/aprender/unterricht" label={g("teacher")} dot={unread} />
           </nav>
@@ -122,6 +123,9 @@ function Header() {
               </Link>
               <Link href="/aprender/geschichten" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep lg:hidden">
                 📚 {g("stories")}
+              </Link>
+              <Link href="/aprender/lieder" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep lg:hidden">
+                🎵 {g("songs")}
               </Link>
               <Link href="/aprender/spiele" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep lg:hidden">
                 🎮 {g("games")}

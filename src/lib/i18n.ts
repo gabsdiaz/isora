@@ -62,6 +62,7 @@ const strings = {
   learn: { de: "Lernen", es: "Aprender", en: "Learn" },
   games: { de: "Spiele", es: "Juegos", en: "Games" },
   stories: { de: "Geschichten", es: "Historias", en: "Stories" },
+  songs: { de: "Lieder", es: "Canciones", en: "Songs" },
   storiesBody: {
     de: "Kurze, lustige Geschichten zum Lesen und Hören. Tippe auf ein Wort, wenn du es nicht kennst.",
     es: "Historias cortas y divertidas para leer y escuchar. Toca una palabra si no la conoces.",

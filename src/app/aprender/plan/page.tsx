@@ -140,7 +140,7 @@ function PlanPage() {
 
 function BlockRow({ b, done, onToggle, L }: { b: Block; done: boolean; onToggle: () => void; L: (t: Tr) => string }) {
   const router = useRouter();
-  const auto = b.kind === "section" || b.kind === "story";
+  const auto = b.kind === "section" || b.kind === "story" || b.kind === "song";
   const open = () => {
     if (b.level && b.unit && b.sectionIndex !== undefined) jumpToSection(b.level, b.unit, b.sectionIndex);
     router.push(b.href);

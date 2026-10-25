@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ChatWindow } from "@/components/chat/ChatWindow";
 import { subscribeInbox, type ChatThread } from "@/lib/chat";
@@ -35,7 +36,12 @@ export default function TeacherInbox() {
   return (
     <div>
       <p className="text-sm text-muted">Lehrkraft</p>
-      <h1 className="mt-1 text-3xl font-semibold sm:text-4xl">Postfach 📬</h1>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="mt-1 text-3xl font-semibold sm:text-4xl">Postfach 📬</h1>
+        <Link href="/aprender/lieder?lehrkraft=1" className="rounded-full border border-cocoa/30 bg-paper px-4 py-2 text-sm text-cocoa transition hover:border-cocoa">
+          🎵 Lieder einrichten
+        </Link>
+      </div>
       <p className="mt-2 text-cocoa">
         {threads?.length ?? 0} Gespräche · {threads?.filter((t) => t.unreadTeacher).length ?? 0} ungelesen
       </p>

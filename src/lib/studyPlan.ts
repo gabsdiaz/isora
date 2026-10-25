@@ -11,6 +11,7 @@ import { unitKey, unitPercent, type Progress } from "./progress";
 import type { LevelState } from "./levels";
 import { isUnitAvailable } from "@/content/de/units";
 import { STORIES } from "@/content/de/stories";
+import { SONGS } from "@/content/de/songs";
 
 export type Tr = { es: string; en: string };
 export const DAY = 86_400_000;
@@ -180,7 +181,7 @@ export function buildPlan(
 
 /* ───────────────────────── Plan de la semana ───────────────────────── */
 
-export type BlockKind = "section" | "review" | "story" | "game" | "focus" | "exam" | "teacher";
+export type BlockKind = "section" | "review" | "story" | "song" | "game" | "focus" | "exam" | "teacher";
 export type Block = {
   id: string;
   kind: BlockKind;
@@ -194,12 +195,13 @@ export type Block = {
   section?: string;
   sectionIndex?: number;
   storyId?: string;
+  songId?: string;
   /** Si un paso no cabe en un día, se parte: Teil 1, Teil 2… */
   part?: number;
 };
 export type WeekDay = { day: number; date: number; blocks: Block[] };
 export type WeekPlan = { v: number; weekStart: number; profileAt: number; days: WeekDay[]; manual: Record<string, boolean> };
-export const WEEK_VERSION = 1;
+export const WEEK_VERSION = 2;
 
 export const SECTION_BLOCKS: { section: string; emoji: string; de: string; tr: Tr; minutes: number }[] = [
   { section: "video", emoji: "🎬", de: "Video ansehen", tr: { es: "Ver el video", en: "Watch the video" }, minutes: 10 },
@@ -310,12 +312,21 @@ export function buildWeek(plan: Plan, profile: StudentProfile, levels: LevelStat
 
   // Cola de bloques: unidad actual (sin lo ya visto), luego las siguientes
   const queue: Block[] = [];
+  const likesMusic = (profile.interests ?? []).includes("music");
+  const cefr = plan.start.cefr;
+  const songs = SONGS.filter((s) => !progress[`song/${s.id}`]).sort((a, b) => Number(b.level === cefr) - Number(a.level === cefr) || a.level.localeCompare(b.level));
+  let songI = 0;
   let storyI = 0;
   let gameI = 0;
   const extras = (level: string, n: number, withFocus = true) => {
-    if (n % 2 === 1 && stories[storyI]) {
+    // A quien le gusta la música le toca una canción cada dos unidades; a los demás, cada cuatro
+    const kind = likesMusic ? (n % 2 === 1 ? "song" : "story") : n % 2 === 1 ? "story" : n % 4 === 0 ? "song" : "game";
+    if (kind === "story" && stories[storyI]) {
       const s = stories[storyI++];
       queue.push({ id: `story-${s.id}`, kind: "story", emoji: "📚", de: `Geschichte: ${s.title}`, tr: s.titleTr, minutes: 10, href: `/aprender/geschichten/${s.id}`, storyId: s.id });
+    } else if (kind === "song" && songs[songI]) {
+      const s = songs[songI++];
+      queue.push({ id: `song-${s.id}`, kind: "song", emoji: "🎵", de: `Lied: ${s.title}`, tr: { es: "Completa la letra con música", en: "Fill in the lyrics with music" }, minutes: 10, href: `/aprender/lieder/${s.id}`, songId: s.id });
     } else {
       const g = GAME_ROTATION[gameI % GAME_ROTATION.length];
       const th = themes[gameI % themes.length];
@@ -422,6 +433,7 @@ export function blockDone(b: Block, progress: Progress, manual: Record<string, b
   if (manual[b.id]) return true;
   if (b.kind === "section" && b.level && b.unit) return Boolean(progress[unitKey("de", b.level, b.unit)]?.sections?.includes(b.section!));
   if (b.kind === "story" && b.storyId) return Boolean(progress[`story/${b.storyId}`]);
+  if (b.kind === "song" && b.songId) return Boolean(progress[`song/${b.songId}`]);
   if (b.kind === "exam") return false;
   return false;
 }
