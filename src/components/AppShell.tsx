@@ -66,6 +66,7 @@ function Header() {
           <nav className="hidden items-center gap-1 sm:flex">
             <NavLink href="/aprender" label={g("learn")} />
             <NavLink href="/aprender/karten" label={g("myCards")} />
+            <NavLink href="/aprender/spiele" label={g("games")} />
           </nav>
         </div>
         <div className="relative" ref={menuRef}>
@@ -90,6 +91,9 @@ function Header() {
             <div role="menu" className="absolute right-0 mt-2 w-60 rounded-2xl border border-line bg-paper p-2 shadow-lg shadow-cocoa/10">
               <Link href="/aprender/karten" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep sm:hidden">
                 🃏 {g("myCards")}
+              </Link>
+              <Link href="/aprender/spiele" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep sm:hidden">
+                🎮 {g("games")}
               </Link>
               <p className="px-3 pb-1 pt-2 text-xs font-medium uppercase tracking-wide text-muted">{t("settingsLang")}</p>
               <div className="flex gap-1 px-2 pb-2">

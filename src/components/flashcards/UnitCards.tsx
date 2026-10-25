@@ -2,11 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { VocabEntry } from "@/content/types";
-import { imageFor } from "@/content/de/images";
 import { cardId, dueCards, useDeck, type Card } from "@/lib/flashcards";
-import { speakGerman } from "@/lib/speech";
-import { useT } from "@/lib/i18n";
 import { MiniCard, ReviewSession } from "./Flashcards";
+import { Memory } from "../games/Memory";
 
 /** Pestaña "Karteikarten" de una unidad: las palabras se guardan solas en el mazo del estudiante. */
 export function UnitCards({ vocab, source }: { vocab: VocabEntry[]; source: string }) {
@@ -53,110 +51,6 @@ export function UnitCards({ vocab, source }: { vocab: VocabEntry[]; source: stri
           <MiniCard key={c.id} card={c} />
         ))}
       </div>
-    </div>
-  );
-}
-
-/* ─────────── Memory: une la imagen o la traducción con la palabra alemana ─────────── */
-
-type Tile = { id: string; pair: string; kind: "de" | "pic"; text: string; img?: string | null };
-
-function shuffle<X>(a: X[]) {
-  const b = [...a];
-  for (let i = b.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [b[i], b[j]] = [b[j], b[i]];
-  }
-  return b;
-}
-
-function Memory({ words, onDone }: { words: VocabEntry[]; onDone: () => void }) {
-  const { loc } = useT();
-  const [tiles] = useState<Tile[]>(() => {
-    const pool = shuffle(words.filter((w) => w.de.length < 22)).slice(0, 6);
-    const t: Tile[] = [];
-    for (const w of pool) {
-      const head = w.article ? `${w.article} ${w.de}` : w.de;
-      t.push({ id: `${w.de}-de`, pair: w.de, kind: "de", text: head });
-      t.push({ id: `${w.de}-pic`, pair: w.de, kind: "pic", text: loc(w.tr), img: imageFor(w.de) });
-    }
-    return shuffle(t);
-  });
-  const [open, setOpen] = useState<string[]>([]);
-  const [found, setFound] = useState<string[]>([]);
-  const [moves, setMoves] = useState(0);
-  const done = found.length === tiles.length / 2;
-
-  const flip = (tile: Tile) => {
-    if (open.length === 2 || open.includes(tile.id) || found.includes(tile.pair)) return;
-    if (tile.kind === "de") speakGerman(tile.text);
-    const next = [...open, tile.id];
-    setOpen(next);
-    if (next.length === 2) {
-      setMoves((m) => m + 1);
-      const [a, b] = next.map((id) => tiles.find((x) => x.id === id)!);
-      if (a.pair === b.pair) {
-        setTimeout(() => {
-          setFound((f) => [...f, a.pair]);
-          setOpen([]);
-        }, 450);
-      } else {
-        setTimeout(() => setOpen([]), 900);
-      }
-    }
-  };
-
-  return (
-    <div>
-      <div className="mb-4 flex items-center justify-between">
-        <p className="font-display text-2xl text-wine">Memory 🧠</p>
-        <p className="text-sm text-cocoa">Züge: {moves}</p>
-      </div>
-      <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
-        {tiles.map((tile) => {
-          const isOpen = open.includes(tile.id) || found.includes(tile.pair);
-          const isFound = found.includes(tile.pair);
-          return (
-            <button
-              key={tile.id}
-              type="button"
-              onClick={() => flip(tile)}
-              className={`flex aspect-square flex-col items-center justify-center gap-1 rounded-2xl p-2 text-center transition ${
-                isFound ? "bg-sage-soft text-sage" : isOpen ? "bg-paper text-ink shadow-md" : "border border-latte/60 bg-sand text-cocoa hover:bg-sand-deep"
-              }`}
-            >
-              {isOpen ? (
-                tile.kind === "pic" ? (
-                  <>
-                    {tile.img && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={tile.img} alt="" width={44} height={44} draggable={false} />
-                    )}
-                    <span className="text-xs leading-tight sm:text-sm">{tile.text}</span>
-                  </>
-                ) : (
-                  <span className="font-display text-base leading-tight sm:text-lg">{tile.text}</span>
-                )
-              ) : (
-                <span className="font-display text-2xl text-wine">?</span>
-              )}
-            </button>
-          );
-        })}
-      </div>
-      {done && (
-        <div className="mt-5 rounded-[2rem] border border-latte/60 bg-sand p-6 text-center text-ink">
-          <p className="font-display text-2xl">Geschafft in {moves} Zügen! 🎉</p>
-          <button type="button" onClick={onDone} className="mt-4 rounded-full bg-wine px-5 py-2 text-sm font-medium text-cream hover:bg-wine-light">
-            Zurück
-          </button>
-        </div>
-      )}
-      {!done && (
-        <button type="button" onClick={onDone} className="mt-4 text-sm text-muted hover:text-wine">
-          ← Zurück
-        </button>
-      )}
     </div>
   );
 }

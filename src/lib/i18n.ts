@@ -57,6 +57,15 @@ const strings = {
   secCards: { de: "Karteikarten", es: "Flashcards", en: "Flashcards" },
   myCards: { de: "Meine Karten", es: "Mis flashcards", en: "My flashcards" },
   learn: { de: "Lernen", es: "Aprender", en: "Learn" },
+  games: { de: "Spiele", es: "Juegos", en: "Games" },
+  gameZone: { de: "Spielzone", es: "Zona de juegos", en: "Game zone" },
+  chooseTheme: { de: "Wähle ein Thema", es: "Elige un tema", en: "Choose a theme" },
+  chooseGame: { de: "Wähle ein Spiel", es: "Elige un juego", en: "Choose a game" },
+  gameZoneBody: {
+    de: "Spielen und lernen: Artikel, Wörter, Hören und Sprechen – nach Themen sortiert.",
+    es: "Juega y aprende: artículos, palabras, comprensión y expresión oral, organizados por temas.",
+    en: "Play and learn: articles, words, listening and speaking – sorted by theme.",
+  },
   tapHint: {
     de: "Tippe auf ein Wort: Übersetzung und Aussprache.",
     es: "Toca una palabra para ver su traducción y escuchar cómo se pronuncia. El botón de idioma traduce la frase completa.",
