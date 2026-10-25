@@ -45,9 +45,74 @@ for (const unit of allUnits) {
 // 2) léxico común: solo rellena lo que falte
 for (const v of commonVocab) register(v, undefined, false);
 
+const UMLAUT: Record<string, string> = { ä: "a", ö: "o", ü: "u" };
+const deUmlaut = (s: string) => s.replace(/[äöü](?=[^äöü]*$)/, (c) => UMLAUT[c]);
+
+/** Variantes simples para encontrar la forma base: adjetivos (kleine → klein), plurales (Ländern → Land),
+ *  imperativos (Schreib → schreiben) y verbos conjugados (denkt → denken). */
+function candidates(k: string): string[] {
+  const out: string[] = [];
+  if (k.length < 4) return out;
+  for (const end of ["en", "em", "er", "es", "e", "n", "s"]) {
+    if (k.endsWith(end) && k.length - end.length >= 3) {
+      const base = k.slice(0, -end.length);
+      out.push(base, deUmlaut(base));
+    }
+  }
+  if (k.endsWith("ern")) out.push(deUmlaut(k.slice(0, -3)));
+  // verbos: denkt/denkst → denken, zählt → zählen; imperativo: schreib → schreiben
+  if (k.endsWith("st")) out.push(k.slice(0, -2) + "en");
+  if (k.endsWith("t")) out.push(k.slice(0, -1) + "en", k.slice(0, -1) + "n");
+  out.push(k + "en", k + "n");
+  if (k.endsWith("e")) out.push(k + "n");
+  return out;
+}
+
+/* ── Números escritos en palabras: "neunundneunzig" → 99 ── */
+const UNITS: Record<string, number> = { ein: 1, eins: 1, eine: 1, zwei: 2, drei: 3, vier: 4, fünf: 5, sechs: 6, sieben: 7, acht: 8, neun: 9 };
+const TEENS: Record<string, number> = { zehn: 10, elf: 11, zwölf: 12, dreizehn: 13, vierzehn: 14, fünfzehn: 15, sechzehn: 16, siebzehn: 17, achtzehn: 18, neunzehn: 19 };
+const TENS: Record<string, number> = { zwanzig: 20, dreißig: 30, vierzig: 40, fünfzig: 50, sechzig: 60, siebzig: 70, achtzig: 80, neunzig: 90 };
+
+function below100(s: string): number | null {
+  if (s === "") return 0;
+  if (s in UNITS) return UNITS[s];
+  if (s in TEENS) return TEENS[s];
+  if (s in TENS) return TENS[s];
+  const m = s.match(/^(.+?)und(zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)$/);
+  if (m && m[1] in UNITS) return UNITS[m[1]] + TENS[m[2]];
+  return null;
+}
+function below1000(s: string): number | null {
+  const i = s.indexOf("hundert");
+  if (i < 0) return below100(s);
+  const h = s.slice(0, i);
+  const hv = h === "" ? 1 : UNITS[h];
+  const rest = below100(s.slice(i + 7));
+  return hv && rest !== null ? hv * 100 + rest : null;
+}
+export function parseGermanNumber(word: string): number | null {
+  const s = word.toLowerCase();
+  if (s.length < 3) return null;
+  const i = s.indexOf("tausend");
+  if (i < 0) return below1000(s);
+  const t = s.slice(0, i);
+  const tv = t === "" ? 1 : below1000(t);
+  const rest = below1000(s.slice(i + 7));
+  return tv && rest !== null ? tv * 1000 + rest : null;
+}
+
 export function lookup(surface: string): Gloss | null {
-  const k = norm(surface);
-  return index.get(k) ?? index.get(k.replace(/[.,!?;:]+$/, "")) ?? null;
+  const k = norm(surface).replace(/[.,!?;:]+$/, "");
+  const direct = index.get(k);
+  if (direct) return direct;
+  const n = !k.includes(" ") && /^[a-zäöüß]+$/.test(k) ? parseGermanNumber(k) : null;
+  if (n !== null && n > 12) return { de: k, tr: { es: `número ${n.toLocaleString("es")}`, en: `number ${n.toLocaleString("en")}` } };
+  if (k.includes(" ")) return null;
+  for (const c of candidates(k)) {
+    const g = index.get(c);
+    if (g) return g;
+  }
+  return null;
 }
 
 export function maxPhraseWords() {

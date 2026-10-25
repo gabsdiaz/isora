@@ -130,7 +130,7 @@ type Token = { text: string; word: boolean };
 
 function tokenize(s: string): Token[] {
   const out: Token[] = [];
-  const re = /[A-Za-zÄÖÜäöüßéÉ][A-Za-zÄÖÜäöüßéÉ'’-]*/g;
+  const re = /\p{L}[\p{L}'’-]*/gu;
   let last = 0;
   for (const m of s.matchAll(re)) {
     if (m.index! > last) out.push({ text: s.slice(last, m.index), word: false });
