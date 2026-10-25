@@ -10,12 +10,12 @@ import { ARTICLE_BG, Progress, ResultCard, headword, sample, shuffle, stars } fr
 
 /* Casillas de la ruleta */
 const SEGMENTS = [
-  { id: "bild", de: "Was ist das?", emoji: "🖼️", color: "#940d00" },
-  { id: "sprich", de: "Sprich!", emoji: "🗣️", color: "#c08a3e" },
-  { id: "artikel", de: "der, die, das?", emoji: "🎯", color: "#2f5d8a" },
-  { id: "hoer", de: "Hör zu!", emoji: "🎧", color: "#5f7a5a" },
-  { id: "uebersetze", de: "Übersetze!", emoji: "🔤", color: "#7b5a45" },
-  { id: "joker", de: "Joker!", emoji: "⭐", color: "#b3200f" },
+  { id: "bild", de: "Was ist das?", emoji: "🖼️", color: "#940d00", text: "#fbf9f4" },
+  { id: "sprich", de: "Sprich!", emoji: "🗣️", color: "#f3ead9", text: "#940d00" },
+  { id: "artikel", de: "der, die, das?", emoji: "🎯", color: "#6b4a3a", text: "#fbf9f4" },
+  { id: "hoer", de: "Hör zu!", emoji: "🎧", color: "#e8d9c2", text: "#4a3326" },
+  { id: "uebersetze", de: "Übersetze!", emoji: "🔤", color: "#940d00", text: "#fbf9f4" },
+  { id: "joker", de: "Joker!", emoji: "⭐", color: "#c08a3e", text: "#fbf9f4" },
 ] as const;
 type SegId = (typeof SEGMENTS)[number]["id"];
 
@@ -119,7 +119,7 @@ export function Wheel({ theme, onRestart }: { theme: Theme; onRestart: () => voi
       <div className="mt-4 grid items-center gap-6 md:grid-cols-[1fr_1.1fr]">
         {/* La ruleta */}
         <div className="relative mx-auto aspect-square w-full max-w-[320px]">
-          <div className="absolute left-1/2 top-[-6px] z-10 -translate-x-1/2 text-3xl text-ink drop-shadow" aria-hidden="true">
+          <div className="absolute left-1/2 top-[-6px] z-10 -translate-x-1/2 text-3xl text-wine drop-shadow" aria-hidden="true">
             ▼
           </div>
           <svg
@@ -133,19 +133,23 @@ export function Wheel({ theme, onRestart }: { theme: Theme; onRestart: () => voi
               const mid = i * SLICE + SLICE / 2;
               return (
                 <g key={s.id}>
-                  <path d={`M0 0 L${96 * Math.cos(a0)} ${96 * Math.sin(a0)} A96 96 0 0 1 ${96 * Math.cos(a1)} ${96 * Math.sin(a1)} Z`} fill={s.color} stroke="#fbf9f4" strokeWidth="2" />
+                  <path d={`M0 0 L${96 * Math.cos(a0)} ${96 * Math.sin(a0)} A96 96 0 0 1 ${96 * Math.cos(a1)} ${96 * Math.sin(a1)} Z`} fill={s.color} stroke="#fbf9f4" strokeWidth="1.5" />
                   <g transform={`rotate(${mid}) translate(0 -62)`}>
                     <text textAnchor="middle" fontSize="20" y="4">
                       {s.emoji}
                     </text>
-                    <text textAnchor="middle" fontSize="9" y="22" fill="#fbf9f4" fontWeight="600">
+                    <text textAnchor="middle" fontSize="9" y="22" fill={s.text} fontWeight="600">
                       {s.de}
                     </text>
                   </g>
                 </g>
               );
             })}
-            <circle r="16" fill="#fbf9f4" stroke="#2e2019" strokeWidth="2" />
+            <circle r="97" fill="none" stroke="#4a3326" strokeWidth="2.5" />
+            {SEGMENTS.map((s, i) => (
+              <circle key={s.id} cx={0} cy={-97} r="2.2" fill="#fbf9f4" transform={`rotate(${i * SLICE})`} />
+            ))}
+            <circle r="16" fill="#fbf9f4" stroke="#4a3326" strokeWidth="2" />
           </svg>
           <button
             type="button"
