@@ -1,6 +1,7 @@
 import type { Tr, VocabEntry } from "../types";
 import { commonVocab } from "./common";
 import { allUnits } from "./units";
+import { STORIES, STORY_WORDS } from "./stories";
 
 /**
  * Diccionario para "tocar una palabra".
@@ -44,6 +45,10 @@ for (const unit of allUnits) {
 }
 // 2) léxico común: solo rellena lo que falte
 for (const v of commonVocab) register(v, undefined, false);
+// 3) palabras de las Geschichten
+for (const story of STORIES)
+  for (const [de, es, en, article] of story.glossary) register({ de, tr: { es, en }, article }, undefined, false);
+for (const [de, es, en, article] of STORY_WORDS) register({ de, tr: { es, en }, article }, undefined, false);
 
 const UMLAUT: Record<string, string> = { ä: "a", ö: "o", ü: "u" };
 const deUmlaut = (s: string) => s.replace(/[äöü](?=[^äöü]*$)/, (c) => UMLAUT[c]);

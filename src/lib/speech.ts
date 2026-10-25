@@ -93,3 +93,12 @@ export function speakGerman(text: string, voice: Voice = "m"): Promise<void> {
     });
   });
 }
+
+/** Detiene cualquier audio en curso (por ejemplo al salir de una historia). */
+export function stopSpeech() {
+  if (typeof window === "undefined") return;
+  const a = current;
+  current = null;
+  a?.pause();
+  window.speechSynthesis?.cancel();
+}

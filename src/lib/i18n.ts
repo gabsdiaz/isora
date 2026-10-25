@@ -58,6 +58,16 @@ const strings = {
   myCards: { de: "Meine Karten", es: "Mis flashcards", en: "My flashcards" },
   learn: { de: "Lernen", es: "Aprender", en: "Learn" },
   games: { de: "Spiele", es: "Juegos", en: "Games" },
+  stories: { de: "Geschichten", es: "Historias", en: "Stories" },
+  storiesBody: {
+    de: "Kurze, lustige Geschichten zum Lesen und Hören. Tippe auf ein Wort, wenn du es nicht kennst.",
+    es: "Historias cortas y divertidas para leer y escuchar. Toca una palabra si no la conoces.",
+    en: "Short, fun stories to read and listen to. Tap a word if you don't know it.",
+  },
+  listenStory: { de: "Geschichte anhören", es: "Escuchar la historia", en: "Listen to the story" },
+  showTranslation: { de: "Alles übersetzen", es: "Traducir todo", en: "Translate all" },
+  hideTranslation: { de: "Übersetzung ausblenden", es: "Ocultar traducción", en: "Hide translation" },
+  nextStory: { de: "Nächste Geschichte", es: "Siguiente historia", en: "Next story" },
   lessons: { de: "Unterricht", es: "Clases 1:1", en: "1:1 lessons" },
   lessonTitle: { de: "Einzelunterricht", es: "Clases uno a uno", en: "One-to-one lessons" },
   lessonQuestion: {

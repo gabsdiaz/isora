@@ -68,6 +68,19 @@ export default function Dashboard() {
 
       <CardsTile />
       <Link
+        href="/aprender/geschichten"
+        className="mt-4 flex items-center justify-between gap-4 rounded-3xl border border-line bg-paper p-5 transition hover:border-cocoa-light hover:shadow-md hover:shadow-espresso/10"
+      >
+        <div className="flex items-center gap-4">
+          <span className="text-3xl" aria-hidden="true">📚</span>
+          <div>
+            <p className="font-display text-xl text-wine">{g("stories")}</p>
+            <p className="text-sm text-muted">Der Kaffee-Dieb · Oma Hilde und das Handy · Pizza um Mitternacht …</p>
+          </div>
+        </div>
+        <span className="shrink-0 rounded-full bg-wine px-4 py-2 text-sm font-medium text-cream">Lesen →</span>
+      </Link>
+      <Link
         href="/aprender/spiele"
         className="mt-4 flex items-center justify-between gap-4 rounded-3xl border border-line bg-paper p-5 transition hover:border-cocoa-light hover:shadow-md hover:shadow-espresso/10"
       >

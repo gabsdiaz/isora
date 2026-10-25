@@ -4,6 +4,8 @@
  */
 import { allUnits } from "../src/content/de/units";
 import { commonVocab } from "../src/content/de/common";
+import { STORIES } from "../src/content/de/stories";
+import { THEMES } from "../src/content/de/themes";
 import { audioKey, normalizeSpeech } from "../src/lib/speech";
 import type { Voice } from "../src/content/types";
 
@@ -30,4 +32,7 @@ for (const u of allUnits) {
   }
 }
 commonVocab.forEach((v) => add(head(v)));
+// Geschichten (narradora "f", personajes con su voz) y preguntas de la ruleta
+for (const s of STORIES) for (const sc of s.scenes) for (const l of sc.lines) add(l.de, l.who ? (s.voices[l.who] ?? "m") : "f");
+for (const t of THEMES) t.questions.forEach((q) => add(q.de, "f"));
 console.log(JSON.stringify([...out.entries()].map(([key, v]) => ({ key, ...v }))));
