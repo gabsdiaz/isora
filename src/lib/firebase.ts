@@ -1,5 +1,5 @@
 import { initializeApp, getApps, type FirebaseApp } from "firebase/app";
-import { browserLocalPersistence, getAuth, indexedDBLocalPersistence, initializeAuth, type Auth } from "firebase/auth";
+import { browserLocalPersistence, getAuth, initializeAuth, type Auth } from "firebase/auth";
 import { getFirestore, type Firestore } from "firebase/firestore";
 
 /**
@@ -17,6 +17,7 @@ const config = {
 };
 
 export const firebaseEnabled = Boolean(config.apiKey && config.authDomain && config.projectId);
+export const firebaseApiKey = config.apiKey ?? "";
 
 /** ID de cliente web de Google (Credenciales de Google Cloud). Es público: va en el navegador. */
 export const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "412381183744-p7u847fisobeloafo2kad3p2a8qprdld.apps.googleusercontent.com";
@@ -53,7 +54,8 @@ export function getFirebase() {
       } catch {
         /* sin sessionStorage */
       }
-      auth = initializeAuth(app, { persistence: [indexedDBLocalPersistence, browserLocalPersistence] });
+      // localStorage en vez de IndexedDB (en algunos celulares IndexedDB se cuelga al abrir)
+      auth = initializeAuth(app, { persistence: browserLocalPersistence });
     } else {
       auth = getAuth(app);
     }

@@ -7,6 +7,7 @@ import { useT } from "@/lib/i18n";
 import { Logo } from "@/components/Logo";
 import { FullPageLoader } from "@/components/AppShell";
 import { GoogleButton } from "@/components/GoogleButton";
+import { LoginDiagnosis } from "@/components/LoginDiagnosis";
 import { GOOGLE_CLIENT_ID, firebaseEnabled, isMobileDevice } from "@/lib/firebase";
 
 /** Navegadores internos de apps (Instagram, Facebook, TikTok…): Google no permite iniciar sesión ahí. */
@@ -104,6 +105,7 @@ export default function Landing() {
                 {error ?? "No se pudo iniciar sesión. Intenta de nuevo."} {authError && <span className="text-xs text-muted">({authError})</span>}
               </p>
             )}
+            {mobileGoogle && (error || authError) && <LoginDiagnosis />}
             {inApp && (
               <p className="max-w-sm rounded-2xl bg-yellow-soft px-4 py-3 text-sm text-ink">
                 Para iniciar sesión con Google, abre este enlace en <b>Chrome</b> o <b>Safari</b> (menú ⋯ → «Abrir en el navegador»).
