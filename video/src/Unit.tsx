@@ -16,6 +16,7 @@ import {
   TipScene,
   TitleScene,
   TryScene,
+  WordsScene,
   type Meta,
   type SceneData,
 } from "./scenes";
@@ -61,6 +62,8 @@ function SceneSwitch({ scene, meta }: { scene: SceneData; meta: Meta }) {
       return <DialogueScene scene={scene} />;
     case "try":
       return <TryScene scene={scene} />;
+    case "words":
+      return <WordsScene scene={scene} />;
     case "recap":
       return <RecapScene scene={scene} />;
     default:

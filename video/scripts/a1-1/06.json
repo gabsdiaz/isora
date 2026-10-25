@@ -1,0 +1,452 @@
+{
+  "key": "de/a1-1/06",
+  "level": "A1.1",
+  "number": 6,
+  "title": "Berufe",
+  "subtitle": "Was bist du von Beruf?",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "💼",
+        "👨‍🍳",
+        "💻"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute sprechen wir über Berufe.",
+          "es": "¡Hola! Hoy hablamos de profesiones.",
+          "en": "Hi! Today we talk about jobs."
+        },
+        {
+          "lang": "de",
+          "text": "Was bist du von Beruf?",
+          "es": "¿A qué te dedicas?",
+          "en": "What do you do for a living?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Berufe",
+      "gloss": "profesiones",
+      "items": [
+        {
+          "de": "der Arzt",
+          "es": "el médico",
+          "at": 1,
+          "icon": "👨‍⚕️"
+        },
+        {
+          "de": "der Koch",
+          "es": "el cocinero",
+          "at": 2,
+          "icon": "👨‍🍳"
+        },
+        {
+          "de": "der Lehrer",
+          "es": "el profesor",
+          "at": 3,
+          "icon": "👨‍🏫"
+        },
+        {
+          "de": "der Kellner",
+          "es": "el mesero",
+          "at": 4,
+          "icon": "🤵"
+        },
+        {
+          "de": "der Student",
+          "es": "el estudiante",
+          "at": 5,
+          "icon": "🧑‍🎓"
+        },
+        {
+          "de": "der Friseur",
+          "es": "el peluquero",
+          "at": 6,
+          "icon": "💇"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hier sind ein paar Berufe:",
+          "es": "Aquí hay algunas profesiones:",
+          "en": "Here are a few jobs:"
+        },
+        {
+          "lang": "de",
+          "text": "der Arzt",
+          "es": "el médico",
+          "en": "the doctor"
+        },
+        {
+          "lang": "de",
+          "text": "der Koch",
+          "es": "el cocinero",
+          "en": "the cook"
+        },
+        {
+          "lang": "de",
+          "text": "der Lehrer",
+          "es": "el profesor",
+          "en": "the teacher"
+        },
+        {
+          "lang": "de",
+          "text": "der Kellner",
+          "es": "el mesero",
+          "en": "the waiter"
+        },
+        {
+          "lang": "de",
+          "text": "der Student",
+          "es": "el estudiante",
+          "en": "the student"
+        },
+        {
+          "lang": "de",
+          "text": "der Friseur",
+          "es": "el peluquero",
+          "en": "the hairdresser"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Was bist du von Beruf?",
+      "gloss": "¿a qué te dedicas?",
+      "sticker": "💼",
+      "lines": [
+        {
+          "de": "Ich bin Lehrer.",
+          "es": "Soy profesor.",
+          "mark": "Lehrer",
+          "at": 1
+        },
+        {
+          "de": "Ich bin Ärztin.",
+          "es": "Soy médica.",
+          "mark": "Ärztin",
+          "at": 4
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Was bist du von Beruf? Hör zu:",
+          "es": "¿A qué te dedicas? Escucha:",
+          "en": "What do you do? Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich bin Lehrer.",
+          "es": "Soy profesor.",
+          "en": "I'm a teacher.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Achtung: ohne Artikel! Nicht: ein Lehrer.",
+          "es": "¡Ojo: sin artículo! No: ein Lehrer.",
+          "en": "Careful: no article! Not: ein Lehrer."
+        },
+        {
+          "lang": "de",
+          "text": "Und eine Frau sagt:",
+          "es": "Y una mujer dice:",
+          "en": "And a woman says:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich bin Ärztin.",
+          "es": "Soy médica.",
+          "en": "I'm a doctor.",
+          "voice": "f"
+        }
+      ],
+      "notes": [
+        {
+          "text": "kein Artikel!",
+          "at": 2
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "heading": "-in",
+      "left": {
+        "title": "er",
+        "icon": "👨‍🏫",
+        "gloss": "él",
+        "example": "der Lehrer",
+        "at": 1
+      },
+      "right": {
+        "title": "sie",
+        "icon": "👩‍🏫",
+        "gloss": "ella",
+        "example": "die Lehrerin",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Viele Berufe haben zwei Formen. Für einen Mann:",
+          "es": "Muchas profesiones tienen dos formas. Para un hombre:",
+          "en": "Many jobs have two forms. For a man:"
+        },
+        {
+          "lang": "de",
+          "text": "der Lehrer",
+          "es": "el profesor",
+          "en": "the (male) teacher"
+        },
+        {
+          "lang": "de",
+          "text": "Für eine Frau kommt -in ans Ende:",
+          "es": "Para una mujer se agrega -in al final:",
+          "en": "For a woman, -in goes at the end:"
+        },
+        {
+          "lang": "de",
+          "text": "die Lehrerin",
+          "es": "la profesora",
+          "en": "the (female) teacher"
+        },
+        {
+          "lang": "de",
+          "text": "Genauso: der Kellner, die Kellnerin.",
+          "es": "Igual: el mesero, la mesera.",
+          "en": "The same: der Kellner, die Kellnerin."
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "arbeiten",
+      "gloss": "trabajar",
+      "rows": [
+        {
+          "p": "ich",
+          "stem": "arbeit",
+          "end": "e",
+          "at": 3
+        },
+        {
+          "p": "du",
+          "stem": "arbeit",
+          "end": "est",
+          "at": 4
+        },
+        {
+          "p": "er / sie",
+          "stem": "arbeit",
+          "end": "et",
+          "at": 5
+        },
+        {
+          "p": "wir",
+          "stem": "arbeit",
+          "end": "en",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wo arbeitest du? Hör zu:",
+          "es": "¿Dónde trabajas? Escucha:",
+          "en": "Where do you work? Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich arbeite im Krankenhaus.",
+          "es": "Trabajo en el hospital.",
+          "en": "I work at the hospital.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Bei arbeiten brauchen wir ein extra e:",
+          "es": "Con arbeiten necesitamos una e extra:",
+          "en": "With arbeiten we need an extra e:"
+        },
+        {
+          "lang": "de",
+          "text": "ich arbeite",
+          "es": "yo trabajo",
+          "en": "I work"
+        },
+        {
+          "lang": "de",
+          "text": "du arbeitest",
+          "es": "tú trabajas",
+          "en": "you work"
+        },
+        {
+          "lang": "de",
+          "text": "er arbeitet, sie arbeitet",
+          "es": "él trabaja, ella trabaja",
+          "en": "he works, she works"
+        },
+        {
+          "lang": "de",
+          "text": "wir arbeiten",
+          "es": "nosotros trabajamos",
+          "en": "we work"
+        }
+      ],
+      "side": "← extra e",
+      "example": {
+        "de": "Ich arbeite im Krankenhaus.",
+        "es": "Trabajo en el hospital.",
+        "at": 1
+      },
+      "sticker": "🏥"
+    },
+    {
+      "type": "dialogue",
+      "heading": "Was machen Sie?",
+      "people": {
+        "Herr Braun": {
+          "icon": "🧔",
+          "voice": "m"
+        },
+        "Frau Kim": {
+          "icon": "👩",
+          "voice": "f"
+        }
+      },
+      "lines": [
+        {
+          "who": "Herr Braun",
+          "de": "Was sind Sie von Beruf?",
+          "at": 1
+        },
+        {
+          "who": "Frau Kim",
+          "de": "Ich bin Programmiererin.",
+          "at": 2
+        },
+        {
+          "who": "Herr Braun",
+          "de": "Wo arbeiten Sie?",
+          "at": 3
+        },
+        {
+          "who": "Frau Kim",
+          "de": "Bei Siemens. Und Sie?",
+          "at": 4
+        },
+        {
+          "who": "Herr Braun",
+          "de": "Ich bin Koch.",
+          "at": 5
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Herr Braun und Frau Kim.",
+          "es": "Escucha: el señor Braun y la señora Kim.",
+          "en": "Listen: Mr Braun and Ms Kim."
+        },
+        {
+          "lang": "de",
+          "text": "Was sind Sie von Beruf?",
+          "es": "¿A qué se dedica usted?",
+          "en": "What do you do for a living?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich bin Programmiererin.",
+          "es": "Soy programadora.",
+          "en": "I'm a programmer.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Wo arbeiten Sie?",
+          "es": "¿Dónde trabaja?",
+          "en": "Where do you work?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Bei Siemens. Und Sie?",
+          "es": "En Siemens. ¿Y usted?",
+          "en": "At Siemens. And you?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich bin Koch.",
+          "es": "Soy cocinero.",
+          "en": "I'm a cook.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich bin …\nIch arbeite …",
+      "pause": 7,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Was bist du von Beruf? Wo arbeitest du? Oder was studierst du?",
+          "es": "¡Ahora tú! ¿A qué te dedicas? ¿Dónde trabajas? ¿O qué estudias?",
+          "en": "Now you! What do you do? Where do you work? Or what do you study?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Ich bin Lehrer. (ohne ein!)",
+          "at": 1
+        },
+        {
+          "text": "der Lehrer · die Lehrerin",
+          "at": 1
+        },
+        {
+          "text": "ich arbeite · du arbeitest",
+          "at": 1
+        },
+        {
+          "text": "Was sind Sie von Beruf?",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du sprichst über Berufe und sagst, wo du arbeitest.",
+          "es": "Hablas de profesiones y dices dónde trabajas.",
+          "en": "You talk about jobs and say where you work."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

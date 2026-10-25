@@ -1,0 +1,396 @@
+{
+  "key": "de/a1-1/18",
+  "level": "A1.1",
+  "number": 18,
+  "title": "Meine Wohnung",
+  "subtitle": "Zimmer und Möbel",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🏠",
+        "🛋️",
+        "🔑"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute zeige ich dir meine Wohnung.",
+          "es": "¡Hola! Hoy te muestro mi apartamento.",
+          "en": "Hi! Today I'll show you my flat."
+        },
+        {
+          "lang": "de",
+          "text": "Welche Zimmer gibt es? Wie ist sie?",
+          "es": "¿Qué habitaciones hay? ¿Cómo es?",
+          "en": "Which rooms are there? What is it like?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Die Wohnung",
+      "gloss": "el apartamento",
+      "items": [
+        {
+          "de": "das Wohnzimmer",
+          "es": "la sala",
+          "at": 1,
+          "icon": "🛋️"
+        },
+        {
+          "de": "das Schlafzimmer",
+          "es": "la habitación",
+          "at": 2,
+          "icon": "🛏️"
+        },
+        {
+          "de": "die Küche",
+          "es": "la cocina",
+          "at": 3,
+          "icon": "🍳"
+        },
+        {
+          "de": "das Bad",
+          "es": "el baño",
+          "at": 4,
+          "icon": "🛁"
+        },
+        {
+          "de": "der Flur",
+          "es": "el pasillo",
+          "at": 5,
+          "icon": "🚪"
+        },
+        {
+          "de": "der Garten",
+          "es": "el jardín",
+          "at": 6,
+          "icon": "🌳"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Das ist meine Wohnung. Hör zu:",
+          "es": "Este es mi apartamento. Escucha:",
+          "en": "This is my flat. Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "das Wohnzimmer",
+          "es": "la sala",
+          "en": "the living room"
+        },
+        {
+          "lang": "de",
+          "text": "das Schlafzimmer",
+          "es": "la habitación",
+          "en": "the bedroom"
+        },
+        {
+          "lang": "de",
+          "text": "die Küche",
+          "es": "la cocina",
+          "en": "the kitchen"
+        },
+        {
+          "lang": "de",
+          "text": "das Bad",
+          "es": "el baño",
+          "en": "the bathroom"
+        },
+        {
+          "lang": "de",
+          "text": "der Flur",
+          "es": "el pasillo",
+          "en": "the hallway"
+        },
+        {
+          "lang": "de",
+          "text": "der Garten",
+          "es": "el jardín",
+          "en": "the garden"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Es gibt …",
+      "gloss": "hay…",
+      "sticker": "🏠",
+      "lines": [
+        {
+          "de": "Es gibt einen Balkon.",
+          "es": "Hay un balcón.",
+          "mark": "einen",
+          "at": 1
+        },
+        {
+          "de": "Es gibt keinen Garten.",
+          "es": "No hay jardín.",
+          "mark": "keinen",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Was gibt es in der Wohnung? Hör zu:",
+          "es": "¿Qué hay en el apartamento? Escucha:",
+          "en": "What is there in the flat? Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "Es gibt einen Balkon.",
+          "es": "Hay un balcón.",
+          "en": "There is a balcony.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Nach es gibt kommt der Akkusativ: einen, eine, ein.",
+          "es": "Después de es gibt viene el acusativo: einen, eine, ein.",
+          "en": "After es gibt comes the accusative: einen, eine, ein."
+        },
+        {
+          "lang": "de",
+          "text": "Es gibt keinen Garten.",
+          "es": "No hay jardín.",
+          "en": "There is no garden.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Schade!",
+          "es": "¡Qué pena!",
+          "en": "What a pity!"
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "heading": "Wie ist die Wohnung?",
+      "left": {
+        "title": "groß",
+        "icon": "🏢",
+        "gloss": "grande",
+        "example": "Die Küche ist groß.",
+        "at": 1
+      },
+      "right": {
+        "title": "klein",
+        "icon": "🏠",
+        "gloss": "pequeño",
+        "example": "Das Bad ist klein.",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wie ist die Wohnung? Hör zu:",
+          "es": "¿Cómo es el apartamento? Escucha:",
+          "en": "What is the flat like? Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "Die Küche ist groß.",
+          "es": "La cocina es grande.",
+          "en": "The kitchen is big.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Aber:",
+          "es": "Pero:",
+          "en": "But:"
+        },
+        {
+          "lang": "de",
+          "text": "Das Bad ist klein.",
+          "es": "El baño es pequeño.",
+          "en": "The bathroom is small.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Noch mehr Wörter: hell und dunkel, ruhig und laut.",
+          "es": "Más palabras: claro y oscuro, tranquilo y ruidoso.",
+          "en": "More words: bright and dark, quiet and loud."
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "note": "2-Zi.-Whg.\n= 2 Zimmer",
+      "sticker": "🔑",
+      "say": [
+        {
+          "lang": "de",
+          "text": "In Wohnungsanzeigen siehst du oft Abkürzungen:",
+          "es": "En los anuncios de apartamentos ves a menudo abreviaturas:",
+          "en": "In flat adverts you often see abbreviations:"
+        },
+        {
+          "lang": "de",
+          "text": "Das heißt: Zwei-Zimmer-Wohnung.",
+          "es": "Significa: apartamento de dos habitaciones.",
+          "en": "It means: two-room flat."
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Die neue Wohnung",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Mateo",
+          "de": "Wie ist deine neue Wohnung?",
+          "at": 1
+        },
+        {
+          "who": "Lena",
+          "de": "Sie ist hell und ruhig.",
+          "at": 2
+        },
+        {
+          "who": "Mateo",
+          "de": "Wie viele Zimmer hat sie?",
+          "at": 3
+        },
+        {
+          "who": "Lena",
+          "de": "Zwei – und einen Balkon!",
+          "at": 4
+        },
+        {
+          "who": "Mateo",
+          "de": "Toll! Ist sie teuer?",
+          "at": 5
+        },
+        {
+          "who": "Lena",
+          "de": "Nein, sie ist günstig.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena hat eine neue Wohnung.",
+          "es": "Escucha: Lena tiene un apartamento nuevo.",
+          "en": "Listen: Lena has a new flat."
+        },
+        {
+          "lang": "de",
+          "text": "Wie ist deine neue Wohnung?",
+          "es": "¿Cómo es tu nuevo apartamento?",
+          "en": "What's your new flat like?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Sie ist hell und ruhig.",
+          "es": "Es claro y tranquilo.",
+          "en": "It's bright and quiet.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Wie viele Zimmer hat sie?",
+          "es": "¿Cuántas habitaciones tiene?",
+          "en": "How many rooms does it have?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Zwei – und einen Balkon!",
+          "es": "Dos… ¡y un balcón!",
+          "en": "Two – and a balcony!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Toll! Ist sie teuer?",
+          "es": "¡Genial! ¿Es caro?",
+          "en": "Great! Is it expensive?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Nein, sie ist günstig.",
+          "es": "No, está a buen precio.",
+          "en": "No, it's affordable.",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Meine Wohnung ist …\nEs gibt …",
+      "pause": 8,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Beschreib deine Wohnung. Was gibt es? Wie ist sie?",
+          "es": "¡Ahora tú! Describe tu apartamento. ¿Qué hay? ¿Cómo es?",
+          "en": "Now you! Describe your flat. What is there? What is it like?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "das Wohnzimmer · die Küche · das Bad",
+          "at": 1
+        },
+        {
+          "text": "Es gibt einen Balkon.",
+          "at": 1
+        },
+        {
+          "text": "groß · klein · hell · ruhig",
+          "at": 1
+        },
+        {
+          "text": "2-Zi.-Whg. = 2 Zimmer",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du beschreibst deine Wohnung: die Zimmer und wie sie ist.",
+          "es": "Describes tu apartamento: las habitaciones y cómo es.",
+          "en": "You describe your flat: the rooms and what it's like."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

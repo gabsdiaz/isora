@@ -88,6 +88,9 @@ export function TimelineScene({ scene }: { scene: SceneData }) {
   const x1 = 1130;
   const y = 400;
   const step = (x1 - x0) / items.length;
+  const n = items.length;
+  const size = scene.size ?? (n <= 4 ? 44 : n === 5 ? 38 : n === 6 ? 34 : 30);
+  const icon = Math.min(100, step - 24);
   const playing = activeSeg(scene, frame);
   return (
     <>
@@ -99,12 +102,12 @@ export function TimelineScene({ scene }: { scene: SceneData }) {
         const on = playing === it.at;
         return (
           <React.Fragment key={it.de}>
-            <div style={{ position: "absolute", left: cx - 50, top: y - 140 }}>
-              <Sticker emoji={it.icon} start={at - 6} size={100} rotate={i % 2 ? 6 : -6} />
+            <div style={{ position: "absolute", left: cx - icon / 2, top: y - 40 - icon }}>
+              <Sticker emoji={it.icon} start={at - 6} size={icon} rotate={i % 2 ? 6 : -6} />
             </div>
             <RoughEllipse cx={cx} cy={y} w={18} h={18} start={at - 4} fill={C.red} fillStyle="solid" stroke={C.red} />
             <div style={{ position: "absolute", left: cx - step / 2, width: step, top: y + 30, textAlign: "center" }}>
-              <Write start={at} size={44} dur={16} style={{ whiteSpace: "nowrap" }}>
+              <Write start={at} size={size} dur={16} style={{ whiteSpace: "nowrap" }}>
                 {on ? <Marker start={at}>{it.de}</Marker> : it.de}
               </Write>
               <Gloss start={at + 14} size={22}>
@@ -128,7 +131,7 @@ export function TipScene({ scene }: { scene: SceneData }) {
     <>
       <div style={{ position: "absolute", left: 370, top: 170 }}>
         <PostIt start={8} w={540} rotate={-3 + wiggle * 0.3}>
-          <div style={{ fontFamily: HAND, fontSize: 84, fontWeight: 700, color: C.ink, textAlign: "center" }}>{scene.note}</div>
+          <div style={{ fontFamily: HAND, fontSize: scene.size ?? 84, fontWeight: 700, color: C.ink, textAlign: "center", whiteSpace: "pre-line", lineHeight: 1.1 }}>{scene.note}</div>
         </PostIt>
       </div>
       {scene.sticker && (
@@ -184,7 +187,7 @@ export function SentenceScene({ scene }: { scene: SceneData }) {
       {notes.map((n, i) => {
         const at = segFrom(scene, n.at) + i * 40;
         return (
-          <div key={n.text} style={{ position: "absolute", left: 860, top: 250 + i * 70 }}>
+          <div key={n.text} style={{ position: "absolute", left: scene.notesX ?? 860, top: 250 + i * 70 }}>
             <RoughLine x1={-20} y1={22} x2={-90 + i * 30} y2={40 + i * 10} start={at} arrow stroke={C.pencil} strokeWidth={2} />
             <Write start={at + 6} size={42} color={C.blue} dur={14}>
               {n.text}
@@ -200,13 +203,17 @@ export function SentenceScene({ scene }: { scene: SceneData }) {
 
 export function ConjugationScene({ scene }: { scene: SceneData }) {
   const frame = useCurrentFrame();
-  const rows = scene.rows as { p: string; stem: string; end: string; at: number }[];
-  const ex = scene.example as { de: string; es: string; at: number };
+  const rows = scene.rows as { p: string; stem: string; end: string; rest?: string; at: number }[];
+  const ex = scene.example as { de: string; es: string; at: number } | undefined;
   const playing = activeSeg(scene, frame);
-  const tx = 360;
-  const ty = 345;
-  const rowH = 82;
-  const tableStart = segFrom(scene, 2);
+  const tx: number = scene.tx ?? 360;
+  const ty = ex ? 345 : 215;
+  const w: number = scene.w ?? 520;
+  const pw: number = scene.pw ?? 150;
+  const size: number = scene.size ?? 64;
+  const rowH = Math.round(size * 1.28);
+  const tableStart = segFrom(scene, scene.tableAt ?? 2);
+  const side: string = scene.side ?? "← nur das Ende\n    ändert sich";
   return (
     <>
       <Heading text={scene.heading} gloss={scene.gloss} />
@@ -215,42 +222,105 @@ export function ConjugationScene({ scene }: { scene: SceneData }) {
           <Sticker emoji={scene.sticker} start={10} size={110} rotate={-8} />
         </div>
       )}
-      <div style={{ position: "absolute", left: 170, top: 225 }}>
-        <Write start={segFrom(scene, ex.at) - 4} size={62} dur={20}>
-          {ex.de}
-          <SoundWaves on={playing === ex.at} />
-        </Write>
-        <Gloss start={segFrom(scene, ex.at) + 18} size={26}>
-          {ex.es}
-        </Gloss>
-      </div>
-      <RoughBox x={tx} y={ty} w={520} h={rows.length * rowH + 24} start={tableStart} dur={22} stroke={C.inkSoft} />
-      <RoughLine x1={tx + 150} y1={ty + 14} x2={tx + 150} y2={ty + rows.length * rowH + 10} start={tableStart + 14} stroke={C.inkSoft} strokeWidth={2} />
+      {ex && (
+        <div style={{ position: "absolute", left: 170, top: 225 }}>
+          <Write start={segFrom(scene, ex.at) - 4} size={62} dur={20}>
+            {ex.de}
+            <SoundWaves on={playing === ex.at} />
+          </Write>
+          <Gloss start={segFrom(scene, ex.at) + 18} size={26}>
+            {ex.es}
+          </Gloss>
+        </div>
+      )}
+      <RoughBox x={tx} y={ty} w={w} h={rows.length * rowH + 24} start={tableStart} dur={22} stroke={C.inkSoft} />
+      <RoughLine x1={tx + pw} y1={ty + 14} x2={tx + pw} y2={ty + rows.length * rowH + 10} start={tableStart + 14} stroke={C.inkSoft} strokeWidth={2} />
       {rows.map((r, i) => {
         const at = segFrom(scene, r.at);
         const y = ty + 16 + i * rowH;
         return (
-          <React.Fragment key={r.p}>
-            <div style={{ position: "absolute", left: tx + 30, top: y + 8, fontFamily: PRINT, fontSize: 40, color: C.pencil, opacity: prog(frame, at - 6, 10) }}>{r.p}</div>
-            <div style={{ position: "absolute", left: tx + 190, top: y }}>
-              <Write start={at - 4} size={64} dur={14}>
+          <React.Fragment key={r.p + i}>
+            <div style={{ position: "absolute", left: tx + 26, width: pw - 36, top: y + 8 + (size - 64) * 0.3, fontFamily: PRINT, fontSize: 40, color: C.pencil, whiteSpace: "nowrap", opacity: prog(frame, at - 6, 10) }}>{r.p}</div>
+            <div style={{ position: "absolute", left: tx + pw + 40, top: y }}>
+              <Write start={at - 4} size={size} dur={14} style={{ whiteSpace: "pre" }}>
                 {r.stem}
                 <span style={{ color: C.red }}>
                   <Marker start={at + 12} color={C.markerPeach}>
                     {r.end}
                   </Marker>
                 </span>
+                {r.rest}
               </Write>
             </div>
-            {i > 0 && <RoughLine x1={tx + 14} y1={y - 4} x2={tx + 506} y2={y - 2} start={at - 8} stroke={C.rule} strokeWidth={2} />}
+            {i > 0 && <RoughLine x1={tx + 14} y1={y - 4} x2={tx + w - 14} y2={y - 2} start={at - 8} stroke={C.rule} strokeWidth={2} />}
           </React.Fragment>
         );
       })}
-      <div style={{ position: "absolute", left: tx + 560, top: ty + 30 }}>
-        <Write start={segFrom(scene, rows[0]?.at ?? 0) + 10} size={40} color={C.blue} dur={16}>
-          {"← nur das Ende\n    cambia"}
-        </Write>
-      </div>
+      {side && (
+        <div style={{ position: "absolute", left: tx + w + 40, top: ty + 30 }}>
+          <Write start={segFrom(scene, rows[0]?.at ?? 0) + 10} size={40} color={C.blue} dur={16}>
+            {side}
+          </Write>
+        </div>
+      )}
+    </>
+  );
+}
+
+/* ───────────── Diccionario ilustrado: tarjetas con dibujo y palabra ───────────── */
+
+const ART: Record<string, string> = { der: C.blue, die: C.red, das: C.green };
+
+export function WordsScene({ scene }: { scene: SceneData }) {
+  const frame = useCurrentFrame();
+  const items = scene.items as { de: string; es: string; icon?: string; big?: string; at: number }[];
+  const n = items.length;
+  const cols = n <= 3 ? n : n === 4 ? 2 : 3;
+  const rows = Math.ceil(n / cols);
+  const w = cols === 2 ? 380 : 300;
+  const h = rows === 1 ? 270 : 222;
+  const gx = 36;
+  const gy = 26;
+  const totalW = cols * w + (cols - 1) * gx;
+  const totalH = rows * h + (rows - 1) * gy;
+  const x0 = 690 - totalW / 2;
+  const y0 = 182 + (500 - totalH) / 2;
+  const playing = activeSeg(scene, frame);
+  return (
+    <>
+      <Heading text={scene.heading} gloss={scene.gloss} />
+      {items.map((it, i) => {
+        const at = segFrom(scene, it.at);
+        const x = x0 + (i % cols) * (w + gx);
+        const y = y0 + Math.floor(i / cols) * (h + gy);
+        const on = playing === it.at;
+        const m = it.de.match(/^(der|die|das) (.+)$/);
+        const fs = Math.min(46, Math.floor((w - 30) / (Math.max(it.de.length, 8) * 0.43)));
+        return (
+          <React.Fragment key={i}>
+            <RoughBox x={x} y={y} w={w} h={h} start={at - 8} dur={12} stroke={on ? C.red : C.inkSoft} strokeWidth={on ? 3 : 2} fill="#fffdf7" fillStyle="solid" seed={i + 21} />
+            <div style={{ position: "absolute", left: x, top: y + 16, width: w, display: "flex", flexDirection: "column", alignItems: "center", opacity: prog(frame, at - 6, 8) }}>
+              {it.icon ? (
+                <Sticker emoji={it.icon} start={at - 4} size={rows === 1 ? 110 : 88} rotate={i % 2 ? 5 : -5} float={false} />
+              ) : (
+                <div style={{ fontFamily: HAND, fontSize: 86, fontWeight: 700, color: C.red, lineHeight: 1.05 }}>{it.big}</div>
+              )}
+              <Write start={at} size={fs} dur={12} style={{ whiteSpace: "nowrap", marginTop: 2 }}>
+                {m ? (
+                  <>
+                    <span style={{ color: ART[m[1]] }}>{m[1]}</span> {m[2]}
+                  </>
+                ) : (
+                  it.de
+                )}
+              </Write>
+              <Gloss start={at + 10} size={22}>
+                {it.es}
+              </Gloss>
+            </div>
+          </React.Fragment>
+        );
+      })}
     </>
   );
 }

@@ -1,0 +1,523 @@
+{
+  "key": "de/a1-1/04",
+  "level": "A1.1",
+  "number": 4,
+  "title": "Zahlen bis 20",
+  "subtitle": "Zahlen, Alter, Wie geht's?",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🔢",
+        "📞",
+        "🎂"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute zählen wir von null bis zwanzig.",
+          "es": "¡Hola! Hoy contamos de cero a veinte.",
+          "en": "Hi! Today we count from zero to twenty."
+        },
+        {
+          "lang": "de",
+          "text": "Und du lernst: Wie alt bist du? Wie geht's?",
+          "es": "Y aprendes: ¿Cuántos años tienes? ¿Cómo estás?",
+          "en": "And you learn: How old are you? How are you?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Zahlen",
+      "gloss": "números",
+      "items": [
+        {
+          "de": "eins",
+          "es": "uno",
+          "at": 1,
+          "big": "1"
+        },
+        {
+          "de": "zwei",
+          "es": "dos",
+          "at": 2,
+          "big": "2"
+        },
+        {
+          "de": "drei",
+          "es": "tres",
+          "at": 3,
+          "big": "3"
+        },
+        {
+          "de": "vier",
+          "es": "cuatro",
+          "at": 4,
+          "big": "4"
+        },
+        {
+          "de": "fünf",
+          "es": "cinco",
+          "at": 5,
+          "big": "5"
+        },
+        {
+          "de": "sechs",
+          "es": "seis",
+          "at": 6,
+          "big": "6"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wir zählen zusammen:",
+          "es": "Contamos juntos:",
+          "en": "Let's count together:"
+        },
+        {
+          "lang": "de",
+          "text": "eins",
+          "es": "uno",
+          "en": "one"
+        },
+        {
+          "lang": "de",
+          "text": "zwei",
+          "es": "dos",
+          "en": "two"
+        },
+        {
+          "lang": "de",
+          "text": "drei",
+          "es": "tres",
+          "en": "three"
+        },
+        {
+          "lang": "de",
+          "text": "vier",
+          "es": "cuatro",
+          "en": "four"
+        },
+        {
+          "lang": "de",
+          "text": "fünf",
+          "es": "cinco",
+          "en": "five"
+        },
+        {
+          "lang": "de",
+          "text": "sechs",
+          "es": "seis",
+          "en": "six"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Zahlen",
+      "gloss": "números",
+      "items": [
+        {
+          "de": "sieben",
+          "es": "siete",
+          "at": 1,
+          "big": "7"
+        },
+        {
+          "de": "acht",
+          "es": "ocho",
+          "at": 2,
+          "big": "8"
+        },
+        {
+          "de": "neun",
+          "es": "nueve",
+          "at": 3,
+          "big": "9"
+        },
+        {
+          "de": "zehn",
+          "es": "diez",
+          "at": 4,
+          "big": "10"
+        },
+        {
+          "de": "elf",
+          "es": "once",
+          "at": 5,
+          "big": "11"
+        },
+        {
+          "de": "zwölf",
+          "es": "doce",
+          "at": 6,
+          "big": "12"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Weiter:",
+          "es": "Seguimos:",
+          "en": "Let's go on:"
+        },
+        {
+          "lang": "de",
+          "text": "sieben",
+          "es": "siete",
+          "en": "seven"
+        },
+        {
+          "lang": "de",
+          "text": "acht",
+          "es": "ocho",
+          "en": "eight"
+        },
+        {
+          "lang": "de",
+          "text": "neun",
+          "es": "nueve",
+          "en": "nine"
+        },
+        {
+          "lang": "de",
+          "text": "zehn",
+          "es": "diez",
+          "en": "ten"
+        },
+        {
+          "lang": "de",
+          "text": "elf",
+          "es": "once",
+          "en": "eleven"
+        },
+        {
+          "lang": "de",
+          "text": "zwölf",
+          "es": "doce",
+          "en": "twelve"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "13 bis 19",
+      "gloss": "del 13 al 19",
+      "rows": [
+        {
+          "p": "13",
+          "stem": "drei",
+          "end": "zehn",
+          "at": 1
+        },
+        {
+          "p": "14",
+          "stem": "vier",
+          "end": "zehn",
+          "at": 2
+        },
+        {
+          "p": "16",
+          "stem": "sech",
+          "end": "zehn",
+          "at": 3
+        },
+        {
+          "p": "17",
+          "stem": "sieb",
+          "end": "zehn",
+          "at": 4
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Ab dreizehn ist es einfach: Zahl plus zehn.",
+          "es": "Desde el trece es fácil: número más diez.",
+          "en": "From thirteen it's easy: number plus ten."
+        },
+        {
+          "lang": "de",
+          "text": "dreizehn",
+          "es": "trece",
+          "en": "thirteen"
+        },
+        {
+          "lang": "de",
+          "text": "vierzehn",
+          "es": "catorce",
+          "en": "fourteen"
+        },
+        {
+          "lang": "de",
+          "text": "sechzehn. Achtung: ohne s!",
+          "es": "dieciséis. ¡Ojo: sin s!",
+          "en": "sixteen. Careful: no s!"
+        },
+        {
+          "lang": "de",
+          "text": "siebzehn. Achtung: ohne en!",
+          "es": "diecisiete. ¡Ojo: sin en!",
+          "en": "seventeen. Careful: no en!"
+        },
+        {
+          "lang": "de",
+          "text": "Und dann: zwanzig!",
+          "es": "Y luego: ¡veinte!",
+          "en": "And then: twenty!"
+        }
+      ],
+      "side": "zehn = 10",
+      "tableAt": 0
+    },
+    {
+      "type": "sentence",
+      "heading": "Wie alt bist du?",
+      "gloss": "¿cuántos años tienes?",
+      "sticker": "🎂",
+      "lines": [
+        {
+          "de": "Ich bin zwanzig.",
+          "es": "Tengo veinte años.",
+          "mark": "zwanzig",
+          "at": 1
+        },
+        {
+          "de": "Ich bin 18 Jahre alt.",
+          "es": "Tengo 18 años.",
+          "mark": "Jahre alt",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wie alt bist du? Hör zu:",
+          "es": "¿Cuántos años tienes? Escucha:",
+          "en": "How old are you? Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich bin zwanzig.",
+          "es": "Tengo veinte años.",
+          "en": "I'm twenty.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Oder lang:",
+          "es": "O más largo:",
+          "en": "Or the long way:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich bin achtzehn Jahre alt.",
+          "es": "Tengo dieciocho años.",
+          "en": "I'm eighteen years old.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Achtung: Auf Deutsch sagen wir sein, nicht haben!",
+          "es": "Ojo: en alemán se usa sein (ser), no haben (tener).",
+          "en": "Note: in German we use sein (to be), not haben (to have)."
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "heading": "Wie geht's?",
+      "left": {
+        "title": "gut",
+        "icon": "😀",
+        "gloss": "bien",
+        "example": "Danke, gut!",
+        "at": 1
+      },
+      "right": {
+        "title": "schlecht",
+        "icon": "😕",
+        "gloss": "mal",
+        "example": "Nicht so gut.",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wie geht's? Wenn alles gut ist, sagst du:",
+          "es": "¿Cómo estás? Si todo va bien, dices:",
+          "en": "How are you? If all is well, you say:"
+        },
+        {
+          "lang": "de",
+          "text": "Danke, gut!",
+          "es": "¡Bien, gracias!",
+          "en": "Fine, thanks!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Und wenn nicht, sagst du:",
+          "es": "Y si no, dices:",
+          "en": "And if not, you say:"
+        },
+        {
+          "lang": "de",
+          "text": "Nicht so gut.",
+          "es": "No muy bien.",
+          "en": "Not so good.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und dann fragst du: Und dir?",
+          "es": "Y luego preguntas: ¿Y tú?",
+          "en": "And then you ask: And you?"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "In der Pause",
+      "people": {
+        "Tim": {
+          "icon": "🧑",
+          "voice": "m"
+        },
+        "Paula": {
+          "icon": "👩",
+          "voice": "f"
+        }
+      },
+      "lines": [
+        {
+          "who": "Tim",
+          "de": "Hallo Paula! Wie geht's?",
+          "at": 1
+        },
+        {
+          "who": "Paula",
+          "de": "Super, danke! Und dir?",
+          "at": 2
+        },
+        {
+          "who": "Tim",
+          "de": "Es geht. Wie alt bist du?",
+          "at": 3
+        },
+        {
+          "who": "Paula",
+          "de": "Ich bin neunzehn. Und du?",
+          "at": 4
+        },
+        {
+          "who": "Tim",
+          "de": "Ich bin zwanzig.",
+          "at": 5
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Paula und Tim.",
+          "es": "Escucha: Paula y Tim.",
+          "en": "Listen: Paula and Tim."
+        },
+        {
+          "lang": "de",
+          "text": "Hallo Paula! Wie geht's?",
+          "es": "¡Hola, Paula! ¿Cómo estás?",
+          "en": "Hi Paula! How are you?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Super, danke! Und dir?",
+          "es": "¡Súper, gracias! ¿Y tú?",
+          "en": "Great, thanks! And you?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Es geht. Wie alt bist du?",
+          "es": "Más o menos. ¿Cuántos años tienes?",
+          "en": "So-so. How old are you?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich bin neunzehn. Und du?",
+          "es": "Tengo diecinueve. ¿Y tú?",
+          "en": "I'm nineteen. And you?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich bin zwanzig.",
+          "es": "Tengo veinte.",
+          "en": "I'm twenty.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Wie alt bist du?\nIch bin … Jahre alt.",
+      "pause": 6,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Wie alt bist du? Sag es laut!",
+          "es": "¡Ahora tú! ¿Cuántos años tienes? ¡Dilo en voz alta!",
+          "en": "Now you! How old are you? Say it out loud!"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "eins, zwei, drei … zwanzig",
+          "at": 1
+        },
+        {
+          "text": "dreizehn = drei + zehn",
+          "at": 1
+        },
+        {
+          "text": "Ich bin … Jahre alt.",
+          "at": 1
+        },
+        {
+          "text": "Wie geht's? – Danke, gut!",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du zählst bis zwanzig, sagst dein Alter und fragst: Wie geht's?",
+          "es": "Cuentas hasta veinte, dices tu edad y preguntas: ¿cómo estás?",
+          "en": "You count to twenty, say your age and ask: How are you?"
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

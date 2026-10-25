@@ -1,0 +1,459 @@
+{
+  "key": "de/a1-1/03",
+  "level": "A1.1",
+  "number": 3,
+  "title": "Woher kommst du?",
+  "subtitle": "Länder und Sprachen",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🌍",
+        "🗣️",
+        "✈️"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute geht es um Länder und Sprachen.",
+          "es": "¡Hola! Hoy hablamos de países e idiomas.",
+          "en": "Hi! Today is about countries and languages."
+        },
+        {
+          "lang": "de",
+          "text": "Woher kommst du? Wo wohnst du? Was sprichst du?",
+          "es": "¿De dónde eres? ¿Dónde vives? ¿Qué idiomas hablas?",
+          "en": "Where are you from? Where do you live? What do you speak?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Länder",
+      "gloss": "países",
+      "items": [
+        {
+          "de": "Kolumbien",
+          "es": "Colombia",
+          "at": 1,
+          "icon": "🇨🇴"
+        },
+        {
+          "de": "Mexiko",
+          "es": "México",
+          "at": 2,
+          "icon": "🇲🇽"
+        },
+        {
+          "de": "Spanien",
+          "es": "España",
+          "at": 3,
+          "icon": "🇪🇸"
+        },
+        {
+          "de": "Deutschland",
+          "es": "Alemania",
+          "at": 4,
+          "icon": "🇩🇪"
+        },
+        {
+          "de": "Österreich",
+          "es": "Austria",
+          "at": 5,
+          "icon": "🇦🇹"
+        },
+        {
+          "de": "die Schweiz",
+          "es": "Suiza",
+          "at": 6,
+          "icon": "🇨🇭"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hier sind ein paar Länder:",
+          "es": "Aquí hay algunos países:",
+          "en": "Here are a few countries:"
+        },
+        {
+          "lang": "de",
+          "text": "Kolumbien",
+          "es": "Colombia",
+          "en": "Colombia"
+        },
+        {
+          "lang": "de",
+          "text": "Mexiko",
+          "es": "México",
+          "en": "Mexico"
+        },
+        {
+          "lang": "de",
+          "text": "Spanien",
+          "es": "España",
+          "en": "Spain"
+        },
+        {
+          "lang": "de",
+          "text": "Deutschland",
+          "es": "Alemania",
+          "en": "Germany"
+        },
+        {
+          "lang": "de",
+          "text": "Österreich",
+          "es": "Austria",
+          "en": "Austria"
+        },
+        {
+          "lang": "de",
+          "text": "die Schweiz",
+          "es": "Suiza",
+          "en": "Switzerland"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Woher? Wo?",
+      "gloss": "¿de dónde? ¿dónde?",
+      "sticker": "🏠",
+      "lines": [
+        {
+          "de": "Ich komme aus Peru.",
+          "es": "Soy de Perú.",
+          "mark": "aus",
+          "at": 1
+        },
+        {
+          "de": "Ich wohne in Berlin.",
+          "es": "Vivo en Berlín.",
+          "mark": "in",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Woher kommst du? Hör zu:",
+          "es": "¿De dónde eres? Escucha:",
+          "en": "Where are you from? Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich komme aus Peru.",
+          "es": "Soy de Perú.",
+          "en": "I'm from Peru.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich komme aus … das ist mein Land. Und wo wohne ich?",
+          "es": "Ich komme aus… es mi país. ¿Y dónde vivo?",
+          "en": "Ich komme aus… that's my country. And where do I live?"
+        },
+        {
+          "lang": "de",
+          "text": "Ich wohne in Berlin.",
+          "es": "Vivo en Berlín.",
+          "en": "I live in Berlin.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich wohne in … das ist meine Stadt.",
+          "es": "Ich wohne in… es mi ciudad.",
+          "en": "Ich wohne in… that's my city."
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "wohnen",
+      "gloss": "vivir",
+      "rows": [
+        {
+          "p": "ich",
+          "stem": "wohn",
+          "end": "e",
+          "at": 3
+        },
+        {
+          "p": "du",
+          "stem": "wohn",
+          "end": "st",
+          "at": 4
+        },
+        {
+          "p": "er / sie",
+          "stem": "wohn",
+          "end": "t",
+          "at": 5
+        },
+        {
+          "p": "wir",
+          "stem": "wohn",
+          "end": "en",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt das Verb wohnen. Hör zu:",
+          "es": "Ahora el verbo wohnen (vivir). Escucha:",
+          "en": "Now the verb wohnen (to live). Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "Wir wohnen in Bogotá.",
+          "es": "Vivimos en Bogotá.",
+          "en": "We live in Bogotá.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Schau auf das Ende:",
+          "es": "Mira el final:",
+          "en": "Look at the ending:"
+        },
+        {
+          "lang": "de",
+          "text": "ich wohne",
+          "es": "yo vivo",
+          "en": "I live"
+        },
+        {
+          "lang": "de",
+          "text": "du wohnst",
+          "es": "tú vives",
+          "en": "you live"
+        },
+        {
+          "lang": "de",
+          "text": "er wohnt, sie wohnt",
+          "es": "él vive, ella vive",
+          "en": "he lives, she lives"
+        },
+        {
+          "lang": "de",
+          "text": "wir wohnen",
+          "es": "nosotros vivimos",
+          "en": "we live"
+        }
+      ],
+      "example": {
+        "de": "Wir wohnen in Bogotá.",
+        "es": "Vivimos en Bogotá.",
+        "at": 1
+      },
+      "sticker": "🏡"
+    },
+    {
+      "type": "compare",
+      "heading": "sprechen",
+      "left": {
+        "title": "ich",
+        "icon": "🙋",
+        "gloss": "yo hablo",
+        "example": "ich spreche",
+        "at": 1
+      },
+      "right": {
+        "title": "du",
+        "icon": "🧑",
+        "gloss": "tú hablas",
+        "example": "du sprichst",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Das Verb sprechen ist besonders. Mit ich sagen wir:",
+          "es": "El verbo sprechen (hablar) es especial. Con ich decimos:",
+          "en": "The verb sprechen (to speak) is special. With ich we say:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich spreche Spanisch.",
+          "es": "Hablo español.",
+          "en": "I speak Spanish.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Aber mit du wird das e zu i:",
+          "es": "Pero con du la e se vuelve i:",
+          "en": "But with du the e becomes i:"
+        },
+        {
+          "lang": "de",
+          "text": "Du sprichst Deutsch.",
+          "es": "Hablas alemán.",
+          "en": "You speak German.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und auch: er spricht, sie spricht.",
+          "es": "Y también: él habla, ella habla.",
+          "en": "And also: he speaks, she speaks."
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Im Deutschkurs",
+      "people": {
+        "Jonas": {
+          "icon": "🧔",
+          "voice": "m"
+        },
+        "Sofía": {
+          "icon": "👩",
+          "voice": "f"
+        }
+      },
+      "lines": [
+        {
+          "who": "Jonas",
+          "de": "Woher kommst du, Sofía?",
+          "at": 1
+        },
+        {
+          "who": "Sofía",
+          "de": "Ich komme aus Mexiko.",
+          "at": 2
+        },
+        {
+          "who": "Jonas",
+          "de": "Und wo wohnst du?",
+          "at": 3
+        },
+        {
+          "who": "Sofía",
+          "de": "Ich wohne in Hamburg.",
+          "at": 4
+        },
+        {
+          "who": "Jonas",
+          "de": "Welche Sprachen sprichst du?",
+          "at": 5
+        },
+        {
+          "who": "Sofía",
+          "de": "Spanisch und Englisch.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Sofía und Jonas sind im Deutschkurs.",
+          "es": "Escucha: Sofía y Jonas están en el curso de alemán.",
+          "en": "Listen: Sofía and Jonas are in German class."
+        },
+        {
+          "lang": "de",
+          "text": "Woher kommst du, Sofía?",
+          "es": "¿De dónde eres, Sofía?",
+          "en": "Where are you from, Sofía?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich komme aus Mexiko.",
+          "es": "Soy de México.",
+          "en": "I'm from Mexico.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Und wo wohnst du?",
+          "es": "¿Y dónde vives?",
+          "en": "And where do you live?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich wohne in Hamburg.",
+          "es": "Vivo en Hamburgo.",
+          "en": "I live in Hamburg.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Welche Sprachen sprichst du?",
+          "es": "¿Qué idiomas hablas?",
+          "en": "Which languages do you speak?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Spanisch und Englisch.",
+          "es": "Español e inglés.",
+          "en": "Spanish and English.",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich komme aus …\nIch wohne in …\nIch spreche …",
+      "pause": 7,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Woher kommst du? Wo wohnst du? Welche Sprachen sprichst du?",
+          "es": "¡Ahora tú! ¿De dónde eres? ¿Dónde vives? ¿Qué idiomas hablas?",
+          "en": "Now you! Where are you from? Where do you live? Which languages do you speak?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Ich komme aus …",
+          "at": 1
+        },
+        {
+          "text": "Ich wohne in …",
+          "at": 1
+        },
+        {
+          "text": "ich spreche · du sprichst",
+          "at": 1
+        },
+        {
+          "text": "ein bisschen Deutsch",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du sagst, woher du kommst, wo du wohnst und welche Sprachen du sprichst.",
+          "es": "Dices de dónde eres, dónde vives y qué idiomas hablas.",
+          "en": "You say where you're from, where you live and which languages you speak."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

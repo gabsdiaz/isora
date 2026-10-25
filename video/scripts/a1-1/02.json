@@ -1,0 +1,400 @@
+{
+  "key": "de/a1-1/02",
+  "level": "A1.1",
+  "number": 2,
+  "title": "Das Alphabet",
+  "subtitle": "Das ABC",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🔤",
+        "✏️",
+        "🗣️"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute lernen wir das Alphabet.",
+          "es": "¡Hola! Hoy aprendemos el alfabeto.",
+          "en": "Hi! Today we learn the alphabet."
+        },
+        {
+          "lang": "de",
+          "text": "Und du lernst die Frage: Wie schreibt man das?",
+          "es": "Y aprendes la pregunta: ¿cómo se escribe?",
+          "en": "And you learn the question: How do you spell that?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Das ABC",
+      "gloss": "el abecedario",
+      "items": [
+        {
+          "de": "A wie Apfel",
+          "es": "manzana",
+          "at": 1,
+          "icon": "🍎"
+        },
+        {
+          "de": "B wie Ball",
+          "es": "balón",
+          "at": 2,
+          "icon": "⚽"
+        },
+        {
+          "de": "C wie Clown",
+          "es": "payaso",
+          "at": 3,
+          "icon": "🤡"
+        },
+        {
+          "de": "D wie Delfin",
+          "es": "delfín",
+          "at": 4,
+          "icon": "🐬"
+        },
+        {
+          "de": "E wie Elefant",
+          "es": "elefante",
+          "at": 5,
+          "icon": "🐘"
+        },
+        {
+          "de": "F wie Fisch",
+          "es": "pez",
+          "at": 6,
+          "icon": "🐟"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Das Alphabet hat sechsundzwanzig Buchstaben. Hör zu:",
+          "es": "El alfabeto tiene 26 letras. Escucha:",
+          "en": "The alphabet has 26 letters. Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "A wie Apfel.",
+          "es": "A, como Apfel (manzana).",
+          "en": "A as in Apfel (apple)."
+        },
+        {
+          "lang": "de",
+          "text": "B wie Ball.",
+          "es": "B, como Ball (balón).",
+          "en": "B as in Ball."
+        },
+        {
+          "lang": "de",
+          "text": "C wie Clown.",
+          "es": "C, como Clown (payaso).",
+          "en": "C as in Clown."
+        },
+        {
+          "lang": "de",
+          "text": "D wie Delfin.",
+          "es": "D, como Delfin (delfín).",
+          "en": "D as in Delfin (dolphin)."
+        },
+        {
+          "lang": "de",
+          "text": "E wie Elefant.",
+          "es": "E, como Elefant (elefante).",
+          "en": "E as in Elefant (elephant)."
+        },
+        {
+          "lang": "de",
+          "text": "F wie Fisch.",
+          "es": "F, como Fisch (pez).",
+          "en": "F as in Fisch (fish)."
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "ä · ö · ü · ß",
+      "gloss": "letras especiales",
+      "items": [
+        {
+          "de": "ä – Käse",
+          "es": "queso",
+          "at": 1,
+          "icon": "🧀"
+        },
+        {
+          "de": "ö – schön",
+          "es": "bonito",
+          "at": 2,
+          "icon": "🌸"
+        },
+        {
+          "de": "ü – fünf",
+          "es": "cinco",
+          "at": 3,
+          "icon": "🖐️"
+        },
+        {
+          "de": "ß – Straße",
+          "es": "calle",
+          "at": 4,
+          "icon": "🛣️"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Deutsch hat auch besondere Buchstaben. Hör gut zu:",
+          "es": "El alemán también tiene letras especiales. Escucha bien:",
+          "en": "German also has special letters. Listen carefully:"
+        },
+        {
+          "lang": "de",
+          "text": "ä wie Käse.",
+          "es": "ä, como Käse (queso).",
+          "en": "ä as in Käse (cheese)."
+        },
+        {
+          "lang": "de",
+          "text": "ö wie schön.",
+          "es": "ö, como schön (bonito).",
+          "en": "ö as in schön (beautiful)."
+        },
+        {
+          "lang": "de",
+          "text": "ü wie fünf.",
+          "es": "ü, como fünf (cinco).",
+          "en": "ü as in fünf (five)."
+        },
+        {
+          "lang": "de",
+          "text": "ß wie Straße. Das klingt wie ein doppeltes s.",
+          "es": "ß, como Straße (calle). Suena como una doble s.",
+          "en": "ß as in Straße (street). It sounds like a double s."
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "note": "ei → ai\nie → i",
+      "sticker": "🍷",
+      "say": [
+        {
+          "lang": "de",
+          "text": "Achtung! Zwei Buchstaben, ein Laut. ei sagen wir wie ai:",
+          "es": "¡Ojo! Dos letras, un sonido. ei se dice como ai:",
+          "en": "Careful! Two letters, one sound. We say ei like ai:"
+        },
+        {
+          "lang": "de",
+          "text": "mein, drei, Wein.",
+          "es": "mein, drei, Wein.",
+          "en": "mein, drei, Wein."
+        },
+        {
+          "lang": "de",
+          "text": "Und ie sagen wir wie ein langes i:",
+          "es": "Y ie se dice como una i larga:",
+          "en": "And we say ie like a long i:"
+        },
+        {
+          "lang": "de",
+          "text": "Wien, Brief, sie.",
+          "es": "Wien, Brief, sie.",
+          "en": "Wien, Brief, sie."
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Wie schreibt man das?",
+      "gloss": "¿cómo se escribe?",
+      "sticker": "📝",
+      "lines": [
+        {
+          "de": "Wie schreibt man das?",
+          "es": "¿Cómo se escribe?",
+          "mark": "schreibt",
+          "at": 1
+        },
+        {
+          "de": "L – E – N – A",
+          "es": "L – E – N – A",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Du verstehst einen Namen nicht? Dann fragst du:",
+          "es": "¿No entiendes un nombre? Entonces preguntas:",
+          "en": "You don't understand a name? Then you ask:"
+        },
+        {
+          "lang": "de",
+          "text": "Wie schreibt man das?",
+          "es": "¿Cómo se escribe?",
+          "en": "How do you spell that?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und die Person buchstabiert:",
+          "es": "Y la persona deletrea:",
+          "en": "And the person spells:"
+        },
+        {
+          "lang": "de",
+          "text": "Lena. L, E, N, A.",
+          "es": "Lena. L, E, N, A.",
+          "en": "Lena. L, E, N, A.",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "In der Sprachschule",
+      "people": {
+        "Herr Weber": {
+          "icon": "🧔",
+          "voice": "m"
+        },
+        "Ana": {
+          "icon": "👩",
+          "voice": "f"
+        }
+      },
+      "lines": [
+        {
+          "who": "Herr Weber",
+          "de": "Wie heißen Sie, bitte?",
+          "at": 1
+        },
+        {
+          "who": "Ana",
+          "de": "Ana Gómez.",
+          "at": 2
+        },
+        {
+          "who": "Herr Weber",
+          "de": "Wie schreibt man das?",
+          "at": 3
+        },
+        {
+          "who": "Ana",
+          "de": "G – O – M – E – Z.",
+          "at": 4
+        },
+        {
+          "who": "Herr Weber",
+          "de": "Danke, Frau Gómez!",
+          "at": 5
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Ana ist in der Sprachschule.",
+          "es": "Escucha: Ana está en la escuela de idiomas.",
+          "en": "Listen: Ana is at the language school."
+        },
+        {
+          "lang": "de",
+          "text": "Wie heißen Sie, bitte?",
+          "es": "¿Cómo se llama, por favor?",
+          "en": "What's your name, please?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ana Gómez.",
+          "es": "Ana Gómez.",
+          "en": "Ana Gómez.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Wie schreibt man das?",
+          "es": "¿Cómo se escribe?",
+          "en": "How do you spell that?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "G, O, M, E, Z.",
+          "es": "G – O – M – E – Z.",
+          "en": "G – O – M – E – Z.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Danke, Frau Gómez!",
+          "es": "¡Gracias, señora Gómez!",
+          "en": "Thank you, Ms Gómez!",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Buchstabiere\ndeinen Namen!",
+      "pause": 6,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Buchstabiere deinen Namen. Langsam!",
+          "es": "¡Ahora tú! Deletrea tu nombre. ¡Despacio!",
+          "en": "Now you! Spell your name. Slowly!"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "A wie Apfel, B wie Ball",
+          "at": 1
+        },
+        {
+          "text": "ä · ö · ü · ß",
+          "at": 1
+        },
+        {
+          "text": "ei = ai · ie = i",
+          "at": 1
+        },
+        {
+          "text": "Wie schreibt man das?",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du kennst das Alphabet und die Umlaute. Und du kannst deinen Namen buchstabieren.",
+          "es": "Conoces el alfabeto y las diéresis. Y puedes deletrear tu nombre.",
+          "en": "You know the alphabet and the umlauts. And you can spell your name."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

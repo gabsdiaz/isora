@@ -1,0 +1,477 @@
+{
+  "key": "de/a1-1/14",
+  "level": "A1.1",
+  "number": 14,
+  "title": "Essen und Trinken",
+  "subtitle": "Was isst du gern?",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🍎",
+        "🥖",
+        "☕"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute geht es um Essen und Trinken.",
+          "es": "¡Hola! Hoy hablamos de comida y bebida.",
+          "en": "Hi! Today is about food and drink."
+        },
+        {
+          "lang": "de",
+          "text": "Was isst du gern? Was trinkst du?",
+          "es": "¿Qué te gusta comer? ¿Qué tomas?",
+          "en": "What do you like to eat? What do you drink?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Essen",
+      "gloss": "comida",
+      "items": [
+        {
+          "de": "der Apfel",
+          "es": "la manzana",
+          "at": 1,
+          "icon": "🍎"
+        },
+        {
+          "de": "das Brot",
+          "es": "el pan",
+          "at": 2,
+          "icon": "🍞"
+        },
+        {
+          "de": "der Käse",
+          "es": "el queso",
+          "at": 3,
+          "icon": "🧀"
+        },
+        {
+          "de": "das Ei",
+          "es": "el huevo",
+          "at": 4,
+          "icon": "🥚"
+        },
+        {
+          "de": "der Fisch",
+          "es": "el pescado",
+          "at": 5,
+          "icon": "🐟"
+        },
+        {
+          "de": "die Tomate",
+          "es": "el tomate",
+          "at": 6,
+          "icon": "🍅"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Was isst du? Hör zu:",
+          "es": "¿Qué comes? Escucha:",
+          "en": "What do you eat? Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "der Apfel",
+          "es": "la manzana",
+          "en": "the apple"
+        },
+        {
+          "lang": "de",
+          "text": "das Brot",
+          "es": "el pan",
+          "en": "the bread"
+        },
+        {
+          "lang": "de",
+          "text": "der Käse",
+          "es": "el queso",
+          "en": "the cheese"
+        },
+        {
+          "lang": "de",
+          "text": "das Ei",
+          "es": "el huevo",
+          "en": "the egg"
+        },
+        {
+          "lang": "de",
+          "text": "der Fisch",
+          "es": "el pescado",
+          "en": "the fish"
+        },
+        {
+          "lang": "de",
+          "text": "die Tomate",
+          "es": "el tomate",
+          "en": "the tomato"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Trinken",
+      "gloss": "bebidas",
+      "items": [
+        {
+          "de": "das Wasser",
+          "es": "el agua",
+          "at": 1,
+          "icon": "💧"
+        },
+        {
+          "de": "der Kaffee",
+          "es": "el café",
+          "at": 2,
+          "icon": "☕"
+        },
+        {
+          "de": "der Tee",
+          "es": "el té",
+          "at": 3,
+          "icon": "🍵"
+        },
+        {
+          "de": "die Milch",
+          "es": "la leche",
+          "at": 4,
+          "icon": "🥛"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Und was trinkst du?",
+          "es": "¿Y qué tomas?",
+          "en": "And what do you drink?"
+        },
+        {
+          "lang": "de",
+          "text": "das Wasser",
+          "es": "el agua",
+          "en": "the water"
+        },
+        {
+          "lang": "de",
+          "text": "der Kaffee",
+          "es": "el café",
+          "en": "the coffee"
+        },
+        {
+          "lang": "de",
+          "text": "der Tee",
+          "es": "el té",
+          "en": "the tea"
+        },
+        {
+          "lang": "de",
+          "text": "die Milch",
+          "es": "la leche",
+          "en": "the milk"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "Akkusativ",
+      "gloss": "acusativo",
+      "rows": [
+        {
+          "p": "der",
+          "stem": "Ich esse ",
+          "end": "einen",
+          "at": 1,
+          "rest": " Apfel."
+        },
+        {
+          "p": "die",
+          "stem": "Ich esse ",
+          "end": "eine",
+          "at": 2,
+          "rest": " Banane."
+        },
+        {
+          "p": "das",
+          "stem": "Ich esse ",
+          "end": "ein",
+          "at": 3,
+          "rest": " Ei."
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt ein bisschen Grammatik: der Akkusativ. Nur der ändert sich!",
+          "es": "Ahora un poco de gramática: el acusativo. ¡Solo der cambia!",
+          "en": "Now a bit of grammar: the accusative. Only der changes!"
+        },
+        {
+          "lang": "de",
+          "text": "der Apfel – ich esse einen Apfel.",
+          "es": "la manzana – me como una manzana.",
+          "en": "the apple – I eat an apple."
+        },
+        {
+          "lang": "de",
+          "text": "die Banane – ich esse eine Banane.",
+          "es": "el banano – me como un banano.",
+          "en": "the banana – I eat a banana."
+        },
+        {
+          "lang": "de",
+          "text": "das Ei – ich esse ein Ei.",
+          "es": "el huevo – me como un huevo.",
+          "en": "the egg – I eat an egg."
+        }
+      ],
+      "pw": 130,
+      "w": 600,
+      "tx": 280,
+      "size": 56,
+      "side": "← nur der\n    ändert sich",
+      "tableAt": 0
+    },
+    {
+      "type": "conjugation",
+      "heading": "mögen",
+      "gloss": "gustar",
+      "rows": [
+        {
+          "p": "ich",
+          "stem": "mag",
+          "end": "",
+          "at": 3
+        },
+        {
+          "p": "du",
+          "stem": "mag",
+          "end": "st",
+          "at": 4
+        },
+        {
+          "p": "er / sie",
+          "stem": "mag",
+          "end": "",
+          "at": 5
+        },
+        {
+          "p": "wir",
+          "stem": "mög",
+          "end": "en",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Und was magst du? Das Verb mögen:",
+          "es": "¿Y qué te gusta? El verbo mögen:",
+          "en": "And what do you like? The verb mögen:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich mag Käse.",
+          "es": "Me gusta el queso.",
+          "en": "I like cheese.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Schau:",
+          "es": "Mira:",
+          "en": "Look:"
+        },
+        {
+          "lang": "de",
+          "text": "ich mag",
+          "es": "a mí me gusta",
+          "en": "I like"
+        },
+        {
+          "lang": "de",
+          "text": "du magst",
+          "es": "a ti te gusta",
+          "en": "you like"
+        },
+        {
+          "lang": "de",
+          "text": "er mag, sie mag",
+          "es": "a él le gusta, a ella le gusta",
+          "en": "he likes, she likes"
+        },
+        {
+          "lang": "de",
+          "text": "wir mögen",
+          "es": "a nosotros nos gusta",
+          "en": "we like"
+        }
+      ],
+      "side": "ich mag =\ner mag",
+      "example": {
+        "de": "Ich mag Käse.",
+        "es": "Me gusta el queso.",
+        "at": 1
+      },
+      "sticker": "😋"
+    },
+    {
+      "type": "dialogue",
+      "heading": "Essen",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Mateo",
+          "de": "Was isst du gern?",
+          "at": 1
+        },
+        {
+          "who": "Lena",
+          "de": "Ich esse gern Fisch.",
+          "at": 2
+        },
+        {
+          "who": "Mateo",
+          "de": "Magst du Fleisch?",
+          "at": 3
+        },
+        {
+          "who": "Lena",
+          "de": "Nein, ich esse kein Fleisch.",
+          "at": 4
+        },
+        {
+          "who": "Mateo",
+          "de": "Und was trinkst du?",
+          "at": 5
+        },
+        {
+          "who": "Lena",
+          "de": "Am liebsten Tee!",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena und Mateo sprechen über das Essen.",
+          "es": "Escucha: Lena y Mateo hablan de comida.",
+          "en": "Listen: Lena and Mateo talk about food."
+        },
+        {
+          "lang": "de",
+          "text": "Was isst du gern?",
+          "es": "¿Qué te gusta comer?",
+          "en": "What do you like to eat?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich esse gern Fisch.",
+          "es": "Me gusta comer pescado.",
+          "en": "I like eating fish.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Magst du Fleisch?",
+          "es": "¿Te gusta la carne?",
+          "en": "Do you like meat?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Nein, ich esse kein Fleisch.",
+          "es": "No, no como carne.",
+          "en": "No, I don't eat meat.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Und was trinkst du?",
+          "es": "¿Y qué tomas?",
+          "en": "And what do you drink?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Am liebsten Tee!",
+          "es": "¡Lo que más me gusta es el té!",
+          "en": "Tea, best of all!",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich esse gern …\nIch trinke …",
+      "pause": 6,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Was isst du gern? Was trinkst du gern?",
+          "es": "¡Ahora tú! ¿Qué te gusta comer? ¿Qué te gusta tomar?",
+          "en": "Now you! What do you like to eat? What do you like to drink?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "der Apfel · das Brot · die Milch",
+          "at": 1
+        },
+        {
+          "text": "Ich esse einen Apfel.",
+          "at": 1
+        },
+        {
+          "text": "ich mag · du magst",
+          "at": 1
+        },
+        {
+          "text": "Ich esse kein Fleisch.",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du sprichst über Essen und Trinken – mit dem Akkusativ und mit mögen.",
+          "es": "Hablas de comida y bebida, con el acusativo y con mögen.",
+          "en": "You talk about food and drink – with the accusative and with mögen."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

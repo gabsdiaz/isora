@@ -1,0 +1,467 @@
+{
+  "key": "de/a1-1/17",
+  "level": "A1.1",
+  "number": 17,
+  "title": "Farben und Kleidung",
+  "subtitle": "Wie findest du das?",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🎨",
+        "👗",
+        "👟"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute lernst du Farben und Kleidung.",
+          "es": "¡Hola! Hoy aprendes colores y ropa.",
+          "en": "Hi! Today you learn colours and clothes."
+        },
+        {
+          "lang": "de",
+          "text": "Wie findest du die Jacke?",
+          "es": "¿Qué te parece la chaqueta?",
+          "en": "What do you think of the jacket?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Farben",
+      "gloss": "colores",
+      "items": [
+        {
+          "de": "rot",
+          "es": "rojo",
+          "at": 1,
+          "icon": "🟥"
+        },
+        {
+          "de": "blau",
+          "es": "azul",
+          "at": 2,
+          "icon": "🟦"
+        },
+        {
+          "de": "grün",
+          "es": "verde",
+          "at": 3,
+          "icon": "🟩"
+        },
+        {
+          "de": "gelb",
+          "es": "amarillo",
+          "at": 4,
+          "icon": "🟨"
+        },
+        {
+          "de": "schwarz",
+          "es": "negro",
+          "at": 5,
+          "icon": "⬛"
+        },
+        {
+          "de": "weiß",
+          "es": "blanco",
+          "at": 6,
+          "icon": "⬜"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Das sind die Farben:",
+          "es": "Estos son los colores:",
+          "en": "These are the colours:"
+        },
+        {
+          "lang": "de",
+          "text": "rot",
+          "es": "rojo",
+          "en": "red"
+        },
+        {
+          "lang": "de",
+          "text": "blau",
+          "es": "azul",
+          "en": "blue"
+        },
+        {
+          "lang": "de",
+          "text": "grün",
+          "es": "verde",
+          "en": "green"
+        },
+        {
+          "lang": "de",
+          "text": "gelb",
+          "es": "amarillo",
+          "en": "yellow"
+        },
+        {
+          "lang": "de",
+          "text": "schwarz",
+          "es": "negro",
+          "en": "black"
+        },
+        {
+          "lang": "de",
+          "text": "weiß",
+          "es": "blanco",
+          "en": "white"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Kleidung",
+      "gloss": "ropa",
+      "items": [
+        {
+          "de": "der Mantel",
+          "es": "el abrigo",
+          "at": 1,
+          "icon": "🧥"
+        },
+        {
+          "de": "die Hose",
+          "es": "el pantalón",
+          "at": 2,
+          "icon": "👖"
+        },
+        {
+          "de": "das Hemd",
+          "es": "la camisa",
+          "at": 3,
+          "icon": "👔"
+        },
+        {
+          "de": "das Kleid",
+          "es": "el vestido",
+          "at": 4,
+          "icon": "👗"
+        },
+        {
+          "de": "das T-Shirt",
+          "es": "la camiseta",
+          "at": 5,
+          "icon": "👕"
+        },
+        {
+          "de": "die Schuhe",
+          "es": "los zapatos",
+          "at": 6,
+          "icon": "👟"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Und das ist Kleidung:",
+          "es": "Y esto es ropa:",
+          "en": "And these are clothes:"
+        },
+        {
+          "lang": "de",
+          "text": "der Mantel",
+          "es": "el abrigo",
+          "en": "the coat"
+        },
+        {
+          "lang": "de",
+          "text": "die Hose",
+          "es": "el pantalón",
+          "en": "the trousers"
+        },
+        {
+          "lang": "de",
+          "text": "das Hemd",
+          "es": "la camisa",
+          "en": "the shirt"
+        },
+        {
+          "lang": "de",
+          "text": "das Kleid",
+          "es": "el vestido",
+          "en": "the dress"
+        },
+        {
+          "lang": "de",
+          "text": "das T-Shirt",
+          "es": "la camiseta",
+          "en": "the T-shirt"
+        },
+        {
+          "lang": "de",
+          "text": "die Schuhe",
+          "es": "los zapatos",
+          "en": "the shoes"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Wie findest du …?",
+      "gloss": "¿qué te parece…?",
+      "sticker": "👗",
+      "lines": [
+        {
+          "de": "Wie findest du den Rock?",
+          "es": "¿Qué te parece la falda?",
+          "mark": "findest",
+          "at": 1
+        },
+        {
+          "de": "Ich finde ihn schön!",
+          "es": "¡Me parece bonita!",
+          "mark": "ihn",
+          "at": 2
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Im Geschäft fragst du deine Freundin:",
+          "es": "En la tienda le preguntas a tu amiga:",
+          "en": "In the shop you ask your friend:"
+        },
+        {
+          "lang": "de",
+          "text": "Wie findest du den Rock?",
+          "es": "¿Qué te parece la falda?",
+          "en": "What do you think of the skirt?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich finde ihn schön!",
+          "es": "¡Me parece bonita!",
+          "en": "I think it's pretty!",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Achtung: der Rock wird ihn!",
+          "es": "Ojo: der Rock se vuelve ihn.",
+          "en": "Careful: der Rock becomes ihn!"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "ihn · sie · es",
+      "gloss": "lo · la",
+      "rows": [
+        {
+          "p": "der Mantel",
+          "stem": "Ich finde ",
+          "end": "ihn",
+          "at": 1,
+          "rest": " toll."
+        },
+        {
+          "p": "die Jacke",
+          "stem": "Ich finde ",
+          "end": "sie",
+          "at": 2,
+          "rest": " toll."
+        },
+        {
+          "p": "das Hemd",
+          "stem": "Ich finde ",
+          "end": "es",
+          "at": 3,
+          "rest": " toll."
+        },
+        {
+          "p": "die Schuhe",
+          "stem": "Ich finde ",
+          "end": "sie",
+          "at": 4,
+          "rest": " toll."
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Nach finden kommt der Akkusativ. Hör zu:",
+          "es": "Después de finden viene el acusativo. Escucha:",
+          "en": "After finden comes the accusative. Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "Der Mantel? Ich finde ihn toll.",
+          "es": "¿El abrigo? Me parece genial.",
+          "en": "The coat? I think it's great."
+        },
+        {
+          "lang": "de",
+          "text": "Die Jacke? Ich finde sie toll.",
+          "es": "¿La chaqueta? Me parece genial.",
+          "en": "The jacket? I think it's great."
+        },
+        {
+          "lang": "de",
+          "text": "Das Hemd? Ich finde es toll.",
+          "es": "¿La camisa? Me parece genial.",
+          "en": "The shirt? I think it's great."
+        },
+        {
+          "lang": "de",
+          "text": "Die Schuhe? Ich finde sie toll.",
+          "es": "¿Los zapatos? Me parecen geniales.",
+          "en": "The shoes? I think they're great."
+        }
+      ],
+      "pw": 230,
+      "w": 640,
+      "tx": 260,
+      "size": 54,
+      "side": "← nur der\n    ändert sich",
+      "tableAt": 0
+    },
+    {
+      "type": "dialogue",
+      "heading": "Im Geschäft",
+      "people": {
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        },
+        "Verkäuferin": {
+          "icon": "👩",
+          "voice": "f"
+        }
+      },
+      "lines": [
+        {
+          "who": "Mateo",
+          "de": "Haben Sie die Jacke in Blau?",
+          "at": 1
+        },
+        {
+          "who": "Verkäuferin",
+          "de": "Ja, hier. Welche Größe?",
+          "at": 2
+        },
+        {
+          "who": "Mateo",
+          "de": "Größe M, bitte.",
+          "at": 3
+        },
+        {
+          "who": "Verkäuferin",
+          "de": "Wie finden Sie die Jacke?",
+          "at": 4
+        },
+        {
+          "who": "Mateo",
+          "de": "Sie passt gut. Ich nehme sie!",
+          "at": 5
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Mateo kauft eine Jacke.",
+          "es": "Escucha: Mateo compra una chaqueta.",
+          "en": "Listen: Mateo buys a jacket."
+        },
+        {
+          "lang": "de",
+          "text": "Haben Sie die Jacke in Blau?",
+          "es": "¿Tiene la chaqueta en azul?",
+          "en": "Do you have the jacket in blue?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ja, hier. Welche Größe?",
+          "es": "Sí, aquí. ¿Qué talla?",
+          "en": "Yes, here. Which size?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Größe M, bitte.",
+          "es": "Talla M, por favor.",
+          "en": "Size M, please.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Wie finden Sie die Jacke?",
+          "es": "¿Qué le parece la chaqueta?",
+          "en": "How do you like the jacket?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Sie passt gut. Ich nehme sie!",
+          "es": "Me queda bien. ¡Me la llevo!",
+          "en": "It fits well. I'll take it!",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Mein T-Shirt ist …\nIch finde es …",
+      "pause": 6,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Schau deine Kleidung an. Welche Farbe hat dein T-Shirt?",
+          "es": "¡Ahora tú! Mira tu ropa. ¿De qué color es tu camiseta?",
+          "en": "Now you! Look at your clothes. What colour is your T-shirt?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "rot · blau · grün · gelb",
+          "at": 1
+        },
+        {
+          "text": "die Hose · das Hemd · der Mantel",
+          "at": 1
+        },
+        {
+          "text": "Wie findest du den Rock?",
+          "at": 1
+        },
+        {
+          "text": "Ich finde ihn schön.",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du kennst Farben und Kleidung und sagst deine Meinung.",
+          "es": "Conoces colores y ropa y das tu opinión.",
+          "en": "You know colours and clothes and give your opinion."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

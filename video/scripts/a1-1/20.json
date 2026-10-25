@@ -1,0 +1,400 @@
+{
+  "key": "de/a1-1/20",
+  "level": "A1.1",
+  "number": 20,
+  "title": "Wiederholung A1.1",
+  "subtitle": "Fit für die Prüfung",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🏆",
+        "📝",
+        "🎉"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Das ist die letzte Einheit von A1.1. Super!",
+          "es": "¡Hola! Esta es la última unidad del A1.1. ¡Súper!",
+          "en": "Hi! This is the last unit of A1.1. Great!"
+        },
+        {
+          "lang": "de",
+          "text": "Heute wiederholen wir alles – wie in der Prüfung.",
+          "es": "Hoy repasamos todo, como en el examen.",
+          "en": "Today we review everything – like in the exam."
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Sich vorstellen",
+      "gloss": "presentarse",
+      "items": [
+        {
+          "de": "Name",
+          "es": "nombre",
+          "at": 1,
+          "icon": "🏷️"
+        },
+        {
+          "de": "Alter",
+          "es": "edad",
+          "at": 2,
+          "icon": "🎂"
+        },
+        {
+          "de": "Land",
+          "es": "país",
+          "at": 3,
+          "icon": "🌍"
+        },
+        {
+          "de": "Wohnort",
+          "es": "dónde vives",
+          "at": 4,
+          "icon": "🏠"
+        },
+        {
+          "de": "Sprachen",
+          "es": "idiomas",
+          "at": 5,
+          "icon": "🗣️"
+        },
+        {
+          "de": "Beruf",
+          "es": "profesión",
+          "at": 6,
+          "icon": "💼"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "In der Prüfung stellst du dich vor. Dafür gibt es sechs Wörter:",
+          "es": "En el examen te presentas. Para eso hay seis palabras:",
+          "en": "In the exam you introduce yourself. There are six key words:"
+        },
+        {
+          "lang": "de",
+          "text": "Name: Ich heiße Valentina.",
+          "es": "Nombre: Me llamo Valentina.",
+          "en": "Name: My name is Valentina."
+        },
+        {
+          "lang": "de",
+          "text": "Alter: Ich bin vierundzwanzig Jahre alt.",
+          "es": "Edad: Tengo veinticuatro años.",
+          "en": "Age: I'm twenty-four."
+        },
+        {
+          "lang": "de",
+          "text": "Land: Ich komme aus Kolumbien.",
+          "es": "País: Soy de Colombia.",
+          "en": "Country: I'm from Colombia."
+        },
+        {
+          "lang": "de",
+          "text": "Wohnort: Ich wohne in Medellín.",
+          "es": "Vivienda: Vivo en Medellín.",
+          "en": "Home: I live in Medellín."
+        },
+        {
+          "lang": "de",
+          "text": "Sprachen: Ich spreche Spanisch und ein bisschen Deutsch.",
+          "es": "Idiomas: Hablo español y un poco de alemán.",
+          "en": "Languages: I speak Spanish and a bit of German."
+        },
+        {
+          "lang": "de",
+          "text": "Beruf: Ich bin Ingenieurin.",
+          "es": "Profesión: Soy ingeniera.",
+          "en": "Job: I'm an engineer."
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "Position 2",
+      "gloss": "el verbo en la posición 2",
+      "rows": [
+        {
+          "p": "Ich",
+          "stem": "",
+          "end": "wohne",
+          "at": 1,
+          "rest": " in Bogotá."
+        },
+        {
+          "p": "Am Samstag",
+          "stem": "",
+          "end": "spiele",
+          "at": 2,
+          "rest": " ich Fußball."
+        },
+        {
+          "p": "Was",
+          "stem": "",
+          "end": "machst",
+          "at": 3,
+          "rest": " du gern?"
+        },
+        {
+          "p": "Ja / Nein?",
+          "stem": "",
+          "end": "Hast",
+          "at": 4,
+          "rest": " du Zeit?"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Die wichtigste Regel: Das Verb steht auf Position zwei.",
+          "es": "La regla más importante: el verbo va en la posición dos.",
+          "en": "The most important rule: the verb is in position two."
+        },
+        {
+          "lang": "de",
+          "text": "Ich wohne in Bogotá.",
+          "es": "Vivo en Bogotá.",
+          "en": "I live in Bogotá."
+        },
+        {
+          "lang": "de",
+          "text": "Am Samstag spiele ich Fußball.",
+          "es": "El sábado juego fútbol.",
+          "en": "On Saturday I play football."
+        },
+        {
+          "lang": "de",
+          "text": "Was machst du gern?",
+          "es": "¿Qué te gusta hacer?",
+          "en": "What do you like doing?"
+        },
+        {
+          "lang": "de",
+          "text": "Bei Ja-Nein-Fragen steht das Verb vorne: Hast du Zeit?",
+          "es": "En preguntas de sí o no, el verbo va adelante: ¿Tienes tiempo?",
+          "en": "In yes/no questions the verb comes first: Do you have time?"
+        }
+      ],
+      "pw": 250,
+      "w": 780,
+      "tx": 210,
+      "size": 50,
+      "side": "",
+      "tableAt": 0
+    },
+    {
+      "type": "compare",
+      "heading": "Akkusativ",
+      "left": {
+        "title": "der",
+        "icon": "🍎",
+        "gloss": "nominativo",
+        "example": "Der Apfel ist rot.",
+        "at": 1
+      },
+      "right": {
+        "title": "den",
+        "icon": "😋",
+        "gloss": "acusativo",
+        "example": "Ich esse den Apfel.",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Noch einmal der Akkusativ. Hier ist der Apfel:",
+          "es": "Una vez más el acusativo. Aquí está la manzana:",
+          "en": "The accusative once more. Here is the apple:"
+        },
+        {
+          "lang": "de",
+          "text": "Der Apfel ist rot.",
+          "es": "La manzana es roja.",
+          "en": "The apple is red.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Und jetzt:",
+          "es": "Y ahora:",
+          "en": "And now:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich esse den Apfel.",
+          "es": "Me como la manzana.",
+          "en": "I eat the apple.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Nur der ändert sich. Die, das und der Plural bleiben gleich.",
+          "es": "Solo der cambia. Die, das y el plural se quedan igual.",
+          "en": "Only der changes. Die, das and the plural stay the same."
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "In der Prüfung",
+      "people": {
+        "Prüferin": {
+          "icon": "👩‍💼",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Prüferin",
+          "de": "Wie heißen Sie?",
+          "at": 1
+        },
+        {
+          "who": "Mateo",
+          "de": "Ich heiße Mateo Ríos.",
+          "at": 2
+        },
+        {
+          "who": "Prüferin",
+          "de": "Woher kommen Sie?",
+          "at": 3
+        },
+        {
+          "who": "Mateo",
+          "de": "Aus Kolumbien. Aus Cali.",
+          "at": 4
+        },
+        {
+          "who": "Prüferin",
+          "de": "Was sind Sie von Beruf?",
+          "at": 5
+        },
+        {
+          "who": "Mateo",
+          "de": "Ich bin Student.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Mateo ist in der Prüfung.",
+          "es": "Escucha: Mateo está en el examen.",
+          "en": "Listen: Mateo is taking the exam."
+        },
+        {
+          "lang": "de",
+          "text": "Wie heißen Sie?",
+          "es": "¿Cómo se llama?",
+          "en": "What's your name?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich heiße Mateo Ríos.",
+          "es": "Me llamo Mateo Ríos.",
+          "en": "My name is Mateo Ríos.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Woher kommen Sie?",
+          "es": "¿De dónde es usted?",
+          "en": "Where are you from?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Aus Kolumbien. Aus Cali.",
+          "es": "De Colombia. De Cali.",
+          "en": "From Colombia. From Cali.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Was sind Sie von Beruf?",
+          "es": "¿A qué se dedica?",
+          "en": "What do you do?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich bin Student.",
+          "es": "Soy estudiante.",
+          "en": "I'm a student.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Name · Alter · Land\nWohnort · Sprachen\nBeruf",
+      "pause": 12,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Stell dich vor: Name, Alter, Land, Wohnort, Sprachen, Beruf. Los!",
+          "es": "¡Ahora tú! Preséntate: nombre, edad, país, dónde vives, idiomas, profesión. ¡Vamos!",
+          "en": "Now you! Introduce yourself: name, age, country, home, languages, job. Go!"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Ich stelle mich vor.",
+          "at": 1
+        },
+        {
+          "text": "Das Verb auf Position 2",
+          "at": 1
+        },
+        {
+          "text": "der → den (Akkusativ)",
+          "at": 1
+        },
+        {
+          "text": "am Montag · im Mai · um acht",
+          "at": 1
+        },
+        {
+          "text": "Fit für A1.2!",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du kannst dich vorstellen und kennst die wichtigste Grammatik. Du bist fit für A1.2. Herzlichen Glückwunsch!",
+          "es": "Puedes presentarte y conoces la gramática más importante. Estás listo para el A1.2. ¡Felicitaciones!",
+          "en": "You can introduce yourself and know the key grammar. You're ready for A1.2. Congratulations!"
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald in A1.2!",
+          "es": "¡Hasta pronto en el A1.2!",
+          "en": "See you soon in A1.2!"
+        }
+      ]
+    }
+  ]
+}

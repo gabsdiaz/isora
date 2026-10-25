@@ -1,0 +1,416 @@
+{
+  "key": "de/a1-1/13",
+  "level": "A1.1",
+  "number": 13,
+  "title": "Hobbys",
+  "subtitle": "Die Freizeit",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "⚽",
+        "🎸",
+        "📷"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute sprechen wir über Hobbys.",
+          "es": "¡Hola! Hoy hablamos de pasatiempos.",
+          "en": "Hi! Today we talk about hobbies."
+        },
+        {
+          "lang": "de",
+          "text": "Was machst du gern in der Freizeit?",
+          "es": "¿Qué te gusta hacer en tu tiempo libre?",
+          "en": "What do you like doing in your free time?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Hobbys",
+      "gloss": "pasatiempos",
+      "items": [
+        {
+          "de": "Fußball",
+          "es": "fútbol",
+          "at": 1,
+          "icon": "⚽"
+        },
+        {
+          "de": "Gitarre",
+          "es": "guitarra",
+          "at": 2,
+          "icon": "🎸"
+        },
+        {
+          "de": "schwimmen",
+          "es": "nadar",
+          "at": 3,
+          "icon": "🏊"
+        },
+        {
+          "de": "tanzen",
+          "es": "bailar",
+          "at": 4,
+          "icon": "💃"
+        },
+        {
+          "de": "kochen",
+          "es": "cocinar",
+          "at": 5,
+          "icon": "🍳"
+        },
+        {
+          "de": "reisen",
+          "es": "viajar",
+          "at": 6,
+          "icon": "✈️"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Was machst du in der Freizeit? Hier sind ein paar Hobbys:",
+          "es": "¿Qué haces en tu tiempo libre? Aquí hay algunos pasatiempos:",
+          "en": "What do you do in your free time? Here are a few hobbies:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich spiele Fußball.",
+          "es": "Juego fútbol.",
+          "en": "I play football."
+        },
+        {
+          "lang": "de",
+          "text": "Ich spiele Gitarre.",
+          "es": "Toco guitarra.",
+          "en": "I play guitar."
+        },
+        {
+          "lang": "de",
+          "text": "Ich schwimme.",
+          "es": "Nado.",
+          "en": "I swim."
+        },
+        {
+          "lang": "de",
+          "text": "Ich tanze.",
+          "es": "Bailo.",
+          "en": "I dance."
+        },
+        {
+          "lang": "de",
+          "text": "Ich koche.",
+          "es": "Cocino.",
+          "en": "I cook."
+        },
+        {
+          "lang": "de",
+          "text": "Ich reise.",
+          "es": "Viajo.",
+          "en": "I travel."
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "note": "spielen =\nSport + Musik",
+      "sticker": "🎹",
+      "say": [
+        {
+          "lang": "de",
+          "text": "Spielen sagen wir für Sport und für Instrumente:",
+          "es": "Spielen se usa para deportes y para instrumentos:",
+          "en": "We use spielen for sports and for instruments:"
+        },
+        {
+          "lang": "de",
+          "text": "Fußball spielen, Klavier spielen.",
+          "es": "jugar fútbol, tocar piano.",
+          "en": "play football, play the piano."
+        }
+      ],
+      "size": 76
+    },
+    {
+      "type": "conjugation",
+      "heading": "gern",
+      "gloss": "con gusto",
+      "rows": [
+        {
+          "p": "+",
+          "stem": "Ich tanze ",
+          "end": "gern",
+          "at": 1,
+          "rest": "."
+        },
+        {
+          "p": "++",
+          "stem": "Ich koche ",
+          "end": "lieber",
+          "at": 2,
+          "rest": "."
+        },
+        {
+          "p": "+++",
+          "stem": "Ich lese ",
+          "end": "am liebsten",
+          "at": 3,
+          "rest": "."
+        },
+        {
+          "p": "–",
+          "stem": "Ich jogge ",
+          "end": "nicht gern",
+          "at": 4,
+          "rest": "."
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Mit gern sagst du, was du magst:",
+          "es": "Con gern dices lo que te gusta:",
+          "en": "With gern you say what you like:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich tanze gern.",
+          "es": "Me gusta bailar.",
+          "en": "I like dancing."
+        },
+        {
+          "lang": "de",
+          "text": "Ich koche lieber.",
+          "es": "Prefiero cocinar.",
+          "en": "I prefer cooking."
+        },
+        {
+          "lang": "de",
+          "text": "Ich lese am liebsten.",
+          "es": "Lo que más me gusta es leer.",
+          "en": "I like reading best."
+        },
+        {
+          "lang": "de",
+          "text": "Und ich jogge nicht gern.",
+          "es": "Y no me gusta trotar.",
+          "en": "And I don't like jogging."
+        }
+      ],
+      "pw": 120,
+      "w": 640,
+      "tx": 300,
+      "size": 54,
+      "side": "",
+      "tableAt": 0
+    },
+    {
+      "type": "compare",
+      "heading": "ja · doch",
+      "left": {
+        "title": "ja",
+        "icon": "👍",
+        "gloss": "sí",
+        "example": "Ja, sehr gern!",
+        "at": 1
+      },
+      "right": {
+        "title": "doch",
+        "icon": "😄",
+        "gloss": "¡claro que sí!",
+        "example": "Doch, ich koche gern!",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Kochst du gern? Dann sagst du:",
+          "es": "¿Te gusta cocinar? Entonces dices:",
+          "en": "Do you like cooking? Then you say:"
+        },
+        {
+          "lang": "de",
+          "text": "Ja, sehr gern!",
+          "es": "¡Sí, mucho!",
+          "en": "Yes, very much!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Aber: Kochst du nicht gern? Ist die Antwort ja, sagst du doch!",
+          "es": "Pero: ¿No te gusta cocinar? Si la respuesta es sí, dices doch.",
+          "en": "But: Don't you like cooking? If the answer is yes, you say doch!"
+        },
+        {
+          "lang": "de",
+          "text": "Doch, ich koche gern!",
+          "es": "¡Claro que sí, me gusta cocinar!",
+          "en": "Yes I do, I like cooking!",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Doch ist ein Ja nach einer negativen Frage.",
+          "es": "Doch es un sí después de una pregunta negativa.",
+          "en": "Doch is a yes after a negative question."
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Freizeit",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Lena",
+          "de": "Was machst du gern?",
+          "at": 1
+        },
+        {
+          "who": "Mateo",
+          "de": "Ich spiele gern Fußball.",
+          "at": 2
+        },
+        {
+          "who": "Lena",
+          "de": "Spielst du auch Gitarre?",
+          "at": 3
+        },
+        {
+          "who": "Mateo",
+          "de": "Nein, ich lese lieber.",
+          "at": 4
+        },
+        {
+          "who": "Lena",
+          "de": "Tanzt du nicht gern?",
+          "at": 5
+        },
+        {
+          "who": "Mateo",
+          "de": "Doch, sehr gern!",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena und Mateo sprechen über Hobbys.",
+          "es": "Escucha: Lena y Mateo hablan de pasatiempos.",
+          "en": "Listen: Lena and Mateo talk about hobbies."
+        },
+        {
+          "lang": "de",
+          "text": "Was machst du gern?",
+          "es": "¿Qué te gusta hacer?",
+          "en": "What do you like doing?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich spiele gern Fußball.",
+          "es": "Me gusta jugar fútbol.",
+          "en": "I like playing football.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Spielst du auch Gitarre?",
+          "es": "¿También tocas guitarra?",
+          "en": "Do you play guitar too?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Nein, ich lese lieber.",
+          "es": "No, prefiero leer.",
+          "en": "No, I prefer reading.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Tanzt du nicht gern?",
+          "es": "¿No te gusta bailar?",
+          "en": "Don't you like dancing?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Doch, sehr gern!",
+          "es": "¡Claro que sí, mucho!",
+          "en": "Oh yes, very much!",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich … gern.\nIch … nicht gern.",
+      "pause": 7,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Was machst du gern? Was machst du nicht gern?",
+          "es": "¡Ahora tú! ¿Qué te gusta hacer? ¿Qué no te gusta hacer?",
+          "en": "Now you! What do you like doing? What don't you like doing?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Ich spiele Fußball.",
+          "at": 1
+        },
+        {
+          "text": "gern · lieber · am liebsten",
+          "at": 1
+        },
+        {
+          "text": "Kochst du nicht gern? – Doch!",
+          "at": 1
+        },
+        {
+          "text": "spielen: Sport und Musik",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du sprichst über Hobbys und sagst, was du gern machst.",
+          "es": "Hablas de pasatiempos y dices lo que te gusta hacer.",
+          "en": "You talk about hobbies and say what you like doing."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

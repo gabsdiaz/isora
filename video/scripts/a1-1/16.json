@@ -1,0 +1,419 @@
+{
+  "key": "de/a1-1/16",
+  "level": "A1.1",
+  "number": 16,
+  "title": "Einkaufen",
+  "subtitle": "Im Supermarkt",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🛒",
+        "🥕",
+        "🧾"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute kaufen wir ein.",
+          "es": "¡Hola! Hoy vamos de compras.",
+          "en": "Hi! Today we go shopping."
+        },
+        {
+          "lang": "de",
+          "text": "Im Supermarkt und auf dem Markt.",
+          "es": "En el supermercado y en el mercado.",
+          "en": "At the supermarket and at the market."
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Mengen",
+      "gloss": "cantidades",
+      "items": [
+        {
+          "de": "ein Kilo",
+          "es": "un kilo",
+          "at": 1,
+          "icon": "⚖️"
+        },
+        {
+          "de": "ein Liter",
+          "es": "un litro",
+          "at": 2,
+          "icon": "🥛"
+        },
+        {
+          "de": "eine Packung",
+          "es": "un paquete",
+          "at": 3,
+          "icon": "📦"
+        },
+        {
+          "de": "eine Dose",
+          "es": "una lata",
+          "at": 4,
+          "icon": "🥫"
+        },
+        {
+          "de": "ein Becher",
+          "es": "un vaso (yogur)",
+          "at": 5,
+          "icon": "🥣"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wie viel brauchst du? Hör zu:",
+          "es": "¿Cuánto necesitas? Escucha:",
+          "en": "How much do you need? Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "ein Kilo Äpfel",
+          "es": "un kilo de manzanas",
+          "en": "a kilo of apples"
+        },
+        {
+          "lang": "de",
+          "text": "ein Liter Milch",
+          "es": "un litro de leche",
+          "en": "a litre of milk"
+        },
+        {
+          "lang": "de",
+          "text": "eine Packung Nudeln",
+          "es": "un paquete de pasta",
+          "en": "a pack of pasta"
+        },
+        {
+          "lang": "de",
+          "text": "eine Dose Tomaten",
+          "es": "una lata de tomates",
+          "en": "a can of tomatoes"
+        },
+        {
+          "lang": "de",
+          "text": "ein Becher Joghurt",
+          "es": "un vaso de yogur",
+          "en": "a pot of yoghurt"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Im Supermarkt",
+      "gloss": "en el supermercado",
+      "sticker": "🛒",
+      "lines": [
+        {
+          "de": "Wo finde ich Reis?",
+          "es": "¿Dónde encuentro arroz?",
+          "mark": "Wo finde ich",
+          "at": 1
+        },
+        {
+          "de": "Haben Sie Erdbeeren?",
+          "es": "¿Tiene fresas?",
+          "mark": "Haben Sie",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Du suchst etwas? Dann fragst du:",
+          "es": "¿Buscas algo? Entonces preguntas:",
+          "en": "Looking for something? Then you ask:"
+        },
+        {
+          "lang": "de",
+          "text": "Entschuldigung, wo finde ich Reis?",
+          "es": "Disculpe, ¿dónde encuentro arroz?",
+          "en": "Excuse me, where can I find rice?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Oder du fragst:",
+          "es": "O preguntas:",
+          "en": "Or you ask:"
+        },
+        {
+          "lang": "de",
+          "text": "Haben Sie frische Erdbeeren?",
+          "es": "¿Tiene fresas frescas?",
+          "en": "Do you have fresh strawberries?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Sag zuerst Entschuldigung. Das ist höflich.",
+          "es": "Di primero Entschuldigung (disculpe). Es cortés.",
+          "en": "Say Entschuldigung (excuse me) first. That's polite."
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "brauchen",
+      "gloss": "necesitar",
+      "rows": [
+        {
+          "p": "der",
+          "stem": "",
+          "end": "einen",
+          "at": 3,
+          "rest": " Apfel"
+        },
+        {
+          "p": "die",
+          "stem": "",
+          "end": "eine",
+          "at": 4,
+          "rest": " Tüte"
+        },
+        {
+          "p": "das",
+          "stem": "",
+          "end": "ein",
+          "at": 5,
+          "rest": " Brot"
+        },
+        {
+          "p": "kein",
+          "stem": "",
+          "end": "keinen",
+          "at": 6,
+          "rest": " Reis"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Was brauchst du? Hör zu:",
+          "es": "¿Qué necesitas? Escucha:",
+          "en": "What do you need? Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich brauche Milch.",
+          "es": "Necesito leche.",
+          "en": "I need milk.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Nach brauchen, kaufen und haben kommt der Akkusativ:",
+          "es": "Después de brauchen, kaufen y haben viene el acusativo:",
+          "en": "After brauchen, kaufen and haben comes the accusative:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich brauche einen Apfel.",
+          "es": "Necesito una manzana.",
+          "en": "I need an apple."
+        },
+        {
+          "lang": "de",
+          "text": "Ich kaufe eine Tüte.",
+          "es": "Compro una bolsa.",
+          "en": "I buy a bag."
+        },
+        {
+          "lang": "de",
+          "text": "Ich habe ein Brot.",
+          "es": "Tengo un pan.",
+          "en": "I have a loaf of bread."
+        },
+        {
+          "lang": "de",
+          "text": "Ich habe keinen Reis.",
+          "es": "No tengo arroz.",
+          "en": "I have no rice."
+        }
+      ],
+      "side": "",
+      "example": {
+        "de": "Ich brauche Milch.",
+        "es": "Necesito leche.",
+        "at": 1
+      },
+      "sticker": "📝"
+    },
+    {
+      "type": "tip",
+      "note": "Tasche\nmitbringen!",
+      "sticker": "👜",
+      "say": [
+        {
+          "lang": "de",
+          "text": "Ein Tipp für Deutschland:",
+          "es": "Un consejo para Alemania:",
+          "en": "A tip for Germany:"
+        },
+        {
+          "lang": "de",
+          "text": "Bring deine Tasche mit. Eine Tüte kostet Geld!",
+          "es": "Lleva tu bolsa. ¡Una bolsa cuesta dinero!",
+          "en": "Bring your own bag. A plastic bag costs money!"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Auf dem Markt",
+      "people": {
+        "Verkäufer": {
+          "icon": "👨‍🌾",
+          "voice": "m"
+        },
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        }
+      },
+      "lines": [
+        {
+          "who": "Verkäufer",
+          "de": "Guten Tag! Was möchten Sie?",
+          "at": 1
+        },
+        {
+          "who": "Lena",
+          "de": "Ein Kilo Tomaten, bitte.",
+          "at": 2
+        },
+        {
+          "who": "Verkäufer",
+          "de": "Sonst noch etwas?",
+          "at": 3
+        },
+        {
+          "who": "Lena",
+          "de": "Was kosten die Erdbeeren?",
+          "at": 4
+        },
+        {
+          "who": "Verkäufer",
+          "de": "Drei Euro das Kilo.",
+          "at": 5
+        },
+        {
+          "who": "Lena",
+          "de": "Gut, ein Kilo. Das ist alles.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena ist auf dem Markt.",
+          "es": "Escucha: Lena está en el mercado.",
+          "en": "Listen: Lena is at the market."
+        },
+        {
+          "lang": "de",
+          "text": "Guten Tag! Was möchten Sie?",
+          "es": "¡Buen día! ¿Qué desea?",
+          "en": "Hello! What would you like?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ein Kilo Tomaten, bitte.",
+          "es": "Un kilo de tomates, por favor.",
+          "en": "A kilo of tomatoes, please.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Sonst noch etwas?",
+          "es": "¿Algo más?",
+          "en": "Anything else?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Was kosten die Erdbeeren?",
+          "es": "¿Cuánto cuestan las fresas?",
+          "en": "How much are the strawberries?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Drei Euro das Kilo.",
+          "es": "Tres euros el kilo.",
+          "en": "Three euros a kilo.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Gut, ein Kilo. Das ist alles.",
+          "es": "Bien, un kilo. Eso es todo.",
+          "en": "Good, one kilo. That's all.",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich brauche …\nWo finde ich …?",
+      "pause": 8,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Was brauchst du heute? Schreib einen Einkaufszettel!",
+          "es": "¡Ahora tú! ¿Qué necesitas hoy? ¡Escribe una lista de compras!",
+          "en": "Now you! What do you need today? Write a shopping list!"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "ein Kilo · ein Liter · eine Packung",
+          "at": 1
+        },
+        {
+          "text": "Wo finde ich …?",
+          "at": 1
+        },
+        {
+          "text": "Ich brauche einen Apfel.",
+          "at": 1
+        },
+        {
+          "text": "Das ist alles, danke.",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du kaufst im Supermarkt und auf dem Markt ein.",
+          "es": "Haces compras en el supermercado y en el mercado.",
+          "en": "You shop at the supermarket and at the market."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

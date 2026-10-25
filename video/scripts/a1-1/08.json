@@ -1,0 +1,408 @@
+{
+  "key": "de/a1-1/08",
+  "level": "A1.1",
+  "number": 8,
+  "title": "Der, die, das",
+  "subtitle": "Die Artikel",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "📚",
+        "🔑",
+        "🚪"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute lernen wir die Artikel: der, die, das.",
+          "es": "¡Hola! Hoy aprendemos los artículos: der, die, das.",
+          "en": "Hi! Today we learn the articles: der, die, das."
+        },
+        {
+          "lang": "de",
+          "text": "Jedes Nomen hat einen Artikel.",
+          "es": "Cada sustantivo tiene un artículo.",
+          "en": "Every noun has an article."
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "der · die · das",
+      "gloss": "tres artículos",
+      "items": [
+        {
+          "de": "der Schlüssel",
+          "es": "la llave",
+          "at": 1,
+          "icon": "🔑"
+        },
+        {
+          "de": "die Lampe",
+          "es": "la lámpara",
+          "at": 2,
+          "icon": "💡"
+        },
+        {
+          "de": "das Buch",
+          "es": "el libro",
+          "at": 3,
+          "icon": "📖"
+        },
+        {
+          "de": "der Computer",
+          "es": "el computador",
+          "at": 4,
+          "icon": "💻"
+        },
+        {
+          "de": "die Tasche",
+          "es": "el bolso",
+          "at": 5,
+          "icon": "👜"
+        },
+        {
+          "de": "das Auto",
+          "es": "el carro",
+          "at": 6,
+          "icon": "🚗"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Auf Deutsch gibt es drei Artikel: der, die und das. Hör zu:",
+          "es": "En alemán hay tres artículos: der, die y das. Escucha:",
+          "en": "German has three articles: der, die and das. Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "der Schlüssel",
+          "es": "la llave",
+          "en": "the key"
+        },
+        {
+          "lang": "de",
+          "text": "die Lampe",
+          "es": "la lámpara",
+          "en": "the lamp"
+        },
+        {
+          "lang": "de",
+          "text": "das Buch",
+          "es": "el libro",
+          "en": "the book"
+        },
+        {
+          "lang": "de",
+          "text": "der Computer",
+          "es": "el computador",
+          "en": "the computer"
+        },
+        {
+          "lang": "de",
+          "text": "die Tasche",
+          "es": "el bolso",
+          "en": "the bag"
+        },
+        {
+          "lang": "de",
+          "text": "das Auto",
+          "es": "el carro",
+          "en": "the car"
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "note": "Lerne immer\nmit Artikel!",
+      "sticker": "💡",
+      "say": [
+        {
+          "lang": "de",
+          "text": "Mein Tipp: Lerne jedes Wort mit Artikel. Nicht nur Tisch, sondern:",
+          "es": "Mi consejo: aprende cada palabra con su artículo. No solo Tisch, sino:",
+          "en": "My tip: learn every word with its article. Not just Tisch, but:"
+        },
+        {
+          "lang": "de",
+          "text": "der Tisch!",
+          "es": "¡der Tisch!",
+          "en": "der Tisch!"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "Tipps",
+      "gloss": "pistas",
+      "rows": [
+        {
+          "p": "-ung",
+          "stem": "die Zeit",
+          "end": "ung",
+          "at": 1
+        },
+        {
+          "p": "-e",
+          "stem": "die Lamp",
+          "end": "e",
+          "at": 2
+        },
+        {
+          "p": "-chen",
+          "stem": "das Mäd",
+          "end": "chen",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Ein paar Tipps helfen beim Raten:",
+          "es": "Algunas pistas ayudan a adivinar:",
+          "en": "A few tips help you guess:"
+        },
+        {
+          "lang": "de",
+          "text": "Wörter mit -ung haben die: die Zeitung.",
+          "es": "Las palabras con -ung llevan die: die Zeitung.",
+          "en": "Words ending in -ung take die: die Zeitung."
+        },
+        {
+          "lang": "de",
+          "text": "Wörter mit -e haben oft die: die Lampe.",
+          "es": "Las palabras con -e suelen llevar die: die Lampe.",
+          "en": "Words ending in -e often take die: die Lampe."
+        },
+        {
+          "lang": "de",
+          "text": "Wörter mit -chen haben das: das Mädchen.",
+          "es": "Las palabras con -chen llevan das: das Mädchen.",
+          "en": "Words ending in -chen take das: das Mädchen."
+        }
+      ],
+      "w": 560,
+      "tx": 330,
+      "side": "",
+      "tableAt": 0
+    },
+    {
+      "type": "sentence",
+      "heading": "Wo ist …?",
+      "gloss": "¿dónde está…?",
+      "sticker": "🔑",
+      "lines": [
+        {
+          "de": "Wo ist der Schlüssel?",
+          "es": "¿Dónde está la llave?",
+          "mark": "der",
+          "at": 1
+        },
+        {
+          "de": "Er ist hier.",
+          "es": "Está aquí.",
+          "mark": "Er",
+          "at": 2
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Für Sachen sagen wir auch er, sie, es.",
+          "es": "Para cosas también decimos er, sie, es.",
+          "en": "For things we also say er, sie, es."
+        },
+        {
+          "lang": "de",
+          "text": "Wo ist der Schlüssel?",
+          "es": "¿Dónde está la llave?",
+          "en": "Where is the key?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Er ist hier.",
+          "es": "Está aquí.",
+          "en": "It's here.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "der wird er, die wird sie, das wird es.",
+          "es": "der se vuelve er, die se vuelve sie, das se vuelve es.",
+          "en": "der becomes er, die becomes sie, das becomes es."
+        }
+      ],
+      "notesX": 960,
+      "notes": [
+        {
+          "text": "der → er",
+          "at": 3
+        },
+        {
+          "text": "die → sie",
+          "at": 3
+        },
+        {
+          "text": "das → es",
+          "at": 3
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Ist das dein Buch?",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Mateo",
+          "de": "Ist das dein Buch?",
+          "at": 1
+        },
+        {
+          "who": "Lena",
+          "de": "Nein, das ist nicht mein Buch.",
+          "at": 2
+        },
+        {
+          "who": "Mateo",
+          "de": "Und die Tasche?",
+          "at": 3
+        },
+        {
+          "who": "Lena",
+          "de": "Ja, das ist meine Tasche.",
+          "at": 4
+        },
+        {
+          "who": "Mateo",
+          "de": "Wo ist der Schlüssel?",
+          "at": 5
+        },
+        {
+          "who": "Lena",
+          "de": "Er ist im Auto!",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena und Mateo suchen Sachen.",
+          "es": "Escucha: Lena y Mateo buscan cosas.",
+          "en": "Listen: Lena and Mateo are looking for things."
+        },
+        {
+          "lang": "de",
+          "text": "Ist das dein Buch?",
+          "es": "¿Es este tu libro?",
+          "en": "Is this your book?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Nein, das ist nicht mein Buch.",
+          "es": "No, no es mi libro.",
+          "en": "No, that's not my book.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Und die Tasche?",
+          "es": "¿Y el bolso?",
+          "en": "And the bag?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ja, das ist meine Tasche.",
+          "es": "Sí, es mi bolso.",
+          "en": "Yes, that's my bag.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Wo ist der Schlüssel?",
+          "es": "¿Dónde está la llave?",
+          "en": "Where is the key?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Er ist im Auto!",
+          "es": "¡Está en el carro!",
+          "en": "It's in the car!",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "der … · die … · das …",
+      "pause": 7,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Schau dich um. Was siehst du? Sag das Wort mit Artikel!",
+          "es": "¡Ahora tú! Mira a tu alrededor. ¿Qué ves? ¡Di la palabra con artículo!",
+          "en": "Now you! Look around. What do you see? Say the word with its article!"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "der Tisch · die Lampe · das Buch",
+          "at": 1
+        },
+        {
+          "text": "-ung → die · -chen → das",
+          "at": 1
+        },
+        {
+          "text": "der → er · die → sie · das → es",
+          "at": 1
+        },
+        {
+          "text": "Ist das dein Buch?",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du kennst der, die, das, ein paar Tipps und er, sie, es für Sachen.",
+          "es": "Conoces der, die, das, algunas pistas y er, sie, es para cosas.",
+          "en": "You know der, die, das, a few tips and er, sie, es for things."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

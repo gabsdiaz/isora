@@ -1,0 +1,392 @@
+{
+  "key": "de/a1-1/05",
+  "level": "A1.1",
+  "number": 5,
+  "title": "Meine Familie",
+  "subtitle": "Die Familie",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "👨‍👩‍👧",
+        "❤️",
+        "🏠"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute geht es um die Familie.",
+          "es": "¡Hola! Hoy hablamos de la familia.",
+          "en": "Hi! Today is about the family."
+        },
+        {
+          "lang": "de",
+          "text": "Wer ist das? Das ist meine Mutter!",
+          "es": "¿Quién es? ¡Es mi mamá!",
+          "en": "Who is that? That's my mother!"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Die Familie",
+      "gloss": "la familia",
+      "items": [
+        {
+          "de": "der Vater",
+          "es": "el padre",
+          "at": 1,
+          "icon": "👨"
+        },
+        {
+          "de": "die Mutter",
+          "es": "la madre",
+          "at": 2,
+          "icon": "👩"
+        },
+        {
+          "de": "der Bruder",
+          "es": "el hermano",
+          "at": 3,
+          "icon": "👦"
+        },
+        {
+          "de": "die Schwester",
+          "es": "la hermana",
+          "at": 4,
+          "icon": "👧"
+        },
+        {
+          "de": "der Opa",
+          "es": "el abuelo",
+          "at": 5,
+          "icon": "👴"
+        },
+        {
+          "de": "die Oma",
+          "es": "la abuela",
+          "at": 6,
+          "icon": "👵"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Das ist die Familie. Hör zu:",
+          "es": "Esta es la familia. Escucha:",
+          "en": "This is the family. Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "der Vater",
+          "es": "el padre",
+          "en": "the father"
+        },
+        {
+          "lang": "de",
+          "text": "die Mutter",
+          "es": "la madre",
+          "en": "the mother"
+        },
+        {
+          "lang": "de",
+          "text": "der Bruder",
+          "es": "el hermano",
+          "en": "the brother"
+        },
+        {
+          "lang": "de",
+          "text": "die Schwester",
+          "es": "la hermana",
+          "en": "the sister"
+        },
+        {
+          "lang": "de",
+          "text": "der Opa",
+          "es": "el abuelo",
+          "en": "grandpa"
+        },
+        {
+          "lang": "de",
+          "text": "die Oma",
+          "es": "la abuela",
+          "en": "grandma"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "haben",
+      "gloss": "tener",
+      "rows": [
+        {
+          "p": "ich",
+          "stem": "hab",
+          "end": "e",
+          "at": 3
+        },
+        {
+          "p": "du",
+          "stem": "ha",
+          "end": "st",
+          "at": 4
+        },
+        {
+          "p": "er / sie",
+          "stem": "ha",
+          "end": "t",
+          "at": 5
+        },
+        {
+          "p": "wir",
+          "stem": "hab",
+          "end": "en",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Das Verb haben ist sehr wichtig. Hör zu:",
+          "es": "El verbo haben (tener) es muy importante. Escucha:",
+          "en": "The verb haben (to have) is very important. Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich habe einen Bruder.",
+          "es": "Tengo un hermano.",
+          "en": "I have a brother.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Schau:",
+          "es": "Mira:",
+          "en": "Look:"
+        },
+        {
+          "lang": "de",
+          "text": "ich habe",
+          "es": "yo tengo",
+          "en": "I have"
+        },
+        {
+          "lang": "de",
+          "text": "du hast",
+          "es": "tú tienes",
+          "en": "you have"
+        },
+        {
+          "lang": "de",
+          "text": "er hat, sie hat",
+          "es": "él tiene, ella tiene",
+          "en": "he has, she has"
+        },
+        {
+          "lang": "de",
+          "text": "wir haben",
+          "es": "nosotros tenemos",
+          "en": "we have"
+        }
+      ],
+      "side": "",
+      "example": {
+        "de": "Ich habe einen Bruder.",
+        "es": "Tengo un hermano.",
+        "at": 1
+      },
+      "sticker": "🐶"
+    },
+    {
+      "type": "compare",
+      "heading": "mein oder meine?",
+      "left": {
+        "title": "mein",
+        "icon": "👨",
+        "gloss": "der · das",
+        "example": "mein Vater",
+        "at": 1
+      },
+      "right": {
+        "title": "meine",
+        "icon": "👩",
+        "gloss": "die · plural",
+        "example": "meine Mutter",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Mein oder meine? Bei der und das sagen wir mein:",
+          "es": "¿Mein o meine? Con der y das decimos mein:",
+          "en": "Mein or meine? With der and das we say mein:"
+        },
+        {
+          "lang": "de",
+          "text": "mein Vater, mein Kind",
+          "es": "mi padre, mi hijo",
+          "en": "my father, my child"
+        },
+        {
+          "lang": "de",
+          "text": "Bei die sagen wir meine:",
+          "es": "Con die decimos meine:",
+          "en": "With die we say meine:"
+        },
+        {
+          "lang": "de",
+          "text": "meine Mutter, meine Eltern",
+          "es": "mi madre, mis padres",
+          "en": "my mother, my parents"
+        },
+        {
+          "lang": "de",
+          "text": "Und so geht auch dein und deine.",
+          "es": "Y así funciona también dein y deine (tu).",
+          "en": "And dein and deine (your) work the same way."
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Geschwister",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Mateo",
+          "de": "Hast du Geschwister?",
+          "at": 1
+        },
+        {
+          "who": "Lena",
+          "de": "Ja, ich habe eine Schwester.",
+          "at": 2
+        },
+        {
+          "who": "Mateo",
+          "de": "Wie heißt deine Schwester?",
+          "at": 3
+        },
+        {
+          "who": "Lena",
+          "de": "Sie heißt Anna. Und du?",
+          "at": 4
+        },
+        {
+          "who": "Mateo",
+          "de": "Ich habe zwei Brüder.",
+          "at": 5
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena und Mateo sprechen über die Familie.",
+          "es": "Escucha: Lena y Mateo hablan de la familia.",
+          "en": "Listen: Lena and Mateo talk about family."
+        },
+        {
+          "lang": "de",
+          "text": "Hast du Geschwister?",
+          "es": "¿Tienes hermanos?",
+          "en": "Do you have siblings?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ja, ich habe eine Schwester.",
+          "es": "Sí, tengo una hermana.",
+          "en": "Yes, I have a sister.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Wie heißt deine Schwester?",
+          "es": "¿Cómo se llama tu hermana?",
+          "en": "What's your sister's name?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Sie heißt Anna. Und du?",
+          "es": "Se llama Anna. ¿Y tú?",
+          "en": "Her name is Anna. And you?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich habe zwei Brüder.",
+          "es": "Tengo dos hermanos.",
+          "en": "I have two brothers.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich habe …\nMeine Mutter heißt …",
+      "pause": 6,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Hast du Geschwister? Wie heißt deine Mutter?",
+          "es": "¡Ahora tú! ¿Tienes hermanos? ¿Cómo se llama tu mamá?",
+          "en": "Now you! Do you have siblings? What's your mother's name?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "der Vater · die Mutter",
+          "at": 1
+        },
+        {
+          "text": "ich habe · du hast",
+          "at": 1
+        },
+        {
+          "text": "mein Vater · meine Mutter",
+          "at": 1
+        },
+        {
+          "text": "Hast du Geschwister?",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du stellst deine Familie vor. Und du kennst haben und mein, meine.",
+          "es": "Presentas a tu familia. Y conoces haben y mein, meine.",
+          "en": "You introduce your family. And you know haben and mein, meine."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,446 @@
+{
+  "key": "de/a1-1/07",
+  "level": "A1.1",
+  "number": 7,
+  "title": "Zahlen bis 100",
+  "subtitle": "Zahlen und Preise",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "💯",
+        "💶",
+        "🛒"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute zählen wir bis hundert – und weiter!",
+          "es": "¡Hola! Hoy contamos hasta cien… ¡y más!",
+          "en": "Hi! Today we count to a hundred – and beyond!"
+        },
+        {
+          "lang": "de",
+          "text": "Und du fragst: Was kostet das?",
+          "es": "Y preguntas: ¿cuánto cuesta?",
+          "en": "And you ask: How much is that?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Die Zehner",
+      "gloss": "las decenas",
+      "items": [
+        {
+          "de": "zwanzig",
+          "es": "veinte",
+          "at": 1,
+          "big": "20"
+        },
+        {
+          "de": "dreißig",
+          "es": "treinta",
+          "at": 2,
+          "big": "30"
+        },
+        {
+          "de": "vierzig",
+          "es": "cuarenta",
+          "at": 3,
+          "big": "40"
+        },
+        {
+          "de": "fünfzig",
+          "es": "cincuenta",
+          "at": 4,
+          "big": "50"
+        },
+        {
+          "de": "sechzig",
+          "es": "sesenta",
+          "at": 5,
+          "big": "60"
+        },
+        {
+          "de": "hundert",
+          "es": "cien",
+          "at": 6,
+          "big": "100"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Das sind die Zehner:",
+          "es": "Estas son las decenas:",
+          "en": "These are the tens:"
+        },
+        {
+          "lang": "de",
+          "text": "zwanzig",
+          "es": "veinte",
+          "en": "twenty"
+        },
+        {
+          "lang": "de",
+          "text": "dreißig. Mit ß!",
+          "es": "treinta. ¡Con ß!",
+          "en": "thirty. With ß!"
+        },
+        {
+          "lang": "de",
+          "text": "vierzig",
+          "es": "cuarenta",
+          "en": "forty"
+        },
+        {
+          "lang": "de",
+          "text": "fünfzig",
+          "es": "cincuenta",
+          "en": "fifty"
+        },
+        {
+          "lang": "de",
+          "text": "sechzig",
+          "es": "sesenta",
+          "en": "sixty"
+        },
+        {
+          "lang": "de",
+          "text": "hundert",
+          "es": "cien",
+          "en": "a hundred"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "21, 34, 57 …",
+      "gloss": "primero la unidad",
+      "rows": [
+        {
+          "p": "21",
+          "stem": "",
+          "end": "ein",
+          "at": 3,
+          "rest": "undzwanzig"
+        },
+        {
+          "p": "34",
+          "stem": "",
+          "end": "vier",
+          "at": 4,
+          "rest": "unddreißig"
+        },
+        {
+          "p": "57",
+          "stem": "",
+          "end": "sieben",
+          "at": 5,
+          "rest": "undfünfzig"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt ein Trick: Auf Deutsch sagen wir zuerst die Einer, dann die Zehner.",
+          "es": "Ahora un truco: en alemán decimos primero las unidades y luego las decenas.",
+          "en": "Now a trick: in German we say the ones first, then the tens."
+        },
+        {
+          "lang": "de",
+          "text": "einundzwanzig. Eins und zwanzig.",
+          "es": "veintiuno. Uno y veinte.",
+          "en": "twenty-one. One and twenty."
+        },
+        {
+          "lang": "de",
+          "text": "Hör zu:",
+          "es": "Escucha:",
+          "en": "Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "einundzwanzig",
+          "es": "veintiuno",
+          "en": "twenty-one"
+        },
+        {
+          "lang": "de",
+          "text": "vierunddreißig",
+          "es": "treinta y cuatro",
+          "en": "thirty-four"
+        },
+        {
+          "lang": "de",
+          "text": "siebenundfünfzig",
+          "es": "cincuenta y siete",
+          "en": "fifty-seven"
+        }
+      ],
+      "w": 620,
+      "tx": 300,
+      "size": 56,
+      "side": "1 + 20",
+      "example": {
+        "de": "einundzwanzig",
+        "es": "veintiuno = 1 + 20",
+        "at": 1
+      }
+    },
+    {
+      "type": "sentence",
+      "heading": "Was kostet das?",
+      "gloss": "¿cuánto cuesta?",
+      "sticker": "💶",
+      "lines": [
+        {
+          "de": "Was kostet der Tisch?",
+          "es": "¿Cuánto cuesta la mesa?",
+          "mark": "kostet",
+          "at": 1
+        },
+        {
+          "de": "Er kostet 30 Euro.",
+          "es": "Cuesta 30 euros.",
+          "mark": "30 Euro",
+          "at": 2
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Auf dem Flohmarkt fragst du:",
+          "es": "En el mercado de pulgas preguntas:",
+          "en": "At the flea market you ask:"
+        },
+        {
+          "lang": "de",
+          "text": "Was kostet der Tisch?",
+          "es": "¿Cuánto cuesta la mesa?",
+          "en": "How much is the table?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Er kostet dreißig Euro.",
+          "es": "Cuesta treinta euros.",
+          "en": "It costs thirty euros.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und so sagen wir Preise: zwei Euro fünfzig.",
+          "es": "Y así decimos los precios: dos euros cincuenta.",
+          "en": "And this is how we say prices: two euros fifty."
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "heading": "teuer oder billig?",
+      "left": {
+        "title": "teuer",
+        "icon": "💎",
+        "gloss": "caro",
+        "example": "Das ist zu teuer!",
+        "at": 1
+      },
+      "right": {
+        "title": "billig",
+        "icon": "🪙",
+        "gloss": "barato",
+        "example": "Das ist billig!",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hundert Euro für einen Stuhl? Dann sagst du:",
+          "es": "¿Cien euros por una silla? Entonces dices:",
+          "en": "A hundred euros for a chair? Then you say:"
+        },
+        {
+          "lang": "de",
+          "text": "Das ist zu teuer!",
+          "es": "¡Es demasiado caro!",
+          "en": "That's too expensive!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Zwei Euro für eine Lampe? Super:",
+          "es": "¿Dos euros por una lámpara? Súper:",
+          "en": "Two euros for a lamp? Great:"
+        },
+        {
+          "lang": "de",
+          "text": "Das ist billig!",
+          "es": "¡Es barato!",
+          "en": "That's cheap!",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Oder freundlicher: Das ist günstig.",
+          "es": "O más amable: Das ist günstig (está a buen precio).",
+          "en": "Or more friendly: Das ist günstig (good value)."
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Auf dem Flohmarkt",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Verkäufer": {
+          "icon": "🧔",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Lena",
+          "de": "Was kostet die Lampe?",
+          "at": 1
+        },
+        {
+          "who": "Verkäufer",
+          "de": "Zwölf Euro.",
+          "at": 2
+        },
+        {
+          "who": "Lena",
+          "de": "Und der Stuhl?",
+          "at": 3
+        },
+        {
+          "who": "Verkäufer",
+          "de": "Fünfundzwanzig Euro.",
+          "at": 4
+        },
+        {
+          "who": "Lena",
+          "de": "Das ist zu teuer!",
+          "at": 5
+        },
+        {
+          "who": "Verkäufer",
+          "de": "Okay, zwanzig Euro.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena ist auf dem Flohmarkt.",
+          "es": "Escucha: Lena está en el mercado de pulgas.",
+          "en": "Listen: Lena is at the flea market."
+        },
+        {
+          "lang": "de",
+          "text": "Was kostet die Lampe?",
+          "es": "¿Cuánto cuesta la lámpara?",
+          "en": "How much is the lamp?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Zwölf Euro.",
+          "es": "Doce euros.",
+          "en": "Twelve euros.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und der Stuhl?",
+          "es": "¿Y la silla?",
+          "en": "And the chair?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Fünfundzwanzig Euro.",
+          "es": "Veinticinco euros.",
+          "en": "Twenty-five euros.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Das ist zu teuer!",
+          "es": "¡Es demasiado caro!",
+          "en": "That's too expensive!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Okay, zwanzig Euro.",
+          "es": "Bueno, veinte euros.",
+          "en": "Okay, twenty euros.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "20, 30, 40 … 100\n21, 22, 23 …",
+      "pause": 8,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Zähl laut von zwanzig bis hundert: zwanzig, dreißig, vierzig …",
+          "es": "¡Ahora tú! Cuenta en voz alta de veinte a cien: veinte, treinta, cuarenta…",
+          "en": "Now you! Count out loud from twenty to a hundred: twenty, thirty, forty…"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "20, 30, 40 … 100",
+          "at": 1
+        },
+        {
+          "text": "einundzwanzig = 1 + 20",
+          "at": 1
+        },
+        {
+          "text": "Was kostet …?",
+          "at": 1
+        },
+        {
+          "text": "Das ist zu teuer!",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du zählst bis hundert und fragst nach Preisen.",
+          "es": "Cuentas hasta cien y preguntas precios.",
+          "en": "You count to a hundred and ask about prices."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

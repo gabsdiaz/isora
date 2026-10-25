@@ -1,0 +1,385 @@
+{
+  "key": "de/a1-1/10",
+  "level": "A1.1",
+  "number": 10,
+  "title": "Wie spät ist es?",
+  "subtitle": "Die Uhrzeit",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "⏰",
+        "🕒",
+        "🚆"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute lernst du die Uhrzeit.",
+          "es": "¡Hola! Hoy aprendes la hora.",
+          "en": "Hi! Today you learn to tell the time."
+        },
+        {
+          "lang": "de",
+          "text": "Wie spät ist es?",
+          "es": "¿Qué hora es?",
+          "en": "What time is it?"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Wie spät ist es?",
+      "gloss": "¿qué hora es?",
+      "sticker": "🕒",
+      "lines": [
+        {
+          "de": "Es ist drei Uhr.",
+          "es": "Son las tres.",
+          "mark": "drei Uhr",
+          "at": 1
+        },
+        {
+          "de": "Es ist halb vier.",
+          "es": "Son las tres y media.",
+          "mark": "halb vier",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wie spät ist es? Hör zu:",
+          "es": "¿Qué hora es? Escucha:",
+          "en": "What time is it? Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "Es ist drei Uhr.",
+          "es": "Son las tres.",
+          "en": "It's three o'clock.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und jetzt ein Trick:",
+          "es": "Y ahora un truco:",
+          "en": "And now a trick:"
+        },
+        {
+          "lang": "de",
+          "text": "Es ist halb vier.",
+          "es": "Son las tres y media.",
+          "en": "It's half past three.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Halb vier heißt: eine halbe Stunde vor vier. Also drei Uhr dreißig!",
+          "es": "Halb vier significa: media hora antes de las cuatro. ¡O sea, las tres y media!",
+          "en": "Halb vier means half an hour before four. So, three thirty!"
+        }
+      ],
+      "notes": [
+        {
+          "text": "halb vier = 3:30",
+          "at": 4
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "note": "halb elf\n= 10:30 !",
+      "sticker": "⚠️",
+      "say": [
+        {
+          "lang": "de",
+          "text": "Achtung, das ist sehr wichtig:",
+          "es": "Ojo, esto es muy importante:",
+          "en": "Careful, this is very important:"
+        },
+        {
+          "lang": "de",
+          "text": "Halb elf ist zehn Uhr dreißig. Nicht elf Uhr dreißig!",
+          "es": "Halb elf son las diez y media. ¡No las once y media!",
+          "en": "Halb elf is ten thirty. Not eleven thirty!"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "nach · vor",
+      "gloss": "y · para",
+      "rows": [
+        {
+          "p": "10:05",
+          "stem": "fünf ",
+          "end": "nach",
+          "at": 1,
+          "rest": " zehn"
+        },
+        {
+          "p": "10:15",
+          "stem": "Viertel ",
+          "end": "nach",
+          "at": 2,
+          "rest": " zehn"
+        },
+        {
+          "p": "10:45",
+          "stem": "Viertel ",
+          "end": "vor",
+          "at": 3,
+          "rest": " elf"
+        },
+        {
+          "p": "10:55",
+          "stem": "fünf ",
+          "end": "vor",
+          "at": 4,
+          "rest": " elf"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Im Alltag sagen wir nach und vor:",
+          "es": "En el día a día decimos nach (y) y vor (para):",
+          "en": "In everyday speech we say nach (past) and vor (to):"
+        },
+        {
+          "lang": "de",
+          "text": "fünf nach zehn",
+          "es": "las diez y cinco",
+          "en": "five past ten"
+        },
+        {
+          "lang": "de",
+          "text": "Viertel nach zehn",
+          "es": "las diez y cuarto",
+          "en": "quarter past ten"
+        },
+        {
+          "lang": "de",
+          "text": "Viertel vor elf",
+          "es": "un cuarto para las once",
+          "en": "quarter to eleven"
+        },
+        {
+          "lang": "de",
+          "text": "fünf vor elf",
+          "es": "cinco para las once",
+          "en": "five to eleven"
+        }
+      ],
+      "w": 640,
+      "tx": 300,
+      "size": 56,
+      "side": "",
+      "tableAt": 0
+    },
+    {
+      "type": "compare",
+      "heading": "um · von … bis",
+      "left": {
+        "title": "um",
+        "icon": "⏰",
+        "gloss": "a las",
+        "example": "um acht Uhr",
+        "at": 1
+      },
+      "right": {
+        "title": "von–bis",
+        "icon": "🕘",
+        "gloss": "de … a",
+        "example": "von 9 bis 17 Uhr",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wann beginnt der Kurs? Wir sagen um:",
+          "es": "¿A qué hora empieza el curso? Decimos um:",
+          "en": "When does the class start? We say um:"
+        },
+        {
+          "lang": "de",
+          "text": "Der Kurs beginnt um acht Uhr.",
+          "es": "El curso empieza a las ocho.",
+          "en": "The class starts at eight.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Und wie lange? Von … bis:",
+          "es": "¿Y cuánto tiempo? Von… bis (de… a):",
+          "en": "And how long? Von… bis (from… to):"
+        },
+        {
+          "lang": "de",
+          "text": "Ich arbeite von neun bis siebzehn Uhr.",
+          "es": "Trabajo de nueve a diecisiete.",
+          "en": "I work from nine to five.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Schnell!",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Mateo",
+          "de": "Wie spät ist es?",
+          "at": 1
+        },
+        {
+          "who": "Lena",
+          "de": "Viertel nach acht.",
+          "at": 2
+        },
+        {
+          "who": "Mateo",
+          "de": "Oh nein! Der Kurs!",
+          "at": 3
+        },
+        {
+          "who": "Lena",
+          "de": "Wann beginnt er?",
+          "at": 4
+        },
+        {
+          "who": "Mateo",
+          "de": "Um halb neun!",
+          "at": 5
+        },
+        {
+          "who": "Lena",
+          "de": "Dann schnell, los!",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Mateo hat keine Zeit.",
+          "es": "Escucha: Mateo no tiene tiempo.",
+          "en": "Listen: Mateo is in a hurry."
+        },
+        {
+          "lang": "de",
+          "text": "Wie spät ist es?",
+          "es": "¿Qué hora es?",
+          "en": "What time is it?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Viertel nach acht.",
+          "es": "Las ocho y cuarto.",
+          "en": "Quarter past eight.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Oh nein! Der Kurs!",
+          "es": "¡Oh no! ¡El curso!",
+          "en": "Oh no! The class!",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Wann beginnt er?",
+          "es": "¿A qué hora empieza?",
+          "en": "When does it start?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Um halb neun!",
+          "es": "¡A las ocho y media!",
+          "en": "At half past eight!",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Dann schnell, los!",
+          "es": "¡Entonces rápido, vamos!",
+          "en": "Then hurry, go!",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Wie spät ist es\njetzt?",
+      "pause": 6,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Schau auf die Uhr: Wie spät ist es jetzt?",
+          "es": "¡Ahora tú! Mira el reloj: ¿qué hora es ahora?",
+          "en": "Now you! Look at the clock: what time is it now?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Wie spät ist es?",
+          "at": 1
+        },
+        {
+          "text": "Es ist drei Uhr.",
+          "at": 1
+        },
+        {
+          "text": "halb vier = 3:30",
+          "at": 1
+        },
+        {
+          "text": "Viertel nach · Viertel vor",
+          "at": 1
+        },
+        {
+          "text": "um acht · von 9 bis 17 Uhr",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du fragst nach der Uhrzeit und sagst sie – offiziell und im Alltag.",
+          "es": "Preguntas la hora y la dices, de forma oficial y en el día a día.",
+          "en": "You ask for the time and tell it – officially and in everyday speech."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}
