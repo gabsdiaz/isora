@@ -69,6 +69,18 @@ const strings = {
   hideTranslation: { de: "Übersetzung ausblenden", es: "Ocultar traducción", en: "Hide translation" },
   nextStory: { de: "Nächste Geschichte", es: "Siguiente historia", en: "Next story" },
   lessons: { de: "Unterricht", es: "Clases 1:1", en: "1:1 lessons" },
+  teacher: { de: "Lehrkraft", es: "Profesor", en: "Teacher" },
+  chatTitle: { de: "Frag eine Lehrkraft", es: "Pregúntale a un profesor", en: "Ask a teacher" },
+  chatBody: {
+    de: "Du hast eine Frage zu einer Einheit, zur Grammatik oder zur Prüfung? Schreib hier – eine Lehrkraft antwortet dir so schnell wie möglich.",
+    es: "¿Tienes una duda sobre una unidad, la gramática o el examen? Escribe aquí: un profesor te responderá lo antes posible.",
+    en: "Got a question about a unit, grammar or the exam? Write here – a teacher will reply as soon as possible.",
+  },
+  chatLogin: {
+    de: "Melde dich mit Google an, um mit einer Lehrkraft zu chatten.",
+    es: "Inicia sesión con Google para chatear con un profesor.",
+    en: "Sign in with Google to chat with a teacher.",
+  },
   lessonTitle: { de: "Einzelunterricht", es: "Clases uno a uno", en: "One-to-one lessons" },
   lessonQuestion: {
     de: "Möchtest du eine Einzelstunde mit einer Lehrkraft? Hast du Fragen?",
@@ -92,6 +104,7 @@ const strings = {
   lessonCta: { de: "Hast du Fragen? Buche eine Einzelstunde.", es: "¿Tienes dudas? Reserva una clase 1:1.", en: "Questions? Book a 1:1 lesson." },
   gameZone: { de: "Spielzone", es: "Zona de juegos", en: "Game zone" },
   chooseTheme: { de: "Wähle ein Thema", es: "Elige un tema", en: "Choose a theme" },
+  chooseLevel: { de: "Wähle dein Niveau", es: "Elige tu nivel", en: "Choose your level" },
   chooseGame: { de: "Wähle ein Spiel", es: "Elige un juego", en: "Choose a game" },
   gameZoneBody: {
     de: "Spielen und lernen: Artikel, Wörter, Hören und Sprechen – nach Themen sortiert.",

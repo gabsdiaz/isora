@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getLevel, getUnitMeta } from "@/content/de/course";
 import { getUnitContent } from "@/content/de/units";
 import { useT, type StringKey } from "@/lib/i18n";
-import { unitKey as progressKey, useProgress } from "@/lib/progress";
+import { unitKey as progressKey, useLastVisit, useProgress } from "@/lib/progress";
+import { useMounted } from "../games/shared";
 import { Translatable } from "../german/Translatable";
 import { VideoSection } from "./VideoSection";
 import { TheorySection } from "./TheorySection";
@@ -28,9 +29,23 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
   const meta = getUnitMeta(levelId, number)!;
   const content = getUnitContent(levelId, number);
   const { g } = useT();
-  const { progress, markUnit } = useProgress();
-  const [active, setActive] = useState(0);
-  const done = progress[progressKey("de", levelId, number)]?.completed;
+  const { progress, markUnit, markSection } = useProgress();
+  const { last, setLast } = useLastVisit();
+  const mounted = useMounted();
+  const pk = progressKey("de", levelId, number);
+  // Pestaña: la elegida ahora, o la última que el estudiante abrió en esta unidad
+  const [chosen, setActive] = useState<number | null>(null);
+  const stored = last && last.level === levelId && last.number === number ? last.section : 0;
+  const active = chosen ?? Math.min(stored, SECTIONS.length - 1);
+  const seen = progress[pk]?.sections ?? [];
+  const done = progress[pk]?.completed;
+
+  // Guarda dónde va el estudiante (solo en el navegador, tras leer lo guardado)
+  useEffect(() => {
+    if (!mounted || !content) return;
+    setLast(levelId, number, active);
+    markSection(pk, SECTIONS[active].id);
+  }, [mounted, content, levelId, number, active, pk, setLast, markSection]);
   const key = `${levelId}/${number}`;
   const mediaKey = `de/${levelId}/${String(number).padStart(2, "0")}`;
 
@@ -93,8 +108,12 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
                 aria-current={active === i ? "step" : undefined}
                 className={`flex items-center gap-2 rounded-full px-3.5 py-2 text-sm transition ${active === i ? "bg-wine text-cream shadow-sm shadow-wine/20" : "text-cocoa hover:bg-cream-deep"}`}
               >
-                <span className={`flex h-5 w-5 items-center justify-center rounded-full text-[11px] ${active === i ? "bg-cream/25 text-cream" : "bg-cream-deep text-cocoa"}`}>
-                  {i + 1}
+                <span
+                  className={`flex h-5 w-5 items-center justify-center rounded-full text-[11px] ${
+                    active === i ? "bg-cream/25 text-cream" : seen.includes(s.id) ? "bg-sage-soft text-sage" : "bg-cream-deep text-cocoa"
+                  }`}
+                >
+                  {active !== i && seen.includes(s.id) ? "✓" : i + 1}
                 </span>
                 {g(s.label)}
               </button>
@@ -112,7 +131,7 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
           <ExercisesSection
             exercises={content.exercises}
             unitKey={key}
-            onComplete={(score, total) => markUnit(progressKey("de", levelId, number), score, total)}
+            onComplete={(score, total) => markUnit(pk, score, total)}
           />
         )}
         {active === 5 && <GuideSection mediaKey={mediaKey} title={meta.title} />}

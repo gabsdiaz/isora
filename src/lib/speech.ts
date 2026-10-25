@@ -68,6 +68,7 @@ export function speakGerman(text: string, voice: Voice = "m"): Promise<void> {
   if (typeof window === "undefined") return Promise.resolve();
   current?.pause();
   window.speechSynthesis?.cancel();
+  paused = false;
   const audio = new Audio(`/audio/${audioKey(text, voice)}.mp3`);
   current = audio;
   return new Promise((resolve) => {
@@ -99,6 +100,25 @@ export function stopSpeech() {
   if (typeof window === "undefined") return;
   const a = current;
   current = null;
+  paused = false;
   a?.pause();
   window.speechSynthesis?.cancel();
+}
+
+let paused = false;
+export const isSpeechPaused = () => paused;
+
+/** Pausa el audio actual (se puede seguir con resumeSpeech). */
+export function pauseSpeech() {
+  if (typeof window === "undefined") return;
+  paused = true;
+  current?.pause();
+  window.speechSynthesis?.pause();
+}
+
+export function resumeSpeech() {
+  if (typeof window === "undefined") return;
+  paused = false;
+  current?.play().catch(() => undefined);
+  window.speechSynthesis?.resume();
 }

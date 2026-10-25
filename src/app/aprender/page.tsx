@@ -5,16 +5,22 @@ import { german } from "@/content/de/course";
 import { isUnitAvailable } from "@/content/de/units";
 import { useT } from "@/lib/i18n";
 import { useSession } from "@/lib/session";
-import { unitKey, useProgress } from "@/lib/progress";
+import { unitKey, unitPercent, useLastVisit, useProgress } from "@/lib/progress";
+import { getUnitMeta } from "@/content/de/course";
+import type { StringKey } from "@/lib/i18n";
 import { dueCards, useDeck } from "@/lib/flashcards";
+
+const TILE = "mt-4 flex items-center justify-between gap-4 rounded-3xl border border-latte/60 bg-sand p-5 shadow-sm shadow-espresso/5 transition hover:border-cocoa-light hover:bg-sand-deep";
+const SECTION_LABELS: StringKey[] = ["secVideo", "secTheory", "secCards", "secReading", "secExercises", "secGuide"];
 
 export default function Dashboard() {
   const { g } = useT();
   const { user } = useSession();
   const { progress } = useProgress();
+  const { last } = useLastVisit();
 
   // Siguiente unidad disponible y no completada
-  let nextUnit: { level: string; label: string; number: number; title: string } | null = null;
+  let nextUnit: { level: string; label: string; number: number; title: string; section?: number } | null = null;
   for (const lvl of german.levels) {
     for (const u of lvl.units) {
       if (isUnitAvailable(lvl.id, u.number) && !progress[unitKey("de", lvl.id, u.number)]?.completed) {
@@ -24,10 +30,17 @@ export default function Dashboard() {
     }
     if (nextUnit) break;
   }
+  // …pero si el estudiante ya empezó algo, seguimos justo donde quedó
+  if (last && isUnitAvailable(last.level, last.number)) {
+    const lvl = german.levels.find((l) => l.id === last.level);
+    const meta = getUnitMeta(last.level, last.number);
+    if (lvl && meta) nextUnit = { level: lvl.id, label: lvl.label, number: last.number, title: meta.title, section: last.section };
+  }
+  const nextPct = nextUnit ? unitPercent(progress[unitKey("de", nextUnit.level, nextUnit.number)]) : 0;
 
   return (
     <div>
-      <p className="text-sm text-muted">
+      <p className="text-sm text-cocoa">
         {g("hello")}, {user?.name.split(" ")[0]}
       </p>
       <h1 className="mt-1 text-3xl font-semibold sm:text-4xl">{g("myCourses")}</h1>
@@ -54,11 +67,20 @@ export default function Dashboard() {
           href={`/aprender/de/${nextUnit.level}/${nextUnit.number}`}
           className="group mt-8 flex items-center justify-between gap-4 rounded-3xl border border-latte/60 bg-sand p-6 text-ink shadow-md shadow-espresso/5 transition hover:border-cocoa-light hover:bg-sand-deep"
         >
-          <div>
+          <div className="min-w-0 flex-1">
             <p className="text-xs font-medium uppercase tracking-[0.14em] text-wine">
               {g("continueLearning")} · {nextUnit.label} · {g("unit")} {nextUnit.number}
             </p>
-            <p className="mt-1 font-display text-2xl">{nextUnit.title}</p>
+            <p className="mt-1 font-display text-2xl">
+              {nextUnit.title}
+              {nextUnit.section !== undefined && <span className="ml-2 align-middle text-base text-cocoa">· {g(SECTION_LABELS[nextUnit.section] ?? "secVideo")}</span>}
+            </p>
+            <div className="mt-3 flex max-w-sm items-center gap-3">
+              <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-paper">
+                <div className="h-full rounded-full bg-wine" style={{ width: `${nextPct}%` }} />
+              </div>
+              <span className="text-xs tabular-nums text-cocoa">{nextPct}%</span>
+            </div>
           </div>
           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-wine text-cream transition group-hover:translate-x-1">
             →
@@ -69,33 +91,33 @@ export default function Dashboard() {
       <CardsTile />
       <Link
         href="/aprender/geschichten"
-        className="mt-4 flex items-center justify-between gap-4 rounded-3xl border border-line bg-paper p-5 transition hover:border-cocoa-light hover:shadow-md hover:shadow-espresso/10"
+        className={TILE}
       >
         <div className="flex items-center gap-4">
           <span className="text-3xl" aria-hidden="true">📚</span>
           <div>
             <p className="font-display text-xl text-wine">{g("stories")}</p>
-            <p className="text-sm text-muted">Der Kaffee-Dieb · Oma Hilde und das Handy · Pizza um Mitternacht …</p>
+            <p className="text-sm text-cocoa">Der Kaffee-Dieb · Oma Hilde und das Handy · Pizza um Mitternacht …</p>
           </div>
         </div>
         <span className="shrink-0 rounded-full bg-wine px-4 py-2 text-sm font-medium text-cream">Lesen →</span>
       </Link>
       <Link
         href="/aprender/spiele"
-        className="mt-4 flex items-center justify-between gap-4 rounded-3xl border border-line bg-paper p-5 transition hover:border-cocoa-light hover:shadow-md hover:shadow-espresso/10"
+        className={TILE}
       >
         <div className="flex items-center gap-4">
           <span className="text-3xl" aria-hidden="true">🎮</span>
           <div>
             <p className="font-display text-xl text-wine">{g("gameZone")}</p>
-            <p className="text-sm text-muted">Der, die, das · Memory · Glücksrad · Galgenmännchen</p>
+            <p className="text-sm text-cocoa">Der, die, das · Memory · Glücksrad · Galgenmännchen</p>
           </div>
         </div>
         <span className="rounded-full bg-wine px-4 py-2 text-sm font-medium text-cream">{g("games")} →</span>
       </Link>
       <Link
         href="/aprender/unterricht"
-        className="mt-4 flex items-center justify-between gap-4 rounded-3xl border border-latte/60 bg-sand p-5 transition hover:border-cocoa-light hover:bg-sand-deep"
+        className={TILE}
       >
         <div className="flex items-center gap-4">
           <span className="text-3xl" aria-hidden="true">🧑‍🏫</span>
@@ -150,13 +172,13 @@ function CardsTile() {
   return (
     <Link
       href="/aprender/karten"
-      className="mt-4 flex items-center justify-between gap-4 rounded-3xl border border-line bg-paper p-5 transition hover:border-cocoa-light hover:shadow-md hover:shadow-espresso/10"
+      className={TILE}
     >
       <div className="flex items-center gap-4">
         <span className="text-3xl" aria-hidden="true">🃏</span>
         <div>
           <p className="font-display text-xl text-wine">{g("myCards")}</p>
-          <p className="text-sm text-muted">
+          <p className="text-sm text-cocoa">
             {total} Karten · {due} heute fällig
           </p>
         </div>

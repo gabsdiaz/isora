@@ -8,6 +8,8 @@ import { imageFor } from "./images";
  */
 export type Theme = {
   id: string;
+  /** Nivel del curso (por ahora todos los temas son del A1.1) */
+  level: string;
   de: string;
   tr: Tr;
   emoji: string;
@@ -20,6 +22,7 @@ const q = (de: string, es: string, en: string) => ({ de, tr: { es, en } });
 export const THEMES: Theme[] = [
   {
     id: "ich",
+    level: "a1-1",
     de: "Ich & die Welt",
     tr: { es: "Yo y el mundo", en: "Me & the world" },
     emoji: "🌍",
@@ -35,6 +38,7 @@ export const THEMES: Theme[] = [
   },
   {
     id: "familie",
+    level: "a1-1",
     de: "Familie",
     tr: { es: "Familia", en: "Family" },
     emoji: "👨‍👩‍👧",
@@ -50,6 +54,7 @@ export const THEMES: Theme[] = [
   },
   {
     id: "berufe",
+    level: "a1-1",
     de: "Berufe",
     tr: { es: "Profesiones", en: "Jobs" },
     emoji: "💼",
@@ -65,6 +70,7 @@ export const THEMES: Theme[] = [
   },
   {
     id: "kurs",
+    level: "a1-1",
     de: "Im Kurs & Sachen",
     tr: { es: "En clase y objetos", en: "Classroom & things" },
     emoji: "✏️",
@@ -80,6 +86,7 @@ export const THEMES: Theme[] = [
   },
   {
     id: "zeit",
+    level: "a1-1",
     de: "Zahlen & Zeit",
     tr: { es: "Números y tiempo", en: "Numbers & time" },
     emoji: "🕒",
@@ -95,6 +102,7 @@ export const THEMES: Theme[] = [
   },
   {
     id: "alltag",
+    level: "a1-1",
     de: "Alltag & Hobbys",
     tr: { es: "Día a día y pasatiempos", en: "Daily life & hobbies" },
     emoji: "⚽",
@@ -110,6 +118,7 @@ export const THEMES: Theme[] = [
   },
   {
     id: "essen",
+    level: "a1-1",
     de: "Essen & Trinken",
     tr: { es: "Comida y bebida", en: "Food & drink" },
     emoji: "🍎",
@@ -125,6 +134,7 @@ export const THEMES: Theme[] = [
   },
   {
     id: "kleidung",
+    level: "a1-1",
     de: "Kleidung & Farben",
     tr: { es: "Ropa y colores", en: "Clothes & colours" },
     emoji: "👕",
@@ -140,6 +150,7 @@ export const THEMES: Theme[] = [
   },
   {
     id: "wohnung",
+    level: "a1-1",
     de: "Wohnung",
     tr: { es: "Vivienda", en: "Home" },
     emoji: "🏠",
@@ -155,6 +166,7 @@ export const THEMES: Theme[] = [
   },
   {
     id: "wetter",
+    level: "a1-1",
     de: "Wetter",
     tr: { es: "Clima", en: "Weather" },
     emoji: "☀️",
@@ -172,6 +184,7 @@ export const THEMES: Theme[] = [
 
 export const ALL_THEME: Theme = {
   id: "alles",
+  level: "a1-1",
   de: "Alles gemischt",
   tr: { es: "Todo mezclado", en: "Everything mixed" },
   emoji: "🎲",

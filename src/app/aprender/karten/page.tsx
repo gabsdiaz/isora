@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { getUnitMeta } from "@/content/de/course";
+import { german, getUnitMeta } from "@/content/de/course";
 import { BOX_LABELS, dueCards, useDeck } from "@/lib/flashcards";
 import { useT } from "@/lib/i18n";
 import { MiniCard, ReviewSession } from "@/components/flashcards/Flashcards";
@@ -12,8 +12,16 @@ export default function MyCards() {
   const { deck } = useDeck();
   const { g } = useT();
   const [reviewing, setReviewing] = useState(false);
-  const cards = useMemo(() => Object.values(deck), [deck]);
-  const due = dueCards(deck);
+  const [level, setLevel] = useState<string>("alle");
+  const allCards = useMemo(() => Object.values(deck), [deck]);
+  const levelOf = (source: string) => (source.includes("/") ? source.split("/")[0] : "mine");
+  const cards = useMemo(() => (level === "alle" ? allCards : allCards.filter((c) => levelOf(c.source) === level)), [allCards, level]);
+  const due = dueCards(Object.fromEntries(cards.map((c) => [c.id, c])));
+  const tabs = [
+    { id: "alle", label: "Alle", n: allCards.length },
+    ...german.levels.map((l) => ({ id: l.id, label: l.label, n: allCards.filter((c) => levelOf(c.source) === l.id).length })),
+    { id: "mine", label: "Eigene Wörter", n: allCards.filter((c) => levelOf(c.source) === "mine").length },
+  ];
   const byBox = [0, 1, 2, 3, 4, 5].map((b) => cards.filter((c) => c.box === b).length);
 
   const groups = useMemo(() => {
@@ -29,7 +37,23 @@ export default function MyCards() {
       <p className="text-sm text-muted">Karteikarten</p>
       <h1 className="mt-1 text-3xl font-semibold sm:text-4xl">{g("myCards")}</h1>
 
-      <div className="mt-6 grid gap-4 md:grid-cols-[1.3fr_1fr]">
+      <nav className="-mx-4 mt-5 flex gap-2 overflow-x-auto px-4 pb-1" aria-label="Niveaus">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            type="button"
+            disabled={tab.n === 0 && tab.id !== "alle"}
+            onClick={() => setLevel(tab.id)}
+            className={`shrink-0 rounded-full border px-4 py-1.5 text-sm transition disabled:opacity-40 ${
+              level === tab.id ? "border-wine bg-wine text-cream" : "border-line bg-paper text-cocoa hover:border-cocoa-light"
+            }`}
+          >
+            {tab.label} <span className="opacity-70">· {tab.n}</span>
+          </button>
+        ))}
+      </nav>
+
+      <div className="mt-5 grid gap-4 md:grid-cols-[1.3fr_1fr]">
         <div className="rounded-[2rem] border border-latte/60 bg-sand p-6 text-ink">
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-wine">Heute</p>
           <p className="mt-1 font-display text-4xl">{due.length} Karten fällig</p>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { german, getLevel } from "@/content/de/course";
 import { isUnitAvailable } from "@/content/de/units";
 import { useT } from "@/lib/i18n";
-import { unitKey, useProgress } from "@/lib/progress";
+import { unitKey, unitPercent, useProgress } from "@/lib/progress";
 
 export function LevelView({ levelId }: { levelId: string }) {
   const level = getLevel(levelId)!;
@@ -42,7 +42,9 @@ export function LevelView({ levelId }: { levelId: string }) {
       <ol className="grid gap-3 sm:grid-cols-2">
         {level.units.map((u) => {
           const available = isUnitAvailable(level.id, u.number);
-          const done = progress[unitKey("de", level.id, u.number)]?.completed;
+          const up = progress[unitKey("de", level.id, u.number)];
+          const done = up?.completed;
+          const pct = unitPercent(up);
           const body = (
             <>
               <span
@@ -54,13 +56,21 @@ export function LevelView({ levelId }: { levelId: string }) {
               </span>
               <span className="min-w-0 flex-1">
                 <span className={`block truncate font-display text-lg ${available ? "text-ink" : "text-ink/50"}`}>{u.title}</span>
+                {available && pct > 0 && (
+                  <span className="mt-1 flex items-center gap-2">
+                    <span className="h-1 flex-1 overflow-hidden rounded-full bg-cream-deep">
+                      <span className="block h-full rounded-full bg-wine" style={{ width: `${pct}%` }} />
+                    </span>
+                    <span className="text-[11px] tabular-nums text-muted">{pct}%</span>
+                  </span>
+                )}
               </span>
               <span
                 className={`shrink-0 rounded-full px-2.5 py-1 text-xs ${
                   done ? "bg-sage-soft text-sage" : available ? "bg-wine-soft text-wine" : "text-muted"
                 }`}
               >
-                {done ? g("completed") : available ? g("start") : g("comingSoon")}
+                {done ? g("completed") : available ? (pct > 0 ? g("continue") : g("start")) : g("comingSoon")}
               </span>
             </>
           );

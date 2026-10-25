@@ -1,10 +1,40 @@
 rules_version = '2';
 
-// Cada estudiante solo puede leer y escribir sus propios datos (users/{su uid} y lo que haya dentro).
 service cloud.firestore {
   match /databases/{database}/documents {
+
+    // Lehrkräfte: cambia el correo por el de la cuenta de Google con la que entras como profesora
+    // (para agregar más profesores: ['correo1@gmail.com', 'correo2@gmail.com'])
+    function isTeacher() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in ['TU_CORREO@gmail.com'];
+    }
+
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    // Datos de cada estudiante (idioma, progreso, flashcards): solo él mismo
     match /users/{userId}/{document=**} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read, write: if isOwner(userId);
+    }
+
+    // Chat con la Lehrkraft: el estudiante ve su conversación; las Lehrkräfte ven todas
+    match /chats/{studentId} {
+      allow read, write: if isOwner(studentId) || isTeacher();
+
+      match /messages/{messageId} {
+        allow read: if isOwner(studentId) || isTeacher();
+        allow create: if (
+            (isOwner(studentId) && request.resource.data.from == 'student')
+            || (isTeacher() && request.resource.data.from == 'teacher')
+          )
+          && request.resource.data.text is string
+          && request.resource.data.text.size() > 0
+          && request.resource.data.text.size() <= 2000;
+        allow update, delete: if false;
+      }
     }
   }
 }

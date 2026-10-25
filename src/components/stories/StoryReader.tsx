@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { STORIES, type Story, type StoryLine } from "@/content/de/stories";
 import { getTheme } from "@/content/de/themes";
 import { emojiCode } from "@/content/de/images";
 import type { Voice } from "@/content/types";
 import { useT } from "@/lib/i18n";
 import { useProgress } from "@/lib/progress";
-import { speakGerman, stopSpeech } from "@/lib/speech";
+import { usePlaylist } from "@/lib/playlist";
+import { PlayerControls } from "../PlayerControls";
 import { SpeakButton } from "../SpeakButton";
 import { GermanText } from "../german/Gloss";
 import { TranslateToggle } from "../german/Translatable";
@@ -21,39 +22,16 @@ const Emoji = ({ e, size }: { e: string; size: number }) => (
 export function StoryReader({ story }: { story: Story }) {
   const { g, t, loc } = useT();
   const theme = getTheme(story.theme);
-  const [playing, setPlaying] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
-  const cancel = useRef(false);
+  const player = usePlaylist();
+  const playing = player.currentId;
   const voiceOf = (l: StoryLine): Voice => (l.who ? (story.voices[l.who] ?? "m") : "f");
 
-  // Al salir de la historia (Next.js oculta la página) se detiene el audio
-  useLayoutEffect(
-    () => () => {
-      cancel.current = true;
-      stopSpeech();
-    },
-    [],
-  );
-
-  const playAll = async () => {
-    if (playing) {
-      cancel.current = true;
-      stopSpeech();
-      setPlaying(null);
-      return;
-    }
-    cancel.current = false;
-    for (const [si, scene] of story.scenes.entries()) {
-      for (const [li, line] of scene.lines.entries()) {
-        if (cancel.current) return;
-        setPlaying(`${si}-${li}`);
-        document.getElementById(`line-${si}-${li}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
-        await speakGerman(line.de, voiceOf(line));
-        await new Promise((r) => setTimeout(r, 300));
-      }
-    }
-    setPlaying(null);
-  };
+  const playAll = () =>
+    player.play(
+      story.scenes.flatMap((scene, si) => scene.lines.map((line, li) => ({ text: line.de, voice: voiceOf(line), id: `${si}-${li}` }))),
+      (id) => id && document.getElementById(`line-${id}`)?.scrollIntoView({ behavior: "smooth", block: "center" }),
+    );
 
   const idx = STORIES.findIndex((s) => s.id === story.id);
   const next = STORIES[(idx + 1) % STORIES.length];
@@ -84,9 +62,7 @@ export function StoryReader({ story }: { story: Story }) {
       </header>
 
       <div className="sticky top-16 z-10 -mx-4 mt-6 flex flex-wrap items-center gap-2 border-b border-line bg-cream/95 px-4 py-2.5 backdrop-blur">
-        <button type="button" onClick={playAll} className="rounded-full bg-wine px-4 py-2 text-sm font-medium text-cream transition hover:bg-wine-light">
-          {playing ? "■ Stopp" : `▶ ${g("listenStory")}`}
-        </button>
+        <PlayerControls state={player.state} label={g("listenStory")} onPlay={playAll} onPause={player.pause} onResume={player.resume} onStop={player.stop} />
         <button
           type="button"
           onClick={() => setShowAll((v) => !v)}

@@ -8,6 +8,9 @@ import { useT } from "@/lib/i18n";
 import { Logo } from "./Logo";
 import { GlossProvider } from "./german/Gloss";
 import { APP_NAME } from "@/lib/brand";
+import { subscribeThread } from "@/lib/chat";
+import { firebaseEnabled } from "@/lib/firebase";
+import { useCloudSync } from "@/lib/cloud";
 
 /** Protege las páginas internas: exige sesión y que el idioma nativo esté elegido. */
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -36,8 +39,20 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   );
 }
 
+/** Punto rojo en "Lehrkraft" cuando el profesor respondió. */
+function useTeacherReply(uid: string | undefined) {
+  const [unread, setUnread] = useState(false);
+  useEffect(() => {
+    if (!firebaseEnabled || !uid || uid === "demo") return;
+    return subscribeThread(uid, (t) => setUnread(Boolean(t?.unreadStudent)));
+  }, [uid]);
+  return unread;
+}
+
 function Header() {
   const { user, signOut, setNativeLang } = useSession();
+  const unread = useTeacherReply(user?.uid);
+  useCloudSync(user?.uid);
   const { t, g, lang } = useT();
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -68,7 +83,7 @@ function Header() {
             <NavLink href="/aprender/karten" label={g("myCards")} />
             <NavLink href="/aprender/geschichten" label={g("stories")} />
             <NavLink href="/aprender/spiele" label={g("games")} />
-            <NavLink href="/aprender/unterricht" label={g("lessons")} />
+            <NavLink href="/aprender/chat" also="/aprender/unterricht" label={g("teacher")} dot={unread} />
           </nav>
         </div>
         <div className="relative" ref={menuRef}>
@@ -100,8 +115,8 @@ function Header() {
               <Link href="/aprender/spiele" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep lg:hidden">
                 🎮 {g("games")}
               </Link>
-              <Link href="/aprender/unterricht" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep lg:hidden">
-                🧑‍🏫 {g("lessons")}
+              <Link href="/aprender/chat" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-ink hover:bg-cream-deep lg:hidden">
+                🧑‍🏫 {g("teacher")} {unread && <span className="ml-1 inline-block h-2 w-2 rounded-full bg-wine" />}
               </Link>
               <p className="px-3 pb-1 pt-2 text-xs font-medium uppercase tracking-wide text-muted">{t("settingsLang")}</p>
               <div className="flex gap-1 px-2 pb-2">
@@ -138,15 +153,17 @@ function Header() {
   );
 }
 
-function NavLink({ href, label }: { href: string; label: string }) {
+function NavLink({ href, label, also, dot }: { href: string; label: string; also?: string; dot?: boolean }) {
   const pathname = usePathname();
-  const active = href === "/aprender" ? pathname === "/aprender" || pathname.startsWith("/aprender/de") : pathname.startsWith(href);
+  const active =
+    href === "/aprender" ? pathname === "/aprender" || pathname.startsWith("/aprender/de") : pathname.startsWith(href) || Boolean(also && pathname.startsWith(also));
   return (
     <Link
       href={href}
-      className={`rounded-full px-3.5 py-1.5 text-sm transition ${active ? "bg-wine text-cream" : "text-cocoa hover:bg-cream-deep hover:text-ink"}`}
+      className={`relative rounded-full px-3.5 py-1.5 text-sm transition ${active ? "bg-wine text-cream" : "text-cocoa hover:bg-cream-deep hover:text-ink"}`}
     >
       {label}
+      {dot && <span className="absolute right-1 top-1 h-2 w-2 rounded-full bg-wine ring-2 ring-paper" aria-label="neu" />}
     </Link>
   );
 }

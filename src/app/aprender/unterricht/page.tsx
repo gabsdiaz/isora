@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { TEACHERS, type Teacher } from "@/content/teachers";
 import { useT } from "@/lib/i18n";
+import { TeacherTabs } from "@/components/chat/TeacherTabs";
 
 const TOPICS = [
   { emoji: "❓", de: "Fragen zu einer Einheit", tr: { es: "Resolver dudas de una unidad", en: "Questions about a unit" } },
@@ -25,6 +26,7 @@ export default function Lessons() {
 
   return (
     <div>
+      <TeacherTabs />
       <p className="text-sm text-muted">{t("lessons")}</p>
       <h1 className="mt-1 text-3xl font-semibold sm:text-4xl">{g("lessonTitle")}</h1>
 

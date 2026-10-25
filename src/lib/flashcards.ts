@@ -117,3 +117,6 @@ export function dueCards(deck: Deck, now = Date.now()) {
 }
 
 export const BOX_LABELS = ["Neu", "Lernen", "1 Tag", "3 Tage", "1 Woche", "Gelernt"];
+
+export const CARDS_KEY = KEY;
+export const CARDS_EVENT = EVENT;

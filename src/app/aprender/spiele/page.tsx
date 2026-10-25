@@ -2,14 +2,17 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { german } from "@/content/de/course";
 import { ALL_THEMES, GAMES, themeNouns, themeWords } from "@/content/de/themes";
 import { useT } from "@/lib/i18n";
 
 /** Spielzone: primero el tema, luego el juego. */
 export default function GameZone() {
   const { g, t, loc } = useT();
+  const [levelId, setLevelId] = useState("a1-1");
   const [themeId, setThemeId] = useState("alles");
-  const theme = ALL_THEMES.find((x) => x.id === themeId)!;
+  const themes = ALL_THEMES.filter((x) => x.level === levelId);
+  const theme = themes.find((x) => x.id === themeId) ?? themes[0];
 
   return (
     <div>
@@ -17,9 +20,29 @@ export default function GameZone() {
       <h1 className="mt-1 text-3xl font-semibold sm:text-4xl">{g("gameZone")} 🎮</h1>
       <p className="mt-2 max-w-xl text-cocoa">{g("gameZoneBody")}</p>
 
-      <h2 className="mt-8 text-xl font-semibold">1. {g("chooseTheme")}</h2>
+      <h2 className="mt-8 text-xl font-semibold">1. {g("chooseLevel")}</h2>
+      <nav className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1" aria-label="Niveaus">
+        {german.levels.map((l) => {
+          const has = ALL_THEMES.some((x) => x.level === l.id);
+          return (
+            <button
+              key={l.id}
+              type="button"
+              disabled={!has}
+              onClick={() => setLevelId(l.id)}
+              className={`shrink-0 rounded-full border px-4 py-1.5 text-sm transition disabled:opacity-45 ${
+                l.id === levelId ? "border-wine bg-wine text-cream" : "border-line bg-paper text-cocoa hover:border-cocoa-light"
+              }`}
+            >
+              {l.label} {!has && <span className="opacity-70">· bald</span>}
+            </button>
+          );
+        })}
+      </nav>
+
+      <h2 className="mt-8 text-xl font-semibold">2. {g("chooseTheme")}</h2>
       <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-        {ALL_THEMES.map((th) => {
+        {themes.map((th) => {
           const active = th.id === themeId;
           return (
             <button
@@ -45,7 +68,7 @@ export default function GameZone() {
         })}
       </div>
 
-      <h2 className="mt-8 text-xl font-semibold">2. {g("chooseGame")}</h2>
+      <h2 className="mt-8 text-xl font-semibold">3. {g("chooseGame")}</h2>
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
         {GAMES.map((game) => (
           <Link

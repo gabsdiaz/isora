@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
+import { german } from "@/content/de/course";
 import { STORIES } from "@/content/de/stories";
 import { getTheme } from "@/content/de/themes";
 import { emojiCode } from "@/content/de/images";
@@ -11,7 +13,10 @@ import { useProgress } from "@/lib/progress";
 export default function Stories() {
   const { g, t, loc } = useT();
   const { progress } = useProgress();
-  const read = STORIES.filter((s) => progress[`story/${s.id}`]?.completed).length;
+  const [levelId, setLevelId] = useState("a1-1");
+  const level = german.levels.find((l) => l.id === levelId)!;
+  const list = STORIES.filter((s) => s.level === level.label);
+  const read = list.filter((s) => progress[`story/${s.id}`]?.completed).length;
 
   return (
     <div>
@@ -20,14 +25,35 @@ export default function Stories() {
       <p className="mt-2 max-w-xl text-cocoa">{g("storiesBody")}</p>
       <p className="mt-1 max-w-xl text-sm italic text-muted">{t("storiesBody")}</p>
 
-      <div className="mt-8 flex items-baseline justify-between">
-        <h2 className="text-xl font-semibold">A1.1 · Anfänger</h2>
+      <nav className="-mx-4 mt-6 flex gap-2 overflow-x-auto px-4 pb-1" aria-label="Niveaus">
+        {german.levels.map((l) => {
+          const n = STORIES.filter((s) => s.level === l.label).length;
+          return (
+            <button
+              key={l.id}
+              type="button"
+              disabled={!n}
+              onClick={() => setLevelId(l.id)}
+              className={`shrink-0 rounded-full border px-4 py-1.5 text-sm transition disabled:opacity-45 ${
+                l.id === levelId ? "border-wine bg-wine text-cream" : "border-line bg-paper text-cocoa hover:border-cocoa-light"
+              }`}
+            >
+              {l.label} <span className="opacity-70">· {n ? n : "bald"}</span>
+            </button>
+          );
+        })}
+      </nav>
+
+      <div className="mt-6 flex items-baseline justify-between">
+        <h2 className="text-xl font-semibold">
+          {level.label} · {level.name.de}
+        </h2>
         <p className="text-sm text-muted">
-          {read}/{STORIES.length} gelesen
+          {read}/{list.length} gelesen
         </p>
       </div>
       <div className="mt-3 grid gap-4 sm:grid-cols-2">
-        {STORIES.map((s) => {
+        {list.map((s) => {
           const done = progress[`story/${s.id}`];
           const theme = getTheme(s.theme);
           return (

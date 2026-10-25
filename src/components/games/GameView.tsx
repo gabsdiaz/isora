@@ -30,14 +30,15 @@ export function GameView({ gameId, themeId }: { gameId: GameId; themeId: string 
             <span aria-hidden="true">{game.emoji}</span> {game.de}
           </h1>
           <p className="mt-1 text-sm text-muted">
-            {loc(game.tr)} · Thema: <b className="text-cocoa">{theme.de}</b>
+            {loc(game.tr)} · <span className="rounded-full bg-cream-deep px-2 py-0.5 text-xs text-cocoa">{theme.level.toUpperCase().replace("-", ".")}</span> · Thema:{" "}
+            <b className="text-cocoa">{theme.de}</b>
           </p>
         </div>
       </div>
 
       <nav className="-mx-4 mt-4 overflow-x-auto px-4 pb-1" aria-label="Themen">
         <ul className="flex gap-2 sm:flex-wrap">
-          {ALL_THEMES.map((t) => (
+          {ALL_THEMES.filter((t) => t.level === theme.level).map((t) => (
             <li key={t.id} className="shrink-0">
               <Link
                 href={`/aprender/spiele/${gameId}/${t.id}`}
