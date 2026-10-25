@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { VideoScript } from "@/content/types";
 import { videos } from "@/content/generated/media";
 import { useT } from "@/lib/i18n";
@@ -16,6 +16,13 @@ export function VideoSection({ script, title, mediaKey, unitKey }: { script: Vid
   const [choice, setTrack] = useState<Track | null>(null);
   const track: Track = choice ?? lang;
   const base = `/videos/${mediaKey}`;
+
+  // Al salir de la unidad (o cambiar de pestaña) Next.js oculta la página sin desmontarla:
+  // pausamos el video para que no siga sonando de fondo.
+  useLayoutEffect(() => {
+    const v = ref.current;
+    return () => v?.pause();
+  }, [info]);
 
   // Activa la pista de subtítulos elegida
   useEffect(() => {

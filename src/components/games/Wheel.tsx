@@ -10,12 +10,12 @@ import { ARTICLE_BG, Progress, ResultCard, headword, sample, shuffle, stars } fr
 
 /* Casillas de la ruleta */
 const SEGMENTS = [
-  { id: "bild", de: "Was ist das?", emoji: "🖼️", color: "#940d00", text: "#fbf9f4" },
-  { id: "sprich", de: "Sprich!", emoji: "🗣️", color: "#f3ead9", text: "#940d00" },
-  { id: "artikel", de: "der, die, das?", emoji: "🎯", color: "#6b4a3a", text: "#fbf9f4" },
-  { id: "hoer", de: "Hör zu!", emoji: "🎧", color: "#e8d9c2", text: "#4a3326" },
-  { id: "uebersetze", de: "Übersetze!", emoji: "🔤", color: "#940d00", text: "#fbf9f4" },
-  { id: "joker", de: "Joker!", emoji: "⭐", color: "#c08a3e", text: "#fbf9f4" },
+  { id: "bild", de: "Was ist das?", emoji: "🖼️", color: "#f4c9b9", text: "#7a3324" },
+  { id: "sprich", de: "Sprich!", emoji: "🗣️", color: "#f8e6bd", text: "#6b4f1d" },
+  { id: "artikel", de: "der, die, das?", emoji: "🎯", color: "#ead3c3", text: "#5a3d2e" },
+  { id: "hoer", de: "Hör zu!", emoji: "🎧", color: "#f7d9bb", text: "#6b4226" },
+  { id: "uebersetze", de: "Übersetze!", emoji: "🔤", color: "#f1cdca", text: "#7a3324" },
+  { id: "joker", de: "Joker!", emoji: "⭐", color: "#f5df9e", text: "#6b4f1d" },
 ] as const;
 type SegId = (typeof SEGMENTS)[number]["id"];
 
@@ -119,7 +119,7 @@ export function Wheel({ theme, onRestart }: { theme: Theme; onRestart: () => voi
       <div className="mt-4 grid items-center gap-6 md:grid-cols-[1fr_1.1fr]">
         {/* La ruleta */}
         <div className="relative mx-auto aspect-square w-full max-w-[320px]">
-          <div className="absolute left-1/2 top-[-6px] z-10 -translate-x-1/2 text-3xl text-wine drop-shadow" aria-hidden="true">
+          <div className="absolute left-1/2 top-[-4px] z-10 -translate-x-1/2 text-2xl text-wine/80 drop-shadow-sm" aria-hidden="true">
             ▼
           </div>
           <svg
@@ -133,29 +133,29 @@ export function Wheel({ theme, onRestart }: { theme: Theme; onRestart: () => voi
               const mid = i * SLICE + SLICE / 2;
               return (
                 <g key={s.id}>
-                  <path d={`M0 0 L${96 * Math.cos(a0)} ${96 * Math.sin(a0)} A96 96 0 0 1 ${96 * Math.cos(a1)} ${96 * Math.sin(a1)} Z`} fill={s.color} stroke="#fbf9f4" strokeWidth="1.5" />
-                  <g transform={`rotate(${mid}) translate(0 -62)`}>
-                    <text textAnchor="middle" fontSize="20" y="4">
+                  <path d={`M0 0 L${96 * Math.cos(a0)} ${96 * Math.sin(a0)} A96 96 0 0 1 ${96 * Math.cos(a1)} ${96 * Math.sin(a1)} Z`} fill={s.color} stroke="#fffdf8" strokeWidth="2" />
+                  <g transform={`rotate(${mid}) translate(0 -64)`}>
+                    <text textAnchor="middle" fontSize="15" y="4">
                       {s.emoji}
                     </text>
-                    <text textAnchor="middle" fontSize="9" y="22" fill={s.text} fontWeight="600">
+                    <text textAnchor="middle" fontSize="6.6" y="19" fill={s.text} fontWeight="600">
                       {s.de}
                     </text>
                   </g>
                 </g>
               );
             })}
-            <circle r="97" fill="none" stroke="#4a3326" strokeWidth="2.5" />
+            <circle r="97" fill="none" stroke="#e2c9ae" strokeWidth="3" />
             {SEGMENTS.map((s, i) => (
-              <circle key={s.id} cx={0} cy={-97} r="2.2" fill="#fbf9f4" transform={`rotate(${i * SLICE})`} />
+              <circle key={s.id} cx={0} cy={-97} r="2.2" fill="#fffdf8" transform={`rotate(${i * SLICE})`} />
             ))}
-            <circle r="16" fill="#fbf9f4" stroke="#4a3326" strokeWidth="2" />
+            <circle r="17" fill="#fffdf8" stroke="#e2c9ae" strokeWidth="2" />
           </svg>
           <button
             type="button"
             onClick={spin}
             disabled={spinning || Boolean(question)}
-            className="absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2 rounded-full bg-wine text-xs font-bold text-cream shadow-lg transition hover:scale-105 disabled:opacity-60"
+            className="absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-wine/70 bg-paper text-[11px] font-semibold text-wine shadow-md transition hover:scale-105 disabled:opacity-70"
           >
             {spinning ? "…" : "Drehen!"}
           </button>
