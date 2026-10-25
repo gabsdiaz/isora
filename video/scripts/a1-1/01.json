@@ -1,0 +1,147 @@
+{
+  "key": "de/a1-1/01",
+  "level": "A1.1",
+  "number": 1,
+  "title": "Vorstellung",
+  "subtitle": "Presentarte en alemán",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": ["👋", "🇩🇪", "🗣️"],
+      "say": [
+        { "lang": "es", "text": "¡Hola! Bienvenido a tu primera clase de alemán.", "en": "Hi! Welcome to your first German lesson." },
+        { "lang": "es", "text": "Hoy vas a aprender a presentarte. Al final de este video vas a poder decir quién eres y de dónde vienes… en alemán.", "en": "Today you'll learn to introduce yourself. By the end of this video you'll be able to say who you are and where you're from… in German." }
+      ]
+    },
+    {
+      "type": "timeline",
+      "heading": "Grüßen",
+      "gloss": "saludar",
+      "items": [
+        { "de": "Guten Morgen!", "es": "buenos días", "icon": "🌅", "at": 1 },
+        { "de": "Guten Tag!", "es": "buen día", "icon": "☀️", "at": 3 },
+        { "de": "Guten Abend!", "es": "buenas noches (al llegar)", "icon": "🌆", "at": 5 },
+        { "de": "Gute Nacht!", "es": "buenas noches (a dormir)", "icon": "🌙", "at": 7 }
+      ],
+      "say": [
+        { "lang": "es", "text": "Empecemos por saludar. En alemán, el saludo cambia según la hora del día. Por la mañana decimos:", "en": "Let's start with greetings. In German the greeting changes with the time of day. In the morning we say:" },
+        { "lang": "de", "text": "Guten Morgen!", "es": "¡Buenos días!", "en": "Good morning!" },
+        { "lang": "es", "text": "Durante el día, decimos:", "en": "During the day we say:" },
+        { "lang": "de", "text": "Guten Tag!", "es": "¡Buen día!", "en": "Good day!" },
+        { "lang": "es", "text": "Y en la noche, cuando llegas a algún lugar:", "en": "And in the evening, when you arrive somewhere:" },
+        { "lang": "de", "text": "Guten Abend!", "es": "¡Buenas noches!", "en": "Good evening!" },
+        { "lang": "es", "text": "Ojo: esta última solo se dice antes de ir a dormir.", "en": "Careful: this last one is only said before going to bed." },
+        { "lang": "de", "text": "Gute Nacht!", "es": "¡Buenas noches! (a dormir)", "en": "Good night!" }
+      ]
+    },
+    {
+      "type": "tip",
+      "note": "Hallo! = siempre ✓",
+      "sticker": "👋",
+      "say": [
+        { "lang": "es", "text": "Y hay un comodín que sirve a cualquier hora, sobre todo con amigos:", "en": "And there's a wildcard that works at any time, especially with friends:" },
+        { "lang": "de", "text": "Hallo!", "es": "¡Hola!", "en": "Hi!" }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Wie heißt du?",
+      "gloss": "¿cómo te llamas?",
+      "sticker": "🏷️",
+      "lines": [
+        { "de": "Ich heiße Lena.", "es": "Me llamo Lena.", "mark": "heiße", "at": 1 },
+        { "de": "Ich bin Lena.", "es": "Soy Lena.", "mark": "bin", "at": 4 }
+      ],
+      "notes": [
+        { "text": "ich = yo", "at": 2 },
+        { "text": "ß = ss", "at": 2 }
+      ],
+      "say": [
+        { "lang": "es", "text": "Ahora, tu nombre. Fíjate en esta frase:", "en": "Now, your name. Look at this sentence:" },
+        { "lang": "de", "text": "Ich heiße Lena.", "voice": "f", "es": "Me llamo Lena.", "en": "My name is Lena." },
+        { "lang": "es", "text": "«Ich» significa «yo», y «heiße» viene del verbo heißen, que significa llamarse. Esa letra rara, la ese-zet, suena como una doble ese.", "en": "“Ich” means “I”, and “heiße” comes from the verb heißen, which means to be called. That strange letter, the eszett, sounds like a double s." },
+        { "lang": "es", "text": "También puedes decir, simplemente:", "en": "You can also simply say:" },
+        { "lang": "de", "text": "Ich bin Lena.", "voice": "f", "es": "Soy Lena.", "en": "I'm Lena." },
+        { "lang": "es", "text": "«Ich bin» es «yo soy». ¡Así de fácil!", "en": "“Ich bin” is “I am”. That easy!" }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "Woher kommst du?",
+      "gloss": "¿de dónde eres?",
+      "sticker": "🌍",
+      "example": { "de": "Ich komme aus Kolumbien.", "es": "Soy de Colombia.", "at": 1 },
+      "rows": [
+        { "p": "ich", "stem": "komm", "end": "e", "at": 3 },
+        { "p": "du", "stem": "komm", "end": "st", "at": 4 },
+        { "p": "Sie", "stem": "komm", "end": "en", "at": 5 }
+      ],
+      "say": [
+        { "lang": "es", "text": "¿Y de dónde eres? Para eso usamos «komme aus»:", "en": "And where are you from? For that we use “komme aus”:" },
+        { "lang": "de", "text": "Ich komme aus Kolumbien.", "voice": "m", "es": "Soy de Colombia.", "en": "I'm from Colombia." },
+        { "lang": "es", "text": "Mira lo que pasa con el verbo kommen, venir. Lo que cambia es solo el final:", "en": "Look what happens to the verb kommen, to come. Only the ending changes:" },
+        { "lang": "es", "text": "Con «ich», termina en e: komme.", "en": "With “ich”, it ends in e: komme." },
+        { "lang": "es", "text": "Con «du», termina en ese-te: kommst.", "en": "With “du”, it ends in s-t: kommst." },
+        { "lang": "es", "text": "Y con «Sie», es igual al infinitivo: kommen.", "en": "And with “Sie”, it's the same as the infinitive: kommen." }
+      ]
+    },
+    {
+      "type": "compare",
+      "heading": "du oder Sie?",
+      "left": { "title": "du", "icon": "🧑‍🤝‍🧑", "gloss": "amigos, familia, niños", "example": "Wie heißt du?", "at": 1 },
+      "right": { "title": "Sie", "icon": "🤵", "gloss": "profe, tienda, adultos", "example": "Wie heißen Sie?", "at": 3 },
+      "say": [
+        { "lang": "es", "text": "Y ahora, un detalle muy alemán: hay dos formas de decir «tú». Con amigos, familia y niños usas «du».", "en": "And now a very German detail: there are two ways to say “you”. With friends, family and children you use “du”." },
+        { "lang": "de", "text": "Wie heißt du?", "voice": "f", "es": "¿Cómo te llamas?", "en": "What's your name?" },
+        { "lang": "es", "text": "Pero con un profesor, en una tienda o con un adulto que no conoces, usas «Sie», con mayúscula. Es como decir «usted».", "en": "But with a teacher, in a shop or with an adult you don't know, you use “Sie”, with a capital S. It's the formal “you”." },
+        { "lang": "de", "text": "Wie heißen Sie?", "voice": "m", "es": "¿Cómo se llama usted?", "en": "What's your name? (formal)" },
+        { "lang": "es", "text": "Si tienes dudas, usa «Sie». ¡Siempre es más educado!", "en": "If in doubt, use “Sie”. It's always more polite!" }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Im Sprachkurs",
+      "people": { "Lena": { "icon": "👩", "voice": "f" }, "Mateo": { "icon": "🧑", "voice": "m" } },
+      "lines": [
+        { "who": "Lena", "de": "Hallo! Ich bin Lena. Wie heißt du?", "at": 1 },
+        { "who": "Mateo", "de": "Ich heiße Mateo.", "at": 2 },
+        { "who": "Lena", "de": "Woher kommst du?", "at": 3 },
+        { "who": "Mateo", "de": "Ich komme aus Kolumbien. Und du?", "at": 4 },
+        { "who": "Lena", "de": "Ich komme aus Österreich. Tschüss!", "at": 5 }
+      ],
+      "say": [
+        { "lang": "es", "text": "Ahora escucha una conversación completa entre Lena y Mateo.", "en": "Now listen to a whole conversation between Lena and Mateo." },
+        { "lang": "de", "text": "Hallo! Ich bin Lena. Wie heißt du?", "voice": "f", "es": "¡Hola! Soy Lena. ¿Cómo te llamas?", "en": "Hi! I'm Lena. What's your name?" },
+        { "lang": "de", "text": "Ich heiße Mateo.", "voice": "m", "es": "Me llamo Mateo.", "en": "My name is Mateo." },
+        { "lang": "de", "text": "Woher kommst du?", "voice": "f", "es": "¿De dónde eres?", "en": "Where are you from?" },
+        { "lang": "de", "text": "Ich komme aus Kolumbien. Und du?", "voice": "m", "es": "Soy de Colombia. ¿Y tú?", "en": "I'm from Colombia. And you?" },
+        { "lang": "de", "text": "Ich komme aus Österreich. Tschüss!", "voice": "f", "es": "Soy de Austria. ¡Chao!", "en": "I'm from Austria. Bye!" }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich heiße ______.\nIch komme aus ______.",
+      "pause": 5,
+      "say": [
+        { "lang": "es", "text": "¡Ahora tú! Di en voz alta tu nombre y de dónde eres. Te espero.", "en": "Now you! Say your name and where you're from out loud. I'll wait." }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        { "text": "Guten Morgen! · Guten Tag! · Guten Abend!", "at": 1 },
+        { "text": "Ich heiße … / Ich bin …", "at": 1 },
+        { "text": "Ich komme aus …", "at": 1 },
+        { "text": "du = amigos · Sie = usted", "at": 1 }
+      ],
+      "say": [
+        { "lang": "es", "text": "¡Muy bien! Repasemos.", "en": "Very good! Let's review." },
+        { "lang": "es", "text": "Ya sabes saludar según la hora, decir cómo te llamas y de dónde eres, y sabes cuándo usar du y cuándo usar Sie. Ahora ve a los ejercicios para practicar.", "en": "You can now greet depending on the time, say your name and where you're from, and you know when to use du and when to use Sie. Now go to the exercises to practise." },
+        { "lang": "de", "text": "Bis bald!", "voice": "f", "es": "¡Hasta pronto!", "en": "See you soon!" }
+      ]
+    }
+  ]
+}
