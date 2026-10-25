@@ -7,7 +7,7 @@ import { useT } from "@/lib/i18n";
 import { Logo } from "@/components/Logo";
 import { FullPageLoader } from "@/components/AppShell";
 import { GoogleButton } from "@/components/GoogleButton";
-import { GOOGLE_CLIENT_ID, isMobileDevice } from "@/lib/firebase";
+import { GOOGLE_CLIENT_ID, firebaseEnabled, isMobileDevice } from "@/lib/firebase";
 
 /** Navegadores internos de apps (Instagram, Facebook, TikTok…): Google no permite iniciar sesión ahí. */
 const IN_APP = /FBAN|FBAV|Instagram|Line\/|TikTok|Snapchat|; wv\)/i;
@@ -15,7 +15,7 @@ const noop = () => () => {};
 const useMobileGoogle = () =>
   useSyncExternalStore(
     noop,
-    () => Boolean(GOOGLE_CLIENT_ID) && isMobileDevice(),
+    () => firebaseEnabled && Boolean(GOOGLE_CLIENT_ID) && isMobileDevice(),
     () => false,
   );
 const useInAppBrowser = () =>

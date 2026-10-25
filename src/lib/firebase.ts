@@ -19,7 +19,7 @@ const config = {
 export const firebaseEnabled = Boolean(config.apiKey && config.authDomain && config.projectId);
 
 /** ID de cliente web de Google (Credenciales de Google Cloud). Es público: va en el navegador. */
-export const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "";
+export const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "412381183744-p7u847fisobeloafo2kad3p2a8qprdld.apps.googleusercontent.com";
 
 /** Celular o tablet: ahí usamos el botón oficial de Google (ver GoogleButton.tsx). */
 export const isMobileDevice = () => typeof navigator !== "undefined" && /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
