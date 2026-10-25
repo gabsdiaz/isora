@@ -93,8 +93,8 @@ export function useLastVisit() {
 
 export const unitKey = (lang: string, level: string, n: number) => `${lang}/${level}/${n}`;
 
-/** Porcentaje de una unidad: 6 secciones vistas + ejercicios terminados. */
-export function unitPercent(p: UnitProgress | undefined, sections = 6) {
+/** Porcentaje de una unidad: 9 secciones vistas + ejercicios terminados. */
+export function unitPercent(p: UnitProgress | undefined, sections = 9) {
   if (!p) return 0;
   const seen = Math.min(p.sections?.length ?? 0, sections);
   return Math.round(((seen + (p.completed ? 2 : 0)) / (sections + 2)) * 100);

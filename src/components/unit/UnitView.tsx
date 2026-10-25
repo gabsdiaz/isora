@@ -15,12 +15,17 @@ import { ReadingSection } from "./ReadingSection";
 import { ExercisesSection } from "./ExercisesSection";
 import { GuideSection } from "./GuideSection";
 import { UnitCards } from "../flashcards/UnitCards";
+import { PRACTICE } from "@/content/de/practice";
+import { ListeningSection, SpeakingSection, WritingSection, phrasesFrom } from "./practice/PracticeSections";
 
 const SECTIONS: { id: string; label: StringKey }[] = [
   { id: "video", label: "secVideo" },
   { id: "theory", label: "secTheory" },
   { id: "cards", label: "secCards" },
   { id: "reading", label: "secReading" },
+  { id: "listening", label: "secListening" },
+  { id: "speaking", label: "secSpeaking" },
+  { id: "writing", label: "secWriting" },
   { id: "exercises", label: "secExercises" },
   { id: "guide", label: "secGuide" },
 ];
@@ -141,18 +146,29 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
       </nav>
 
       <div className="min-h-[40vh]">
-        {active === 0 && <VideoSection script={content.video} title={meta.title} mediaKey={mediaKey} unitKey={key} />}
-        {active === 1 && <TheorySection blocks={content.theory} vocab={content.vocab} unitKey={key} />}
-        {active === 2 && <UnitCards vocab={content.vocab} source={key} />}
-        {active === 3 && <ReadingSection readings={content.readings} unitKey={key} />}
-        {active === 4 && (
+        {(() => {
+          const practice = levelId === "a1-1" ? PRACTICE[number] : undefined;
+          const id = SECTIONS[active].id;
+          const label = `${level.label} · Einheit ${number}: ${meta.title}`;
+          if (!practice && (id === "listening" || id === "speaking" || id === "writing"))
+            return <p className="rounded-3xl border border-dashed border-line bg-paper/60 p-8 text-center text-cocoa">{g("inProduction")}</p>;
+          if (id === "listening") return <ListeningSection practice={practice!} onDone={(sc, t) => markUnit(`${pk}/hoeren`, sc, t)} />;
+          if (id === "speaking") return <SpeakingSection practice={practice!} phrases={phrasesFrom(content.theory)} unitLabel={label} />;
+          if (id === "writing") return <WritingSection practice={practice!} unitKey={key} unitLabel={label} />;
+          return null;
+        })()}
+        {SECTIONS[active].id === "video" && <VideoSection script={content.video} title={meta.title} mediaKey={mediaKey} unitKey={key} />}
+        {SECTIONS[active].id === "theory" && <TheorySection blocks={content.theory} vocab={content.vocab} unitKey={key} />}
+        {SECTIONS[active].id === "cards" && <UnitCards vocab={content.vocab} source={key} />}
+        {SECTIONS[active].id === "reading" && <ReadingSection readings={content.readings} unitKey={key} />}
+        {SECTIONS[active].id === "exercises" && (
           <ExercisesSection
             exercises={content.exercises}
             unitKey={key}
             onComplete={(score, total) => markUnit(pk, score, total)}
           />
         )}
-        {active === 5 && <GuideSection mediaKey={mediaKey} title={meta.title} />}
+        {SECTIONS[active].id === "guide" && <GuideSection mediaKey={mediaKey} title={meta.title} />}
       </div>
 
       <Link

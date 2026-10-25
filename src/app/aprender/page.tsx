@@ -13,7 +13,7 @@ import { useMounted } from "@/components/games/shared";
 import { dueCards, useDeck } from "@/lib/flashcards";
 
 const TILE = "mt-4 flex items-center justify-between gap-4 rounded-3xl border border-latte/60 bg-sand p-5 shadow-sm shadow-espresso/5 transition hover:border-cocoa-light hover:bg-sand-deep";
-const SECTION_LABELS: StringKey[] = ["secVideo", "secTheory", "secCards", "secReading", "secExercises", "secGuide"];
+const SECTION_LABELS: StringKey[] = ["secVideo", "secTheory", "secCards", "secReading", "secListening", "secSpeaking", "secWriting", "secExercises", "secGuide"];
 
 export default function Dashboard() {
   const { g } = useT();
