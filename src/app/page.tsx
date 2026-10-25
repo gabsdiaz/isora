@@ -32,6 +32,7 @@ export default function Landing() {
   const router = useRouter();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [status, setStatus] = useState("");
   const inApp = useInAppBrowser();
 
   useEffect(() => {
@@ -68,7 +69,24 @@ export default function Landing() {
 
           <div className="mt-8 flex flex-col items-start gap-3">
             {mobileGoogle ? (
-              <GoogleButton onToken={signInWithGoogleToken} onError={setError} />
+              <div className="flex flex-col items-start gap-2">
+                <GoogleButton
+                  onStatus={setStatus}
+                  onError={(code) => {
+                    setStatus("");
+                    setError(`No se pudo iniciar sesión (${code}). Intenta de nuevo.`);
+                  }}
+                  onToken={async (token) => {
+                    setError(null);
+                    await signInWithGoogleToken(token);
+                  }}
+                />
+                {status && (
+                  <p className="flex items-center gap-2 text-sm text-cocoa">
+                    <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-line border-t-wine" /> {status}
+                  </p>
+                )}
+              </div>
             ) : (
               <button
                 type="button"
