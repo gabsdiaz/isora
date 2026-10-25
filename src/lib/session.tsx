@@ -24,7 +24,7 @@ export type NativeLang = "es" | "en";
 export type StudentProfile = {
   name: string;
   age?: string;
-  /** Idiomas que quiere aprender ("de", "en", "fr"…) */
+  /** Lo que quiere aprender: idiomas ("de", "en", "fr"…), ciencias ("math", "physics") u "other" */
   languages?: string[];
   reasons?: string[];
   goal?: string;
@@ -34,6 +34,8 @@ export type StudentProfile = {
   /** Días de estudio por semana */
   days?: number;
   interests?: string[];
+  /** Respuestas escritas en las opciones "Otro" */
+  other?: { learn?: string; why?: string; goal?: string; exam?: string; interests?: string };
   at?: number;
 };
 

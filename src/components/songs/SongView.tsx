@@ -28,7 +28,8 @@ export function SongView({ id }: { id: string }) {
   const mounted = useMounted();
   const { config, update } = useSongConfig(id);
   const [previewUri, setPreviewUri] = useState<string | null>(null);
-  const uri = previewUri ?? config?.spotify ?? null;
+  // Versión elegida por la Lehrkraft o, si no hay, la versión por defecto de la canción
+  const uri = previewUri ?? (config ? (config.spotify ?? song.spotify ?? null) : null);
   const [attachPlayer, player] = useSpotifyPlayer(mounted ? uri : null);
   const lines = useMemo(() => songLines(song), [song]);
   const [difficulty, setDifficulty] = useState<Difficulty>("leicht");

@@ -107,7 +107,9 @@ export function buildPlan(
   const pace: Pace = paceOverride ?? { minutes: profile.minutes ?? 20, days: profile.days ?? 5 };
   const startIdx = stageIndex(levels.placement?.level ?? "a1-1");
   const ex = profile.goal === "exam" && profile.exam && profile.exam !== "?" ? EXAM_TARGET[profile.exam] : undefined;
-  const goal = ex ?? GOAL_TARGET[profile.goal ?? "relaxed"] ?? GOAL_TARGET.relaxed;
+  // Meta propia ("Otro"): apuntamos a B1 y mostramos lo que escribió
+  const goal =
+    ex ?? (profile.goal === "other" ? { stage: "b1-2", label: profile.other?.goal || "B1" } : (GOAL_TARGET[profile.goal ?? "relaxed"] ?? GOAL_TARGET.relaxed));
   let targetIdx = stageIndex(goal.stage);
   const examPrepHours = profile.goal === "exam" ? (ex?.prep ?? 25) : 0;
   // Según el test ya tiene el nivel de su meta: con examen, solo queda el entrenamiento;
@@ -160,7 +162,16 @@ export function buildPlan(
     start: STAGES[startIdx],
     target: STAGES[targetIdx],
     targetLabel: alreadyThere && !examPrepHours ? STAGES[targetIdx].label : goal.label,
-    exam: ex?.label ?? (profile.goal === "exam" ? "Prüfung" : undefined),
+    // Examen elegido: el de la lista, el que escribió en "Otro" o, si no sabe aún, "Prüfung"
+    exam:
+      ex?.label ??
+      (profile.goal === "exam"
+        ? profile.exam === "other"
+          ? profile.other?.exam || "Prüfung"
+          : profile.exam && profile.exam !== "?"
+            ? profile.exam
+            : "Prüfung"
+        : undefined),
     alreadyThere,
     pace,
     weeklyHours,

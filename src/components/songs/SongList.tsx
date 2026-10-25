@@ -41,8 +41,8 @@ export function SongList() {
         <div className="mt-5 rounded-[2rem] border-2 border-dashed border-wine/40 bg-paper p-5 text-sm text-cocoa">
           <p className="font-display text-xl text-wine">🧑‍🏫 Modo Lehrkraft</p>
           <p className="mt-1">
-            Abre cada canción, pega el enlace de Spotify de la versión que te guste y, si quieres, sincroniza las líneas para el modo karaoke.{" "}
-            {configs && `${SONGS.filter((s) => configs[s.id]?.spotify).length}/${SONGS.length} con Spotify · ${SONGS.filter((s) => configs[s.id]?.timings?.length).length}/${SONGS.length} sincronizadas.`}
+            Cada canción ya trae una versión de Spotify. Si prefieres otra, pega su enlace; y si quieres el modo karaoke, sincroniza las líneas.{" "}
+            {configs && `${SONGS.filter((s) => configs[s.id]?.timings?.length).length}/${SONGS.length} sincronizadas.`}
           </p>
         </div>
       )}
@@ -75,10 +75,10 @@ export function SongList() {
                         {s.theme.de} <span className="text-muted">· {s.theme.tr[lang]}</span>
                       </span>
                       <span className="mt-1 flex flex-wrap gap-1.5 text-[11px]">
-                        {cfg?.spotify && <span className="rounded-full bg-[#1db954]/15 px-2 py-0.5 text-[#14833b]">♫ Spotify</span>}
+                        {(cfg?.spotify || s.spotify) && <span className="rounded-full bg-[#1db954]/15 px-2 py-0.5 text-[#14833b]">♫ Spotify</span>}
                         {cfg?.timings?.length && <span className="rounded-full bg-yellow-soft px-2 py-0.5 text-ink">🎤 Karaoke</span>}
                         {pct !== null && <span className="rounded-full bg-sage-soft px-2 py-0.5 text-sage">✓ {pct} %</span>}
-                        {teacher && !cfg?.spotify && <span className="rounded-full bg-wine-soft px-2 py-0.5 text-wine">falta Spotify</span>}
+                        {teacher && !cfg?.spotify && <span className="rounded-full bg-paper px-2 py-0.5 text-cocoa">versión por defecto</span>}
                       </span>
                     </span>
                     <span className="text-cocoa transition group-hover:translate-x-1" aria-hidden="true">

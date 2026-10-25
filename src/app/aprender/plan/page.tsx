@@ -382,7 +382,7 @@ function Focus({ plan, T, L }: { plan: Plan; T: (es: string, en: string) => stri
     },
     ...reasonTips.map((r) => {
       const c = REASONS.find((x) => x.id === r)!;
-      return { emoji: c.emoji ?? "💡", title: c.de, body: L(REASON_TIPS[r]) };
+      return { emoji: c.emoji ?? "💡", title: L(c.t), body: L(REASON_TIPS[r]) };
     }),
     {
       emoji: "🔁",

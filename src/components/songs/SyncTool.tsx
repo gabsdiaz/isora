@@ -31,12 +31,12 @@ export function SyncTool({
   onSaved: (c: SongConfig) => void;
 }) {
   const { user } = useSession();
-  const [link, setLink] = useState(config.spotify ? spotifyOpenUrl(config.spotify) : "");
+  const [link, setLink] = useState(config.spotify ?? song.spotify ? spotifyOpenUrl((config.spotify ?? song.spotify)!) : "");
   const [linkError, setLinkError] = useState(false);
   const [marks, setMarks] = useState<number[]>([]);
   const [recording, setRecording] = useState(false);
   const [saved, setSaved] = useState<"idle" | "saving" | "ok" | "denied" | "error">("idle");
-  const uri = previewUri ?? config.spotify ?? null;
+  const uri = previewUri ?? config.spotify ?? song.spotify ?? null;
   const complete = marks.length === lines.length;
 
   const mark = () => {

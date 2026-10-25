@@ -18,8 +18,10 @@ export type Song = {
   level: "A1" | "A2" | "B1" | "B2";
   theme: { de: string; tr: Tr };
   emoji: string;
-  /** Búsqueda en Spotify si aún no hay una versión elegida */
+  /** Búsqueda en Spotify (para elegir otra versión) */
   query: string;
+  /** Versión por defecto en Spotify; la Lehrkraft puede cambiarla en el modo Lehrkraft */
+  spotify?: string;
   about: Tr;
   stanzas: SongLine[][];
   /** Palabras que preferimos como huecos (vocabulario útil) */
@@ -39,6 +41,7 @@ export const SONGS: Song[] = [
     theme: { de: "Natur & Tiere", tr: { es: "Naturaleza y animales", en: "Nature & animals" } },
     emoji: "🐝",
     query: "Summ summ summ Bienchen summ herum",
+    spotify: "spotify:track:71FsKMjZ34T5IUZO5kO6bn",
     about: {
       es: "Una de las primeras canciones que aprenden los niños en Alemania. Le cantan a una abejita para que salga a buscar flores.",
       en: "One of the first songs children learn in Germany. They sing to a little bee to go out and look for flowers.",
@@ -77,6 +80,7 @@ export const SONGS: Song[] = [
     theme: { de: "Familie", tr: { es: "Familia", en: "Family" } },
     emoji: "🎒",
     query: "Hänschen klein Kinderlied",
+    spotify: "spotify:track:3w0LkYVZHtP99iuQlC1JkK",
     about: {
       es: "Hänschen («Juanito») se va solo a recorrer el mundo y su mamá llora. Todo alemán conoce esta melodía: es la misma que se usa para aprender a tocar flauta o piano.",
       en: "Little Hans goes off alone to see the world and his mum cries. Every German knows this tune: it's the one used to learn recorder or piano.",
@@ -113,6 +117,7 @@ export const SONGS: Song[] = [
     theme: { de: "Essen & Trinken", tr: { es: "Comida y bebida", en: "Food & drink" } },
     emoji: "🎂",
     query: "Backe backe Kuchen Kinderlied",
+    spotify: "spotify:track:3UYRIPoWdvDaP6XguW0w0X",
     about: {
       es: "Una receta cantada: las «siete cosas» que necesitas para hornear un pastel. «gel» es una forma antigua de decir «gelb» (amarillo).",
       en: "A sung recipe: the “seven things” you need to bake a cake. “gel” is an old way of saying “gelb” (yellow).",
@@ -150,6 +155,7 @@ export const SONGS: Song[] = [
     theme: { de: "Wetter & Jahreszeiten", tr: { es: "Clima y estaciones", en: "Weather & seasons" } },
     emoji: "🐦",
     query: "Kuckuck Kuckuck ruft's aus dem Wald",
+    spotify: "spotify:track:2WGxHo7WuFggpmPLnZqMEF",
     about: {
       es: "Cuando el cuco canta en el bosque, en Alemania se dice que ya llega la primavera. ¡El invierno tiene que irse!",
       en: "When the cuckoo calls in the forest, Germans say spring is coming. Winter has to leave!",
@@ -191,6 +197,7 @@ export const SONGS: Song[] = [
     theme: { de: "Feste & Winter", tr: { es: "Fiestas e invierno", en: "Holidays & winter" } },
     emoji: "🎄",
     query: "O Tannenbaum",
+    spotify: "spotify:track:2MAB24iL9zgMKFzcMa2Ym4",
     about: {
       es: "El villancico alemán más famoso del mundo. El abeto sigue verde incluso cuando nieva.",
       en: "The world's most famous German Christmas song. The fir tree stays green even when it snows.",
@@ -230,6 +237,7 @@ export const SONGS: Song[] = [
     theme: { de: "Wetter & Jahreszeiten", tr: { es: "Clima y estaciones", en: "Weather & seasons" } },
     emoji: "🐤",
     query: "Alle Vögel sind schon da",
+    spotify: "spotify:track:6AWgd4SWCBY6gkJabZjeH6",
     about: {
       es: "La canción de la primavera por excelencia: todos los pájaros ya volvieron y cantan. Amsel, Drossel, Fink und Star son mirlo, zorzal, pinzón y estornino.",
       en: "The spring song par excellence: all the birds are back and singing. Amsel, Drossel, Fink und Star are blackbird, thrush, finch and starling.",
@@ -269,6 +277,7 @@ export const SONGS: Song[] = [
     theme: { de: "Kleidung & Farben", tr: { es: "Ropa y colores", en: "Clothes & colours" } },
     emoji: "🍄",
     query: "Ein Männlein steht im Walde",
+    spotify: "spotify:track:2KC7oHqkAGccCXC0nqNPAz",
     about: {
       es: "Es una adivinanza: un hombrecito en el bosque, sobre una sola pierna, con un abrigo rojo y una gorrita negra. ¿Quién es? La respuesta: «die Hagebutte», el fruto rojo del rosal silvestre.",
       en: "It's a riddle: a little man in the forest, on one leg, with a red coat and a little black cap. Who is it? The answer: “die Hagebutte”, the red rose hip.",
@@ -310,6 +319,7 @@ export const SONGS: Song[] = [
     theme: { de: "Zeit & Alltag", tr: { es: "El tiempo y el día a día", en: "Time & daily life" } },
     emoji: "🌙",
     query: "Guten Abend gut Nacht Brahms Wiegenlied",
+    spotify: "spotify:track:6fMSOKjoxqQOZZLWYXNEkp",
     about: {
       es: "La canción de cuna de Brahms, conocida en todo el mundo. Aquí ves cómo se dice buenas noches y «mañana temprano» (morgen früh).",
       en: "Brahms' lullaby, known all over the world. Here you see how to say good night and “tomorrow early” (morgen früh).",
@@ -349,6 +359,7 @@ export const SONGS: Song[] = [
     theme: { de: "Gefühle & Freiheit", tr: { es: "Sentimientos y libertad", en: "Feelings & freedom" } },
     emoji: "🕊️",
     query: "Die Gedanken sind frei",
+    spotify: "spotify:track:0LluXxFJfGEM4mWjtz2Qeh",
     about: {
       es: "Una de las canciones más queridas de Alemania: nadie puede quitarte lo que piensas. Se ha cantado en muchos momentos de la historia como canción de libertad.",
       en: "One of Germany's best-loved songs: nobody can take away your thoughts. It has been sung at many moments in history as a song of freedom.",
@@ -392,6 +403,7 @@ export const SONGS: Song[] = [
     theme: { de: "Natur & Nacht", tr: { es: "Naturaleza y noche", en: "Nature & night" } },
     emoji: "🌕",
     query: "Der Mond ist aufgegangen",
+    spotify: "spotify:track:1ylE2TrrytPVCYZXV9ogFw",
     about: {
       es: "Una canción de la tarde que muchas familias alemanas cantan antes de dormir. Describe la luna, las estrellas, el bosque oscuro y la niebla sobre los prados.",
       en: "An evening song many German families sing before bed. It describes the moon, the stars, the dark forest and the mist over the meadows.",
@@ -431,6 +443,7 @@ export const SONGS: Song[] = [
     theme: { de: "Reisen & Legenden", tr: { es: "Viajes y leyendas", en: "Travel & legends" } },
     emoji: "🧜‍♀️",
     query: "Ich weiß nicht was soll es bedeuten Lorelei Silcher",
+    spotify: "spotify:track:4WYdR57KwZaGU43sKM4KLB",
     about: {
       es: "La leyenda de la roca Lorelei, sobre el río Rin: una joven peina su cabello dorado y canta tan bonito que los barqueros se distraen. Puedes visitar la roca entre Coblenza y Maguncia.",
       en: "The legend of the Lorelei rock on the Rhine: a young woman combs her golden hair and sings so beautifully that the boatmen get distracted. You can visit the rock between Koblenz and Mainz.",
@@ -475,6 +488,7 @@ export const SONGS: Song[] = [
     theme: { de: "Kultur & Europa", tr: { es: "Cultura y Europa", en: "Culture & Europe" } },
     emoji: "🎻",
     query: "Freude schöner Götterfunken Beethoven 9 Ode an die Freude",
+    spotify: "spotify:track:2nGa3CuSK9t7sQ8308DwpG",
     about: {
       es: "El poema de Schiller que Beethoven puso en su Novena Sinfonía. Su melodía es el himno de la Unión Europea. Lenguaje poético y antiguo: ideal para el B2.",
       en: "Schiller's poem that Beethoven set in his Ninth Symphony. Its melody is the anthem of the European Union. Poetic, old-fashioned language: great for B2.",
