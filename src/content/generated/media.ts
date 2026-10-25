@@ -1,5 +1,9 @@
 // Archivo generado automáticamente por scripts/ (videos y guías disponibles). No editar a mano.
-export const videos: Record<string, { duration: number }> = {};
+export const videos: Record<string, { duration: number }> = {
+  "de/a1-1/01": {
+    "duration": 192
+  }
+};
 export const guides: Record<string, { pages: number }> = {
   "de/a1-1/01": {
     "pages": 6
