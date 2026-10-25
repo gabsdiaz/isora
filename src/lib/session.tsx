@@ -11,7 +11,7 @@ import {
   signOut as fbSignOut,
 } from "firebase/auth";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
-import { firebaseEnabled, getFirebase, isMobileDevice } from "./firebase";
+import { firebaseEnabled, getFirebase, isMobileDevice, usesGoogleButton } from "./firebase";
 
 export type NativeLang = "es" | "en";
 
@@ -109,7 +109,7 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
       };
     }
     // Vuelta del login por redirección (celular): si Google devolvió un error, lo mostramos
-    getRedirectResult(auth).catch((e: { code?: string }) => setAuthError(e.code ?? "auth/error"));
+    if (!usesGoogleButton()) getRedirectResult(auth).catch((e: { code?: string }) => setAuthError(e.code ?? "auth/error"));
     // Si Firebase no responde (red lenta), no dejamos al estudiante mirando el spinner
     const safety = setTimeout(() => setLoading(false), 8000);
     const off = onAuthStateChanged(auth, async (fbUser) => {
@@ -172,7 +172,8 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
     if (!auth) return;
     setAuthError(null);
     try {
-      await signInWithCredential(auth, GoogleAuthProvider.credential(idToken));
+      const done = await withTimeout(signInWithCredential(auth, GoogleAuthProvider.credential(idToken)), 20000);
+      if (!done) setAuthError("auth/timeout");
     } catch (e) {
       setAuthError((e as { code?: string }).code ?? "auth/error");
     }

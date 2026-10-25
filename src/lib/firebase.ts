@@ -1,5 +1,5 @@
 import { initializeApp, getApps, type FirebaseApp } from "firebase/app";
-import { getAuth, type Auth } from "firebase/auth";
+import { browserLocalPersistence, getAuth, indexedDBLocalPersistence, initializeAuth, type Auth } from "firebase/auth";
 import { getFirestore, type Firestore } from "firebase/firestore";
 
 /**
@@ -24,6 +24,9 @@ export const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "412
 /** Celular o tablet: ahí usamos el botón oficial de Google (ver GoogleButton.tsx). */
 export const isMobileDevice = () => typeof navigator !== "undefined" && /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
 
+/** Celular con ID de cliente: se entra con el botón oficial de Google. */
+export const usesGoogleButton = () => typeof window !== "undefined" && isMobileDevice() && Boolean(GOOGLE_CLIENT_ID);
+
 /** En el celular el login usa el dominio de la app (proxy en next.config.ts) en vez de firebaseapp.com. */
 function authDomain() {
   if (typeof window === "undefined") return config.authDomain;
@@ -40,7 +43,20 @@ export function getFirebase() {
   if (!firebaseEnabled) return { app: null, auth: null, db: null };
   if (!app) {
     app = getApps()[0] ?? initializeApp({ ...config, authDomain: authDomain() });
-    auth = getAuth(app);
+    if (usesGoogleButton()) {
+      // Celular: sin el "ayudante" de ventanas/redirecciones de Firebase (un iframe que Chrome móvil
+      // bloquea y deja el login esperando para siempre). Iniciamos sesión con el token del botón de Google.
+      try {
+        Object.keys(sessionStorage)
+          .filter((k) => k.startsWith("firebase:pendingRedirect") || k.startsWith("firebase:redirectEvent"))
+          .forEach((k) => sessionStorage.removeItem(k));
+      } catch {
+        /* sin sessionStorage */
+      }
+      auth = initializeAuth(app, { persistence: [indexedDBLocalPersistence, browserLocalPersistence] });
+    } else {
+      auth = getAuth(app);
+    }
     db = getFirestore(app);
   }
   return { app, auth, db };
