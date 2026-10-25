@@ -98,7 +98,7 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
         </ul>
       </section>
 
-      <nav className="sticky top-16 z-20 -mx-4 mb-6 border-b border-line bg-cream/95 px-4 backdrop-blur" aria-label="Abschnitte">
+      <nav className="sticky top-[68px] z-20 -mx-4 mb-6 border-b border-line bg-cream/95 px-4 backdrop-blur" aria-label="Abschnitte">
         <ol className="flex gap-1 overflow-x-auto py-2">
           {SECTIONS.map((s, i) => (
             <li key={s.id} className="shrink-0">

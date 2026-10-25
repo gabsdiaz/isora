@@ -75,6 +75,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-paper/95 text-ink backdrop-blur">
+      <div className="h-[3px] bg-[linear-gradient(90deg,#2e2019_0_33.4%,#940d00_33.4%_66.7%,#f2c230_66.7%)]" aria-hidden="true" />
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-6">
           <Logo href="/aprender" />
