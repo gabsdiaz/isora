@@ -1,0 +1,357 @@
+{
+  "key": "de/a1-2/01",
+  "level": "A1.2",
+  "number": 1,
+  "title": "Termine",
+  "subtitle": "Einen Termin machen",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "📅",
+        "☎️",
+        "💇"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Willkommen in A1.2! Heute machen wir Termine.",
+          "es": "¡Hola! ¡Bienvenido al A1.2! Hoy hacemos citas.",
+          "en": "Hi! Welcome to A1.2! Today we make appointments."
+        },
+        {
+          "lang": "de",
+          "text": "Beim Arzt, beim Friseur oder mit Freunden.",
+          "es": "Con el médico, en la peluquería o con amigos.",
+          "en": "At the doctor's, the hairdresser's or with friends."
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "Wann?",
+      "gloss": "¿cuándo?",
+      "rows": [
+        {
+          "p": "Tag",
+          "stem": "",
+          "end": "am",
+          "at": 1,
+          "rest": " Montag"
+        },
+        {
+          "p": "Uhrzeit",
+          "stem": "",
+          "end": "um",
+          "at": 2,
+          "rest": " 10 Uhr"
+        },
+        {
+          "p": "Monat",
+          "stem": "",
+          "end": "im",
+          "at": 3,
+          "rest": " Juni"
+        },
+        {
+          "p": "Zeitraum",
+          "stem": "",
+          "end": "von",
+          "at": 4,
+          "rest": " 9 bis 12 Uhr"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wann ist der Termin? Diese Wörter brauchst du:",
+          "es": "¿Cuándo es la cita? Necesitas estas palabras:",
+          "en": "When is the appointment? You need these words:"
+        },
+        {
+          "lang": "de",
+          "text": "Für Tage: am Montag.",
+          "es": "Para días: am Montag (el lunes).",
+          "en": "For days: am Montag (on Monday)."
+        },
+        {
+          "lang": "de",
+          "text": "Für die Uhrzeit: um zehn Uhr.",
+          "es": "Para la hora: um zehn Uhr (a las diez).",
+          "en": "For the time: um zehn Uhr (at ten)."
+        },
+        {
+          "lang": "de",
+          "text": "Für Monate: im Juni.",
+          "es": "Para meses: im Juni (en junio).",
+          "en": "For months: im Juni (in June)."
+        },
+        {
+          "lang": "de",
+          "text": "Und für eine Zeit: von neun bis zwölf.",
+          "es": "Y para un periodo: von neun bis zwölf (de nueve a doce).",
+          "en": "And for a period: von neun bis zwölf (from nine to twelve)."
+        }
+      ],
+      "pw": 212,
+      "w": 723,
+      "tx": 360,
+      "size": 56,
+      "side": "",
+      "tableAt": 0
+    },
+    {
+      "type": "sentence",
+      "heading": "Am Telefon",
+      "gloss": "por teléfono",
+      "sticker": "☎️",
+      "lines": [
+        {
+          "de": "Ich brauche einen Termin.",
+          "es": "Necesito una cita.",
+          "mark": "Termin",
+          "at": 1
+        },
+        {
+          "de": "Geht es am Freitag?",
+          "es": "¿Puede ser el viernes?",
+          "mark": "Geht es",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Du rufst an und sagst:",
+          "es": "Llamas y dices:",
+          "en": "You call and say:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich brauche einen Termin.",
+          "es": "Necesito una cita.",
+          "en": "I need an appointment.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Dann fragst du:",
+          "es": "Luego preguntas:",
+          "en": "Then you ask:"
+        },
+        {
+          "lang": "de",
+          "text": "Geht es am Freitag?",
+          "es": "¿Puede ser el viernes?",
+          "en": "Is Friday possible?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Geht es heißt: Ist das möglich?",
+          "es": "Geht es significa: ¿es posible?",
+          "en": "Geht es means: is that possible?"
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "heading": "Passt das?",
+      "left": {
+        "title": "ja",
+        "icon": "👍",
+        "gloss": "sí",
+        "example": "Ja, das passt.",
+        "at": 1
+      },
+      "right": {
+        "title": "nein",
+        "icon": "🙅",
+        "gloss": "no",
+        "example": "Da kann ich nicht.",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Der Termin ist gut? Dann sagst du:",
+          "es": "¿La cita te sirve? Entonces dices:",
+          "en": "The appointment is good? Then you say:"
+        },
+        {
+          "lang": "de",
+          "text": "Ja, das passt gut.",
+          "es": "Sí, me queda bien.",
+          "en": "Yes, that suits me.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Der Termin ist nicht gut? Dann sagst du:",
+          "es": "¿La cita no te sirve? Entonces dices:",
+          "en": "The appointment isn't good? Then you say:"
+        },
+        {
+          "lang": "de",
+          "text": "Da kann ich leider nicht.",
+          "es": "Ese día no puedo, lo siento.",
+          "en": "I'm afraid I can't then.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Beim Friseur",
+      "people": {
+        "Salon": {
+          "icon": "💇‍♀️",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Salon",
+          "de": "Salon Haarmonie, guten Tag!",
+          "at": 1
+        },
+        {
+          "who": "Mateo",
+          "de": "Ich brauche einen Termin.",
+          "at": 2
+        },
+        {
+          "who": "Salon",
+          "de": "Am Dienstag um zehn?",
+          "at": 3
+        },
+        {
+          "who": "Mateo",
+          "de": "Da kann ich leider nicht.",
+          "at": 4
+        },
+        {
+          "who": "Salon",
+          "de": "Und am Mittwoch um vier?",
+          "at": 5
+        },
+        {
+          "who": "Mateo",
+          "de": "Ja, das passt gut. Danke!",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Mateo ruft beim Friseur an.",
+          "es": "Escucha: Mateo llama a la peluquería.",
+          "en": "Listen: Mateo calls the hairdresser's."
+        },
+        {
+          "lang": "de",
+          "text": "Salon Haarmonie, guten Tag!",
+          "es": "Salón Haarmonie, ¡buenos días!",
+          "en": "Salon Haarmonie, hello!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich brauche einen Termin.",
+          "es": "Necesito una cita.",
+          "en": "I need an appointment.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Geht es am Dienstag um zehn Uhr?",
+          "es": "¿Puede ser el martes a las diez?",
+          "en": "Is Tuesday at ten OK?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Da kann ich leider nicht.",
+          "es": "Ese día no puedo, lo siento.",
+          "en": "I'm afraid I can't then.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und am Mittwoch um vier Uhr?",
+          "es": "¿Y el miércoles a las cuatro?",
+          "en": "And Wednesday at four?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ja, das passt gut. Danke!",
+          "es": "Sí, me queda bien. ¡Gracias!",
+          "en": "Yes, that suits me. Thanks!",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich brauche\neinen Termin.\nGeht es am …?",
+      "pause": 8,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Ruf beim Arzt an. Sag: Ich brauche einen Termin. Geht es am Montag?",
+          "es": "¡Ahora tú! Llama al médico. Di: Necesito una cita. ¿Puede ser el lunes?",
+          "en": "Now you! Call the doctor. Say: I need an appointment. Is Monday possible?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "am Montag · um 10 Uhr · im Juni",
+          "at": 1
+        },
+        {
+          "text": "Ich brauche einen Termin.",
+          "at": 1
+        },
+        {
+          "text": "Geht es am Freitag?",
+          "at": 1
+        },
+        {
+          "text": "Ja, das passt. / Da kann ich nicht.",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du machst Termine und sagst ja oder nein – ganz höflich.",
+          "es": "Haces citas y dices sí o no, con mucha cortesía.",
+          "en": "You make appointments and say yes or no – very politely."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

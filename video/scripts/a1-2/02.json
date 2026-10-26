@@ -1,0 +1,371 @@
+{
+  "key": "de/a1-2/02",
+  "level": "A1.2",
+  "number": 2,
+  "title": "Verabredungen",
+  "subtitle": "Hast du Zeit?",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🎬",
+        "☕",
+        "🎉"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute machen wir Pläne mit Freunden.",
+          "es": "¡Hola! Hoy hacemos planes con amigos.",
+          "en": "Hi! Today we make plans with friends."
+        },
+        {
+          "lang": "de",
+          "text": "Hast du Zeit? Hast du Lust?",
+          "es": "¿Tienes tiempo? ¿Tienes ganas?",
+          "en": "Are you free? Do you feel like it?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Was machen wir?",
+      "gloss": "¿qué hacemos?",
+      "items": [
+        {
+          "de": "ins Kino gehen",
+          "es": "ir a cine",
+          "at": 1,
+          "icon": "🎬"
+        },
+        {
+          "de": "Kaffee trinken",
+          "es": "tomar café",
+          "at": 2,
+          "icon": "☕"
+        },
+        {
+          "de": "tanzen gehen",
+          "es": "ir a bailar",
+          "at": 3,
+          "icon": "💃"
+        },
+        {
+          "de": "ins Konzert gehen",
+          "es": "ir a un concierto",
+          "at": 4,
+          "icon": "🎸"
+        },
+        {
+          "de": "Fußball spielen",
+          "es": "jugar fútbol",
+          "at": 5,
+          "icon": "⚽"
+        },
+        {
+          "de": "spazieren gehen",
+          "es": "ir a caminar",
+          "at": 6,
+          "icon": "🌳"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hier sind Ideen für das Wochenende:",
+          "es": "Aquí hay ideas para el fin de semana:",
+          "en": "Here are ideas for the weekend:"
+        },
+        {
+          "lang": "de",
+          "text": "Gehen wir ins Kino?",
+          "es": "¿Vamos a cine?",
+          "en": "Shall we go to the cinema?"
+        },
+        {
+          "lang": "de",
+          "text": "Trinken wir einen Kaffee?",
+          "es": "¿Tomamos un café?",
+          "en": "Shall we have a coffee?"
+        },
+        {
+          "lang": "de",
+          "text": "Gehen wir tanzen?",
+          "es": "¿Vamos a bailar?",
+          "en": "Shall we go dancing?"
+        },
+        {
+          "lang": "de",
+          "text": "Gehen wir ins Konzert?",
+          "es": "¿Vamos a un concierto?",
+          "en": "Shall we go to a concert?"
+        },
+        {
+          "lang": "de",
+          "text": "Spielen wir Fußball?",
+          "es": "¿Jugamos fútbol?",
+          "en": "Shall we play football?"
+        },
+        {
+          "lang": "de",
+          "text": "Gehen wir spazieren?",
+          "es": "¿Vamos a caminar?",
+          "en": "Shall we go for a walk?"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Fragen",
+      "gloss": "preguntar",
+      "sticker": "🙋",
+      "lines": [
+        {
+          "de": "Hast du am Samstag Zeit?",
+          "es": "¿Tienes tiempo el sábado?",
+          "mark": "Zeit",
+          "at": 1
+        },
+        {
+          "de": "Hast du Lust auf Kino?",
+          "es": "¿Tienes ganas de ir a cine?",
+          "mark": "Lust",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "So fragst du eine Freundin:",
+          "es": "Así le preguntas a una amiga:",
+          "en": "This is how you ask a friend:"
+        },
+        {
+          "lang": "de",
+          "text": "Hast du am Samstag Zeit?",
+          "es": "¿Tienes tiempo el sábado?",
+          "en": "Are you free on Saturday?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und so fragst du, ob sie möchte:",
+          "es": "Y así preguntas si ella quiere:",
+          "en": "And this is how you ask if she wants to:"
+        },
+        {
+          "lang": "de",
+          "text": "Hast du Lust auf Kino?",
+          "es": "¿Tienes ganas de ir a cine?",
+          "en": "Do you feel like going to the cinema?",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "heading": "Antworten",
+      "left": {
+        "title": "zusagen",
+        "icon": "🥳",
+        "gloss": "aceptar",
+        "example": "Gute Idee!",
+        "at": 1
+      },
+      "right": {
+        "title": "absagen",
+        "icon": "😕",
+        "gloss": "rechazar",
+        "example": "Leider nicht.",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Du möchtest mitkommen? Dann sagst du:",
+          "es": "¿Quieres ir? Entonces dices:",
+          "en": "You want to come? Then you say:"
+        },
+        {
+          "lang": "de",
+          "text": "Gute Idee! Gern!",
+          "es": "¡Buena idea! ¡Con gusto!",
+          "en": "Good idea! Gladly!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Du hast keine Zeit? Dann sagst du:",
+          "es": "¿No tienes tiempo? Entonces dices:",
+          "en": "You don't have time? Then you say:"
+        },
+        {
+          "lang": "de",
+          "text": "Leider nicht. Ich muss arbeiten.",
+          "es": "Lastimosamente no. Tengo que trabajar.",
+          "en": "Unfortunately not. I have to work.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Sag immer warum. Das ist freundlich.",
+          "es": "Di siempre por qué. Es amable.",
+          "en": "Always say why. That's friendly."
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Am Samstag?",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Lena",
+          "de": "Hast du am Samstag Zeit?",
+          "at": 1
+        },
+        {
+          "who": "Mateo",
+          "de": "Ja. Was machen wir?",
+          "at": 2
+        },
+        {
+          "who": "Lena",
+          "de": "Gehen wir ins Kino?",
+          "at": 3
+        },
+        {
+          "who": "Mateo",
+          "de": "Gute Idee! Wann?",
+          "at": 4
+        },
+        {
+          "who": "Lena",
+          "de": "Um acht vor dem Kino?",
+          "at": 5
+        },
+        {
+          "who": "Mateo",
+          "de": "Super. Bis Samstag!",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena hat eine Idee.",
+          "es": "Escucha: Lena tiene una idea.",
+          "en": "Listen: Lena has an idea."
+        },
+        {
+          "lang": "de",
+          "text": "Hast du am Samstag Zeit?",
+          "es": "¿Tienes tiempo el sábado?",
+          "en": "Are you free on Saturday?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ja. Was machen wir?",
+          "es": "Sí. ¿Qué hacemos?",
+          "en": "Yes. What shall we do?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Gehen wir ins Kino?",
+          "es": "¿Vamos a cine?",
+          "en": "Shall we go to the cinema?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Gute Idee! Wann?",
+          "es": "¡Buena idea! ¿Cuándo?",
+          "en": "Good idea! When?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Treffen wir uns um acht vor dem Kino?",
+          "es": "¿Nos vemos a las ocho frente al cine?",
+          "en": "Shall we meet at eight in front of the cinema?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Super. Bis Samstag!",
+          "es": "Súper. ¡Hasta el sábado!",
+          "en": "Great. See you Saturday!",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Hast du Zeit?\nGehen wir …?\nTreffen wir uns …?",
+      "pause": 10,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Lade eine Freundin ein: Hast du Zeit? Gehen wir …? Wann treffen wir uns?",
+          "es": "¡Ahora tú! Invita a una amiga: ¿Tienes tiempo? ¿Vamos a…? ¿Cuándo nos vemos?",
+          "en": "Now you! Invite a friend: Are you free? Shall we go…? When shall we meet?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Hast du Zeit? · Hast du Lust?",
+          "at": 1
+        },
+        {
+          "text": "Gehen wir ins Kino?",
+          "at": 1
+        },
+        {
+          "text": "Gute Idee! / Leider nicht.",
+          "at": 1
+        },
+        {
+          "text": "Treffen wir uns um acht?",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du machst Vorschläge, sagst zu oder ab – und erklärst warum.",
+          "es": "Haces propuestas, aceptas o rechazas, y explicas por qué.",
+          "en": "You make suggestions, accept or decline – and explain why."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

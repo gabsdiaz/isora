@@ -1,0 +1,392 @@
+{
+  "key": "de/a1-2/06",
+  "level": "A1.2",
+  "number": 6,
+  "title": "Beim Arzt",
+  "subtitle": "In der Arztpraxis",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🩺",
+        "💊",
+        "🤒"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute gehen wir zum Arzt.",
+          "es": "¡Hola! Hoy vamos al médico.",
+          "en": "Hi! Today we go to the doctor."
+        },
+        {
+          "lang": "de",
+          "text": "Du lernst auch den Imperativ mit Sie.",
+          "es": "También aprendes el imperativo con Sie.",
+          "en": "You also learn the imperative with Sie."
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Beim Arzt",
+      "gloss": "en el médico",
+      "items": [
+        {
+          "de": "das Fieber",
+          "es": "la fiebre",
+          "at": 1,
+          "icon": "🤒"
+        },
+        {
+          "de": "der Husten",
+          "es": "la tos",
+          "at": 2,
+          "icon": "😷"
+        },
+        {
+          "de": "der Schnupfen",
+          "es": "la gripa, el moqueo",
+          "at": 3,
+          "icon": "🤧"
+        },
+        {
+          "de": "die Tabletten",
+          "es": "las pastillas",
+          "at": 4,
+          "icon": "💊"
+        },
+        {
+          "de": "das Rezept",
+          "es": "la fórmula médica",
+          "at": 5,
+          "icon": "📝"
+        },
+        {
+          "de": "die Apotheke",
+          "es": "la farmacia",
+          "at": 6,
+          "icon": "🏥"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Diese Wörter hörst du in der Praxis:",
+          "es": "Estas palabras las oyes en el consultorio:",
+          "en": "You hear these words at the practice:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich habe Fieber.",
+          "es": "Tengo fiebre.",
+          "en": "I have a fever."
+        },
+        {
+          "lang": "de",
+          "text": "Ich habe Husten.",
+          "es": "Tengo tos.",
+          "en": "I have a cough."
+        },
+        {
+          "lang": "de",
+          "text": "Ich habe Schnupfen.",
+          "es": "Tengo gripa.",
+          "en": "I have a cold."
+        },
+        {
+          "lang": "de",
+          "text": "Nehmen Sie die Tabletten.",
+          "es": "Tome las pastillas.",
+          "en": "Take the tablets."
+        },
+        {
+          "lang": "de",
+          "text": "Hier ist das Rezept.",
+          "es": "Aquí está la fórmula.",
+          "en": "Here's the prescription."
+        },
+        {
+          "lang": "de",
+          "text": "Die Tabletten gibt es in der Apotheke.",
+          "es": "Las pastillas las venden en la farmacia.",
+          "en": "You get the tablets at the pharmacy."
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "seit",
+      "gloss": "desde hace",
+      "sticker": "📆",
+      "lines": [
+        {
+          "de": "Seit drei Tagen.",
+          "es": "Desde hace tres días.",
+          "mark": "Seit",
+          "at": 2
+        },
+        {
+          "de": "Seit gestern.",
+          "es": "Desde ayer.",
+          "mark": "Seit",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Der Arzt fragt: Seit wann sind Sie krank? Du antwortest mit seit:",
+          "es": "El médico pregunta: ¿desde cuándo está enfermo? Respondes con seit:",
+          "en": "The doctor asks: since when have you been ill? You answer with seit:"
+        },
+        {
+          "lang": "de",
+          "text": "Seit drei Tagen.",
+          "es": "Desde hace tres días.",
+          "en": "For three days.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Oder: Seit gestern.",
+          "es": "O: desde ayer.",
+          "en": "Or: since yesterday.",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "Imperativ mit Sie",
+      "gloss": "imperativo formal",
+      "rows": [
+        {
+          "p": "trinken",
+          "stem": "",
+          "end": "Trinken",
+          "at": 1,
+          "rest": " Sie viel Tee!"
+        },
+        {
+          "p": "bleiben",
+          "stem": "",
+          "end": "Bleiben",
+          "at": 2,
+          "rest": " Sie im Bett!"
+        },
+        {
+          "p": "nehmen",
+          "stem": "",
+          "end": "Nehmen",
+          "at": 3,
+          "rest": " Sie Tabletten!"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Der Arzt sagt, was du machen sollst. Das Verb steht vorne, dann Sie:",
+          "es": "El médico te dice qué hacer. El verbo va adelante y luego Sie:",
+          "en": "The doctor tells you what to do. The verb comes first, then Sie:"
+        },
+        {
+          "lang": "de",
+          "text": "Trinken Sie viel Tee!",
+          "es": "¡Tome mucho té!",
+          "en": "Drink lots of tea!"
+        },
+        {
+          "lang": "de",
+          "text": "Bleiben Sie im Bett!",
+          "es": "¡Quédese en cama!",
+          "en": "Stay in bed!"
+        },
+        {
+          "lang": "de",
+          "text": "Nehmen Sie die Tabletten!",
+          "es": "¡Tómese las pastillas!",
+          "en": "Take the tablets!"
+        }
+      ],
+      "pw": 192,
+      "w": 834,
+      "tx": 360,
+      "size": 56,
+      "side": "",
+      "tableAt": 0
+    },
+    {
+      "type": "tip",
+      "note": "Notruf:\n112",
+      "sticker": "🚑",
+      "say": [
+        {
+          "lang": "de",
+          "text": "Sehr wichtig: Im Notfall rufst du die Nummer eins, eins, zwei an.",
+          "es": "Muy importante: en una emergencia llamas al número uno, uno, dos.",
+          "en": "Very important: in an emergency you call one, one, two."
+        },
+        {
+          "lang": "de",
+          "text": "Eins, eins, zwei.",
+          "es": "Uno, uno, dos.",
+          "en": "One, one, two."
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "In der Praxis",
+      "people": {
+        "Ärztin": {
+          "icon": "👩‍⚕️",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Ärztin",
+          "de": "Was fehlt Ihnen?",
+          "at": 1
+        },
+        {
+          "who": "Mateo",
+          "de": "Ich habe Husten und Fieber.",
+          "at": 2
+        },
+        {
+          "who": "Ärztin",
+          "de": "Seit wann?",
+          "at": 3
+        },
+        {
+          "who": "Mateo",
+          "de": "Seit zwei Tagen.",
+          "at": 4
+        },
+        {
+          "who": "Ärztin",
+          "de": "Bleiben Sie im Bett!",
+          "at": 5
+        },
+        {
+          "who": "Ärztin",
+          "de": "Trinken Sie viel Tee!",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Mateo ist beim Arzt.",
+          "es": "Escucha: Mateo está en el médico.",
+          "en": "Listen: Mateo is at the doctor's."
+        },
+        {
+          "lang": "de",
+          "text": "Was fehlt Ihnen?",
+          "es": "¿Qué le pasa?",
+          "en": "What's the matter?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich habe Husten und Fieber.",
+          "es": "Tengo tos y fiebre.",
+          "en": "I have a cough and a fever.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Seit wann haben Sie Fieber?",
+          "es": "¿Desde cuándo?",
+          "en": "Since when?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Seit zwei Tagen.",
+          "es": "Desde hace dos días.",
+          "en": "For two days.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Bleiben Sie im Bett!",
+          "es": "¡Quédese en cama!",
+          "en": "Stay in bed!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Trinken Sie viel Tee!",
+          "es": "¡Tome mucho té!",
+          "en": "Drink lots of tea!",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich habe …\nseit …\nMir tut … weh.",
+      "pause": 10,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Du bist beim Arzt. Was hast du? Seit wann? Was tut dir weh?",
+          "es": "¡Ahora tú! Estás en el médico. ¿Qué tienes? ¿Desde cuándo? ¿Qué te duele?",
+          "en": "Now you! You're at the doctor's. What's wrong? Since when? What hurts?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Fieber · Husten · Schnupfen",
+          "at": 1
+        },
+        {
+          "text": "seit drei Tagen · seit gestern",
+          "at": 1
+        },
+        {
+          "text": "Trinken Sie viel Tee!",
+          "at": 1
+        },
+        {
+          "text": "Notruf: 112",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du sprichst mit dem Arzt und verstehst seine Tipps. Gute Besserung!",
+          "es": "Hablas con el médico y entiendes sus consejos. ¡Que te mejores!",
+          "en": "You talk to the doctor and understand the advice. Get well soon!"
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

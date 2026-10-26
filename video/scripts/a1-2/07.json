@@ -1,0 +1,396 @@
+{
+  "key": "de/a1-2/07",
+  "level": "A1.2",
+  "number": 7,
+  "title": "In der Stadt",
+  "subtitle": "Orte und der Dativ",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🏙️",
+        "🏦",
+        "🥨"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute gehen wir in die Stadt.",
+          "es": "¡Hola! Hoy vamos a la ciudad.",
+          "en": "Hi! Today we go into town."
+        },
+        {
+          "lang": "de",
+          "text": "Und du lernst den Dativ. Keine Angst, er ist einfach!",
+          "es": "Y aprendes el dativo. ¡No te preocupes, es fácil!",
+          "en": "And you learn the dative. Don't worry, it's easy!"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "In der Stadt",
+      "gloss": "en la ciudad",
+      "items": [
+        {
+          "de": "der Bahnhof",
+          "es": "la estación",
+          "at": 1,
+          "icon": "🚉"
+        },
+        {
+          "de": "die Bank",
+          "es": "el banco",
+          "at": 2,
+          "icon": "🏦"
+        },
+        {
+          "de": "die Post",
+          "es": "el correo",
+          "at": 3,
+          "icon": "📮"
+        },
+        {
+          "de": "die Bäckerei",
+          "es": "la panadería",
+          "at": 4,
+          "icon": "🥨"
+        },
+        {
+          "de": "das Kino",
+          "es": "el cine",
+          "at": 5,
+          "icon": "🎬"
+        },
+        {
+          "de": "der Park",
+          "es": "el parque",
+          "at": 6,
+          "icon": "🌳"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Was gibt es in der Stadt?",
+          "es": "¿Qué hay en la ciudad?",
+          "en": "What is there in town?"
+        },
+        {
+          "lang": "de",
+          "text": "der Bahnhof",
+          "es": "la estación de tren",
+          "en": "the station"
+        },
+        {
+          "lang": "de",
+          "text": "die Bank",
+          "es": "el banco",
+          "en": "the bank"
+        },
+        {
+          "lang": "de",
+          "text": "die Post",
+          "es": "la oficina de correos",
+          "en": "the post office"
+        },
+        {
+          "lang": "de",
+          "text": "die Bäckerei",
+          "es": "la panadería",
+          "en": "the bakery"
+        },
+        {
+          "lang": "de",
+          "text": "das Kino",
+          "es": "el cine",
+          "en": "the cinema"
+        },
+        {
+          "lang": "de",
+          "text": "der Park",
+          "es": "el parque",
+          "en": "the park"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "Dativ: Wo?",
+      "gloss": "¿dónde? (dativo)",
+      "rows": [
+        {
+          "p": "der",
+          "stem": "in ",
+          "end": "dem",
+          "at": 1,
+          "rest": " Park"
+        },
+        {
+          "p": "die",
+          "stem": "in ",
+          "end": "der",
+          "at": 2,
+          "rest": " Bank"
+        },
+        {
+          "p": "das",
+          "stem": "in ",
+          "end": "dem",
+          "at": 3,
+          "rest": " Kino"
+        },
+        {
+          "p": "Plural",
+          "stem": "in ",
+          "end": "den",
+          "at": 4,
+          "rest": " Parks"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wo bist du? Nach in, an, neben und bei kommt der Dativ:",
+          "es": "¿Dónde estás? Después de in, an, neben y bei viene el dativo:",
+          "en": "Where are you? After in, an, neben and bei comes the dative:"
+        },
+        {
+          "lang": "de",
+          "text": "der wird dem: in dem Park.",
+          "es": "der se vuelve dem: en el parque.",
+          "en": "der becomes dem: in the park."
+        },
+        {
+          "lang": "de",
+          "text": "die wird der: in der Bank.",
+          "es": "die se vuelve der: en el banco.",
+          "en": "die becomes der: in the bank."
+        },
+        {
+          "lang": "de",
+          "text": "das wird dem: in dem Kino.",
+          "es": "das se vuelve dem: en el cine.",
+          "en": "das becomes dem: in the cinema."
+        },
+        {
+          "lang": "de",
+          "text": "Und im Plural: den.",
+          "es": "Y en plural: den.",
+          "en": "And in the plural: den."
+        }
+      ],
+      "pw": 172,
+      "w": 600,
+      "tx": 360,
+      "size": 60,
+      "side": "der → dem\ndie → der\ndas → dem",
+      "tableAt": 0
+    },
+    {
+      "type": "compare",
+      "heading": "Kurz!",
+      "left": {
+        "title": "im",
+        "icon": "🌳",
+        "gloss": "= in dem",
+        "example": "im Park",
+        "at": 1
+      },
+      "right": {
+        "title": "am",
+        "icon": "🚉",
+        "gloss": "= an dem",
+        "example": "am Bahnhof",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wir sprechen schnell. In dem wird im:",
+          "es": "Hablamos rápido. In dem se vuelve im:",
+          "en": "We speak fast. In dem becomes im:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich bin im Park.",
+          "es": "Estoy en el parque.",
+          "en": "I'm in the park.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Und an dem wird am:",
+          "es": "Y an dem se vuelve am:",
+          "en": "And an dem becomes am:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich warte am Bahnhof.",
+          "es": "Espero en la estación.",
+          "en": "I'm waiting at the station.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Genauso: bei dem wird beim. Ich bin beim Arzt.",
+          "es": "Igual: bei dem se vuelve beim. Estoy en el médico.",
+          "en": "The same: bei dem becomes beim. I'm at the doctor's."
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Wo bist du?",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Mateo",
+          "de": "Hallo Lena! Wo bist du?",
+          "at": 1
+        },
+        {
+          "who": "Lena",
+          "de": "Ich bin in der Bäckerei.",
+          "at": 2
+        },
+        {
+          "who": "Mateo",
+          "de": "Ich warte im Park.",
+          "at": 3
+        },
+        {
+          "who": "Lena",
+          "de": "Neben dem Kino?",
+          "at": 4
+        },
+        {
+          "who": "Mateo",
+          "de": "Ja, genau!",
+          "at": 5
+        },
+        {
+          "who": "Lena",
+          "de": "Ich komme in fünf Minuten.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena und Mateo telefonieren.",
+          "es": "Escucha: Lena y Mateo hablan por teléfono.",
+          "en": "Listen: Lena and Mateo are on the phone."
+        },
+        {
+          "lang": "de",
+          "text": "Hallo Lena! Wo bist du?",
+          "es": "¡Hola, Lena! ¿Dónde estás?",
+          "en": "Hi Lena! Where are you?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich bin in der Bäckerei.",
+          "es": "Estoy en la panadería.",
+          "en": "I'm at the bakery.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich warte im Park.",
+          "es": "Yo espero en el parque.",
+          "en": "I'm waiting in the park.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Neben dem Kino?",
+          "es": "¿Al lado del cine?",
+          "en": "Next to the cinema?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ja, genau!",
+          "es": "¡Sí, exacto!",
+          "en": "Yes, exactly!",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich komme in fünf Minuten.",
+          "es": "Llego en cinco minutos.",
+          "en": "I'll be there in five minutes.",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich bin im …\nIch bin in der …",
+      "pause": 8,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Wo bist du jetzt? Und wo bist du gern? Sag es mit im, am oder in der.",
+          "es": "¡Ahora tú! ¿Dónde estás ahora? ¿Y dónde te gusta estar? Dilo con im, am o in der.",
+          "en": "Now you! Where are you now? And where do you like to be? Say it with im, am or in der."
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Bahnhof · Bank · Post · Bäckerei",
+          "at": 1
+        },
+        {
+          "text": "Wo? → Dativ: dem · der · dem",
+          "at": 1
+        },
+        {
+          "text": "im Park · am Bahnhof · beim Arzt",
+          "at": 1
+        },
+        {
+          "text": "neben dem Kino",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du kennst Orte in der Stadt und sagst mit dem Dativ, wo du bist.",
+          "es": "Conoces lugares de la ciudad y dices con el dativo dónde estás.",
+          "en": "You know places in town and say where you are with the dative."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

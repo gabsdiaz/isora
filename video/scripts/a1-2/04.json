@@ -1,0 +1,367 @@
+{
+  "key": "de/a1-2/04",
+  "level": "A1.2",
+  "number": 4,
+  "title": "Im Restaurant",
+  "subtitle": "Bestellen und bezahlen",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🍽️",
+        "🍝",
+        "🧾"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute gehen wir ins Restaurant.",
+          "es": "¡Hola! Hoy vamos al restaurante.",
+          "en": "Hi! Today we go to a restaurant."
+        },
+        {
+          "lang": "de",
+          "text": "Du bestellst, du isst und du bezahlst.",
+          "es": "Pides, comes y pagas.",
+          "en": "You order, you eat and you pay."
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Die Speisekarte",
+      "gloss": "la carta",
+      "items": [
+        {
+          "de": "die Vorspeise",
+          "es": "la entrada",
+          "at": 1,
+          "icon": "🥗"
+        },
+        {
+          "de": "das Hauptgericht",
+          "es": "el plato fuerte",
+          "at": 2,
+          "icon": "🍝"
+        },
+        {
+          "de": "die Nachspeise",
+          "es": "el postre",
+          "at": 3,
+          "icon": "🍰"
+        },
+        {
+          "de": "die Getränke",
+          "es": "las bebidas",
+          "at": 4,
+          "icon": "🥤"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Im Restaurant liest du die Speisekarte:",
+          "es": "En el restaurante lees la carta:",
+          "en": "In the restaurant you read the menu:"
+        },
+        {
+          "lang": "de",
+          "text": "die Vorspeise: zum Beispiel eine Suppe.",
+          "es": "la entrada: por ejemplo, una sopa.",
+          "en": "the starter: for example a soup."
+        },
+        {
+          "lang": "de",
+          "text": "das Hauptgericht: Fisch, Fleisch oder Pasta.",
+          "es": "el plato fuerte: pescado, carne o pasta.",
+          "en": "the main course: fish, meat or pasta."
+        },
+        {
+          "lang": "de",
+          "text": "die Nachspeise: Kuchen oder Eis.",
+          "es": "el postre: torta o helado.",
+          "en": "the dessert: cake or ice cream."
+        },
+        {
+          "lang": "de",
+          "text": "die Getränke: Wasser, Saft, Wein.",
+          "es": "las bebidas: agua, jugo, vino.",
+          "en": "the drinks: water, juice, wine."
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Bestellen",
+      "gloss": "pedir",
+      "sticker": "🙋",
+      "lines": [
+        {
+          "de": "Ich hätte gern die Suppe.",
+          "es": "Quisiera la sopa.",
+          "mark": "hätte gern",
+          "at": 1
+        },
+        {
+          "de": "Ich nehme den Fisch.",
+          "es": "Tomo el pescado.",
+          "mark": "nehme",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Höflich bestellen ist einfach:",
+          "es": "Pedir con cortesía es fácil:",
+          "en": "Ordering politely is easy:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich hätte gern die Suppe.",
+          "es": "Quisiera la sopa.",
+          "en": "I'd like the soup.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Oder kurz:",
+          "es": "O corto:",
+          "en": "Or short:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich nehme den Fisch.",
+          "es": "Tomo el pescado.",
+          "en": "I'll have the fish.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "heading": "Bezahlen",
+      "left": {
+        "title": "zusammen",
+        "icon": "🧾",
+        "gloss": "todo junto",
+        "example": "Zusammen, bitte.",
+        "at": 2
+      },
+      "right": {
+        "title": "getrennt",
+        "icon": "✂️",
+        "gloss": "por separado",
+        "example": "Getrennt, bitte.",
+        "at": 4
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Am Ende sagst du: Die Rechnung, bitte! Die Kellnerin fragt: Zusammen oder getrennt?",
+          "es": "Al final dices: ¡La cuenta, por favor! La mesera pregunta: ¿junto o por separado?",
+          "en": "At the end you say: The bill, please! The waitress asks: together or separately?"
+        },
+        {
+          "lang": "de",
+          "text": "Eine Person bezahlt alles:",
+          "es": "Una persona paga todo:",
+          "en": "One person pays for everything:"
+        },
+        {
+          "lang": "de",
+          "text": "Zusammen, bitte.",
+          "es": "Todo junto, por favor.",
+          "en": "Together, please.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Jede Person bezahlt selbst:",
+          "es": "Cada persona paga lo suyo:",
+          "en": "Everyone pays for themselves:"
+        },
+        {
+          "lang": "de",
+          "text": "Getrennt, bitte.",
+          "es": "Por separado, por favor.",
+          "en": "Separately, please.",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "note": "Stimmt so!",
+      "sticker": "💶",
+      "say": [
+        {
+          "lang": "de",
+          "text": "In Deutschland gibt man etwa zehn Prozent Trinkgeld. Das Essen kostet achtzehn Euro? Du gibst zwanzig und sagst:",
+          "es": "En Alemania se da más o menos un diez por ciento de propina. ¿La comida cuesta dieciocho euros? Das veinte y dices:",
+          "en": "In Germany you tip about ten percent. The meal costs eighteen euros? You give twenty and say:"
+        },
+        {
+          "lang": "de",
+          "text": "Stimmt so!",
+          "es": "¡Así está bien! (quédese con el cambio)",
+          "en": "Keep the change!"
+        }
+      ],
+      "size": 80
+    },
+    {
+      "type": "dialogue",
+      "heading": "Im Restaurant",
+      "people": {
+        "Kellnerin": {
+          "icon": "👩‍🍳",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Kellnerin",
+          "de": "Was möchten Sie trinken?",
+          "at": 1
+        },
+        {
+          "who": "Mateo",
+          "de": "Ein Wasser, bitte.",
+          "at": 2
+        },
+        {
+          "who": "Kellnerin",
+          "de": "Und zu essen?",
+          "at": 3
+        },
+        {
+          "who": "Mateo",
+          "de": "Ich nehme die Pasta.",
+          "at": 4
+        },
+        {
+          "who": "Mateo",
+          "de": "Die Rechnung, bitte!",
+          "at": 5
+        },
+        {
+          "who": "Kellnerin",
+          "de": "Das macht 14,50 Euro.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Mateo bestellt.",
+          "es": "Escucha: Mateo pide.",
+          "en": "Listen: Mateo orders."
+        },
+        {
+          "lang": "de",
+          "text": "Was möchten Sie trinken?",
+          "es": "¿Qué desea tomar?",
+          "en": "What would you like to drink?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ein Wasser, bitte.",
+          "es": "Un agua, por favor.",
+          "en": "A water, please.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und was möchten Sie essen?",
+          "es": "¿Y de comer?",
+          "en": "And to eat?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich nehme die Pasta.",
+          "es": "Tomo la pasta.",
+          "en": "I'll have the pasta.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Die Rechnung, bitte!",
+          "es": "¡La cuenta, por favor!",
+          "en": "The bill, please!",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Das macht vierzehn Euro fünfzig.",
+          "es": "Son 14,50 euros.",
+          "en": "That's 14.50 euros.",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich hätte gern …\nIch nehme …\nDie Rechnung, bitte!",
+      "pause": 10,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Bestell ein Getränk und ein Essen. Dann frag nach der Rechnung.",
+          "es": "¡Ahora tú! Pide una bebida y una comida. Luego pide la cuenta.",
+          "en": "Now you! Order a drink and a meal. Then ask for the bill."
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Vorspeise · Hauptgericht · Nachspeise",
+          "at": 1
+        },
+        {
+          "text": "Ich hätte gern … / Ich nehme …",
+          "at": 1
+        },
+        {
+          "text": "Die Rechnung, bitte!",
+          "at": 1
+        },
+        {
+          "text": "Zusammen oder getrennt?",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du bestellst und bezahlst im Restaurant – wie ein Profi.",
+          "es": "Pides y pagas en el restaurante, como un profesional.",
+          "en": "You order and pay in a restaurant – like a pro."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

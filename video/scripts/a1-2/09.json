@@ -1,0 +1,399 @@
+{
+  "key": "de/a1-2/09",
+  "level": "A1.2",
+  "number": 9,
+  "title": "Unterwegs",
+  "subtitle": "Bus, Bahn und Fahrrad",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🚌",
+        "🚆",
+        "🚲"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute fahren wir mit Bus und Bahn.",
+          "es": "¡Hola! Hoy viajamos en bus y en tren.",
+          "en": "Hi! Today we travel by bus and train."
+        },
+        {
+          "lang": "de",
+          "text": "Wie fährst du zur Arbeit?",
+          "es": "¿Cómo vas al trabajo?",
+          "en": "How do you get to work?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Verkehrsmittel",
+      "gloss": "medios de transporte",
+      "items": [
+        {
+          "de": "der Bus",
+          "es": "el bus",
+          "at": 1,
+          "icon": "🚌"
+        },
+        {
+          "de": "die U-Bahn",
+          "es": "el metro",
+          "at": 2,
+          "icon": "🚇"
+        },
+        {
+          "de": "der Zug",
+          "es": "el tren",
+          "at": 3,
+          "icon": "🚆"
+        },
+        {
+          "de": "das Auto",
+          "es": "el carro",
+          "at": 4,
+          "icon": "🚗"
+        },
+        {
+          "de": "das Fahrrad",
+          "es": "la bicicleta",
+          "at": 5,
+          "icon": "🚲"
+        },
+        {
+          "de": "zu Fuß",
+          "es": "a pie",
+          "at": 6,
+          "icon": "🚶"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "So kommst du von A nach B:",
+          "es": "Así llegas de A a B:",
+          "en": "This is how you get from A to B:"
+        },
+        {
+          "lang": "de",
+          "text": "der Bus",
+          "es": "el bus",
+          "en": "the bus"
+        },
+        {
+          "lang": "de",
+          "text": "die U-Bahn",
+          "es": "el metro",
+          "en": "the underground"
+        },
+        {
+          "lang": "de",
+          "text": "der Zug",
+          "es": "el tren",
+          "en": "the train"
+        },
+        {
+          "lang": "de",
+          "text": "das Auto",
+          "es": "el carro",
+          "en": "the car"
+        },
+        {
+          "lang": "de",
+          "text": "das Fahrrad",
+          "es": "la bicicleta",
+          "en": "the bike"
+        },
+        {
+          "lang": "de",
+          "text": "zu Fuß gehen",
+          "es": "ir a pie",
+          "en": "to walk"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "mit + Dativ",
+      "gloss": "en (medio de transporte)",
+      "rows": [
+        {
+          "p": "der",
+          "stem": "mit ",
+          "end": "dem",
+          "at": 1,
+          "rest": " Bus"
+        },
+        {
+          "p": "die",
+          "stem": "mit ",
+          "end": "der",
+          "at": 2,
+          "rest": " U-Bahn"
+        },
+        {
+          "p": "das",
+          "stem": "mit ",
+          "end": "dem",
+          "at": 3,
+          "rest": " Fahrrad"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Nach mit kommt immer der Dativ:",
+          "es": "Después de mit siempre viene el dativo:",
+          "en": "After mit always comes the dative:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich fahre mit dem Bus.",
+          "es": "Voy en bus.",
+          "en": "I go by bus."
+        },
+        {
+          "lang": "de",
+          "text": "Ich fahre mit der U-Bahn.",
+          "es": "Voy en metro.",
+          "en": "I go by underground."
+        },
+        {
+          "lang": "de",
+          "text": "Ich fahre mit dem Fahrrad.",
+          "es": "Voy en bicicleta.",
+          "en": "I go by bike."
+        }
+      ],
+      "pw": 120,
+      "w": 633,
+      "tx": 329,
+      "size": 60,
+      "side": "Achtung:\nzu Fuß gehen",
+      "tableAt": 0
+    },
+    {
+      "type": "sentence",
+      "heading": "Am Schalter",
+      "gloss": "en la taquilla",
+      "sticker": "🎫",
+      "lines": [
+        {
+          "de": "Eine Fahrkarte, bitte.",
+          "es": "Un tiquete, por favor.",
+          "mark": "Fahrkarte",
+          "at": 1
+        },
+        {
+          "de": "Nach Köln, hin und zurück.",
+          "es": "A Colonia, ida y vuelta.",
+          "mark": "hin und zurück",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Am Schalter oder am Automaten kaufst du eine Fahrkarte:",
+          "es": "En la taquilla o en la máquina compras un tiquete:",
+          "en": "At the counter or the machine you buy a ticket:"
+        },
+        {
+          "lang": "de",
+          "text": "Eine Fahrkarte, bitte.",
+          "es": "Un tiquete, por favor.",
+          "en": "A ticket, please.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Wohin? Einfach oder hin und zurück?",
+          "es": "¿A dónde? ¿Solo ida o ida y vuelta?",
+          "en": "Where to? Single or return?"
+        },
+        {
+          "lang": "de",
+          "text": "Nach Köln, hin und zurück.",
+          "es": "A Colonia, ida y vuelta.",
+          "en": "To Cologne, return.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "note": "Verspätung\n= tarde",
+      "sticker": "⏱️",
+      "say": [
+        {
+          "lang": "de",
+          "text": "Am Bahnhof hörst du Durchsagen. Ein sehr wichtiges Wort:",
+          "es": "En la estación oyes anuncios. Una palabra muy importante:",
+          "en": "At the station you hear announcements. A very important word:"
+        },
+        {
+          "lang": "de",
+          "text": "Der Zug hat zehn Minuten Verspätung.",
+          "es": "El tren tiene diez minutos de retraso.",
+          "en": "The train is ten minutes late."
+        }
+      ],
+      "size": 70
+    },
+    {
+      "type": "dialogue",
+      "heading": "Wie fährst du?",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Lena",
+          "de": "Wie fährst du zur Arbeit?",
+          "at": 1
+        },
+        {
+          "who": "Mateo",
+          "de": "Mit dem Fahrrad.",
+          "at": 2
+        },
+        {
+          "who": "Lena",
+          "de": "Auch im Winter?",
+          "at": 3
+        },
+        {
+          "who": "Mateo",
+          "de": "Nein, dann mit der U-Bahn.",
+          "at": 4
+        },
+        {
+          "who": "Mateo",
+          "de": "Und du?",
+          "at": 5
+        },
+        {
+          "who": "Lena",
+          "de": "Ich gehe zu Fuß.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena und Mateo sprechen über den Weg zur Arbeit.",
+          "es": "Escucha: Lena y Mateo hablan del camino al trabajo.",
+          "en": "Listen: Lena and Mateo talk about getting to work."
+        },
+        {
+          "lang": "de",
+          "text": "Wie fährst du zur Arbeit?",
+          "es": "¿Cómo vas al trabajo?",
+          "en": "How do you get to work?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich fahre mit dem Fahrrad.",
+          "es": "En bicicleta.",
+          "en": "By bike.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Auch im Winter?",
+          "es": "¿También en invierno?",
+          "en": "In winter too?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Nein, im Winter fahre ich mit der U-Bahn.",
+          "es": "No, entonces en metro.",
+          "en": "No, then by underground.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und du?",
+          "es": "¿Y tú?",
+          "en": "And you?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich gehe zu Fuß.",
+          "es": "Yo voy a pie.",
+          "en": "I walk.",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich fahre mit\ndem … / der …",
+      "pause": 6,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Wie fährst du zur Arbeit, zur Uni oder zum Kurs?",
+          "es": "¡Ahora tú! ¿Cómo vas al trabajo, a la universidad o al curso?",
+          "en": "Now you! How do you get to work, uni or class?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Bus · U-Bahn · Zug · Fahrrad",
+          "at": 1
+        },
+        {
+          "text": "mit dem Bus · mit der U-Bahn",
+          "at": 1
+        },
+        {
+          "text": "Eine Fahrkarte, bitte.",
+          "at": 1
+        },
+        {
+          "text": "hin und zurück · Verspätung",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du fährst mit Bus und Bahn, kaufst Fahrkarten und verstehst Durchsagen.",
+          "es": "Viajas en bus y tren, compras tiquetes y entiendes los anuncios.",
+          "en": "You travel by bus and train, buy tickets and understand announcements."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

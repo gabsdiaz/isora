@@ -1,0 +1,379 @@
+{
+  "key": "de/a1-2/08",
+  "level": "A1.2",
+  "number": 8,
+  "title": "Wie komme ich …?",
+  "subtitle": "Nach dem Weg fragen",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🗺️",
+        "🚦",
+        "⬅️"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute fragst du nach dem Weg.",
+          "es": "¡Hola! Hoy preguntas cómo llegar.",
+          "en": "Hi! Today you ask for directions."
+        },
+        {
+          "lang": "de",
+          "text": "Entschuldigung, wie komme ich zum Bahnhof?",
+          "es": "Disculpe, ¿cómo llego a la estación?",
+          "en": "Excuse me, how do I get to the station?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Der Weg",
+      "gloss": "el camino",
+      "items": [
+        {
+          "de": "geradeaus",
+          "es": "derecho",
+          "at": 1,
+          "icon": "⬆️"
+        },
+        {
+          "de": "links",
+          "es": "a la izquierda",
+          "at": 2,
+          "icon": "⬅️"
+        },
+        {
+          "de": "rechts",
+          "es": "a la derecha",
+          "at": 3,
+          "icon": "➡️"
+        },
+        {
+          "de": "die Ampel",
+          "es": "el semáforo",
+          "at": 4,
+          "icon": "🚦"
+        },
+        {
+          "de": "die Kreuzung",
+          "es": "el cruce",
+          "at": 5,
+          "icon": "✖️"
+        },
+        {
+          "de": "die Ecke",
+          "es": "la esquina",
+          "at": 6,
+          "icon": "📐"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Diese Wörter brauchst du:",
+          "es": "Necesitas estas palabras:",
+          "en": "You need these words:"
+        },
+        {
+          "lang": "de",
+          "text": "Gehen Sie geradeaus.",
+          "es": "Siga derecho.",
+          "en": "Go straight ahead."
+        },
+        {
+          "lang": "de",
+          "text": "Gehen Sie nach links.",
+          "es": "Vaya a la izquierda.",
+          "en": "Go left."
+        },
+        {
+          "lang": "de",
+          "text": "Gehen Sie nach rechts.",
+          "es": "Vaya a la derecha.",
+          "en": "Go right."
+        },
+        {
+          "lang": "de",
+          "text": "bis zur Ampel",
+          "es": "hasta el semáforo",
+          "en": "as far as the traffic lights"
+        },
+        {
+          "lang": "de",
+          "text": "an der Kreuzung",
+          "es": "en el cruce",
+          "en": "at the crossroads"
+        },
+        {
+          "lang": "de",
+          "text": "an der Ecke",
+          "es": "en la esquina",
+          "en": "on the corner"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "Wohin? zu + Dativ",
+      "gloss": "¿a dónde?",
+      "rows": [
+        {
+          "p": "der",
+          "stem": "",
+          "end": "zum",
+          "at": 1,
+          "rest": " Bahnhof"
+        },
+        {
+          "p": "die",
+          "stem": "",
+          "end": "zur",
+          "at": 2,
+          "rest": " Post"
+        },
+        {
+          "p": "das",
+          "stem": "",
+          "end": "zum",
+          "at": 3,
+          "rest": " Kino"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wohin gehst du? Mit zu:",
+          "es": "¿A dónde vas? Con zu:",
+          "en": "Where are you going? With zu:"
+        },
+        {
+          "lang": "de",
+          "text": "zu dem wird zum: zum Bahnhof.",
+          "es": "zu dem se vuelve zum: a la estación.",
+          "en": "zu dem becomes zum: to the station."
+        },
+        {
+          "lang": "de",
+          "text": "zu der wird zur: zur Post.",
+          "es": "zu der se vuelve zur: al correo.",
+          "en": "zu der becomes zur: to the post office."
+        },
+        {
+          "lang": "de",
+          "text": "Und das? Auch zum: zum Kino.",
+          "es": "¿Y das? También zum: al cine.",
+          "en": "And das? Also zum: to the cinema."
+        }
+      ],
+      "pw": 120,
+      "w": 520,
+      "tx": 360,
+      "size": 60,
+      "side": "zum = zu dem\nzur = zu der",
+      "tableAt": 0
+    },
+    {
+      "type": "sentence",
+      "heading": "Den Weg erklären",
+      "gloss": "explicar el camino",
+      "sticker": "🚶",
+      "lines": [
+        {
+          "de": "Gehen Sie geradeaus.",
+          "es": "Siga derecho.",
+          "mark": "geradeaus",
+          "at": 1
+        },
+        {
+          "de": "Biegen Sie links ab.",
+          "es": "Gire a la izquierda.",
+          "mark": "links ab",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jemand erklärt den Weg – mit dem Imperativ:",
+          "es": "Alguien explica el camino, con el imperativo:",
+          "en": "Someone explains the way – with the imperative:"
+        },
+        {
+          "lang": "de",
+          "text": "Gehen Sie geradeaus.",
+          "es": "Siga derecho.",
+          "en": "Go straight ahead.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und dann:",
+          "es": "Y luego:",
+          "en": "And then:"
+        },
+        {
+          "lang": "de",
+          "text": "Biegen Sie an der Ampel links ab.",
+          "es": "En el semáforo gire a la izquierda.",
+          "en": "Turn left at the traffic lights.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Zum Museum",
+      "people": {
+        "Touristin": {
+          "icon": "👩‍🦰",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Touristin",
+          "de": "Entschuldigung!",
+          "at": 1
+        },
+        {
+          "who": "Touristin",
+          "de": "Wie komme ich zum Museum?",
+          "at": 2
+        },
+        {
+          "who": "Mateo",
+          "de": "Gehen Sie geradeaus.",
+          "at": 3
+        },
+        {
+          "who": "Mateo",
+          "de": "An der Ampel links.",
+          "at": 4
+        },
+        {
+          "who": "Touristin",
+          "de": "Ist es weit?",
+          "at": 5
+        },
+        {
+          "who": "Mateo",
+          "de": "Nein, nur fünf Minuten.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Eine Touristin fragt Mateo.",
+          "es": "Escucha: una turista le pregunta a Mateo.",
+          "en": "Listen: a tourist asks Mateo."
+        },
+        {
+          "lang": "de",
+          "text": "Entschuldigung!",
+          "es": "¡Disculpe!",
+          "en": "Excuse me!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Wie komme ich zum Museum?",
+          "es": "¿Cómo llego al museo?",
+          "en": "How do I get to the museum?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Gehen Sie geradeaus.",
+          "es": "Siga derecho.",
+          "en": "Go straight ahead.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "An der Ampel biegen Sie links ab.",
+          "es": "En el semáforo, a la izquierda.",
+          "en": "Left at the traffic lights.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ist es weit?",
+          "es": "¿Es lejos?",
+          "en": "Is it far?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Nein, nur fünf Minuten.",
+          "es": "No, solo cinco minutos.",
+          "en": "No, just five minutes.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Wie komme ich\nzum … / zur …?",
+      "pause": 10,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Frag höflich nach dem Weg zur Post. Dann erkläre den Weg zu deinem Haus.",
+          "es": "¡Ahora tú! Pregunta con cortesía el camino al correo. Luego explica el camino a tu casa.",
+          "en": "Now you! Ask politely for the way to the post office. Then explain the way to your house."
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "geradeaus · links · rechts",
+          "at": 1
+        },
+        {
+          "text": "zum Bahnhof · zur Post",
+          "at": 1
+        },
+        {
+          "text": "Gehen Sie geradeaus.",
+          "at": 1
+        },
+        {
+          "text": "Biegen Sie links ab.",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du fragst nach dem Weg und verstehst die Antwort. Du verlierst dich nicht mehr!",
+          "es": "Preguntas el camino y entiendes la respuesta. ¡Ya no te pierdes!",
+          "en": "You ask for directions and understand the answer. You won't get lost anymore!"
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

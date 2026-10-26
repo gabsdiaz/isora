@@ -1,0 +1,339 @@
+{
+  "key": "de/a1-2/10",
+  "level": "A1.2",
+  "number": 10,
+  "title": "Trennbare Verben",
+  "subtitle": "Mein Alltag",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "⏰",
+        "🛒",
+        "📺"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute lernst du trennbare Verben.",
+          "es": "¡Hola! Hoy aprendes los verbos separables.",
+          "en": "Hi! Today you learn separable verbs."
+        },
+        {
+          "lang": "de",
+          "text": "Diese Verben teilen sich in zwei Teile!",
+          "es": "¡Estos verbos se dividen en dos partes!",
+          "en": "These verbs split into two parts!"
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "heading": "Mein Tag",
+      "gloss": "mi día",
+      "items": [
+        {
+          "de": "aufstehen",
+          "es": "levantarse",
+          "icon": "⏰",
+          "at": 1
+        },
+        {
+          "de": "anfangen",
+          "es": "empezar",
+          "icon": "💼",
+          "at": 2
+        },
+        {
+          "de": "einkaufen",
+          "es": "hacer mercado",
+          "icon": "🛒",
+          "at": 3
+        },
+        {
+          "de": "anrufen",
+          "es": "llamar",
+          "icon": "📞",
+          "at": 4
+        },
+        {
+          "de": "fernsehen",
+          "es": "ver televisión",
+          "icon": "📺",
+          "at": 5
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "So ist mein Tag:",
+          "es": "Así es mi día:",
+          "en": "This is my day:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich stehe um sieben auf.",
+          "es": "Me levanto a las siete.",
+          "en": "I get up at seven."
+        },
+        {
+          "lang": "de",
+          "text": "Die Arbeit fängt um neun an.",
+          "es": "El trabajo empieza a las nueve.",
+          "en": "Work starts at nine."
+        },
+        {
+          "lang": "de",
+          "text": "Am Nachmittag kaufe ich ein.",
+          "es": "En la tarde hago mercado.",
+          "en": "In the afternoon I go shopping."
+        },
+        {
+          "lang": "de",
+          "text": "Dann rufe ich meine Mutter an.",
+          "es": "Luego llamo a mi mamá.",
+          "en": "Then I call my mother."
+        },
+        {
+          "lang": "de",
+          "text": "Am Abend sehe ich fern.",
+          "es": "En la noche veo televisión.",
+          "en": "In the evening I watch TV."
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "auf|stehen",
+      "gloss": "levantarse",
+      "rows": [
+        {
+          "p": "ich",
+          "stem": "stehe ",
+          "end": "",
+          "at": 1,
+          "rest": "… auf"
+        },
+        {
+          "p": "Ich",
+          "stem": "stehe um 7 ",
+          "end": "auf",
+          "at": 2,
+          "rest": "."
+        },
+        {
+          "p": "Wann",
+          "stem": "stehst du ",
+          "end": "auf",
+          "at": 3,
+          "rest": "?"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Der erste Teil springt ans Ende des Satzes:",
+          "es": "La primera parte salta al final de la frase:",
+          "en": "The first part jumps to the end of the sentence:"
+        },
+        {
+          "lang": "de",
+          "text": "aufstehen: ich stehe … auf.",
+          "es": "aufstehen: yo me levanto.",
+          "en": "aufstehen: I get up."
+        },
+        {
+          "lang": "de",
+          "text": "Ich stehe um sieben Uhr auf.",
+          "es": "Me levanto a las siete.",
+          "en": "I get up at seven."
+        },
+        {
+          "lang": "de",
+          "text": "Wann stehst du auf?",
+          "es": "¿A qué hora te levantas?",
+          "en": "When do you get up?"
+        }
+      ],
+      "pw": 132,
+      "w": 645,
+      "tx": 336,
+      "size": 60,
+      "side": "auf → Ende!",
+      "tableAt": 0
+    },
+    {
+      "type": "tip",
+      "note": "ein|kaufen\nan|rufen\nfern|sehen",
+      "sticker": "✂️",
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wie erkennst du ein trennbares Verb? Die Betonung ist vorne:",
+          "es": "¿Cómo reconoces un verbo separable? El acento va adelante:",
+          "en": "How do you recognise a separable verb? The stress is at the front:"
+        },
+        {
+          "lang": "de",
+          "text": "EINkaufen, ANrufen, FERNsehen.",
+          "es": "EINkaufen, ANrufen, FERNsehen.",
+          "en": "EINkaufen, ANrufen, FERNsehen."
+        }
+      ],
+      "size": 72
+    },
+    {
+      "type": "dialogue",
+      "heading": "Am Sonntag",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Lena",
+          "de": "Sonntag: Wann stehst du auf?",
+          "at": 1
+        },
+        {
+          "who": "Mateo",
+          "de": "Erst um zehn!",
+          "at": 2
+        },
+        {
+          "who": "Lena",
+          "de": "Und dann?",
+          "at": 3
+        },
+        {
+          "who": "Mateo",
+          "de": "Ich rufe meine Familie an.",
+          "at": 4
+        },
+        {
+          "who": "Lena",
+          "de": "Kaufst du auch ein?",
+          "at": 5
+        },
+        {
+          "who": "Mateo",
+          "de": "Nein, alles ist zu!",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Was machen Lena und Mateo am Sonntag?",
+          "es": "Escucha: ¿qué hacen Lena y Mateo el domingo?",
+          "en": "Listen: what do Lena and Mateo do on Sunday?"
+        },
+        {
+          "lang": "de",
+          "text": "Wann stehst du am Sonntag auf?",
+          "es": "¿A qué hora te levantas el domingo?",
+          "en": "When do you get up on Sunday?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich stehe erst um zehn auf!",
+          "es": "¡Hasta las diez!",
+          "en": "Not until ten!",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und dann?",
+          "es": "¿Y luego?",
+          "en": "And then?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich rufe meine Familie an.",
+          "es": "Llamo a mi familia.",
+          "en": "I call my family.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Kaufst du auch ein?",
+          "es": "¿También haces mercado?",
+          "en": "Do you go shopping too?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Nein, am Sonntag ist alles zu!",
+          "es": "¡No, el domingo todo está cerrado!",
+          "en": "No, everything's closed on Sunday!",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich stehe um … auf.\nAm Abend sehe ich …",
+      "pause": 10,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Erzähl deinen Tag mit aufstehen, einkaufen, anrufen und fernsehen.",
+          "es": "¡Ahora tú! Cuenta tu día con aufstehen, einkaufen, anrufen y fernsehen.",
+          "en": "Now you! Describe your day with aufstehen, einkaufen, anrufen and fernsehen."
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "aufstehen · anfangen · einkaufen",
+          "at": 1
+        },
+        {
+          "text": "anrufen · fernsehen",
+          "at": 1
+        },
+        {
+          "text": "Ich stehe um 7 Uhr auf.",
+          "at": 1
+        },
+        {
+          "text": "Der erste Teil steht am Ende.",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du kennst trennbare Verben: Der erste Teil springt ans Ende.",
+          "es": "Conoces los verbos separables: la primera parte salta al final.",
+          "en": "You know separable verbs: the first part jumps to the end."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}
