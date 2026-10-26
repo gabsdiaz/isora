@@ -338,8 +338,8 @@ function Roadmap({ plan, T }: { plan: Plan; T: (es: string, en: string) => strin
       {plan.stages.some((s) => s.stage.content !== "ready") && (
         <p className="mt-3 text-xs text-muted">
           {T(
-            "Hoy Isora tiene completo el A1.1; los siguientes niveles se van abriendo. Tu plan se ajusta solo cuando lleguen.",
-            "Today Isora has A1.1 complete; the next levels are opening step by step. Your plan adjusts when they arrive.",
+            "Hoy Isora tiene completo todo el A1 (A1.1 y A1.2); los siguientes niveles se van abriendo. Tu plan se ajusta solo cuando lleguen.",
+            "Today Isora has all of A1 complete (A1.1 and A1.2); the next levels are opening step by step. Your plan adjusts when they arrive.",
           )}
         </p>
       )}

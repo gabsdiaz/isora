@@ -1,4 +1,5 @@
 import type { Tr, Voice } from "../types";
+import { PRACTICE_A1_2 } from "./practice-a1-2";
 
 /**
  * Práctica de cada unidad del A1.1:
@@ -202,3 +203,7 @@ export const PRACTICE: Record<number, Practice> = {
     writing: w("Schreib eine E-Mail an deine neue Lehrerin: Stell dich vor und sag, warum du Deutsch lernst.", "Escribe un correo a tu nueva profesora: preséntate y di por qué aprendes alemán.", "Write an email to your new teacher: introduce yourself and say why you're learning German.", ["Liebe Frau …", "Ich heiße … und komme aus …", "Ich lerne Deutsch, denn …", "Viele Grüße"], 35, "Liebe Frau Weber, ich heiße Valentina und ich komme aus Kolumbien. Ich bin vierundzwanzig Jahre alt und wohne in Medellín. Ich bin Ingenieurin. Ich lerne Deutsch, denn ich möchte in Deutschland arbeiten. Ich spreche Spanisch und Englisch. Viele Grüße, Valentina"),
   },
 };
+
+/** Práctica por nivel (a1-1, a1-2…). */
+export const PRACTICE_BY_LEVEL: Record<string, Record<number, Practice>> = { "a1-1": PRACTICE, "a1-2": PRACTICE_A1_2 };
+export const practiceFor = (level: string, number: number): Practice | undefined => PRACTICE_BY_LEVEL[level]?.[number];

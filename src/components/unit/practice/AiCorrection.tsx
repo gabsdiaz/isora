@@ -23,7 +23,7 @@ const ERR: Record<CorrectionError, { es: string; en: string }> = {
 const TYPE: Record<string, string> = { grammar: "Grammatik", spelling: "Rechtschreibung", "word-order": "Wortstellung", vocabulary: "Wortschatz" };
 
 /** Botones "Mit KI korrigieren" y "An die Lehrkraft schicken" + resultado de la corrección. */
-export function AiCorrection({ text, task, kind, unitLabel }: { text: string; task: string; kind: "writing" | "speaking"; unitLabel: string }) {
+export function AiCorrection({ text, task, kind, unitLabel, level = "A1.1" }: { text: string; task: string; kind: "writing" | "speaking"; unitLabel: string; level?: string }) {
   const { lang } = useT();
   const { user } = useSession();
   const [busy, setBusy] = useState(false);
@@ -35,7 +35,7 @@ export function AiCorrection({ text, task, kind, unitLabel }: { text: string; ta
   const correct = async () => {
     setBusy(true);
     setError(null);
-    const r = await requestCorrection({ text, task, level: "A1.1", kind, lang });
+    const r = await requestCorrection({ text, task, level, kind, lang });
     setBusy(false);
     if (r.ok) setResult(r.data);
     else setError(r.error);

@@ -7,7 +7,7 @@ import { commonVocab } from "../src/content/de/common";
 import { STORIES } from "../src/content/de/stories";
 import { THEMES } from "../src/content/de/themes";
 import { EXAM_AUDIO } from "../src/content/de/exams";
-import { PRACTICE } from "../src/content/de/practice";
+import { PRACTICE_BY_LEVEL } from "../src/content/de/practice";
 import { SONGS } from "../src/content/de/songs";
 import { audioKey, normalizeSpeech } from "../src/lib/speech";
 import type { Voice } from "../src/content/types";
@@ -41,7 +41,7 @@ for (const t of THEMES) t.questions.forEach((q) => add(q.de, "f"));
 // Audios de los exámenes (Hören)
 EXAM_AUDIO.forEach((a) => add(a.text, a.voice));
 // Práctica de las unidades: diálogos de Hören y preguntas de Sprechen
-for (const p of Object.values(PRACTICE)) {
+for (const p of Object.values(PRACTICE_BY_LEVEL).flatMap((lv) => Object.values(lv))) {
   p.listening.lines.forEach((l) => add(l.de, l.voice));
   p.speaking.forEach((x) => add(x.de, "f"));
 }

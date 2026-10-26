@@ -23,7 +23,8 @@ let maxWords = 1;
 const norm = (s: string) => s.toLowerCase().replace(/[’]/g, "'").replace(/\s+/g, " ").trim();
 
 function add(surface: string, g: Gloss, overwrite: boolean) {
-  const k = norm(surface);
+  // Sin puntuación final: "Klar!" o "Das passt." se encuentran al tocar "klar" / "das passt"
+  const k = norm(surface).replace(/[.,!?;:…]+$/, "").trim();
   if (!k) return;
   if (!overwrite && index.has(k)) return;
   index.set(k, g);

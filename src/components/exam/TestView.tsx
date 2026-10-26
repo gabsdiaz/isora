@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { EXAMS, gateExam, levelLabel, LEVEL_ORDER, type LevelTag } from "@/content/de/exams";
+import { EXAMS, gateExam, levelLabel, LEVEL_ORDER, UNLOCKS_AFTER, type LevelTag } from "@/content/de/exams";
 import { useLevels } from "@/lib/levels";
 import { useMounted } from "../games/shared";
 import { ExamRunner, type ExamOutcome } from "./ExamRunner";
@@ -26,7 +26,7 @@ export function TestView({ id }: { id: string }) {
     }
     saveExam(exam.id, { score: o.score, passed: o.passed, at: Date.now(), sections: o.sections as Record<string, number> });
     if (o.passed && gateLevel) unlock([gateLevel]);
-    if (o.passed && exam.id === "abschluss-a1-1") unlock(["a1-2"]);
+    if (o.passed && UNLOCKS_AFTER[exam.id]) unlock([UNLOCKS_AFTER[exam.id]]);
   };
 
   const btn = "rounded-full px-5 py-2.5 text-sm font-medium transition";
@@ -47,7 +47,7 @@ export function TestView({ id }: { id: string }) {
           )}
         </>
       );
-    const target = gateLevel ?? (exam.id === "abschluss-a1-1" ? "a1-2" : null);
+    const target = gateLevel ?? UNLOCKS_AFTER[exam.id] ?? null;
     return (
       <>
         {o.passed && target && (

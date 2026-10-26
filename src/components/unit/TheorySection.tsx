@@ -138,7 +138,7 @@ function VocabList({ vocab }: { vocab: VocabEntry[] }) {
         <h2 className="text-2xl font-semibold">{g("vocab")}</h2>
         <TranslateToggle open={show} onClick={() => setShow((s) => !s)} />
       </div>
-      <ul className="grid gap-2 sm:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
         {words.map((v) => (
           <li key={v.de} className="flex items-center gap-3 rounded-2xl border border-line bg-paper px-3 py-2.5">
             <WordImage word={v.de} size={30} />

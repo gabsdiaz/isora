@@ -151,7 +151,7 @@ function RepeatLine({ text }: { text: string }) {
   );
 }
 
-function AnswerQuestion({ q, unitLabel }: { q: Practice["speaking"][number]; unitLabel: string }) {
+function AnswerQuestion({ q, unitLabel, level }: { q: Practice["speaking"][number]; unitLabel: string; level: string }) {
   const { loc } = useT();
   const rec = useSpeechRecognition();
   return (
@@ -175,12 +175,12 @@ function AnswerQuestion({ q, unitLabel }: { q: Practice["speaking"][number]; uni
           className="min-h-[64px] flex-1 resize-y rounded-2xl border border-line bg-cream/60 p-3 text-[16px] text-ink outline-none focus:border-wine/60"
         />
       </div>
-      {!rec.listening && rec.transcript && <AiCorrection text={rec.transcript} task={q.de} kind="speaking" unitLabel={unitLabel} />}
+      {!rec.listening && rec.transcript && <AiCorrection text={rec.transcript} task={q.de} kind="speaking" unitLabel={unitLabel} level={level} />}
     </li>
   );
 }
 
-export function SpeakingSection({ practice, phrases, unitLabel }: { practice: Practice; phrases: string[]; unitLabel: string }) {
+export function SpeakingSection({ practice, phrases, unitLabel, level }: { practice: Practice; phrases: string[]; unitLabel: string; level: string }) {
   const rec = useSpeechRecognition();
   return (
     <div className="space-y-6">
@@ -212,7 +212,7 @@ export function SpeakingSection({ practice, phrases, unitLabel }: { practice: Pr
         <h3 className="mb-3 text-xl font-semibold">2. Antworte laut</h3>
         <ul className="space-y-3">
           {practice.speaking.map((q) => (
-            <AnswerQuestion key={q.de} q={q} unitLabel={unitLabel} />
+            <AnswerQuestion key={q.de} q={q} unitLabel={unitLabel} level={level} />
           ))}
         </ul>
       </section>
@@ -222,7 +222,7 @@ export function SpeakingSection({ practice, phrases, unitLabel }: { practice: Pr
 
 /* ═══════════════ ✍️ Schreiben ═══════════════ */
 
-export function WritingSection({ practice, unitKey, unitLabel }: { practice: Practice; unitKey: string; unitLabel: string }) {
+export function WritingSection({ practice, unitKey, unitLabel, level }: { practice: Practice; unitKey: string; unitLabel: string; level: string }) {
   const { loc } = useT();
   const W = practice.writing;
   const draftKey = `isora.draft.${unitKey}`;
@@ -268,7 +268,7 @@ export function WritingSection({ practice, unitKey, unitLabel }: { practice: Pra
         <p className={`mt-2 text-sm ${words >= W.minWords ? "text-sage" : "text-muted"}`}>
           {words} Wörter {words >= W.minWords ? "✓" : `· mindestens ${W.minWords}`}
         </p>
-        <AiCorrection text={text} task={W.prompt} kind="writing" unitLabel={unitLabel} />
+        <AiCorrection text={text} task={W.prompt} kind="writing" unitLabel={unitLabel} level={level} />
       </div>
       <div className="rounded-[2rem] border border-line bg-paper p-5">
         <button type="button" onClick={() => setShowModel((v) => !v)} className="text-sm font-medium text-wine">

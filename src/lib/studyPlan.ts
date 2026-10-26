@@ -12,6 +12,7 @@ import type { LevelState } from "./levels";
 import { isUnitAvailable } from "@/content/de/units";
 import { STORIES } from "@/content/de/stories";
 import { SONGS } from "@/content/de/songs";
+import { FINAL_EXAM_OF } from "@/content/de/exams";
 
 export type Tr = { es: string; en: string };
 export const DAY = 86_400_000;
@@ -21,7 +22,7 @@ export type Stage = { id: string; label: string; cefr: string; hours: number; co
 /** Horas acumuladas: A1 100 · A2 200 · B1 380 · B2 530 · C1 680 (punto medio de los rangos del Goethe-Institut). */
 export const STAGES: Stage[] = [
   { id: "a1-1", label: "A1.1", cefr: "A1", hours: 50, content: "ready" },
-  { id: "a1-2", label: "A1.2", cefr: "A1", hours: 50, content: "soon" },
+  { id: "a1-2", label: "A1.2", cefr: "A1", hours: 50, content: "ready" },
   { id: "a2-1", label: "A2.1", cefr: "A2", hours: 50, content: "soon" },
   { id: "a2-2", label: "A2.2", cefr: "A2", hours: 50, content: "soon" },
   { id: "b1-1", label: "B1.1", cefr: "B1", hours: 90, content: "soon" },
@@ -212,7 +213,7 @@ export type Block = {
 };
 export type WeekDay = { day: number; date: number; blocks: Block[] };
 export type WeekPlan = { v: number; weekStart: number; profileAt: number; days: WeekDay[]; manual: Record<string, boolean> };
-export const WEEK_VERSION = 2;
+export const WEEK_VERSION = 3;
 
 export const SECTION_BLOCKS: { section: string; emoji: string; de: string; tr: Tr; minutes: number }[] = [
   { section: "video", emoji: "🎬", de: "Video ansehen", tr: { es: "Ver el video", en: "Watch the video" }, minutes: 10 },
@@ -359,16 +360,23 @@ export function buildWeek(plan: Plan, profile: StudentProfile, levels: LevelStat
     });
   };
   const weekMinutes = plan.pace.minutes * studyDays.length;
-  const fromTest = plan.start.id !== "a1-1";
-  const level = fromTest ? plan.start.id : (plan.current?.level ?? "a1-1");
-  let n = fromTest ? 1 : (plan.current?.number ?? 1);
+  // Empieza en la unidad actual; si el test lo puso más adelante, en la primera unidad de ese nivel
+  const cur = plan.current && stageIndex(plan.current.level) >= stageIndex(plan.start.id) ? plan.current : null;
+  let level = cur?.level ?? plan.start.id;
+  let n = cur?.number ?? 1;
   let guard = 0;
   while (queue.reduce((a, b) => a + b.minutes, 0) < weekMinutes + 60 && guard++ < 40) {
     if (!isUnitAvailable(level, n)) {
-      // Se acabaron las unidades disponibles: examen final del nivel y repaso
-      const passed = levels.exams?.["abschluss-a1-1"]?.passed;
-      if (level === "a1-1" && !passed && !queue.some((b) => b.kind === "exam"))
-        queue.push({ id: "exam-a1-1", kind: "exam", emoji: "📝", de: "Abschlusstest A1.1", tr: { es: "Examen final del A1.1", en: "A1.1 final test" }, minutes: 30, href: "/aprender/test/abschluss-a1-1" });
+      // Se acabaron las unidades del nivel: examen final y, si ya hay contenido, el siguiente nivel
+      const fin = FINAL_EXAM_OF[level];
+      if (fin && !levels.exams?.[fin.id]?.passed && !queue.some((b) => b.id === `exam-${level}`))
+        queue.push({ id: `exam-${level}`, kind: "exam", emoji: "📝", de: fin.title, tr: fin.titleTr, minutes: fin.minutes + 10, href: `/aprender/test/${fin.id}` });
+      const nextStage = STAGES[stageIndex(level) + 1];
+      if (n > 1 && nextStage && isUnitAvailable(nextStage.id, 1)) {
+        level = nextStage.id;
+        n = 1;
+        continue;
+      }
       queue.push({ id: `review-extra-${guard}`, kind: "review", emoji: "🔁", de: "Wiederholen", tr: { es: "Repasa tus tarjetas y unidades difíciles", en: "Review your cards and tricky units" }, minutes: 15, href: "/aprender/karten" });
       extras(level, 100 + guard, false);
       if (guard === 2 && !queue.some((b) => b.kind === "teacher"))

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { german, getLevel } from "@/content/de/course";
 import { isUnitAvailable } from "@/content/de/units";
+import { FINAL_EXAM_OF, levelLabel, UNLOCKS_AFTER } from "@/content/de/exams";
 import { useT } from "@/lib/i18n";
 import { unitKey, unitPercent, useProgress } from "@/lib/progress";
 import { useLevels } from "@/lib/levels";
@@ -15,7 +16,9 @@ export function LevelView({ levelId }: { levelId: string }) {
   const { levels, isUnlocked } = useLevels();
   const mounted = useMounted();
   const locked = mounted && !isUnlocked(level.id);
-  const finalResult = levels.exams?.["abschluss-a1-1"];
+  const finalExam = FINAL_EXAM_OF[level.id];
+  const finalResult = finalExam ? levels.exams?.[finalExam.id] : undefined;
+  const opens = finalExam ? UNLOCKS_AFTER[finalExam.id] : undefined;
 
   return (
     <div>
@@ -64,7 +67,7 @@ export function LevelView({ levelId }: { levelId: string }) {
         </div>
       )}
 
-      <ol className="grid gap-3 sm:grid-cols-2">
+      <ol className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {level.units.map((u) => {
           const available = isUnitAvailable(level.id, u.number) && !locked;
           const up = progress[unitKey("de", level.id, u.number)];
@@ -118,16 +121,19 @@ export function LevelView({ levelId }: { levelId: string }) {
         })}
       </ol>
 
-      {level.id === "a1-1" && (
+      {finalExam && (
         <Link
-          href="/aprender/test/abschluss-a1-1"
+          href={`/aprender/test/${finalExam.id}`}
           className="mt-6 flex items-center justify-between gap-4 rounded-[2rem] border-2 border-wine/60 bg-sand p-6 transition hover:bg-sand-deep"
         >
           <span className="flex items-center gap-4">
             <span className="text-5xl" aria-hidden="true">🏆</span>
             <span>
-              <span className="block font-display text-2xl text-wine">Abschlusstest A1.1</span>
-              <span className="block text-sm text-cocoa">Grammatik · Lesen · Hören · Schreiben – alle Themen von A1.1. Bestanden = A1.2 frei!</span>
+              <span className="block font-display text-2xl text-wine">{finalExam.title}</span>
+              <span className="block text-sm text-cocoa">
+                Grammatik · Lesen · Hören · Schreiben – alle Themen von {level.label}.{" "}
+                {level.id === "a1-2" ? "Wie im Goethe-Zertifikat A1!" : opens ? `Bestanden = ${levelLabel(opens)} frei!` : ""}
+              </span>
               {finalResult && (
                 <span className={`mt-1 inline-block rounded-full px-2.5 py-0.5 text-xs ${finalResult.passed ? "bg-sage-soft text-sage" : "bg-wine-soft text-wine"}`}>
                   {finalResult.passed ? "✓ Bestanden" : "Noch nicht bestanden"} · {finalResult.score} %

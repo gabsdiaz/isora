@@ -4,7 +4,7 @@ import type { Tr, Voice } from "../types";
  * Exámenes de Isora:
  *  - Einstufungstest (test de nivel): gramática, lectura, comprensión auditiva y escritura (A1.1 → B1.2)
  *  - Zugangstest (mini prueba para abrir un nivel): 8 preguntas del nivel anterior
- *  - Abschlusstest A1.1 (examen final del módulo)
+ *  - Abschlusstest A1.1 y A1.2 (exámenes finales; el del A1.2 es un simulacro del Goethe-Zertifikat A1)
  * Cada pregunta lleva el nivel al que pertenece, para calcular el nivel del estudiante.
  */
 export type LevelTag = "a1-1" | "a1-2" | "a2-1" | "a2-2" | "b1-1" | "b1-2";
@@ -75,6 +75,14 @@ export const BANK: Record<LevelTag, MCQuestion[]> = {
     mc("a1-2", "Ich fahre ___ Bus zur Arbeit.", ["mit dem", "mit den", "mit die"], 0),
     mc("a1-2", "Er hat mir ein Geschenk ___.", ["gegeben", "gibt", "gegebt"], 0),
     mc("a1-2", "___ Sie bitte das Fenster!", ["Öffnen", "Öffnet", "Öffnest"], 0),
+    mc("a1-2", "Mir ___ der Kopf weh.", ["tut", "tun", "tust"], 0),
+    mc("a1-2", "Ich stehe jeden Tag um sechs Uhr ___.", ["an", "auf", "ein"], 1),
+    mc("a1-2", "Das ist Anna. ___ Bruder heißt Tom.", ["Sein", "Ihr", "Ihre"], 1),
+    mc("a1-2", "Ich habe am ___ Mai Geburtstag.", ["drei", "dritten", "dritte"], 1),
+    mc("a1-2", "Letzten Sommer ___ wir in Spanien.", ["waren", "hatten", "sind"], 0),
+    mc("a1-2", "Kannst du ___ bitte helfen?", ["mich", "mir", "ich"], 1),
+    mc("a1-2", "Paul, ___ bitte das Licht aus!", ["mach", "machst", "macht"], 0),
+    mc("a1-2", "___ Sie mir bitte die Rechnung bringen?", ["Könnten", "Möchten", "Müssen"], 0),
   ],
   "a2-1": [
     mc("a2-1", "Ich lerne Deutsch, ___ ich in Deutschland studieren möchte.", ["weil", "denn", "deshalb"], 0),
@@ -341,6 +349,118 @@ export const FINAL_A1_1: Exam = {
   ],
 };
 
+/* ───────────── Abschlusstest A1.2 = Modelltest Goethe-Zertifikat A1 ───────────── */
+
+export const FINAL_A1_2: Exam = {
+  id: "abschluss-a1-2",
+  title: "Abschlusstest A1 · Modelltest",
+  titleTr: { es: "Examen final A1 · simulacro", en: "A1 final exam · mock test" },
+  emoji: "🏆",
+  minutes: 35,
+  pass: 60,
+  intro: {
+    es: "El examen final del A1.2, con el formato del Goethe-Zertifikat A1: gramática y vocabulario, lectura, comprensión auditiva y un mensaje escrito. Necesitas 60 % para aprobar. ¡Si apruebas, estás listo para el examen oficial!",
+    en: "The A1.2 final exam in the format of the Goethe-Zertifikat A1: grammar and vocabulary, reading, listening and a written message. You need 60% to pass. If you pass, you're ready for the official exam!",
+  },
+  sections: [
+    { kind: "grammar", title: "Grammatik & Wortschatz", questions: BANK["a1-2"] },
+    {
+      kind: "reading",
+      title: "Lesen",
+      blocks: [
+        {
+          id: "gr1",
+          title: "Lesen Teil 1 – Eine E-Mail",
+          text: [
+            "Liebe Sara,",
+            "vielen Dank für deine Einladung! Leider kann ich am Samstag nicht zu deiner Party kommen. Meine Eltern besuchen mich am Wochenende. Sie kommen am Freitagabend mit dem Zug aus Hamburg.",
+            "Hast du am Dienstag Zeit? Dann können wir zusammen ins Café am Marktplatz gehen. Ich lade dich ein!",
+            "Viele Grüße, Jonas",
+          ],
+          questions: [
+            mc("a1-2", "Jonas kommt am Samstag zu Saras Party.", ["richtig", "falsch"], 1),
+            mc("a1-2", "Wie kommen die Eltern von Jonas?", ["mit dem Auto", "mit dem Zug", "mit dem Flugzeug"], 1),
+            mc("a1-2", "Was möchte Jonas am Dienstag machen?", ["ins Café gehen", "eine Party machen", "nach Hamburg fahren"], 0),
+          ],
+        },
+        {
+          id: "gr2",
+          title: "Lesen Teil 2 – Im Internet",
+          text: [
+            "Sie möchten am Wochenende schwimmen gehen.",
+            "a) Hallenbad Mitte: Mo–Fr 6–21 Uhr, Sa + So geschlossen.",
+            "b) Freizeitbad Aqua: täglich 9–22 Uhr, auch am Wochenende.",
+          ],
+          questions: [mc("a1-2", "Welches Schwimmbad passt?", ["a) Hallenbad Mitte", "b) Freizeitbad Aqua"], 1)],
+        },
+        {
+          id: "gr3",
+          title: "Lesen Teil 3 – Ein Schild",
+          text: ["Praxis Dr. Wagner", "Vom 2. bis 16. August haben wir Urlaub.", "Bitte gehen Sie in dieser Zeit zu Dr. Hoffmann, Bergstraße 4."],
+          questions: [mc("a1-2", "Im August ist die Praxis zwei Wochen geschlossen.", ["richtig", "falsch"], 0)],
+        },
+      ],
+    },
+    {
+      kind: "listening",
+      title: "Hören",
+      blocks: [
+        {
+          id: "gh1",
+          audio: "Entschuldigung, wie komme ich zur Post? – Gehen Sie hier geradeaus und dann die zweite Straße links. Die Post ist neben der Apotheke.",
+          voice: "m",
+          questions: [mc("a1-2", "Wo ist die Post?", ["neben der Apotheke", "neben dem Bahnhof", "neben der Bank"], 0)],
+        },
+        {
+          id: "gh2",
+          audio: "Achtung an Gleis fünf: Der Regionalexpress nach Leipzig hat heute fünfzehn Minuten Verspätung. Wir bitten um Entschuldigung.",
+          voice: "f",
+          questions: [
+            mc("a1-2", "Wohin fährt der Zug?", ["nach Leipzig", "nach Dresden", "nach Berlin"], 0),
+            mc("a1-2", "Wie viele Minuten Verspätung hat der Zug?", ["5", "15", "50"], 1),
+          ],
+        },
+        {
+          id: "gh3",
+          audio: "Hallo Lukas, hier ist Mira. Ich bin krank, mir tut der Hals weh. Ich kann heute nicht zum Kurs kommen. Kannst du mir bitte die Hausaufgaben schicken? Danke!",
+          voice: "f",
+          questions: [
+            mc("a1-2", "Was tut Mira weh?", ["der Kopf", "der Hals", "der Bauch"], 1),
+            mc("a1-2", "Was soll Lukas machen?", ["Mira besuchen", "die Hausaufgaben schicken", "zum Arzt gehen"], 1),
+          ],
+        },
+      ],
+    },
+    {
+      kind: "writing",
+      title: "Schreiben",
+      task: {
+        id: "w-a1-2",
+        prompt: "Schreiben Teil 2: Sie können morgen nicht zum Deutschkurs kommen. Schreiben Sie Ihrer Lehrerin, Frau Schulz: Warum kommen Sie nicht? Fragen Sie nach den Hausaufgaben. Wann kommen Sie wieder? Schreiben Sie ca. 30 Wörter. Vergessen Sie Anrede und Gruß nicht.",
+        promptTr: {
+          es: "Escritura parte 2: mañana no puedes ir al curso de alemán. Escríbele a tu profesora, la señora Schulz: ¿por qué no vas?, pregunta por las tareas, ¿cuándo vuelves? Unas 30 palabras. No olvides el saludo y la despedida.",
+          en: "Writing part 2: you can't come to German class tomorrow. Write to your teacher, Ms Schulz: why aren't you coming, ask about the homework, when will you be back? About 30 words. Don't forget the greeting and closing.",
+        },
+        hints: ["Liebe Frau Schulz,", "ich kann morgen leider nicht …", "Was sind die Hausaufgaben?", "Am … bin ich wieder da.", "Viele Grüße"],
+        minWords: 25,
+        checks: [
+          { label: "Anrede (Liebe Frau Schulz / Sehr geehrte …)", pattern: "\\b(liebe|sehr geehrte)\\b" },
+          { label: "Warum? (Ich muss … / Ich bin krank …)", pattern: "\\b(muss|krank|arbeite|habe|weil|leider)\\b" },
+          { label: "Hausaufgaben", pattern: "hausaufgabe" },
+          { label: "Wann kommen Sie wieder?", pattern: "\\b(wieder|am (montag|dienstag|mittwoch|donnerstag|freitag)|nächste)" },
+          { label: "Gruß (Viele Grüße / Mit freundlichen Grüßen)", pattern: "gr(ü|ue)(ß|ss)e" },
+        ],
+        model:
+          "Liebe Frau Schulz,\nich kann morgen leider nicht zum Kurs kommen. Ich muss zum Arzt. Was sind die Hausaufgaben? Können Sie mir bitte eine E-Mail schreiben? Am Donnerstag bin ich wieder da.\nViele Grüße\nKofi Mensah",
+      },
+    },
+  ],
+};
+
+/** Qué nivel abre cada examen final, y cuál es el examen final de cada nivel. */
+export const UNLOCKS_AFTER: Record<string, LevelTag> = { "abschluss-a1-1": "a1-2", "abschluss-a1-2": "a2-1" };
+export const FINAL_EXAM_OF: Record<string, Exam> = { "a1-1": FINAL_A1_1, "a1-2": FINAL_A1_2 };
+
 /* ───────────── Mini prueba para abrir un nivel ───────────── */
 
 export function gateExam(level: LevelTag): Exam | null {
@@ -362,9 +482,9 @@ export function gateExam(level: LevelTag): Exam | null {
   };
 }
 
-export const EXAMS: Record<string, Exam> = { [PLACEMENT.id]: PLACEMENT, [FINAL_A1_1.id]: FINAL_A1_1 };
+export const EXAMS: Record<string, Exam> = { [PLACEMENT.id]: PLACEMENT, [FINAL_A1_1.id]: FINAL_A1_1, [FINAL_A1_2.id]: FINAL_A1_2 };
 
 /** Todos los audios de los exámenes (para generarlos con voces de Microsoft) */
-export const EXAM_AUDIO: { text: string; voice: Voice }[] = [PLACEMENT, FINAL_A1_1].flatMap((e) =>
+export const EXAM_AUDIO: { text: string; voice: Voice }[] = [PLACEMENT, FINAL_A1_1, FINAL_A1_2].flatMap((e) =>
   e.sections.flatMap((s) => (s.kind === "listening" ? s.blocks.map((b) => ({ text: b.audio, voice: b.voice })) : [])),
 );

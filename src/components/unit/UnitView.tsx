@@ -15,7 +15,8 @@ import { ReadingSection } from "./ReadingSection";
 import { ExercisesSection } from "./ExercisesSection";
 import { GuideSection } from "./GuideSection";
 import { UnitCards } from "../flashcards/UnitCards";
-import { PRACTICE } from "@/content/de/practice";
+import { practiceFor } from "@/content/de/practice";
+import { FINAL_EXAM_OF } from "@/content/de/exams";
 import { ListeningSection, SpeakingSection, WritingSection, phrasesFrom } from "./practice/PracticeSections";
 
 const SECTIONS: { id: string; label: StringKey }[] = [
@@ -120,7 +121,7 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
 
       <section className="mb-6 rounded-3xl border border-line bg-paper p-5">
         <p className="mb-2 text-sm font-semibold text-cocoa">{g("goals")}:</p>
-        <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
+        <ul className="grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2">
           {content.goals.map((goal, i) => (
             <li key={i} className="flex gap-2 text-sm text-ink/85">
               <span className="mt-1 text-gold">◆</span>
@@ -156,14 +157,14 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
 
       <div className="min-h-[40vh]">
         {(() => {
-          const practice = levelId === "a1-1" ? PRACTICE[number] : undefined;
+          const practice = practiceFor(levelId, number);
           const id = SECTIONS[active].id;
           const label = `${level.label} · Einheit ${number}: ${meta.title}`;
           if (!practice && (id === "listening" || id === "speaking" || id === "writing"))
             return <p className="rounded-3xl border border-dashed border-line bg-paper/60 p-8 text-center text-cocoa">{g("inProduction")}</p>;
           if (id === "listening") return <ListeningSection practice={practice!} onDone={(sc, t) => markUnit(`${pk}/hoeren`, sc, t)} />;
-          if (id === "speaking") return <SpeakingSection practice={practice!} phrases={phrasesFrom(content.theory)} unitLabel={label} />;
-          if (id === "writing") return <WritingSection practice={practice!} unitKey={key} unitLabel={label} />;
+          if (id === "speaking") return <SpeakingSection practice={practice!} phrases={phrasesFrom(content.theory)} unitLabel={label} level={level.label} />;
+          if (id === "writing") return <WritingSection practice={practice!} unitKey={key} unitLabel={label} level={level.label} />;
           return null;
         })()}
         {SECTIONS[active].id === "video" && <VideoSection script={content.video} title={meta.title} mediaKey={mediaKey} unitKey={key} />}
@@ -214,10 +215,11 @@ export function UnitView({ levelId, number }: { levelId: string; number: number 
 function NextUnitLink({ levelId, number }: { levelId: string; number: number }) {
   const { g } = useT();
   const next = getUnitContent(levelId, number + 1);
-  if (!next && levelId === "a1-1") {
+  const finalExam = FINAL_EXAM_OF[levelId];
+  if (!next && finalExam) {
     return (
-      <Link href="/aprender/test/abschluss-a1-1" className="rounded-full bg-wine px-5 py-2.5 text-sm font-medium text-cream hover:bg-wine-light">
-        🏆 Abschlusstest A1.1 →
+      <Link href={`/aprender/test/${finalExam.id}`} className="rounded-full bg-wine px-5 py-2.5 text-sm font-medium text-cream hover:bg-wine-light">
+        🏆 {finalExam.title} →
       </Link>
     );
   }
