@@ -43,3 +43,4 @@ scripts/__pycache__/
 video/node_modules/
 video/out/
 video/public/audio/
+__pycache__/
