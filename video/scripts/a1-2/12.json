@@ -1,0 +1,400 @@
+{
+  "key": "de/a1-2/12",
+  "level": "A1.2",
+  "number": 12,
+  "title": "Im Büro",
+  "subtitle": "Arbeit und Alltag",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "💼",
+        "🖨️",
+        "☕"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute sind wir im Büro.",
+          "es": "¡Hola! Hoy estamos en la oficina.",
+          "en": "Hi! Today we're at the office."
+        },
+        {
+          "lang": "de",
+          "text": "Du bittest um Hilfe und lernst neue Pronomen.",
+          "es": "Pides ayuda y aprendes pronombres nuevos.",
+          "en": "You ask for help and learn new pronouns."
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Im Büro",
+      "gloss": "en la oficina",
+      "items": [
+        {
+          "de": "der Computer",
+          "es": "el computador",
+          "at": 1,
+          "icon": "💻"
+        },
+        {
+          "de": "der Drucker",
+          "es": "la impresora",
+          "at": 2,
+          "icon": "🖨️"
+        },
+        {
+          "de": "die Besprechung",
+          "es": "la reunión",
+          "at": 3,
+          "icon": "👥"
+        },
+        {
+          "de": "der Kollege",
+          "es": "el compañero",
+          "at": 4,
+          "icon": "🧑‍💼"
+        },
+        {
+          "de": "die Pause",
+          "es": "la pausa",
+          "at": 5,
+          "icon": "☕"
+        },
+        {
+          "de": "die E-Mail",
+          "es": "el correo",
+          "at": 6,
+          "icon": "📧"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Das gibt es im Büro:",
+          "es": "Esto hay en la oficina:",
+          "en": "This is what you find at the office:"
+        },
+        {
+          "lang": "de",
+          "text": "der Computer",
+          "es": "el computador",
+          "en": "the computer"
+        },
+        {
+          "lang": "de",
+          "text": "der Drucker",
+          "es": "la impresora",
+          "en": "the printer"
+        },
+        {
+          "lang": "de",
+          "text": "die Besprechung",
+          "es": "la reunión",
+          "en": "the meeting"
+        },
+        {
+          "lang": "de",
+          "text": "der Kollege, die Kollegin",
+          "es": "el compañero, la compañera",
+          "en": "the colleague"
+        },
+        {
+          "lang": "de",
+          "text": "die Pause",
+          "es": "la pausa",
+          "en": "the break"
+        },
+        {
+          "lang": "de",
+          "text": "die E-Mail",
+          "es": "el correo electrónico",
+          "en": "the email"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "Akkusativ",
+      "gloss": "a mí, a ti…",
+      "rows": [
+        {
+          "p": "ich",
+          "stem": "",
+          "end": "mich",
+          "at": 1
+        },
+        {
+          "p": "du",
+          "stem": "",
+          "end": "dich",
+          "at": 2
+        },
+        {
+          "p": "er",
+          "stem": "",
+          "end": "ihn",
+          "at": 3
+        },
+        {
+          "p": "sie",
+          "stem": "",
+          "end": "sie",
+          "at": 4
+        },
+        {
+          "p": "Sie",
+          "stem": "",
+          "end": "Sie",
+          "at": 5
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Nach vielen Verben brauchst du den Akkusativ. Zum Beispiel: Ruf mich an!",
+          "es": "Después de muchos verbos necesitas el acusativo. Por ejemplo: ¡llámame!",
+          "en": "Many verbs need the accusative. For example: call me!"
+        },
+        {
+          "lang": "de",
+          "text": "ich wird mich",
+          "es": "ich se vuelve mich (me)",
+          "en": "ich becomes mich (me)"
+        },
+        {
+          "lang": "de",
+          "text": "du wird dich",
+          "es": "du se vuelve dich (te)",
+          "en": "du becomes dich (you)"
+        },
+        {
+          "lang": "de",
+          "text": "er wird ihn",
+          "es": "er se vuelve ihn (lo)",
+          "en": "er becomes ihn (him)"
+        },
+        {
+          "lang": "de",
+          "text": "sie bleibt sie",
+          "es": "sie se queda sie (la)",
+          "en": "sie stays sie (her)"
+        },
+        {
+          "lang": "de",
+          "text": "und Sie bleibt Sie.",
+          "es": "y Sie se queda Sie (lo, la, usted).",
+          "en": "and Sie stays Sie."
+        }
+      ],
+      "pw": 120,
+      "w": 322,
+      "tx": 360,
+      "size": 60,
+      "side": "Ich rufe dich an.\nIch sehe ihn.",
+      "tableAt": 0
+    },
+    {
+      "type": "sentence",
+      "heading": "Hilfe!",
+      "gloss": "¡ayuda!",
+      "sticker": "🆘",
+      "lines": [
+        {
+          "de": "Kannst du mir helfen?",
+          "es": "¿Me puedes ayudar?",
+          "mark": "mir",
+          "at": 1
+        },
+        {
+          "de": "Kann ich Ihnen helfen?",
+          "es": "¿Le puedo ayudar?",
+          "mark": "Ihnen",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Bei helfen sagst du mir und dir:",
+          "es": "Con helfen dices mir y dir:",
+          "en": "With helfen you say mir and dir:"
+        },
+        {
+          "lang": "de",
+          "text": "Kannst du mir helfen?",
+          "es": "¿Me puedes ayudar?",
+          "en": "Can you help me?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und höflich, mit Sie:",
+          "es": "Y con cortesía, con Sie:",
+          "en": "And politely, with Sie:"
+        },
+        {
+          "lang": "de",
+          "text": "Kann ich Ihnen helfen?",
+          "es": "¿Le puedo ayudar?",
+          "en": "Can I help you?",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Der Drucker",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Mateo",
+          "de": "Kannst du mir helfen?",
+          "at": 1
+        },
+        {
+          "who": "Lena",
+          "de": "Klar! Was ist los?",
+          "at": 2
+        },
+        {
+          "who": "Mateo",
+          "de": "Der Drucker geht nicht.",
+          "at": 3
+        },
+        {
+          "who": "Lena",
+          "de": "Warte, ich helfe dir.",
+          "at": 4
+        },
+        {
+          "who": "Lena",
+          "de": "So, er geht wieder!",
+          "at": 5
+        },
+        {
+          "who": "Mateo",
+          "de": "Danke! Ich lade dich ein.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Mateo hat ein Problem.",
+          "es": "Escucha: Mateo tiene un problema.",
+          "en": "Listen: Mateo has a problem."
+        },
+        {
+          "lang": "de",
+          "text": "Kannst du mir helfen?",
+          "es": "¿Me puedes ayudar?",
+          "en": "Can you help me?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Klar! Was ist los?",
+          "es": "¡Claro! ¿Qué pasa?",
+          "en": "Sure! What's up?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Der Drucker geht nicht.",
+          "es": "La impresora no funciona.",
+          "en": "The printer isn't working.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Warte, ich helfe dir.",
+          "es": "Espera, te ayudo.",
+          "en": "Wait, I'll help you.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "So, er geht wieder!",
+          "es": "Listo, ¡ya funciona!",
+          "en": "There, it works again!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Danke! Ich lade dich zum Kaffee ein.",
+          "es": "¡Gracias! Te invito a un café.",
+          "en": "Thanks! I'll buy you a coffee.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Kannst du mir …?\nIch rufe dich an.",
+      "pause": 8,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Bitte eine Kollegin um Hilfe: Kannst du mir helfen? Mein Computer geht nicht.",
+          "es": "¡Ahora tú! Pídele ayuda a una compañera: ¿Me puedes ayudar? Mi computador no funciona.",
+          "en": "Now you! Ask a colleague for help: Can you help me? My computer isn't working."
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Computer · Drucker · Besprechung",
+          "at": 1
+        },
+        {
+          "text": "mich · dich · ihn · sie · Sie",
+          "at": 1
+        },
+        {
+          "text": "Kannst du mir helfen?",
+          "at": 1
+        },
+        {
+          "text": "Kann ich Ihnen helfen?",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du sprichst im Büro, bittest um Hilfe und kennst die Pronomen.",
+          "es": "Hablas en la oficina, pides ayuda y conoces los pronombres.",
+          "en": "You talk at the office, ask for help and know the pronouns."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

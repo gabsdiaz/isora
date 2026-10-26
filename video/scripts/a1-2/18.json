@@ -1,0 +1,338 @@
+{
+  "key": "de/a1-2/18",
+  "level": "A1.2",
+  "number": 18,
+  "title": "Bitte, mach das!",
+  "subtitle": "Der Imperativ",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "👉",
+        "🍳",
+        "🙏"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute lernst du den Imperativ.",
+          "es": "¡Hola! Hoy aprendes el imperativo.",
+          "en": "Hi! Today you learn the imperative."
+        },
+        {
+          "lang": "de",
+          "text": "Mit du, ihr und Sie.",
+          "es": "Con du, ihr y Sie.",
+          "en": "With du, ihr and Sie."
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "Imperativ",
+      "gloss": "imperativo",
+      "rows": [
+        {
+          "p": "du",
+          "stem": "",
+          "end": "Komm",
+          "at": 1,
+          "rest": "!"
+        },
+        {
+          "p": "ihr",
+          "stem": "",
+          "end": "Kommt",
+          "at": 2,
+          "rest": "!"
+        },
+        {
+          "p": "Sie",
+          "stem": "",
+          "end": "Kommen",
+          "at": 3,
+          "rest": " Sie!"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Drei Formen, ein Verb. Mit du: ohne du und ohne st:",
+          "es": "Tres formas, un verbo. Con du: sin du y sin st:",
+          "en": "Three forms, one verb. With du: no du and no st:"
+        },
+        {
+          "lang": "de",
+          "text": "Komm!",
+          "es": "¡Ven!",
+          "en": "Come!"
+        },
+        {
+          "lang": "de",
+          "text": "Mit ihr: wie ihr kommt, aber ohne ihr:",
+          "es": "Con ihr: como ihr kommt, pero sin ihr:",
+          "en": "With ihr: like ihr kommt, but without ihr:"
+        },
+        {
+          "lang": "de",
+          "text": "Kommt! Und mit Sie: Kommen Sie!",
+          "es": "¡Vengan! Y con Sie: ¡Venga!",
+          "en": "Come! And with Sie: Kommen Sie!"
+        }
+      ],
+      "pw": 120,
+      "w": 540,
+      "tx": 360,
+      "size": 64,
+      "side": "",
+      "tableAt": 0
+    },
+    {
+      "type": "compare",
+      "heading": "Achtung!",
+      "left": {
+        "title": "du nimmst",
+        "icon": "🤲",
+        "gloss": "tú tomas",
+        "example": "Nimm!",
+        "at": 1
+      },
+      "right": {
+        "title": "du fährst",
+        "icon": "🚗",
+        "gloss": "tú manejas",
+        "example": "Fahr!",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Bei e zu i bleibt das i:",
+          "es": "Con e a i, la i se queda:",
+          "en": "With e to i, the i stays:"
+        },
+        {
+          "lang": "de",
+          "text": "Du nimmst. Nimm!",
+          "es": "Tú tomas. ¡Toma!",
+          "en": "You take. Take!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Aber bei a zu ä fällt der Umlaut weg:",
+          "es": "Pero con a a ä, se quita la diéresis:",
+          "en": "But with a to ä, the umlaut goes:"
+        },
+        {
+          "lang": "de",
+          "text": "Du fährst. Fahr!",
+          "es": "Tú manejas. ¡Maneja!",
+          "en": "You drive. Drive!",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Freundlich",
+      "gloss": "amable",
+      "sticker": "🙏",
+      "lines": [
+        {
+          "de": "Mach bitte das Licht an!",
+          "es": "¡Prende la luz, por favor!",
+          "mark": "bitte",
+          "at": 1
+        },
+        {
+          "de": "Komm doch mit!",
+          "es": "¡Ven con nosotros!",
+          "mark": "doch",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Der Imperativ ist direkt. Mit bitte ist er freundlich:",
+          "es": "El imperativo es directo. Con bitte es amable:",
+          "en": "The imperative is direct. With bitte it's friendly:"
+        },
+        {
+          "lang": "de",
+          "text": "Mach bitte das Licht an!",
+          "es": "¡Prende la luz, por favor!",
+          "en": "Please turn on the light!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Und mit doch oder mal klingt es netter:",
+          "es": "Y con doch o mal suena más amable:",
+          "en": "And with doch or mal it sounds nicer:"
+        },
+        {
+          "lang": "de",
+          "text": "Komm doch mit!",
+          "es": "¡Ven con nosotros!",
+          "en": "Why don't you come along!",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "In der Küche",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Lena",
+          "de": "Gib mir bitte die Eier!",
+          "at": 1
+        },
+        {
+          "who": "Mateo",
+          "de": "Hier, bitte.",
+          "at": 2
+        },
+        {
+          "who": "Lena",
+          "de": "Nimm die Milch und rühr!",
+          "at": 3
+        },
+        {
+          "who": "Mateo",
+          "de": "So?",
+          "at": 4
+        },
+        {
+          "who": "Lena",
+          "de": "Ja! Sei vorsichtig!",
+          "at": 5
+        },
+        {
+          "who": "Mateo",
+          "de": "Mmh, das riecht gut!",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena und Mateo backen Pfannkuchen.",
+          "es": "Escucha: Lena y Mateo hacen panqueques.",
+          "en": "Listen: Lena and Mateo make pancakes."
+        },
+        {
+          "lang": "de",
+          "text": "Gib mir bitte die Eier!",
+          "es": "¡Pásame los huevos, por favor!",
+          "en": "Please pass me the eggs!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Hier, bitte.",
+          "es": "Aquí tienes.",
+          "en": "Here you are.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Jetzt nimm die Milch und rühr gut!",
+          "es": "¡Toma la leche y revuelve!",
+          "en": "Take the milk and stir!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "So?",
+          "es": "¿Así?",
+          "en": "Like this?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ja, genau! Sei vorsichtig, die Pfanne ist heiß!",
+          "es": "¡Sí! ¡Ten cuidado!",
+          "en": "Yes! Be careful!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Mmh, das riecht gut!",
+          "es": "¡Mmm, huele rico!",
+          "en": "Mmm, that smells good!",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Komm! Nimm!\nMach bitte …!",
+      "pause": 10,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Gib einem Freund drei Tipps für das Deutschlernen. Benutze den Imperativ!",
+          "es": "¡Ahora tú! Dale a un amigo tres consejos para aprender alemán. ¡Usa el imperativo!",
+          "en": "Now you! Give a friend three tips for learning German. Use the imperative!"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Komm! · Kommt! · Kommen Sie!",
+          "at": 1
+        },
+        {
+          "text": "Nimm! · Fahr!",
+          "at": 1
+        },
+        {
+          "text": "Mach bitte das Licht an!",
+          "at": 1
+        },
+        {
+          "text": "Komm doch mit!",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du bittest und gibst Tipps – mit du, ihr und Sie. Und immer mit bitte!",
+          "es": "Pides y das consejos, con du, ihr y Sie. ¡Y siempre con bitte!",
+          "en": "You make requests and give tips – with du, ihr and Sie. And always with bitte!"
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

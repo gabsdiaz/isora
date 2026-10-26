@@ -1,0 +1,326 @@
+{
+  "key": "de/a1-2/20",
+  "level": "A1.2",
+  "number": 20,
+  "title": "Prüfung A1",
+  "subtitle": "Schreiben und Sprechen",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "✍️",
+        "🗣️",
+        "🏆"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Das ist die letzte Einheit von A1. Super!",
+          "es": "¡Hola! Esta es la última unidad del A1. ¡Súper!",
+          "en": "Hi! This is the last unit of A1. Great!"
+        },
+        {
+          "lang": "de",
+          "text": "Heute: Schreiben und Sprechen für die Prüfung.",
+          "es": "Hoy: escritura y oral para el examen.",
+          "en": "Today: writing and speaking for the exam."
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Schreiben",
+      "gloss": "escritura",
+      "items": [
+        {
+          "de": "Teil 1: Formular",
+          "es": "llenar un formulario",
+          "at": 1,
+          "icon": "📋"
+        },
+        {
+          "de": "Teil 2: Nachricht",
+          "es": "un mensaje corto",
+          "at": 2,
+          "icon": "✉️"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Das Schreiben hat zwei Teile:",
+          "es": "La escritura tiene dos partes:",
+          "en": "Writing has two parts:"
+        },
+        {
+          "lang": "de",
+          "text": "Teil eins: Du füllst ein Formular aus. Nur Wörter und Zahlen!",
+          "es": "Parte uno: llenas un formulario. ¡Solo palabras y números!",
+          "en": "Part one: you fill in a form. Only words and numbers!"
+        },
+        {
+          "lang": "de",
+          "text": "Teil zwei: Du schreibst eine Nachricht, ungefähr dreißig Wörter.",
+          "es": "Parte dos: escribes un mensaje de unas treinta palabras.",
+          "en": "Part two: you write a message of about thirty words."
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "heading": "Anrede und Gruß",
+      "left": {
+        "title": "du",
+        "icon": "😊",
+        "gloss": "informal",
+        "example": "Liebe Anna, …",
+        "at": 1
+      },
+      "right": {
+        "title": "Sie",
+        "icon": "🧑‍💼",
+        "gloss": "formal",
+        "example": "Sehr geehrte Frau …",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Für Freunde schreibst du:",
+          "es": "Para amigos escribes:",
+          "en": "For friends you write:"
+        },
+        {
+          "lang": "de",
+          "text": "Liebe Anna. Am Ende: Viele Grüße.",
+          "es": "Querida Anna. Al final: Saludos.",
+          "en": "Dear Anna. At the end: Best wishes.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Formell schreibst du:",
+          "es": "Formal escribes:",
+          "en": "Formally you write:"
+        },
+        {
+          "lang": "de",
+          "text": "Sehr geehrte Frau Weber. Am Ende: Mit freundlichen Grüßen.",
+          "es": "Estimada señora Weber. Al final: Cordialmente.",
+          "en": "Dear Ms Weber. At the end: Yours sincerely.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und schreib zu allen drei Punkten etwas!",
+          "es": "¡Y escribe algo sobre los tres puntos!",
+          "en": "And write something about all three points!"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Sprechen",
+      "gloss": "oral",
+      "items": [
+        {
+          "de": "Teil 1: Ich",
+          "es": "presentarse",
+          "at": 1,
+          "icon": "🙋"
+        },
+        {
+          "de": "Teil 2: Fragen",
+          "es": "preguntar con tarjetas",
+          "at": 2,
+          "icon": "❓"
+        },
+        {
+          "de": "Teil 3: Bitten",
+          "es": "pedir algo",
+          "at": 3,
+          "icon": "🙏"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Das Sprechen hat drei Teile. Du sprichst in einer Gruppe:",
+          "es": "La parte oral tiene tres partes. Hablas en grupo:",
+          "en": "Speaking has three parts. You speak in a group:"
+        },
+        {
+          "lang": "de",
+          "text": "Teil eins: Du stellst dich vor.",
+          "es": "Parte uno: te presentas.",
+          "en": "Part one: you introduce yourself."
+        },
+        {
+          "lang": "de",
+          "text": "Teil zwei: Du stellst Fragen mit einer Wortkarte.",
+          "es": "Parte dos: haces preguntas con una tarjeta de palabras.",
+          "en": "Part two: you ask questions with a word card."
+        },
+        {
+          "lang": "de",
+          "text": "Teil drei: Du bittest um etwas mit einer Bildkarte.",
+          "es": "Parte tres: pides algo con una tarjeta de imagen.",
+          "en": "Part three: you make a request with a picture card."
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Teil 2 und 3",
+      "people": {
+        "Kofi": {
+          "icon": "🧑🏿",
+          "voice": "m"
+        },
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        }
+      },
+      "lines": [
+        {
+          "who": "Kofi",
+          "de": "Meine Karte: Wochenende.",
+          "at": 1
+        },
+        {
+          "who": "Kofi",
+          "de": "Was machst du am Wochenende?",
+          "at": 2
+        },
+        {
+          "who": "Lena",
+          "de": "Ich gehe oft schwimmen.",
+          "at": 3
+        },
+        {
+          "who": "Lena",
+          "de": "Gib mir bitte den Stift!",
+          "at": 4
+        },
+        {
+          "who": "Kofi",
+          "de": "Hier, bitte.",
+          "at": 5
+        },
+        {
+          "who": "Lena",
+          "de": "Danke schön!",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Kofi und Lena sind in der Prüfung.",
+          "es": "Escucha: Kofi y Lena están en el examen.",
+          "en": "Listen: Kofi and Lena are in the exam."
+        },
+        {
+          "lang": "de",
+          "text": "Mein Thema ist Freizeit. Meine Karte ist Wochenende.",
+          "es": "Mi tarjeta: fin de semana.",
+          "en": "My card: weekend.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Was machst du am Wochenende?",
+          "es": "¿Qué haces el fin de semana?",
+          "en": "What do you do at the weekend?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich gehe oft schwimmen.",
+          "es": "A menudo voy a nadar.",
+          "en": "I often go swimming.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Gib mir bitte den Stift!",
+          "es": "¡Pásame el lápiz, por favor!",
+          "en": "Please give me the pen!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Hier, bitte.",
+          "es": "Aquí tienes.",
+          "en": "Here you are.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Danke schön!",
+          "es": "¡Muchas gracias!",
+          "en": "Thank you!",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Name · Alter · Land\nWohnort · Sprachen\nBeruf · Hobby",
+      "pause": 14,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Stell dich vor wie in der Prüfung: Name, Alter, Land, Wohnort, Sprachen, Beruf und Hobby.",
+          "es": "¡Ahora tú! Preséntate como en el examen: nombre, edad, país, ciudad, idiomas, profesión y pasatiempo.",
+          "en": "Now you! Introduce yourself as in the exam: name, age, country, home, languages, job and hobby."
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Formular · Nachricht (30 Wörter)",
+          "at": 1
+        },
+        {
+          "text": "Liebe … / Sehr geehrte …",
+          "at": 1
+        },
+        {
+          "text": "Sprechen: Ich · Fragen · Bitten",
+          "at": 1
+        },
+        {
+          "text": "Fit für Goethe A1!",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Herzlichen Glückwunsch! Du hast A1 geschafft. Jetzt bist du fit für die Prüfung.",
+          "es": "¡Felicitaciones! Terminaste el A1. Ahora estás listo para el examen.",
+          "en": "Congratulations! You've completed A1. Now you're ready for the exam."
+        },
+        {
+          "lang": "de",
+          "text": "Viel Erfolg – du schaffst das!",
+          "es": "¡Mucho éxito, tú puedes!",
+          "en": "Good luck – you can do it!"
+        }
+      ]
+    }
+  ]
+}

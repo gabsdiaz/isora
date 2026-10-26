@@ -1,0 +1,365 @@
+{
+  "key": "de/a1-2/17",
+  "level": "A1.2",
+  "number": 17,
+  "title": "Im Hotel",
+  "subtitle": "Ein Zimmer reservieren",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🏨",
+        "🛏️",
+        "🔑"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute sind wir im Hotel.",
+          "es": "¡Hola! Hoy estamos en el hotel.",
+          "en": "Hi! Today we're at a hotel."
+        },
+        {
+          "lang": "de",
+          "text": "Du reservierst ein Zimmer und fragst höflich.",
+          "es": "Reservas una habitación y preguntas con cortesía.",
+          "en": "You book a room and ask politely."
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Im Hotel",
+      "gloss": "en el hotel",
+      "items": [
+        {
+          "de": "das Einzelzimmer",
+          "es": "habitación sencilla",
+          "at": 1,
+          "icon": "🛏️"
+        },
+        {
+          "de": "das Doppelzimmer",
+          "es": "habitación doble",
+          "at": 2,
+          "icon": "🛌"
+        },
+        {
+          "de": "die Rezeption",
+          "es": "la recepción",
+          "at": 3,
+          "icon": "🛎️"
+        },
+        {
+          "de": "der Schlüssel",
+          "es": "la llave",
+          "at": 4,
+          "icon": "🔑"
+        },
+        {
+          "de": "das Frühstück",
+          "es": "el desayuno",
+          "at": 5,
+          "icon": "🥐"
+        },
+        {
+          "de": "das WLAN",
+          "es": "el wifi",
+          "at": 6,
+          "icon": "📶"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Diese Wörter brauchst du im Hotel:",
+          "es": "Estas palabras las necesitas en el hotel:",
+          "en": "You need these words at a hotel:"
+        },
+        {
+          "lang": "de",
+          "text": "ein Einzelzimmer: für eine Person",
+          "es": "una habitación sencilla: para una persona",
+          "en": "a single room: for one person"
+        },
+        {
+          "lang": "de",
+          "text": "ein Doppelzimmer: für zwei Personen",
+          "es": "una habitación doble: para dos personas",
+          "en": "a double room: for two people"
+        },
+        {
+          "lang": "de",
+          "text": "die Rezeption",
+          "es": "la recepción",
+          "en": "the reception"
+        },
+        {
+          "lang": "de",
+          "text": "der Schlüssel",
+          "es": "la llave",
+          "en": "the key"
+        },
+        {
+          "lang": "de",
+          "text": "mit Frühstück",
+          "es": "con desayuno",
+          "en": "with breakfast"
+        },
+        {
+          "lang": "de",
+          "text": "Das WLAN funktioniert nicht.",
+          "es": "El wifi no funciona.",
+          "en": "The Wi-Fi isn't working."
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Reservieren",
+      "gloss": "reservar",
+      "sticker": "📞",
+      "lines": [
+        {
+          "de": "Ich möchte ein Zimmer.",
+          "es": "Quisiera una habitación.",
+          "mark": "möchte",
+          "at": 1
+        },
+        {
+          "de": "Vom 3. bis zum 5. Mai.",
+          "es": "Del 3 al 5 de mayo.",
+          "mark": "bis zum",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "So reservierst du:",
+          "es": "Así reservas:",
+          "en": "This is how you book:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich möchte ein Doppelzimmer reservieren.",
+          "es": "Quisiera reservar una habitación doble.",
+          "en": "I'd like to book a double room.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Wann? Mit vom … bis zum:",
+          "es": "¿Cuándo? Con vom… bis zum (del… al):",
+          "en": "When? With vom… bis zum:"
+        },
+        {
+          "lang": "de",
+          "text": "Vom dritten bis zum fünften Mai.",
+          "es": "Del tres al cinco de mayo.",
+          "en": "From the third to the fifth of May.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "heading": "Höflich fragen",
+      "left": {
+        "title": "können",
+        "icon": "🙂",
+        "gloss": "¿puede…?",
+        "example": "Können Sie helfen?",
+        "at": 1
+      },
+      "right": {
+        "title": "könnten",
+        "icon": "😊",
+        "gloss": "¿podría…?",
+        "example": "Könnten Sie helfen?",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Höflich ist: Können Sie …?",
+          "es": "Cortés es: ¿puede…?",
+          "en": "Polite is: können Sie…?"
+        },
+        {
+          "lang": "de",
+          "text": "Können Sie mir helfen?",
+          "es": "¿Me puede ayudar?",
+          "en": "Can you help me?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Noch höflicher ist: Könnten Sie …?",
+          "es": "Aún más cortés es: ¿podría…?",
+          "en": "Even more polite is: könnten Sie…?"
+        },
+        {
+          "lang": "de",
+          "text": "Könnten Sie mich um sechs Uhr wecken?",
+          "es": "¿Podría despertarme a las seis?",
+          "en": "Could you wake me at six?",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "An der Rezeption",
+      "people": {
+        "Rezeption": {
+          "icon": "💁‍♀️",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Mateo",
+          "de": "Ich habe reserviert.",
+          "at": 1
+        },
+        {
+          "who": "Rezeption",
+          "de": "Wie ist Ihr Name?",
+          "at": 2
+        },
+        {
+          "who": "Mateo",
+          "de": "Ríos. Mateo Ríos.",
+          "at": 3
+        },
+        {
+          "who": "Rezeption",
+          "de": "Zimmer 214. Hier, bitte.",
+          "at": 4
+        },
+        {
+          "who": "Mateo",
+          "de": "Wann gibt es Frühstück?",
+          "at": 5
+        },
+        {
+          "who": "Rezeption",
+          "de": "Von sieben bis zehn.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Mateo kommt im Hotel an.",
+          "es": "Escucha: Mateo llega al hotel.",
+          "en": "Listen: Mateo arrives at the hotel."
+        },
+        {
+          "lang": "de",
+          "text": "Guten Abend. Ich habe ein Zimmer reserviert.",
+          "es": "Tengo una reserva.",
+          "en": "I have a booking.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Wie ist Ihr Name?",
+          "es": "¿Cuál es su nombre?",
+          "en": "What's your name?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ríos. Mateo Ríos.",
+          "es": "Ríos. Mateo Ríos.",
+          "en": "Ríos. Mateo Ríos.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Sie haben Zimmer 214. Hier ist Ihr Schlüssel.",
+          "es": "Habitación 214. Aquí tiene.",
+          "en": "Room 214. Here you are.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Wann gibt es Frühstück?",
+          "es": "¿A qué hora es el desayuno?",
+          "en": "When is breakfast?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Von sieben bis zehn Uhr.",
+          "es": "De siete a diez.",
+          "en": "From seven to ten.",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich möchte …\nKönnten Sie …?",
+      "pause": 10,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Ruf ein Hotel an. Reserviere ein Zimmer und frag: Was kostet das?",
+          "es": "¡Ahora tú! Llama a un hotel. Reserva una habitación y pregunta: ¿cuánto cuesta?",
+          "en": "Now you! Call a hotel. Book a room and ask: how much is it?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Einzelzimmer · Doppelzimmer",
+          "at": 1
+        },
+        {
+          "text": "Ich möchte ein Zimmer reservieren.",
+          "at": 1
+        },
+        {
+          "text": "vom 3. bis zum 5. Mai",
+          "at": 1
+        },
+        {
+          "text": "Könnten Sie …?",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du reservierst ein Zimmer und fragst sehr höflich. Schönen Aufenthalt!",
+          "es": "Reservas una habitación y preguntas con mucha cortesía. ¡Feliz estadía!",
+          "en": "You book a room and ask very politely. Enjoy your stay!"
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

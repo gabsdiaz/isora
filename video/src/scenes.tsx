@@ -46,6 +46,8 @@ function SoundWaves({ on }: { on: boolean }) {
 
 export function TitleScene({ scene, meta }: { scene: SceneData; meta: Meta }) {
   const stickers: string[] = scene.stickers ?? [];
+  // Títulos largos: letra más pequeña para que no choquen con los stickers (≈ 0,37 em por letra, máx. 700 px)
+  const titleSize = Math.min(150, Math.floor(700 / (meta.title.length * 0.37)));
   const spots = [
     { left: 900, top: 120, r: -8 },
     { left: 1020, top: 330, r: 7 },
@@ -57,10 +59,10 @@ export function TitleScene({ scene, meta }: { scene: SceneData; meta: Meta }) {
         <Gloss start={4} size={30} style={{ letterSpacing: 2 }}>
           {meta.level} · Einheit {meta.number}
         </Gloss>
-        <Write start={12} dur={34} size={150} color={C.red}>
+        <Write start={12} dur={34} size={titleSize} color={C.red} style={{ whiteSpace: "nowrap" }}>
           {meta.title}
         </Write>
-        <Underline width={Math.min(meta.title.length * 62, 640)} start={44} />
+        <Underline width={Math.min(meta.title.length * 62 * (titleSize / 150), 640)} start={44} />
         <Gloss start={56} size={40} style={{ marginTop: 10, color: C.inkSoft }}>
           {meta.subtitle}
         </Gloss>
@@ -348,7 +350,7 @@ export function CompareScene({ scene }: { scene: SceneData }) {
           <React.Fragment key={s.title}>
             <RoughBox x={s.x} y={175} w={440} h={420} start={appear} dur={20} stroke={s.color} strokeWidth={3} seed={i + 11} />
             <div style={{ position: "absolute", left: s.x, width: 440, top: 195, textAlign: "center", transform: `rotate(${s.rot}deg)` }}>
-              <Write start={appear + 8} size={130} color={s.color} dur={12} style={{ display: "inline-block" }}>
+              <Write start={appear + 8} size={Math.min(130, Math.floor(400 / (String(s.title).length * 0.43)))} color={s.color} dur={12} style={{ display: "inline-block", whiteSpace: "nowrap" }}>
                 {s.title}
               </Write>
               <div style={{ display: "flex", justifyContent: "center", marginTop: -6 }}>

@@ -1,0 +1,385 @@
+{
+  "key": "de/a1-2/14",
+  "level": "A1.2",
+  "number": 14,
+  "title": "Das Perfekt",
+  "subtitle": "Was hast du gemacht?",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "⏪",
+        "📸",
+        "🍕"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute sprechen wir über gestern.",
+          "es": "¡Hola! Hoy hablamos de ayer.",
+          "en": "Hi! Today we talk about yesterday."
+        },
+        {
+          "lang": "de",
+          "text": "Du lernst das Perfekt: Was hast du gemacht?",
+          "es": "Aprendes el Perfekt: ¿qué hiciste?",
+          "en": "You learn the perfect tense: what did you do?"
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Das Perfekt",
+      "gloss": "el pasado",
+      "sticker": "⏪",
+      "lines": [
+        {
+          "de": "Ich habe Pizza gegessen.",
+          "es": "Comí pizza.",
+          "mark": "habe",
+          "at": 1
+        },
+        {
+          "de": "Wir haben Musik gehört.",
+          "es": "Escuchamos música.",
+          "mark": "gehört",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Im Deutschen sprechen wir über die Vergangenheit mit haben und einem Partizip:",
+          "es": "En alemán hablamos del pasado con haben y un participio:",
+          "en": "In German we talk about the past with haben and a participle:"
+        },
+        {
+          "lang": "de",
+          "text": "Ich habe Pizza gegessen.",
+          "es": "Comí pizza.",
+          "en": "I ate pizza.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Haben steht auf Position zwei, das Partizip am Ende:",
+          "es": "Haben va en la posición dos y el participio al final:",
+          "en": "Haben is in position two, the participle at the end:"
+        },
+        {
+          "lang": "de",
+          "text": "Wir haben Musik gehört.",
+          "es": "Escuchamos música.",
+          "en": "We listened to music.",
+          "voice": "f"
+        }
+      ],
+      "notesX": 1010,
+      "notes": [
+        {
+          "text": "Ende!",
+          "at": 3
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "ge- … -t",
+      "gloss": "participio regular",
+      "rows": [
+        {
+          "p": "machen",
+          "stem": "ge",
+          "end": "mach",
+          "at": 1,
+          "rest": "t"
+        },
+        {
+          "p": "kaufen",
+          "stem": "ge",
+          "end": "kauf",
+          "at": 2,
+          "rest": "t"
+        },
+        {
+          "p": "spielen",
+          "stem": "ge",
+          "end": "spiel",
+          "at": 3,
+          "rest": "t"
+        },
+        {
+          "p": "arbeiten",
+          "stem": "ge",
+          "end": "arbeit",
+          "at": 4,
+          "rest": "et"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Regelmäßige Verben: ge plus Stamm plus t:",
+          "es": "Verbos regulares: ge más raíz más t:",
+          "en": "Regular verbs: ge plus stem plus t:"
+        },
+        {
+          "lang": "de",
+          "text": "machen, gemacht",
+          "es": "hacer, hecho",
+          "en": "make, made"
+        },
+        {
+          "lang": "de",
+          "text": "kaufen, gekauft",
+          "es": "comprar, comprado",
+          "en": "buy, bought"
+        },
+        {
+          "lang": "de",
+          "text": "spielen, gespielt",
+          "es": "jugar, jugado",
+          "en": "play, played"
+        },
+        {
+          "lang": "de",
+          "text": "arbeiten, gearbeitet",
+          "es": "trabajar, trabajado",
+          "en": "work, worked"
+        }
+      ],
+      "pw": 212,
+      "w": 584,
+      "tx": 360,
+      "size": 60,
+      "side": "",
+      "tableAt": 0
+    },
+    {
+      "type": "conjugation",
+      "heading": "ge- … -en",
+      "gloss": "participio irregular",
+      "rows": [
+        {
+          "p": "essen",
+          "stem": "ge",
+          "end": "gess",
+          "at": 1,
+          "rest": "en"
+        },
+        {
+          "p": "trinken",
+          "stem": "ge",
+          "end": "trunk",
+          "at": 2,
+          "rest": "en"
+        },
+        {
+          "p": "sehen",
+          "stem": "ge",
+          "end": "seh",
+          "at": 3,
+          "rest": "en"
+        },
+        {
+          "p": "lesen",
+          "stem": "ge",
+          "end": "les",
+          "at": 4,
+          "rest": "en"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Viele wichtige Verben enden auf en. Lern sie wie Vokabeln:",
+          "es": "Muchos verbos importantes terminan en en. Apréndelos como vocabulario:",
+          "en": "Many important verbs end in en. Learn them like vocabulary:"
+        },
+        {
+          "lang": "de",
+          "text": "essen, gegessen",
+          "es": "comer, comido",
+          "en": "eat, eaten"
+        },
+        {
+          "lang": "de",
+          "text": "trinken, getrunken",
+          "es": "beber, bebido",
+          "en": "drink, drunk"
+        },
+        {
+          "lang": "de",
+          "text": "sehen, gesehen",
+          "es": "ver, visto",
+          "en": "see, seen"
+        },
+        {
+          "lang": "de",
+          "text": "lesen, gelesen",
+          "es": "leer, leído",
+          "en": "read, read"
+        }
+      ],
+      "pw": 192,
+      "w": 535,
+      "tx": 360,
+      "size": 60,
+      "side": "Lern sie\nauswendig!",
+      "tableAt": 0
+    },
+    {
+      "type": "dialogue",
+      "heading": "Am Montag",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Lena",
+          "de": "Was hast du gemacht?",
+          "at": 1
+        },
+        {
+          "who": "Mateo",
+          "de": "Ich habe Fußball gespielt.",
+          "at": 2
+        },
+        {
+          "who": "Mateo",
+          "de": "Und ich habe gekocht.",
+          "at": 3
+        },
+        {
+          "who": "Lena",
+          "de": "Was hast du gekocht?",
+          "at": 4
+        },
+        {
+          "who": "Mateo",
+          "de": "Eine Suppe. Und du?",
+          "at": 5
+        },
+        {
+          "who": "Lena",
+          "de": "Ich habe viel gelesen.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Es ist Montag. Lena fragt Mateo.",
+          "es": "Escucha: es lunes. Lena le pregunta a Mateo.",
+          "en": "Listen: it's Monday. Lena asks Mateo."
+        },
+        {
+          "lang": "de",
+          "text": "Was hast du am Wochenende gemacht?",
+          "es": "¿Qué hiciste?",
+          "en": "What did you do?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich habe Fußball gespielt.",
+          "es": "Jugué fútbol.",
+          "en": "I played football.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und ich habe gekocht.",
+          "es": "Y cociné.",
+          "en": "And I cooked.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Was hast du gekocht?",
+          "es": "¿Qué cocinaste?",
+          "en": "What did you cook?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Eine Suppe. Und du?",
+          "es": "Una sopa. ¿Y tú?",
+          "en": "A soup. And you?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich habe viel gelesen.",
+          "es": "Leí mucho.",
+          "en": "I read a lot.",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Gestern habe ich …",
+      "pause": 10,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Was hast du gestern gemacht? Sag drei Sätze mit habe.",
+          "es": "¡Ahora tú! ¿Qué hiciste ayer? Di tres frases con habe.",
+          "en": "Now you! What did you do yesterday? Say three sentences with habe."
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "Ich habe Pizza gegessen.",
+          "at": 1
+        },
+        {
+          "text": "haben (2) … Partizip (Ende)",
+          "at": 1
+        },
+        {
+          "text": "gemacht · gekauft · gespielt",
+          "at": 1
+        },
+        {
+          "text": "gegessen · getrunken · gesehen",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du erzählst, was du gemacht hast – mit haben und dem Partizip.",
+          "es": "Cuentas lo que hiciste, con haben y el participio.",
+          "en": "You say what you did – with haben and the participle."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

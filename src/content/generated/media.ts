@@ -124,5 +124,65 @@ export const guides: Record<string, { pages: number }> = {
   },
   "de/a1-1/20": {
     "pages": 7
+  },
+  "de/a1-2/01": {
+    "pages": 7
+  },
+  "de/a1-2/02": {
+    "pages": 8
+  },
+  "de/a1-2/03": {
+    "pages": 8
+  },
+  "de/a1-2/04": {
+    "pages": 8
+  },
+  "de/a1-2/05": {
+    "pages": 8
+  },
+  "de/a1-2/06": {
+    "pages": 7
+  },
+  "de/a1-2/07": {
+    "pages": 8
+  },
+  "de/a1-2/08": {
+    "pages": 7
+  },
+  "de/a1-2/09": {
+    "pages": 8
+  },
+  "de/a1-2/10": {
+    "pages": 8
+  },
+  "de/a1-2/11": {
+    "pages": 8
+  },
+  "de/a1-2/12": {
+    "pages": 8
+  },
+  "de/a1-2/13": {
+    "pages": 8
+  },
+  "de/a1-2/14": {
+    "pages": 8
+  },
+  "de/a1-2/15": {
+    "pages": 6
+  },
+  "de/a1-2/16": {
+    "pages": 8
+  },
+  "de/a1-2/17": {
+    "pages": 7
+  },
+  "de/a1-2/18": {
+    "pages": 7
+  },
+  "de/a1-2/19": {
+    "pages": 7
+  },
+  "de/a1-2/20": {
+    "pages": 8
   }
 };

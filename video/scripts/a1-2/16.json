@@ -1,0 +1,402 @@
+{
+  "key": "de/a1-2/16",
+  "level": "A1.2",
+  "number": 16,
+  "title": "Urlaub",
+  "subtitle": "Reisen und erzählen",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🏖️",
+        "⛰️",
+        "🧳"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute sprechen wir über den Urlaub.",
+          "es": "¡Hola! Hoy hablamos de las vacaciones.",
+          "en": "Hi! Today we talk about holidays."
+        },
+        {
+          "lang": "de",
+          "text": "Wohin fährst du gern?",
+          "es": "¿A dónde te gusta ir?",
+          "en": "Where do you like to go?"
+        }
+      ]
+    },
+    {
+      "type": "words",
+      "heading": "Wohin?",
+      "gloss": "¿a dónde?",
+      "items": [
+        {
+          "de": "ans Meer",
+          "es": "al mar",
+          "at": 1,
+          "icon": "🏖️"
+        },
+        {
+          "de": "in die Berge",
+          "es": "a la montaña",
+          "at": 2,
+          "icon": "⛰️"
+        },
+        {
+          "de": "an einen See",
+          "es": "a un lago",
+          "at": 3,
+          "icon": "🏞️"
+        },
+        {
+          "de": "nach Spanien",
+          "es": "a España",
+          "at": 4,
+          "icon": "✈️"
+        },
+        {
+          "de": "in die Stadt",
+          "es": "a la ciudad",
+          "at": 5,
+          "icon": "🏙️"
+        },
+        {
+          "de": "aufs Land",
+          "es": "al campo",
+          "at": 6,
+          "icon": "🌾"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wohin fährst du im Urlaub?",
+          "es": "¿A dónde vas de vacaciones?",
+          "en": "Where do you go on holiday?"
+        },
+        {
+          "lang": "de",
+          "text": "Ich fahre ans Meer.",
+          "es": "Voy al mar.",
+          "en": "I'm going to the seaside."
+        },
+        {
+          "lang": "de",
+          "text": "Ich fahre in die Berge.",
+          "es": "Voy a la montaña.",
+          "en": "I'm going to the mountains."
+        },
+        {
+          "lang": "de",
+          "text": "Ich fahre an einen See.",
+          "es": "Voy a un lago.",
+          "en": "I'm going to a lake."
+        },
+        {
+          "lang": "de",
+          "text": "Ich fliege nach Spanien.",
+          "es": "Vuelo a España.",
+          "en": "I'm flying to Spain."
+        },
+        {
+          "lang": "de",
+          "text": "Ich fahre in die Stadt.",
+          "es": "Voy a la ciudad.",
+          "en": "I'm going to the city."
+        },
+        {
+          "lang": "de",
+          "text": "Ich fahre aufs Land.",
+          "es": "Voy al campo.",
+          "en": "I'm going to the countryside."
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "note": "nach Spanien\nin die Türkei",
+      "sticker": "🌍",
+      "say": [
+        {
+          "lang": "de",
+          "text": "Für Länder und Städte sagst du nach: nach Spanien, nach Berlin.",
+          "es": "Para países y ciudades dices nach: a España, a Berlín.",
+          "en": "For countries and cities you say nach: to Spain, to Berlin."
+        },
+        {
+          "lang": "de",
+          "text": "Aber Länder mit Artikel: in die Türkei, in die Schweiz.",
+          "es": "Pero los países con artículo: a Turquía, a Suiza.",
+          "en": "But countries with an article: to Turkey, to Switzerland."
+        }
+      ],
+      "size": 64
+    },
+    {
+      "type": "words",
+      "heading": "Das Wetter",
+      "gloss": "el clima",
+      "items": [
+        {
+          "de": "Die Sonne scheint.",
+          "es": "hace sol",
+          "at": 1,
+          "icon": "☀️"
+        },
+        {
+          "de": "Es regnet.",
+          "es": "llueve",
+          "at": 2,
+          "icon": "🌧️"
+        },
+        {
+          "de": "Es ist heiß.",
+          "es": "hace calor",
+          "at": 3,
+          "icon": "🥵"
+        },
+        {
+          "de": "Es ist kalt.",
+          "es": "hace frío",
+          "at": 4,
+          "icon": "🥶"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Und wie ist das Wetter im Urlaub?",
+          "es": "¿Y cómo está el clima en las vacaciones?",
+          "en": "And what's the weather like on holiday?"
+        },
+        {
+          "lang": "de",
+          "text": "Die Sonne scheint.",
+          "es": "Hace sol.",
+          "en": "The sun is shining."
+        },
+        {
+          "lang": "de",
+          "text": "Es regnet.",
+          "es": "Llueve.",
+          "en": "It's raining."
+        },
+        {
+          "lang": "de",
+          "text": "Es ist heiß.",
+          "es": "Hace calor.",
+          "en": "It's hot."
+        },
+        {
+          "lang": "de",
+          "text": "Es ist kalt.",
+          "es": "Hace frío.",
+          "en": "It's cold."
+        }
+      ]
+    },
+    {
+      "type": "sentence",
+      "heading": "Eine Postkarte",
+      "gloss": "una postal",
+      "sticker": "💌",
+      "lines": [
+        {
+          "de": "Viele Grüße aus Rom!",
+          "es": "¡Saludos desde Roma!",
+          "mark": "Grüße aus",
+          "at": 1
+        },
+        {
+          "de": "Das Wetter ist super.",
+          "es": "El clima está súper.",
+          "mark": "Wetter",
+          "at": 3
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Aus dem Urlaub schreibst du eine Postkarte:",
+          "es": "Desde las vacaciones escribes una postal:",
+          "en": "On holiday you write a postcard:"
+        },
+        {
+          "lang": "de",
+          "text": "Viele Grüße aus Rom!",
+          "es": "¡Saludos desde Roma!",
+          "en": "Greetings from Rome!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Dann erzählst du:",
+          "es": "Luego cuentas:",
+          "en": "Then you tell:"
+        },
+        {
+          "lang": "de",
+          "text": "Das Wetter ist super. Gestern bin ich ans Meer gefahren.",
+          "es": "El clima está súper. Ayer fui al mar.",
+          "en": "The weather's great. Yesterday I went to the sea.",
+          "voice": "f"
+        }
+      ]
+    },
+    {
+      "type": "dialogue",
+      "heading": "Urlaubspläne",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Mateo",
+          "de": "Wohin fährst du im Sommer?",
+          "at": 1
+        },
+        {
+          "who": "Lena",
+          "de": "Ich fahre ans Meer.",
+          "at": 2
+        },
+        {
+          "who": "Lena",
+          "de": "Ich schwimme so gern!",
+          "at": 3
+        },
+        {
+          "who": "Mateo",
+          "de": "Ich fahre in die Berge.",
+          "at": 4
+        },
+        {
+          "who": "Lena",
+          "de": "Wanderst du gern?",
+          "at": 5
+        },
+        {
+          "who": "Mateo",
+          "de": "Ja, sehr!",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena und Mateo planen den Sommer.",
+          "es": "Escucha: Lena y Mateo planean el verano.",
+          "en": "Listen: Lena and Mateo plan the summer."
+        },
+        {
+          "lang": "de",
+          "text": "Wohin fährst du im Sommer?",
+          "es": "¿A dónde vas en verano?",
+          "en": "Where are you going in summer?",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ich fahre ans Meer.",
+          "es": "Voy al mar.",
+          "en": "I'm going to the seaside.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich schwimme so gern!",
+          "es": "¡Me encanta nadar!",
+          "en": "I love swimming!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ich fahre in die Berge.",
+          "es": "Yo voy a la montaña.",
+          "en": "I'm going to the mountains.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Wanderst du gern?",
+          "es": "¿Te gusta caminar?",
+          "en": "Do you like hiking?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ja, sehr!",
+          "es": "¡Sí, mucho!",
+          "en": "Yes, a lot!",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Ich fahre ans …\nIch fliege nach …",
+      "pause": 6,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Wohin fährst du gern im Urlaub? Und wie ist das Wetter dort?",
+          "es": "¡Ahora tú! ¿A dónde te gusta ir de vacaciones? ¿Y cómo es el clima allí?",
+          "en": "Now you! Where do you like to go on holiday? And what's the weather like there?"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "ans Meer · in die Berge · aufs Land",
+          "at": 1
+        },
+        {
+          "text": "nach Spanien · in die Türkei",
+          "at": 1
+        },
+        {
+          "text": "Die Sonne scheint. Es regnet.",
+          "at": 1
+        },
+        {
+          "text": "Viele Grüße aus …!",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du sprichst über Urlaub, Reiseziele und das Wetter. Gute Reise!",
+          "es": "Hablas de vacaciones, destinos y el clima. ¡Buen viaje!",
+          "en": "You talk about holidays, destinations and the weather. Have a good trip!"
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}

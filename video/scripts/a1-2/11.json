@@ -1,0 +1,395 @@
+{
+  "key": "de/a1-2/11",
+  "level": "A1.2",
+  "number": 11,
+  "title": "Mein, dein, sein",
+  "subtitle": "Die Possessivartikel",
+  "scenes": [
+    {
+      "type": "title",
+      "stickers": [
+        "🎒",
+        "🔑",
+        "🐶"
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hallo! Heute lernst du: mein, dein, sein, ihr.",
+          "es": "¡Hola! Hoy aprendes: mein, dein, sein, ihr.",
+          "en": "Hi! Today you learn: mein, dein, sein, ihr."
+        },
+        {
+          "lang": "de",
+          "text": "Wem gehört das?",
+          "es": "¿De quién es esto?",
+          "en": "Whose is this?"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "Possessivartikel",
+      "gloss": "los posesivos",
+      "rows": [
+        {
+          "p": "ich",
+          "stem": "",
+          "end": "mein",
+          "at": 1,
+          "rest": " Hund"
+        },
+        {
+          "p": "du",
+          "stem": "",
+          "end": "dein",
+          "at": 2,
+          "rest": " Hund"
+        },
+        {
+          "p": "er",
+          "stem": "",
+          "end": "sein",
+          "at": 3,
+          "rest": " Hund"
+        },
+        {
+          "p": "sie",
+          "stem": "",
+          "end": "ihr",
+          "at": 4,
+          "rest": " Hund"
+        },
+        {
+          "p": "wir",
+          "stem": "",
+          "end": "unser",
+          "at": 5,
+          "rest": " Hund"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jede Person hat ein Wort. Hör zu:",
+          "es": "Cada persona tiene una palabra. Escucha:",
+          "en": "Each person has a word. Listen:"
+        },
+        {
+          "lang": "de",
+          "text": "ich: mein Hund",
+          "es": "yo: mi perro",
+          "en": "I: my dog"
+        },
+        {
+          "lang": "de",
+          "text": "du: dein Hund",
+          "es": "tú: tu perro",
+          "en": "you: your dog"
+        },
+        {
+          "lang": "de",
+          "text": "er: sein Hund",
+          "es": "él: su perro (de él)",
+          "en": "he: his dog"
+        },
+        {
+          "lang": "de",
+          "text": "sie: ihr Hund",
+          "es": "ella: su perro (de ella)",
+          "en": "she: her dog"
+        },
+        {
+          "lang": "de",
+          "text": "wir: unser Hund",
+          "es": "nosotros: nuestro perro",
+          "en": "we: our dog"
+        }
+      ],
+      "pw": 120,
+      "w": 492,
+      "tx": 360,
+      "size": 60,
+      "side": "",
+      "tableAt": 0
+    },
+    {
+      "type": "compare",
+      "heading": "sein oder ihr?",
+      "left": {
+        "title": "sein",
+        "icon": "👨",
+        "gloss": "de él",
+        "example": "Tom und sein Hund",
+        "at": 1
+      },
+      "right": {
+        "title": "ihr",
+        "icon": "👩",
+        "gloss": "de ella",
+        "example": "Anna und ihr Hund",
+        "at": 3
+      },
+      "say": [
+        {
+          "lang": "de",
+          "text": "Achtung! Das ist der Hund von Tom:",
+          "es": "¡Ojo! Este es el perro de Tom:",
+          "en": "Careful! This is Tom's dog:"
+        },
+        {
+          "lang": "de",
+          "text": "Das ist sein Hund.",
+          "es": "Es su perro (de él).",
+          "en": "That's his dog.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und das ist der Hund von Anna:",
+          "es": "Y este es el perro de Anna:",
+          "en": "And this is Anna's dog:"
+        },
+        {
+          "lang": "de",
+          "text": "Das ist ihr Hund.",
+          "es": "Es su perro (de ella).",
+          "en": "That's her dog.",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Im Spanischen sagst du für beide su. Im Deutschen nicht!",
+          "es": "En español dices su para los dos. ¡En alemán no!",
+          "en": "In Spanish you say su for both. Not in German!"
+        }
+      ]
+    },
+    {
+      "type": "conjugation",
+      "heading": "Mit -e",
+      "gloss": "con -e (die / Plural)",
+      "rows": [
+        {
+          "p": "der",
+          "stem": "",
+          "end": "mein",
+          "at": 1,
+          "rest": " Bruder"
+        },
+        {
+          "p": "die",
+          "stem": "mein",
+          "end": "e",
+          "at": 2,
+          "rest": " Schwester"
+        },
+        {
+          "p": "das",
+          "stem": "",
+          "end": "mein",
+          "at": 3,
+          "rest": " Auto"
+        },
+        {
+          "p": "Plural",
+          "stem": "mein",
+          "end": "e",
+          "at": 4,
+          "rest": " Eltern"
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Wie bei ein und eine: Bei die und im Plural kommt ein e dazu:",
+          "es": "Como con ein y eine: con die y en plural se agrega una e:",
+          "en": "Like ein and eine: with die and the plural you add an e:"
+        },
+        {
+          "lang": "de",
+          "text": "mein Bruder",
+          "es": "mi hermano",
+          "en": "my brother"
+        },
+        {
+          "lang": "de",
+          "text": "meine Schwester",
+          "es": "mi hermana",
+          "en": "my sister"
+        },
+        {
+          "lang": "de",
+          "text": "mein Auto",
+          "es": "mi carro",
+          "en": "my car"
+        },
+        {
+          "lang": "de",
+          "text": "meine Eltern",
+          "es": "mis papás",
+          "en": "my parents"
+        }
+      ],
+      "pw": 172,
+      "w": 685,
+      "tx": 296,
+      "size": 60,
+      "side": "die → meine",
+      "tableAt": 0
+    },
+    {
+      "type": "dialogue",
+      "heading": "Wem gehört das?",
+      "people": {
+        "Lena": {
+          "icon": "👩",
+          "voice": "f"
+        },
+        "Mateo": {
+          "icon": "🧑",
+          "voice": "m"
+        }
+      },
+      "lines": [
+        {
+          "who": "Lena",
+          "de": "Ist das dein Schlüssel?",
+          "at": 1
+        },
+        {
+          "who": "Mateo",
+          "de": "Ja! Das ist mein Schlüssel.",
+          "at": 2
+        },
+        {
+          "who": "Lena",
+          "de": "Und die Jacke?",
+          "at": 3
+        },
+        {
+          "who": "Mateo",
+          "de": "Das ist Annas Jacke.",
+          "at": 4
+        },
+        {
+          "who": "Lena",
+          "de": "Ah, ihre Jacke!",
+          "at": 5
+        },
+        {
+          "who": "Mateo",
+          "de": "Genau.",
+          "at": 6
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Hör zu: Lena räumt auf.",
+          "es": "Escucha: Lena está ordenando.",
+          "en": "Listen: Lena is tidying up."
+        },
+        {
+          "lang": "de",
+          "text": "Ist das dein Schlüssel?",
+          "es": "¿Es tu llave?",
+          "en": "Is this your key?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Ja, danke! Das ist mein Schlüssel.",
+          "es": "¡Sí, gracias! Es mía.",
+          "en": "Yes, thanks! It's mine.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Und die Jacke?",
+          "es": "¿Y la chaqueta?",
+          "en": "And the jacket?",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Das ist Annas Jacke.",
+          "es": "Es la chaqueta de Anna.",
+          "en": "That's Anna's jacket.",
+          "voice": "m"
+        },
+        {
+          "lang": "de",
+          "text": "Ah, ihre Jacke!",
+          "es": "¡Ah, su chaqueta!",
+          "en": "Ah, her jacket!",
+          "voice": "f"
+        },
+        {
+          "lang": "de",
+          "text": "Genau.",
+          "es": "Exacto.",
+          "en": "Exactly.",
+          "voice": "m"
+        }
+      ]
+    },
+    {
+      "type": "try",
+      "heading": "Jetzt du!",
+      "gloss": "¡ahora tú!",
+      "note": "Das ist mein …\nDas ist meine …",
+      "pause": 6,
+      "say": [
+        {
+          "lang": "de",
+          "text": "Jetzt du! Zeig drei Dinge und sag: Das ist mein … oder Das ist meine …",
+          "es": "¡Ahora tú! Muestra tres cosas y di: Das ist mein… o Das ist meine…",
+          "en": "Now you! Show three things and say: Das ist mein… or Das ist meine…"
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "Das kannst du jetzt",
+      "items": [
+        {
+          "text": "mein · dein · sein · ihr · unser",
+          "at": 1
+        },
+        {
+          "text": "sein Hund (Tom) · ihr Hund (Anna)",
+          "at": 1
+        },
+        {
+          "text": "meine Schwester · meine Eltern",
+          "at": 1
+        },
+        {
+          "text": "Wem gehört das?",
+          "at": 1
+        }
+      ],
+      "say": [
+        {
+          "lang": "de",
+          "text": "Super! Das kannst du jetzt:",
+          "es": "¡Súper! Esto ya lo puedes hacer:",
+          "en": "Great! Now you can:"
+        },
+        {
+          "lang": "de",
+          "text": "Du sagst, wem etwas gehört – mit mein, dein, sein und ihr.",
+          "es": "Dices de quién es algo, con mein, dein, sein e ihr.",
+          "en": "You say who something belongs to – with mein, dein, sein and ihr."
+        },
+        {
+          "lang": "de",
+          "text": "Bis bald!",
+          "es": "¡Hasta pronto!",
+          "en": "See you soon!"
+        }
+      ]
+    }
+  ]
+}
