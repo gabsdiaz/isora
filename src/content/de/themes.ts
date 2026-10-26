@@ -1,14 +1,15 @@
 import type { Tr, VocabEntry } from "../types";
 import { a1_1 } from "./units/a1-1";
+import { a1_2 } from "./units/a1-2";
 import { imageFor } from "./images";
 
 /**
  * Temas de la Spielzone. Cada tema reúne el vocabulario de varias unidades
- * del A1.1 y trae preguntas para hablar (ruleta).
+ * de un nivel (A1.1, A1.2) y trae preguntas para hablar (ruleta).
  */
 export type Theme = {
   id: string;
-  /** Nivel del curso (por ahora todos los temas son del A1.1) */
+  /** Nivel del curso (a1-1, a1-2…) */
   level: string;
   de: string;
   tr: Tr;
@@ -182,6 +183,116 @@ export const THEMES: Theme[] = [
   },
 ];
 
+/** Temas del A1.2 */
+export const THEMES_A1_2: Theme[] = [
+  {
+    id: "termine",
+    level: "a1-2",
+    de: "Termine & Freizeit",
+    tr: { es: "Citas y tiempo libre", en: "Appointments & free time" },
+    emoji: "📅",
+    units: [1, 2, 3],
+    questions: [
+      q("Was machst du am Wochenende?", "¿Qué haces el fin de semana?", "What do you do at the weekend?"),
+      q("Hast du heute Abend Zeit?", "¿Tienes tiempo esta noche?", "Are you free tonight?"),
+      q("Was kannst du gut?", "¿Qué sabes hacer bien?", "What can you do well?"),
+      q("Was willst du dieses Jahr lernen?", "¿Qué quieres aprender este año?", "What do you want to learn this year?"),
+      q("Was musst du morgen machen?", "¿Qué tienes que hacer mañana?", "What do you have to do tomorrow?"),
+      q("Gehst du gern ins Kino?", "¿Te gusta ir a cine?", "Do you like going to the cinema?"),
+    ],
+  },
+  {
+    id: "restaurant",
+    level: "a1-2",
+    de: "Im Restaurant",
+    tr: { es: "En el restaurante", en: "At the restaurant" },
+    emoji: "🍽️",
+    units: [4],
+    questions: [
+      q("Was isst du gern im Restaurant?", "¿Qué te gusta comer en un restaurante?", "What do you like eating at a restaurant?"),
+      q("Was ist dein Lieblingsessen?", "¿Cuál es tu comida favorita?", "What's your favourite food?"),
+      q("Isst du gern scharf?", "¿Te gusta la comida picante?", "Do you like spicy food?"),
+      q("Was trinkst du zum Essen?", "¿Qué tomas con la comida?", "What do you drink with your meal?"),
+      q("Wie viel Trinkgeld gibst du?", "¿Cuánta propina das?", "How much do you tip?"),
+    ],
+  },
+  {
+    id: "gesundheit",
+    level: "a1-2",
+    de: "Körper & Gesundheit",
+    tr: { es: "Cuerpo y salud", en: "Body & health" },
+    emoji: "🩺",
+    units: [5, 6],
+    questions: [
+      q("Was machst du bei Kopfschmerzen?", "¿Qué haces cuando te duele la cabeza?", "What do you do when you have a headache?"),
+      q("Wann warst du zuletzt beim Arzt?", "¿Cuándo fuiste al médico por última vez?", "When were you last at the doctor's?"),
+      q("Was machst du für deine Gesundheit?", "¿Qué haces por tu salud?", "What do you do for your health?"),
+      q("Wie viele Stunden schläfst du?", "¿Cuántas horas duermes?", "How many hours do you sleep?"),
+      q("Treibst du Sport?", "¿Haces deporte?", "Do you do sport?"),
+    ],
+  },
+  {
+    id: "stadt",
+    level: "a1-2",
+    de: "Stadt & Verkehr",
+    tr: { es: "Ciudad y transporte", en: "Town & transport" },
+    emoji: "🏙️",
+    units: [7, 8, 9],
+    questions: [
+      q("Was gibt es in deinem Viertel?", "¿Qué hay en tu barrio?", "What is there in your neighbourhood?"),
+      q("Wie fährst du zur Arbeit?", "¿Cómo vas al trabajo?", "How do you get to work?"),
+      q("Wo kaufst du Brot?", "¿Dónde compras pan?", "Where do you buy bread?"),
+      q("Wie kommst du von hier zum Bahnhof?", "¿Cómo llegas de aquí a la estación?", "How do you get from here to the station?"),
+      q("Fährst du gern Fahrrad?", "¿Te gusta montar en bicicleta?", "Do you like cycling?"),
+    ],
+  },
+  {
+    id: "arbeit",
+    level: "a1-2",
+    de: "Alltag & Arbeit",
+    tr: { es: "Rutina y trabajo", en: "Daily life & work" },
+    emoji: "💼",
+    units: [10, 11, 12],
+    questions: [
+      q("Wann stehst du morgens auf?", "¿A qué hora te levantas?", "When do you get up in the morning?"),
+      q("Wann fängt deine Arbeit an?", "¿A qué hora empieza tu trabajo?", "When does your work start?"),
+      q("Was machst du in der Mittagspause?", "¿Qué haces en la pausa del almuerzo?", "What do you do in your lunch break?"),
+      q("Wen rufst du oft an?", "¿A quién llamas a menudo?", "Who do you often call?"),
+      q("Was ist in deinem Rucksack?", "¿Qué hay en tu mochila?", "What's in your backpack?"),
+    ],
+  },
+  {
+    id: "feste",
+    level: "a1-2",
+    de: "Feste & Erlebnisse",
+    tr: { es: "Fiestas y experiencias", en: "Celebrations & experiences" },
+    emoji: "🎉",
+    units: [13, 14, 15],
+    questions: [
+      q("Wann hast du Geburtstag?", "¿Cuándo es tu cumpleaños?", "When is your birthday?"),
+      q("Welches Fest feierst du gern?", "¿Qué fiesta te gusta celebrar?", "Which celebration do you like?"),
+      q("Was hast du gestern gemacht?", "¿Qué hiciste ayer?", "What did you do yesterday?"),
+      q("Wo warst du letztes Wochenende?", "¿Dónde estuviste el fin de semana pasado?", "Where were you last weekend?"),
+      q("Was hast du heute gegessen?", "¿Qué comiste hoy?", "What did you eat today?"),
+    ],
+  },
+  {
+    id: "reisen",
+    level: "a1-2",
+    de: "Urlaub & Hotel",
+    tr: { es: "Vacaciones y hotel", en: "Holidays & hotel" },
+    emoji: "🏖️",
+    units: [16, 17],
+    questions: [
+      q("Wohin fährst du gern in Urlaub?", "¿A dónde te gusta ir de vacaciones?", "Where do you like to go on holiday?"),
+      q("Meer oder Berge?", "¿Mar o montaña?", "Sea or mountains?"),
+      q("Was packst du in den Koffer?", "¿Qué empacas en la maleta?", "What do you pack in your suitcase?"),
+      q("Wo warst du letzten Sommer?", "¿Dónde estuviste el verano pasado?", "Where were you last summer?"),
+      q("Hotel oder Ferienwohnung?", "¿Hotel o apartamento de vacaciones?", "Hotel or holiday flat?"),
+    ],
+  },
+];
+
 export const ALL_THEME: Theme = {
   id: "alles",
   level: "a1-1",
@@ -192,7 +303,17 @@ export const ALL_THEME: Theme = {
   questions: THEMES.flatMap((t) => t.questions),
 };
 
-export const ALL_THEMES = [...THEMES, ALL_THEME];
+export const ALL_THEME_A1_2: Theme = {
+  id: "alles-a1-2",
+  level: "a1-2",
+  de: "Alles gemischt",
+  tr: { es: "Todo mezclado", en: "Everything mixed" },
+  emoji: "🎲",
+  units: a1_2.map((u) => u.number),
+  questions: THEMES_A1_2.flatMap((t) => t.questions),
+};
+
+export const ALL_THEMES = [...THEMES, ALL_THEME, ...THEMES_A1_2, ALL_THEME_A1_2];
 
 export function getTheme(id: string) {
   return ALL_THEMES.find((t) => t.id === id);
@@ -202,7 +323,7 @@ export function getTheme(id: string) {
 export function themeWords(theme: Theme): VocabEntry[] {
   const seen = new Set<string>();
   const out: VocabEntry[] = [];
-  for (const u of a1_1) {
+  for (const u of theme.level === "a1-2" ? a1_2 : a1_1) {
     if (!theme.units.includes(u.number)) continue;
     for (const v of u.vocab) {
       if (v.meta || seen.has(v.de)) continue;

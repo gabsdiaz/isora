@@ -269,10 +269,28 @@ export function recommendedStories(interests: string[] = []) {
   interests.forEach((i) => (INTEREST_STORIES[i] ?? []).forEach((id, k) => score.set(id, (score.get(id) ?? 0) + 2 - k * 0.5)));
   return [...STORIES].sort((a, b) => (score.get(b.id) ?? 0) - (score.get(a.id) ?? 0));
 }
-export function recommendedThemes(interests: string[] = []) {
+const INTEREST_GAMES_A1_2: Record<string, string> = {
+  food: "restaurant",
+  cooking: "restaurant",
+  travel: "reisen",
+  nature: "reisen",
+  sport: "gesundheit",
+  business: "arbeit",
+  tech: "arbeit",
+  music: "feste",
+  film: "termine",
+  games: "termine",
+  art: "stadt",
+  fashion: "feste",
+  science: "stadt",
+};
+
+export function recommendedThemes(interests: string[] = [], level = "a1-1") {
+  const map = level === "a1-2" ? INTEREST_GAMES_A1_2 : INTEREST_GAMES;
   const out: string[] = [];
-  interests.forEach((i) => INTEREST_GAMES[i] && !out.includes(INTEREST_GAMES[i]) && out.push(INTEREST_GAMES[i]));
-  return out.length ? out : ["alltag", "essen"];
+  interests.forEach((i) => map[i] && !out.includes(map[i]) && out.push(map[i]));
+  if (out.length) return out;
+  return level === "a1-2" ? ["termine", "stadt"] : ["alltag", "essen"];
 }
 
 /** Bloque extra de la semana según lo que más necesita el estudiante. */
@@ -319,6 +337,7 @@ export function buildWeek(plan: Plan, profile: StudentProfile, levels: LevelStat
 
   const stories = recommendedStories(profile.interests).filter((s) => !progress[`story/${s.id}`]);
   const themes = recommendedThemes(profile.interests);
+  const themesA12 = recommendedThemes(profile.interests, "a1-2");
   const focus = focusSkill(profile, levels);
   const scale = plan.current && stageIndex(plan.current.level) >= 4 ? 1.8 : 1;
 
@@ -341,7 +360,8 @@ export function buildWeek(plan: Plan, profile: StudentProfile, levels: LevelStat
       queue.push({ id: `song-${s.id}`, kind: "song", emoji: "🎵", de: `Lied: ${s.title}`, tr: { es: "Completa la letra con música", en: "Fill in the lyrics with music" }, minutes: 10, href: `/aprender/lieder/${s.id}`, songId: s.id });
     } else {
       const g = GAME_ROTATION[gameI % GAME_ROTATION.length];
-      const th = themes[gameI % themes.length];
+      const pool = level === "a1-2" ? themesA12 : themes;
+      const th = pool[gameI % pool.length];
       gameI++;
       queue.push({ id: `game-${n}-${g}`, kind: "game", emoji: "🎮", de: `Spiel: ${GAME_NAMES[g]}`, tr: { es: "Juega con el vocabulario", en: "Play with the vocabulary" }, minutes: 10, href: `/aprender/spiele/${g}/${th}` });
     }

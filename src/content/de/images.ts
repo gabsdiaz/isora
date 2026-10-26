@@ -94,6 +94,59 @@ export const IMAGES: Record<string, string> = {
   // 20 Repaso
   Test: "📝", Wohnort: "📍", Schild: "🪧", Eingang: "🚪", Ausgang: "🚪", geöffnet: "🔓", Anmeldung: "🛎️",
   Aufzug: "🛗", Treppe: "🪜", kaputt: "🛠️", fit: "💪",
+  // ═══ A1.2 ═══
+  // 1–2 Termine, Verabredungen
+  Praxis: "🏥", Zahnarzt: "🦷", Anrufbeantworter: "📼", Haarschnitt: "💇", Versichertenkarte: "💳", übermorgen: "📆",
+  Verabredung: "🤝", Treffpunkt: "📍", Vorschlag: "💡", "Gute Idee!": "💡", Konzert: "🎸", Ausstellung: "🖼️",
+  "ins Kino gehen": "🎬", "schwimmen gehen": "🏊", "essen gehen": "🍽️", "Tut mir leid.": "😔", vielleicht: "🤷",
+  // 3 Modalverben
+  singen: "🎤", "Gitarre spielen": "🎸", "Auto fahren": "🚗", "Fahrrad fahren": "🚲", rauchen: "🚬", parken: "🅿️",
+  Hausaufgaben: "📓", lernen: "📚", Führerschein: "🪪", Verbot: "🚫", verboten: "🚫", erlaubt: "✅", Bibliothek: "📚", leise: "🤫",
+  Wunsch: "🌠",
+  // 4 Restaurant
+  reservieren: "📞", Vorspeise: "🥗", Hauptgericht: "🍝", Nachspeise: "🍰", Nachtisch: "🍨", Schnitzel: "🍖", Pommes: "🍟",
+  Rindfleisch: "🥩", vegetarisch: "🥦", Eis: "🍦", Apfelschorle: "🧃", "Die Rechnung, bitte.": "🧾", scharf: "🌶️",
+  salzig: "🧂", "Guten Appetit!": "😋", besetzt: "🚫",
+  // 5 Körper
+  Körper: "🧍", Kopf: "🗣️", Haar: "💇", Auge: "👁️", Ohr: "👂", Nase: "👃", Mund: "👄", Zahn: "🦷", Schulter: "🤷",
+  Arm: "💪", Hand: "✋", Finger: "☝️", Bauch: "🫃", Rücken: "🧍", Bein: "🦵", Knie: "🦵", Fuß: "🦶", Kopfschmerzen: "🤕",
+  Bauchschmerzen: "🤢", Fieber: "🤒", Husten: "😷", Schnupfen: "🤧", Erkältung: "🤧", krank: "🤒", müde: "😴",
+  "Gute Besserung!": "💐", "Sport machen": "🏃",
+  // 6 Arzt
+  Arztpraxis: "🏥", Ärztin: "👩‍⚕️", Patient: "🤒", Patientin: "🤒", Wartezimmer: "🪑", Medikament: "💊", Tablette: "💊",
+  Tropfen: "💧", Salbe: "🧴", Rezept: "📝", Apotheke: "💊", "im Bett bleiben": "🛌", Notfall: "🚑", untersuchen: "🩺",
+  // 7–8 Stadt, Weg
+  Stadt: "🏙️", Bahnhof: "🚉", Post: "📮", Bank: "🏦", Museum: "🏛️", Rathaus: "🏛️", Kirche: "⛪", Platz: "⛲",
+  Straße: "🛣️", Haltestelle: "🚏", Parkplatz: "🅿️", Weg: "🧭", geradeaus: "⬆️", links: "⬅️", rechts: "➡️",
+  abbiegen: "↪️", Ampel: "🚦", Kreuzung: "✖️", Ecke: "📐", Brücke: "🌉", "zu Fuß": "🚶", Stadtplan: "🗺️", Navi: "📱",
+  // 9 Verkehr
+  Verkehrsmittel: "🚌", "S-Bahn": "🚆", Straßenbahn: "🚋", Flugzeug: "✈️", Taxi: "🚕", fliegen: "✈️", Fahrkarte: "🎫",
+  Ticket: "🎫", Automat: "🏧", Schalter: "🪟", Ankunft: "🛬", abfahren: "🚆", ankommen: "🛬", umsteigen: "🔁",
+  Fahrplan: "🗓️", Reise: "🧳", Achtung: "⚠️",
+  // 10 Alltag
+  aufwachen: "⏰", anziehen: "👕", anrufen: "📞", fernsehen: "📺", aufräumen: "🧹", abholen: "🚗", einschlafen: "😴",
+  ausgehen: "🎉", Feierabend: "🍻", morgens: "🌅", abends: "🌆", nachts: "🌙",
+  // 11 Possessiv
+  Rucksack: "🎒", Brille: "👓", Geldbörse: "👛", Ausweis: "🪪", Kind: "🧒", Haustier: "🐶", suchen: "🔍", Fundbüro: "📦",
+  // 12 Arbeit
+  Arbeitsplatz: "🏢", Kollegin: "👩‍💼", Chef: "👨‍💼", Chefin: "👩‍💼", Besprechung: "👥", Drucker: "🖨️", drucken: "🖨️",
+  Datei: "📁", "E-Mail": "📧", Pause: "☕", Kantine: "🍲", Homeoffice: "🏠", helfen: "🤝",
+  // 13 Feste
+  Fest: "🎉", feiern: "🥳", Hochzeit: "💍", Weihnachten: "🎄", Heiligabend: "🎄", Silvester: "🎆", Neujahr: "🎆",
+  Ostern: "🐣", Karneval: "🎭", Datum: "📅", Einladung: "💌", Geschenk: "🎁", schenken: "🎁", Kerze: "🕯️", Feuerwerk: "🎆",
+  "Alles Gute zum Geburtstag!": "🎂",
+  // 14–15 Perfekt
+  gestern: "⏪", gekocht: "🍳", gegessen: "🍽️", getrunken: "🥤", gelesen: "📖", geschlafen: "😴", geflogen: "✈️",
+  geschwommen: "🏊", gelaufen: "🏃", Ausflug: "🚌", See: "🏞️", lustig: "😂",
+  // 16–17 Urlaub, Hotel
+  Urlaub: "🏖️", Ferien: "🏖️", Koffer: "🧳", packen: "🧳", Meer: "🌊", Insel: "🏝️", Sehenswürdigkeit: "🗽",
+  Postkarte: "💌", Ferienwohnung: "🏡", Campingplatz: "🏕️", "es regnet": "🌧️", "in die Berge": "⛰️", "ans Meer": "🏖️",
+  Hotelzimmer: "🛏️", Einzelzimmer: "🛏️", Doppelzimmer: "🛌", Zimmerschlüssel: "🔑", WLAN: "📶", Passwort: "🔐",
+  Handtuch: "🧺", Heizung: "♨️", Klimaanlage: "❄️", Blick: "🌅",
+  // 18–20 Imperativ, Prüfung
+  Tipp: "💡", Topf: "🍲", Pfanne: "🍳", Würfel: "🎲", würfeln: "🎲", Karte: "🃏", gewinnen: "🏆", schneiden: "🔪",
+  Prüfung: "📝", ankreuzen: "☑️", richtig: "✅", falsch: "❌", Webseite: "💻", Öffnungszeiten: "🕘", Formular: "📋",
+  ausfüllen: "✍️", Unterschrift: "✍️", Adresse: "🏠", bar: "💶", Bildkarte: "🖼️", nervös: "😬", "Viel Glück!": "🍀",
 };
 
 /** Nombre del archivo SVG de Twemoji para un emoji (sin el selector de variante FE0F). */

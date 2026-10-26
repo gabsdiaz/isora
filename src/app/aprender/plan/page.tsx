@@ -10,7 +10,7 @@ import { jumpToSection, useLastVisit, useProgress } from "@/lib/progress";
 import { useStudyPlan } from "@/lib/useStudyPlan";
 import { buildPlan, focusSkill, recommendedStories, recommendedThemes, type Block, type Pace, type Plan, type Tr } from "@/lib/studyPlan";
 import { useMounted } from "@/components/games/shared";
-import { THEMES } from "@/content/de/themes";
+import { ALL_THEMES } from "@/content/de/themes";
 import { REASONS } from "@/content/onboarding";
 
 const deMonth = (t: number) => new Date(t).toLocaleDateString("de-DE", { month: "long", year: "numeric" });
@@ -365,8 +365,9 @@ function Focus({ plan, T, L }: { plan: Plan; T: (es: string, en: string) => stri
   const sec = levels.placement?.sections ?? {};
   const weakVal = sec[f.section as keyof typeof sec];
   const stories = recommendedStories(profile?.interests).slice(0, 3);
-  const themes = recommendedThemes(profile?.interests)
-    .map((id) => THEMES.find((t) => t.id === id))
+  const themeLevel = plan.current?.level === "a1-2" ? "a1-2" : "a1-1";
+  const themes = recommendedThemes(profile?.interests, themeLevel)
+    .map((id) => ALL_THEMES.find((t) => t.id === id))
     .filter(Boolean)
     .slice(0, 3);
   const reasonTips = (profile?.reasons ?? []).filter((r) => REASON_TIPS[r]).slice(0, 2);
